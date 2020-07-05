@@ -1,0 +1,833 @@
+digraph in_a_hot_country {
+	graph [fname="docs/html/in_a_hot_country.dot",
+		fontname="sans-serif",
+		rankdir=LR,
+		stylesheet="cargoflow_styles.css",
+		tooltip="In A Hot Country"
+	];
+	C_alcohol	 [fontname="sans-serif",
+		href="cargos.html#alcohol",
+		id=alcohol,
+		label=Alcohol,
+		shape=ellipse,
+		target=_top];
+	I_general_store	 [fontname="sans-serif",
+		href="industries.html#general_store",
+		id=general_store,
+		label=<
+            <table border="0" cellborder="0">
+                <tr><td>General Store</td></tr>
+                
+                    
+                
+                
+                    
+                
+                
+                    
+                
+            </table>
+        >,
+		shape=box,
+		target=_top,
+		tooltip="General Store"];
+	C_alcohol -> I_general_store	 [tooltip="Alcohol -> General Store"];
+	I_hotel	 [fontname="sans-serif",
+		href="industries.html#hotel",
+		id=hotel,
+		label=<
+            <table border="0" cellborder="0">
+                <tr><td>Hotel</td></tr>
+                
+                    
+                
+                
+                    
+                
+                
+                    
+                
+            </table>
+        >,
+		shape=box,
+		target=_top,
+		tooltip=Hotel];
+	C_alcohol -> I_hotel	 [tooltip="Alcohol -> Hotel"];
+	C_building_materials	 [fontname="sans-serif",
+		href="cargos.html#building_materials",
+		id=building_materials,
+		label="Building Materials",
+		shape=ellipse,
+		target=_top];
+	I_builders_yard	 [fontname="sans-serif",
+		href="industries.html#builders_yard",
+		id=builders_yard,
+		label=<
+            <table border="0" cellborder="0">
+                <tr><td>Builders Yard</td></tr>
+                
+                    
+                
+            </table>
+        >,
+		shape=box,
+		target=_top,
+		tooltip="Builders Yard"];
+	C_building_materials -> I_builders_yard	 [tooltip="Building Materials -> Builders Yard"];
+	I_bulk_terminal	 [fontname="sans-serif",
+		href="industries.html#bulk_terminal",
+		id=bulk_terminal,
+		label=<
+            <table border="0" cellborder="0">
+                <tr><td>Bulk Terminal</td></tr>
+                
+                    
+                
+                
+                    
+                
+                
+                    
+                
+            </table>
+        >,
+		shape=box,
+		target=_top,
+		tooltip="Bulk Terminal"];
+	C_building_materials -> I_bulk_terminal	 [tooltip="Building Materials -> Bulk Terminal"];
+	I_hardware_store	 [fontname="sans-serif",
+		href="industries.html#hardware_store",
+		id=hardware_store,
+		label=<
+            <table border="0" cellborder="0">
+                <tr><td>Hardware Store</td></tr>
+                
+                    
+                
+                
+                    
+                
+            </table>
+        >,
+		shape=box,
+		target=_top,
+		tooltip="Hardware Store"];
+	C_building_materials -> I_hardware_store	 [tooltip="Building Materials -> Hardware Store"];
+	I_supply_yard	 [fontname="sans-serif",
+		href="industries.html#supply_yard",
+		id=supply_yard,
+		label=<
+            <table border="0" cellborder="0">
+                <tr><td>Supply Yard</td></tr>
+                
+                    
+                
+                
+                    
+                
+                
+                    
+                
+            </table>
+        >,
+		shape=box,
+		target=_top,
+		tooltip="Supply Yard"];
+	C_building_materials -> I_supply_yard	 [tooltip="Building Materials -> Supply Yard"];
+	C_cassava	 [fontname="sans-serif",
+		href="cargos.html#cassava",
+		id=cassava,
+		label=Cassava,
+		shape=ellipse,
+		target=_top];
+	I_flour_mill	 [fontname="sans-serif",
+		href="industries.html#flour_mill",
+		id=flour_mill,
+		label=<
+            <table border="0" cellborder="0">
+                <tr><td>Flour Mill</td></tr>
+                
+                    
+                
+                
+                    
+                
+                
+                    
+                        <tr><td>[Manufacturing Supplies]</td></tr>
+                    
+                
+            </table>
+        >,
+		shape=box,
+		target=_top,
+		tooltip="Flour Mill"];
+	C_cassava -> I_flour_mill	 [tooltip="Cassava -> Flour Mill"];
+	C_chemicals	 [fontname="sans-serif",
+		href="cargos.html#chemicals",
+		id=chemicals,
+		label=Chemicals,
+		shape=ellipse,
+		target=_top];
+	I_copper_refinery	 [fontname="sans-serif",
+		href="industries.html#copper_refinery",
+		id=copper_refinery,
+		label=<
+            <table border="0" cellborder="0">
+                <tr><td>Copper Refinery</td></tr>
+                
+                    
+                
+                
+                    
+                
+            </table>
+        >,
+		shape=box,
+		target=_top,
+		tooltip="Copper Refinery"];
+	C_chemicals -> I_copper_refinery	 [tooltip="Chemicals -> Copper Refinery"];
+	I_glass_works	 [fontname="sans-serif",
+		href="industries.html#glass_works",
+		id=glass_works,
+		label=<
+            <table border="0" cellborder="0">
+                <tr><td>Glass Works</td></tr>
+                
+                    
+                
+                
+                    
+                
+            </table>
+        >,
+		shape=box,
+		target=_top,
+		tooltip="Glass Works"];
+	C_chemicals -> I_glass_works	 [tooltip="Chemicals -> Glass Works"];
+	I_lumber_yard	 [fontname="sans-serif",
+		href="industries.html#lumber_yard",
+		id=lumber_yard,
+		label=<
+            <table border="0" cellborder="0">
+                <tr><td>Timber Yard</td></tr>
+                
+                    
+                
+                
+                    
+                
+            </table>
+        >,
+		shape=box,
+		target=_top,
+		tooltip="Timber Yard"];
+	C_chemicals -> I_lumber_yard	 [tooltip="Chemicals -> Timber Yard"];
+	C_clay	 [fontname="sans-serif",
+		href="cargos.html#clay",
+		id=clay,
+		label=Clay,
+		shape=ellipse,
+		target=_top];
+	I_cement_plant	 [fontname="sans-serif",
+		href="industries.html#cement_plant",
+		id=cement_plant,
+		label=<
+            <table border="0" cellborder="0">
+                <tr><td>Cement Plant</td></tr>
+                
+                    
+                
+                
+                    
+                
+                
+                    
+                
+            </table>
+        >,
+		shape=box,
+		target=_top,
+		tooltip="Cement Plant"];
+	C_clay -> I_cement_plant	 [tooltip="Clay -> Cement Plant"];
+	C_coffee	 [fontname="sans-serif",
+		href="cargos.html#coffee",
+		id=coffee,
+		label=Coffee,
+		shape=ellipse,
+		target=_top];
+	I_trading_post	 [fontname="sans-serif",
+		href="industries.html#trading_post",
+		id=trading_post,
+		label=<
+            <table border="0" cellborder="0">
+                <tr><td>Trading Post</td></tr>
+                
+                    
+                
+                
+                    
+                
+                
+                    
+                
+            </table>
+        >,
+		shape=box,
+		target=_top,
+		tooltip="Trading Post"];
+	C_coffee -> I_trading_post	 [tooltip="Coffee -> Trading Post"];
+	C_copper	 [fontname="sans-serif",
+		href="cargos.html#copper",
+		id=copper,
+		label=Copper,
+		shape=ellipse,
+		target=_top];
+	I_port	 [fontname="sans-serif",
+		href="industries.html#port",
+		id=port,
+		label=<
+            <table border="0" cellborder="0">
+                <tr><td>Port</td></tr>
+                
+                    
+                
+                
+                    
+                
+                
+                    
+                
+            </table>
+        >,
+		shape=box,
+		target=_top,
+		tooltip=Port];
+	C_copper -> I_port	 [tooltip="Copper -> Port"];
+	C_copper_ore	 [fontname="sans-serif",
+		href="cargos.html#copper_ore",
+		id=copper_ore,
+		label="Copper Ore",
+		shape=ellipse,
+		target=_top];
+	C_copper_ore -> I_copper_refinery	 [tooltip="Copper Ore -> Copper Refinery"];
+	C_diamonds	 [fontname="sans-serif",
+		href="cargos.html#diamonds",
+		id=diamonds,
+		label=Diamonds,
+		shape=ellipse,
+		target=_top];
+	C_diamonds -> I_trading_post	 [tooltip="Diamonds -> Trading Post"];
+	C_edible_oil	 [fontname="sans-serif",
+		href="cargos.html#edible_oil",
+		id=edible_oil,
+		label="Edible Oil",
+		shape=ellipse,
+		target=_top];
+	I_liquids_terminal	 [fontname="sans-serif",
+		href="industries.html#liquids_terminal",
+		id=liquids_terminal,
+		label=<
+            <table border="0" cellborder="0">
+                <tr><td>Liquids Terminal</td></tr>
+                
+                    
+                
+                
+                    
+                
+            </table>
+        >,
+		shape=box,
+		target=_top,
+		tooltip="Liquids Terminal"];
+	C_edible_oil -> I_liquids_terminal	 [tooltip="Edible Oil -> Liquids Terminal"];
+	C_engineering_supplies	 [fontname="sans-serif",
+		href="cargos.html#engineering_supplies",
+		id=engineering_supplies,
+		label="Engineering Supplies",
+		shape=ellipse,
+		target=_top];
+	C_farm_supplies	 [fontname="sans-serif",
+		href="cargos.html#farm_supplies",
+		id=farm_supplies,
+		label="Farm Supplies",
+		shape=ellipse,
+		target=_top];
+	C_food	 [fontname="sans-serif",
+		href="cargos.html#food",
+		id=food,
+		label=Food,
+		shape=ellipse,
+		target=_top];
+	C_food -> I_general_store	 [tooltip="Food -> General Store"];
+	C_food -> I_hotel	 [tooltip="Food -> Hotel"];
+	I_petrol_pump	 [fontname="sans-serif",
+		href="industries.html#petrol_pump",
+		id=petrol_pump,
+		label=<
+            <table border="0" cellborder="0">
+                <tr><td>Petrol Station</td></tr>
+                
+                    
+                
+                
+                    
+                
+                
+                    
+                
+            </table>
+        >,
+		shape=box,
+		target=_top,
+		tooltip="Petrol Station"];
+	C_food -> I_petrol_pump	 [tooltip="Food -> Petrol Station"];
+	C_fruits	 [fontname="sans-serif",
+		href="cargos.html#fruits",
+		id=fruits,
+		label=Fruit,
+		shape=ellipse,
+		target=_top];
+	I_brewery	 [fontname="sans-serif",
+		href="industries.html#brewery",
+		id=brewery,
+		label=<
+            <table border="0" cellborder="0">
+                <tr><td>Brewery</td></tr>
+                
+                    
+                
+                
+                    
+                
+                
+                    
+                        <tr><td>[Manufacturing Supplies]</td></tr>
+                    
+                
+            </table>
+        >,
+		shape=box,
+		target=_top,
+		tooltip=Brewery];
+	C_fruits -> I_brewery	 [tooltip="Fruit -> Brewery"];
+	I_food_processor	 [fontname="sans-serif",
+		href="industries.html#food_processor",
+		id=food_processor,
+		label=<
+            <table border="0" cellborder="0">
+                <tr><td>Food Processing Plant</td></tr>
+                
+                    
+                
+                
+                    
+                
+            </table>
+        >,
+		shape=box,
+		target=_top,
+		tooltip="Food Processing Plant"];
+	C_fruits -> I_food_processor	 [tooltip="Fruit -> Food Processing Plant"];
+	C_fruits -> I_port	 [tooltip="Fruit -> Port"];
+	C_goods	 [fontname="sans-serif",
+		href="cargos.html#goods",
+		id=goods,
+		label=Goods,
+		shape=ellipse,
+		target=_top];
+	C_goods -> I_general_store	 [tooltip="Goods -> General Store"];
+	C_goods -> I_hardware_store	 [tooltip="Goods -> Hardware Store"];
+	C_goods -> I_petrol_pump	 [tooltip="Goods -> Petrol Station"];
+	C_goods -> I_supply_yard	 [tooltip="Goods -> Supply Yard"];
+	C_livestock	 [fontname="sans-serif",
+		href="cargos.html#livestock",
+		id=livestock,
+		label=Livestock,
+		shape=ellipse,
+		target=_top];
+	I_stockyard	 [fontname="sans-serif",
+		href="industries.html#stockyard",
+		id=stockyard,
+		label=<
+            <table border="0" cellborder="0">
+                <tr><td>Stockyard</td></tr>
+                
+                    
+                
+                
+                    
+                        <tr><td>[Manufacturing Supplies]</td></tr>
+                    
+                
+            </table>
+        >,
+		shape=box,
+		target=_top,
+		tooltip=Stockyard];
+	C_livestock -> I_stockyard	 [tooltip="Livestock -> Stockyard"];
+	C_maize	 [fontname="sans-serif",
+		href="cargos.html#maize",
+		id=maize,
+		label=Maize,
+		shape=ellipse,
+		target=_top];
+	C_maize -> I_brewery	 [tooltip="Maize -> Brewery"];
+	C_maize -> I_flour_mill	 [tooltip="Maize -> Flour Mill"];
+	C_manganese	 [fontname="sans-serif",
+		href="cargos.html#manganese",
+		id=manganese,
+		label=Manganese,
+		shape=ellipse,
+		target=_top];
+	C_manganese -> I_bulk_terminal	 [tooltip="Manganese -> Bulk Terminal"];
+	C_manufacturing_supplies	 [fontname="sans-serif",
+		href="cargos.html#manufacturing_supplies",
+		id=manufacturing_supplies,
+		label="Manufacturing Supplies",
+		shape=ellipse,
+		target=_top];
+	C_nuts	 [fontname="sans-serif",
+		href="cargos.html#nuts",
+		id=nuts,
+		label=Nuts,
+		shape=ellipse,
+		target=_top];
+	C_nuts -> I_food_processor	 [tooltip="Nuts -> Food Processing Plant"];
+	C_oil	 [fontname="sans-serif",
+		href="cargos.html#oil",
+		id=oil,
+		label=Oil,
+		shape=ellipse,
+		target=_top];
+	C_oil -> I_liquids_terminal	 [tooltip="Oil -> Liquids Terminal"];
+	C_petrol	 [fontname="sans-serif",
+		href="cargos.html#petrol",
+		id=petrol,
+		label="Petroleum Fuels",
+		shape=ellipse,
+		target=_top];
+	C_petrol -> I_cement_plant	 [tooltip="Petroleum Fuels -> Cement Plant"];
+	C_petrol -> I_petrol_pump	 [tooltip="Petroleum Fuels -> Petrol Station"];
+	C_petrol -> I_supply_yard	 [tooltip="Petroleum Fuels -> Supply Yard"];
+	C_phosphate	 [fontname="sans-serif",
+		href="cargos.html#phosphate",
+		id=phosphate,
+		label=Phosphate,
+		shape=ellipse,
+		target=_top];
+	C_phosphate -> I_bulk_terminal	 [tooltip="Phosphate -> Bulk Terminal"];
+	C_rubber	 [fontname="sans-serif",
+		href="cargos.html#rubber",
+		id=rubber,
+		label=Rubber,
+		shape=ellipse,
+		target=_top];
+	C_rubber -> I_trading_post	 [tooltip="Rubber -> Trading Post"];
+	C_sand	 [fontname="sans-serif",
+		href="cargos.html#sand",
+		id=sand,
+		label=Sand,
+		shape=ellipse,
+		target=_top];
+	C_sand -> I_glass_works	 [tooltip="Sand -> Glass Works"];
+	C_stone	 [fontname="sans-serif",
+		href="cargos.html#stone",
+		id=stone,
+		label=Stone,
+		shape=ellipse,
+		target=_top];
+	C_stone -> I_cement_plant	 [tooltip="Stone -> Cement Plant"];
+	C_lumber	 [fontname="sans-serif",
+		href="cargos.html#lumber",
+		id=lumber,
+		label=Timber,
+		shape=ellipse,
+		target=_top];
+	C_lumber -> I_port	 [tooltip="Timber -> Port"];
+	C_lumber -> I_lumber_yard	 [tooltip="Timber -> Timber Yard"];
+	C_wood	 [fontname="sans-serif",
+		href="cargos.html#wood",
+		id=wood,
+		label=Wood,
+		shape=ellipse,
+		target=_top];
+	I_sawmill	 [fontname="sans-serif",
+		href="industries.html#sawmill",
+		id=sawmill,
+		label=<
+            <table border="0" cellborder="0">
+                <tr><td>Sawmill</td></tr>
+                
+                    
+                
+            </table>
+        >,
+		shape=box,
+		target=_top,
+		tooltip=Sawmill];
+	C_wood -> I_sawmill	 [tooltip="Wood -> Sawmill"];
+	I_arable_farm	 [fontname="sans-serif",
+		href="industries.html#arable_farm",
+		id=arable_farm,
+		label=<
+            <table border="0" cellborder="0">
+                <tr><td>Arable Farm</td></tr>
+                
+                    
+                        <tr><td>[Farm Supplies]</td></tr>
+                    
+                
+            </table>
+        >,
+		shape=box,
+		target=_top,
+		tooltip="Arable Farm"];
+	I_arable_farm -> C_cassava	 [tooltip="Arable Farm -> Cassava"];
+	I_arable_farm -> C_nuts	 [tooltip="Arable Farm -> Nuts"];
+	I_brewery -> C_alcohol	 [tooltip="Brewery -> Alcohol"];
+	I_bulk_terminal -> C_chemicals	 [tooltip="Bulk Terminal -> Chemicals"];
+	I_bulk_terminal -> C_farm_supplies	 [tooltip="Bulk Terminal -> Farm Supplies"];
+	I_cement_plant -> C_building_materials	 [tooltip="Cement Plant -> Building Materials"];
+	I_coffee_estate	 [fontname="sans-serif",
+		href="industries.html#coffee_estate",
+		id=coffee_estate,
+		label=<
+            <table border="0" cellborder="0">
+                <tr><td>Coffee Estate</td></tr>
+                
+                    
+                        <tr><td>[Farm Supplies]</td></tr>
+                    
+                
+            </table>
+        >,
+		shape=box,
+		target=_top,
+		tooltip="Coffee Estate"];
+	I_coffee_estate -> C_coffee	 [tooltip="Coffee Estate -> Coffee"];
+	I_coffee_estate -> C_fruits	 [tooltip="Coffee Estate -> Fruit"];
+	I_copper_mine	 [fontname="sans-serif",
+		href="industries.html#copper_mine",
+		id=copper_mine,
+		label=<
+            <table border="0" cellborder="0">
+                <tr><td>Copper Mine</td></tr>
+                
+                    
+                        <tr><td>[Engineering Supplies]</td></tr>
+                    
+                
+            </table>
+        >,
+		shape=box,
+		target=_top,
+		tooltip="Copper Mine"];
+	I_copper_mine -> C_copper_ore	 [tooltip="Copper Mine -> Copper Ore"];
+	I_copper_refinery -> C_copper	 [tooltip="Copper Refinery -> Copper"];
+	I_diamond_mine	 [fontname="sans-serif",
+		href="industries.html#diamond_mine",
+		id=diamond_mine,
+		label=<
+            <table border="0" cellborder="0">
+                <tr><td>Diamond Mine</td></tr>
+                
+                    
+                        <tr><td>[Engineering Supplies]</td></tr>
+                    
+                
+            </table>
+        >,
+		shape=box,
+		target=_top,
+		tooltip="Diamond Mine"];
+	I_diamond_mine -> C_diamonds	 [tooltip="Diamond Mine -> Diamonds"];
+	I_basic_farm	 [fontname="sans-serif",
+		href="industries.html#basic_farm",
+		id=basic_farm,
+		label=<
+            <table border="0" cellborder="0">
+                <tr><td>Farm</td></tr>
+                
+                    
+                        <tr><td>[Farm Supplies]</td></tr>
+                    
+                
+            </table>
+        >,
+		shape=box,
+		target=_top,
+		tooltip=Farm];
+	I_basic_farm -> C_livestock	 [tooltip="Farm -> Livestock"];
+	I_basic_farm -> C_maize	 [tooltip="Farm -> Maize"];
+	I_flour_mill -> C_food	 [tooltip="Flour Mill -> Food"];
+	I_food_processor -> C_edible_oil	 [tooltip="Food Processing Plant -> Edible Oil"];
+	I_food_processor -> C_food	 [tooltip="Food Processing Plant -> Food"];
+	I_forest	 [fontname="sans-serif",
+		href="industries.html#forest",
+		id=forest,
+		label=<
+            <table border="0" cellborder="0">
+                <tr><td>Forest</td></tr>
+                
+                    
+                        <tr><td>[Farm Supplies]</td></tr>
+                    
+                
+            </table>
+        >,
+		shape=box,
+		target=_top,
+		tooltip=Forest];
+	I_forest -> C_wood	 [tooltip="Forest -> Wood"];
+	I_fruit_plantation	 [fontname="sans-serif",
+		href="industries.html#fruit_plantation",
+		id=fruit_plantation,
+		label=<
+            <table border="0" cellborder="0">
+                <tr><td>Fruit Plantation</td></tr>
+                
+                    
+                        <tr><td>[Farm Supplies]</td></tr>
+                    
+                
+            </table>
+        >,
+		shape=box,
+		target=_top,
+		tooltip="Fruit Plantation"];
+	I_fruit_plantation -> C_fruits	 [tooltip="Fruit Plantation -> Fruit"];
+	I_glass_works -> C_building_materials	 [tooltip="Glass Works -> Building Materials"];
+	I_glass_works -> C_manufacturing_supplies	 [tooltip="Glass Works -> Manufacturing Supplies"];
+	CI_hotel_passengers	 [fontname="sans-serif",
+		href="cargos.html#passengers",
+		id=passengers,
+		label=Passengers,
+		shape=ellipse,
+		target=_top];
+	I_hotel -> CI_hotel_passengers	 [tooltip="Hotel -> Passengers"];
+	CI_hotel_passengers -> I_hotel	 [tooltip="Passengers -> Hotel"];
+	I_liquids_terminal -> C_chemicals	 [tooltip="Liquids Terminal -> Chemicals"];
+	I_liquids_terminal -> C_petrol	 [tooltip="Liquids Terminal -> Petroleum Fuels"];
+	I_manganese_mine	 [fontname="sans-serif",
+		href="industries.html#manganese_mine",
+		id=manganese_mine,
+		label=<
+            <table border="0" cellborder="0">
+                <tr><td>Manganese Mine</td></tr>
+                
+                    
+                        <tr><td>[Engineering Supplies]</td></tr>
+                    
+                
+            </table>
+        >,
+		shape=box,
+		target=_top,
+		tooltip="Manganese Mine"];
+	I_manganese_mine -> C_manganese	 [tooltip="Manganese Mine -> Manganese"];
+	I_oil_rig	 [fontname="sans-serif",
+		href="industries.html#oil_rig",
+		id=oil_rig,
+		label=<
+            <table border="0" cellborder="0">
+                <tr><td>Oil Rig</td></tr>
+                
+                    
+                        <tr><td>[Engineering Supplies]</td></tr>
+                    
+                
+            </table>
+        >,
+		shape=box,
+		target=_top,
+		tooltip="Oil Rig"];
+	CI_oil_rig_passengers	 [fontname="sans-serif",
+		href="cargos.html#passengers",
+		id=passengers,
+		label=Passengers,
+		shape=ellipse,
+		target=_top];
+	I_oil_rig -> CI_oil_rig_passengers	 [tooltip="Oil Rig -> Passengers"];
+	I_oil_rig -> C_oil	 [tooltip="Oil Rig -> Oil"];
+	I_oil_wells	 [fontname="sans-serif",
+		href="industries.html#oil_wells",
+		id=oil_wells,
+		label=<
+            <table border="0" cellborder="0">
+                <tr><td>Oil Wells</td></tr>
+                
+                    
+                        <tr><td>[Engineering Supplies]</td></tr>
+                    
+                
+            </table>
+        >,
+		shape=box,
+		target=_top,
+		tooltip="Oil Wells"];
+	I_oil_wells -> C_oil	 [tooltip="Oil Wells -> Oil"];
+	I_phosphate_mine	 [fontname="sans-serif",
+		href="industries.html#phosphate_mine",
+		id=phosphate_mine,
+		label=<
+            <table border="0" cellborder="0">
+                <tr><td>Phosphate Mine</td></tr>
+                
+                    
+                        <tr><td>[Engineering Supplies]</td></tr>
+                    
+                
+            </table>
+        >,
+		shape=box,
+		target=_top,
+		tooltip="Phosphate Mine"];
+	I_phosphate_mine -> C_clay	 [tooltip="Phosphate Mine -> Clay"];
+	I_phosphate_mine -> C_phosphate	 [tooltip="Phosphate Mine -> Phosphate"];
+	I_port -> C_goods	 [tooltip="Port -> Goods"];
+	I_port -> C_manufacturing_supplies	 [tooltip="Port -> Manufacturing Supplies"];
+	I_quarry	 [fontname="sans-serif",
+		href="industries.html#quarry",
+		id=quarry,
+		label=<
+            <table border="0" cellborder="0">
+                <tr><td>Quarry</td></tr>
+                
+                    
+                        <tr><td>[Engineering Supplies]</td></tr>
+                    
+                
+            </table>
+        >,
+		shape=box,
+		target=_top,
+		tooltip=Quarry];
+	I_quarry -> C_sand	 [tooltip="Quarry -> Sand"];
+	I_quarry -> C_stone	 [tooltip="Quarry -> Stone"];
+	I_rubber_plantation	 [fontname="sans-serif",
+		href="industries.html#rubber_plantation",
+		id=rubber_plantation,
+		label=<
+            <table border="0" cellborder="0">
+                <tr><td>Rubber Plantation</td></tr>
+                
+                    
+                        <tr><td>[Farm Supplies]</td></tr>
+                    
+                
+            </table>
+        >,
+		shape=box,
+		target=_top,
+		tooltip="Rubber Plantation"];
+	I_rubber_plantation -> C_rubber	 [tooltip="Rubber Plantation -> Rubber"];
+	I_sawmill -> C_lumber	 [tooltip="Sawmill -> Timber"];
+	I_stockyard -> C_food	 [tooltip="Stockyard -> Food"];
+	I_supply_yard -> C_engineering_supplies	 [tooltip="Supply Yard -> Engineering Supplies"];
+	I_supply_yard -> C_farm_supplies	 [tooltip="Supply Yard -> Farm Supplies"];
+	I_lumber_yard -> C_building_materials	 [tooltip="Timber Yard -> Building Materials"];
+	I_trading_post -> C_engineering_supplies	 [tooltip="Trading Post -> Engineering Supplies"];
+	I_trading_post -> C_farm_supplies	 [tooltip="Trading Post -> Farm Supplies"];
+}
