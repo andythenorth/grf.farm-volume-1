@@ -1,0 +1,2877 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+    <title >Iron Horse</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link type="text/css" href="static/css/bootstrap.min.css" rel="stylesheet">
+    <link type="text/css" href="static/css/bootstrap-responsive.min.css" rel="stylesheet">
+    <link type="text/css" href="static/css/style.css" rel="stylesheet">
+
+    <script type="text/javascript" src="static/js/jquery-1.9.1.min.js"></script>
+
+    <script type="text/javascript" src="static/js/jquery.metadata.js"></script>
+    <script type="text/javascript" src="static/js/jquery.tablesorter.min.js"></script>
+    <script type="text/javascript" src="static/js/jquery.tablesorter.widgets.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $('.tablesorter').tablesorter({
+                textExtraction: function(node){
+                            var cell_value = $(node).text();
+                            var sort_value = $(node).data('value');
+                    return (sort_value != undefined) ? sort_value : cell_value;
+                 },
+            })
+        })
+    </script>
+</head>
+
+<body>
+    <div class="navbar navbar-inverse navbar-static-top" style="border-bottom:1px solid #000;">
+        <div class="navbar-inner">
+            <div class="container">
+                <ul class="nav pull-left">
+                    <li class="">
+                        <a href="get_started.html">Get Started</a>
+                    </li>
+                    <li class="">
+                        <a href="trains.html">Trains</a>
+                    </li>
+                    <li class="active">
+                        <a href="code_reference.html">Code Reference</a>
+                    </li>
+                </ul>
+                <ul class="nav pull-right">
+                    <li class="">
+                        <a href="translations.html"><i class="icon-globe icon-white"></i> Help Translate Iron Horse</a>
+                    </li>
+                    <li>
+                        <a href="http://www.tt-forums.net/viewtopic.php?f=26&amp;t=44613"><i class="icon-comment icon-white"></i> Discuss at TT-Forums.net</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="hero-unit subhead">
+        <script language="JavaScript">
+        function random_img(){
+            var images=new Array("",
+                                 "");
+
+            var random_image=images[Math.floor(Math.random()*images.length)];
+            document.write('<a href="trains.html#' + random_image + '"><img class="pull-right" style="margin-top:-30px; margin-bottom:0;" src="static/img/industries/'+ random_image +'.png"></a>')
+        }
+        random_img()
+        </script>
+        <div class="container">
+            <h1 style="font-size:48px; padding-top:30px;">Iron Horse</h1>
+            <p class="lead">My Lovely <strike>Horse</strike> Train Set</p>
+        </div>
+    </div>
+    
+        
+    
+    <div class="container">
+        <div>
+    <div class="span12">
+        <h2>Code Reference</h2>
+        <h3>65 trains</h3>
+        <hr />
+        
+            
+                <h4>WagonConsist <small>Subclass</small></h4>
+                <p>
+    Intermediate class for wagon consists to subclass from, provides some common properties.
+    This class should be sparse - only declare the most limited set of properties common to wagon consists.
+    </p>
+                <table style="font-size:84%;" class="table table-striped table-condensed table-bordered tablesorter">
+                    <thead>
+                        <tr>
+                           
+                                <th style="background-color:#eee; vertical-align:top">Vehicle Name</th>
+                            
+                           
+                                <th style="background-color:#eee; vertical-align:top">HP</th>
+                            
+                           
+                                <th style="background-color:#eee; vertical-align:top">Speed (mph)</th>
+                            
+                           
+                                <th style="background-color:#eee; vertical-align:top">Weight (t)</th>
+                            
+                           
+                                <th style="background-color:#eee; vertical-align:top">TE coefficient</th>
+                            
+                           
+                                <th style="background-color:#eee; vertical-align:top">Intro Date</th>
+                            
+                           
+                                <th style="background-color:#eee; vertical-align:top">Vehicle Life</th>
+                            
+                           
+                                <th style="background-color:#eee; vertical-align:top">Replacement ID</th>
+                            
+                           
+                                <th style="background-color:#eee; vertical-align:top">Buy Cost</th>
+                            
+                           
+                                <th style="background-color:#eee; vertical-align:top">Running Cost</th>
+                            
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+                            <tr>
+                                
+                                    <td>Passenger Car</td>
+                                
+                                
+                                    <td>0</td>
+                                
+                                
+                                    <td>85</td>
+                                
+                                
+                                    <td>30</td>
+                                
+                                
+                                    <td>0.3</td>
+                                
+                                
+                                    <td>1860</td>
+                                
+                                
+                                    <td>40</td>
+                                
+                                
+                                    <td>-none</td>
+                                
+                                
+                                    <td>102.5</td>
+                                
+                                
+                                    <td>21</td>
+                                
+                            </tr>
+                        
+                        
+                            <tr>
+                                
+                                    <td>Mail Car</td>
+                                
+                                
+                                    <td>0</td>
+                                
+                                
+                                    <td>85</td>
+                                
+                                
+                                    <td>29</td>
+                                
+                                
+                                    <td>0.3</td>
+                                
+                                
+                                    <td>1860</td>
+                                
+                                
+                                    <td>40</td>
+                                
+                                
+                                    <td>-none</td>
+                                
+                                
+                                    <td>72.5</td>
+                                
+                                
+                                    <td>12</td>
+                                
+                            </tr>
+                        
+                        
+                            <tr>
+                                
+                                    <td>Combine Car</td>
+                                
+                                
+                                    <td>0</td>
+                                
+                                
+                                    <td>65</td>
+                                
+                                
+                                    <td>34</td>
+                                
+                                
+                                    <td>0.3</td>
+                                
+                                
+                                    <td>1860</td>
+                                
+                                
+                                    <td>40</td>
+                                
+                                
+                                    <td>-none</td>
+                                
+                                
+                                    <td>97.5</td>
+                                
+                                
+                                    <td>16</td>
+                                
+                            </tr>
+                        
+                        
+                            <tr>
+                                
+                                    <td>Open Car</td>
+                                
+                                
+                                    <td>0</td>
+                                
+                                
+                                    <td>65</td>
+                                
+                                
+                                    <td>7</td>
+                                
+                                
+                                    <td>0.3</td>
+                                
+                                
+                                    <td>1860</td>
+                                
+                                
+                                    <td>40</td>
+                                
+                                
+                                    <td>-none</td>
+                                
+                                
+                                    <td>42.5</td>
+                                
+                                
+                                    <td>8</td>
+                                
+                            </tr>
+                        
+                        
+                            <tr>
+                                
+                                    <td>Box Car</td>
+                                
+                                
+                                    <td>0</td>
+                                
+                                
+                                    <td>65</td>
+                                
+                                
+                                    <td>12</td>
+                                
+                                
+                                    <td>0.3</td>
+                                
+                                
+                                    <td>1860</td>
+                                
+                                
+                                    <td>40</td>
+                                
+                                
+                                    <td>-none</td>
+                                
+                                
+                                    <td>42.5</td>
+                                
+                                
+                                    <td>8</td>
+                                
+                            </tr>
+                        
+                        
+                            <tr>
+                                
+                                    <td>Tank Car</td>
+                                
+                                
+                                    <td>0</td>
+                                
+                                
+                                    <td>65</td>
+                                
+                                
+                                    <td>12</td>
+                                
+                                
+                                    <td>0.3</td>
+                                
+                                
+                                    <td>1860</td>
+                                
+                                
+                                    <td>40</td>
+                                
+                                
+                                    <td>-none</td>
+                                
+                                
+                                    <td>42.5</td>
+                                
+                                
+                                    <td>8</td>
+                                
+                            </tr>
+                        
+                        
+                            <tr>
+                                
+                                    <td>Flat Car</td>
+                                
+                                
+                                    <td>0</td>
+                                
+                                
+                                    <td>65</td>
+                                
+                                
+                                    <td>6</td>
+                                
+                                
+                                    <td>0.3</td>
+                                
+                                
+                                    <td>1860</td>
+                                
+                                
+                                    <td>40</td>
+                                
+                                
+                                    <td>-none</td>
+                                
+                                
+                                    <td>42.5</td>
+                                
+                                
+                                    <td>8</td>
+                                
+                            </tr>
+                        
+                        
+                            <tr>
+                                
+                                    <td>Livestock Car</td>
+                                
+                                
+                                    <td>0</td>
+                                
+                                
+                                    <td>65</td>
+                                
+                                
+                                    <td>12</td>
+                                
+                                
+                                    <td>0.3</td>
+                                
+                                
+                                    <td>1860</td>
+                                
+                                
+                                    <td>40</td>
+                                
+                                
+                                    <td>-none</td>
+                                
+                                
+                                    <td>42.5</td>
+                                
+                                
+                                    <td>8</td>
+                                
+                            </tr>
+                        
+                        
+                            <tr>
+                                
+                                    <td>Caboose Car</td>
+                                
+                                
+                                    <td>0</td>
+                                
+                                
+                                    <td>85</td>
+                                
+                                
+                                    <td>20</td>
+                                
+                                
+                                    <td>0.3</td>
+                                
+                                
+                                    <td>1860</td>
+                                
+                                
+                                    <td>40</td>
+                                
+                                
+                                    <td>-none</td>
+                                
+                                
+                                    <td>42.5</td>
+                                
+                                
+                                    <td>10</td>
+                                
+                            </tr>
+                        
+                        
+                            <tr>
+                                
+                                    <td>Narrow Gauge Passenger Car</td>
+                                
+                                
+                                    <td>0</td>
+                                
+                                
+                                    <td>55</td>
+                                
+                                
+                                    <td>12</td>
+                                
+                                
+                                    <td>0.3</td>
+                                
+                                
+                                    <td>1870</td>
+                                
+                                
+                                    <td>40</td>
+                                
+                                
+                                    <td>-none</td>
+                                
+                                
+                                    <td>65.0</td>
+                                
+                                
+                                    <td>13</td>
+                                
+                            </tr>
+                        
+                        
+                            <tr>
+                                
+                                    <td>Narrow Gauge Open Car</td>
+                                
+                                
+                                    <td>0</td>
+                                
+                                
+                                    <td>55</td>
+                                
+                                
+                                    <td>3</td>
+                                
+                                
+                                    <td>0.3</td>
+                                
+                                
+                                    <td>1870</td>
+                                
+                                
+                                    <td>40</td>
+                                
+                                
+                                    <td>-none</td>
+                                
+                                
+                                    <td>33.5</td>
+                                
+                                
+                                    <td>6</td>
+                                
+                            </tr>
+                        
+                        
+                            <tr>
+                                
+                                    <td>Narrow Gauge Box Car</td>
+                                
+                                
+                                    <td>0</td>
+                                
+                                
+                                    <td>55</td>
+                                
+                                
+                                    <td>6</td>
+                                
+                                
+                                    <td>0.3</td>
+                                
+                                
+                                    <td>1870</td>
+                                
+                                
+                                    <td>40</td>
+                                
+                                
+                                    <td>-none</td>
+                                
+                                
+                                    <td>33.5</td>
+                                
+                                
+                                    <td>6</td>
+                                
+                            </tr>
+                        
+                        
+                            <tr>
+                                
+                                    <td>Narrow Gauge Tank Car</td>
+                                
+                                
+                                    <td>0</td>
+                                
+                                
+                                    <td>55</td>
+                                
+                                
+                                    <td>5</td>
+                                
+                                
+                                    <td>0.3</td>
+                                
+                                
+                                    <td>1870</td>
+                                
+                                
+                                    <td>40</td>
+                                
+                                
+                                    <td>-none</td>
+                                
+                                
+                                    <td>33.5</td>
+                                
+                                
+                                    <td>6</td>
+                                
+                            </tr>
+                        
+                        
+                            <tr>
+                                
+                                    <td>Narrow Gauge Flat Car</td>
+                                
+                                
+                                    <td>0</td>
+                                
+                                
+                                    <td>55</td>
+                                
+                                
+                                    <td>3</td>
+                                
+                                
+                                    <td>0.3</td>
+                                
+                                
+                                    <td>1870</td>
+                                
+                                
+                                    <td>40</td>
+                                
+                                
+                                    <td>-none</td>
+                                
+                                
+                                    <td>33.5</td>
+                                
+                                
+                                    <td>6</td>
+                                
+                            </tr>
+                        
+                        
+                            <tr>
+                                
+                                    <td>Narrow Gauge Livestock Car</td>
+                                
+                                
+                                    <td>0</td>
+                                
+                                
+                                    <td>55</td>
+                                
+                                
+                                    <td>6</td>
+                                
+                                
+                                    <td>0.3</td>
+                                
+                                
+                                    <td>1870</td>
+                                
+                                
+                                    <td>40</td>
+                                
+                                
+                                    <td>-none</td>
+                                
+                                
+                                    <td>33.5</td>
+                                
+                                
+                                    <td>6</td>
+                                
+                            </tr>
+                        
+                        
+                            <tr>
+                                
+                                    <td>Mail Car (Metro)</td>
+                                
+                                
+                                    <td>0</td>
+                                
+                                
+                                    <td>65</td>
+                                
+                                
+                                    <td>20</td>
+                                
+                                
+                                    <td>0.3</td>
+                                
+                                
+                                    <td>1900</td>
+                                
+                                
+                                    <td>40</td>
+                                
+                                
+                                    <td>-none</td>
+                                
+                                
+                                    <td>72.5</td>
+                                
+                                
+                                    <td>9</td>
+                                
+                            </tr>
+                        
+                        
+                            <tr>
+                                
+                                    <td>Hopper Car</td>
+                                
+                                
+                                    <td>0</td>
+                                
+                                
+                                    <td>65</td>
+                                
+                                
+                                    <td>10</td>
+                                
+                                
+                                    <td>0.3</td>
+                                
+                                
+                                    <td>1915</td>
+                                
+                                
+                                    <td>40</td>
+                                
+                                
+                                    <td>-none</td>
+                                
+                                
+                                    <td>47.5</td>
+                                
+                                
+                                    <td>8</td>
+                                
+                            </tr>
+                        
+                        
+                            <tr>
+                                
+                                    <td>Reefer Car</td>
+                                
+                                
+                                    <td>0</td>
+                                
+                                
+                                    <td>85</td>
+                                
+                                
+                                    <td>14</td>
+                                
+                                
+                                    <td>0.3</td>
+                                
+                                
+                                    <td>1915</td>
+                                
+                                
+                                    <td>40</td>
+                                
+                                
+                                    <td>-none</td>
+                                
+                                
+                                    <td>55.0</td>
+                                
+                                
+                                    <td>10</td>
+                                
+                            </tr>
+                        
+                        
+                            <tr>
+                                
+                                    <td>Covered Hopper Car</td>
+                                
+                                
+                                    <td>0</td>
+                                
+                                
+                                    <td>65</td>
+                                
+                                
+                                    <td>14</td>
+                                
+                                
+                                    <td>0.3</td>
+                                
+                                
+                                    <td>1922</td>
+                                
+                                
+                                    <td>40</td>
+                                
+                                
+                                    <td>-none</td>
+                                
+                                
+                                    <td>47.5</td>
+                                
+                                
+                                    <td>8</td>
+                                
+                            </tr>
+                        
+                        
+                            <tr>
+                                
+                                    <td>Passenger Car</td>
+                                
+                                
+                                    <td>0</td>
+                                
+                                
+                                    <td>100</td>
+                                
+                                
+                                    <td>33</td>
+                                
+                                
+                                    <td>0.3</td>
+                                
+                                
+                                    <td>1925</td>
+                                
+                                
+                                    <td>40</td>
+                                
+                                
+                                    <td>-none</td>
+                                
+                                
+                                    <td>132.5</td>
+                                
+                                
+                                    <td>25</td>
+                                
+                            </tr>
+                        
+                        
+                            <tr>
+                                
+                                    <td>Mail Car</td>
+                                
+                                
+                                    <td>0</td>
+                                
+                                
+                                    <td>100</td>
+                                
+                                
+                                    <td>30</td>
+                                
+                                
+                                    <td>0.3</td>
+                                
+                                
+                                    <td>1925</td>
+                                
+                                
+                                    <td>40</td>
+                                
+                                
+                                    <td>-none</td>
+                                
+                                
+                                    <td>95.0</td>
+                                
+                                
+                                    <td>14</td>
+                                
+                            </tr>
+                        
+                        
+                            <tr>
+                                
+                                    <td>Open Car</td>
+                                
+                                
+                                    <td>0</td>
+                                
+                                
+                                    <td>85</td>
+                                
+                                
+                                    <td>15</td>
+                                
+                                
+                                    <td>0.3</td>
+                                
+                                
+                                    <td>1925</td>
+                                
+                                
+                                    <td>40</td>
+                                
+                                
+                                    <td>-none</td>
+                                
+                                
+                                    <td>60.0</td>
+                                
+                                
+                                    <td>10</td>
+                                
+                            </tr>
+                        
+                        
+                            <tr>
+                                
+                                    <td>Edibles Tank Car</td>
+                                
+                                
+                                    <td>0</td>
+                                
+                                
+                                    <td>85</td>
+                                
+                                
+                                    <td>12</td>
+                                
+                                
+                                    <td>0.3</td>
+                                
+                                
+                                    <td>1925</td>
+                                
+                                
+                                    <td>40</td>
+                                
+                                
+                                    <td>-none</td>
+                                
+                                
+                                    <td>55.0</td>
+                                
+                                
+                                    <td>10</td>
+                                
+                            </tr>
+                        
+                        
+                            <tr>
+                                
+                                    <td>Box Car</td>
+                                
+                                
+                                    <td>0</td>
+                                
+                                
+                                    <td>85</td>
+                                
+                                
+                                    <td>18</td>
+                                
+                                
+                                    <td>0.3</td>
+                                
+                                
+                                    <td>1940</td>
+                                
+                                
+                                    <td>40</td>
+                                
+                                
+                                    <td>-none</td>
+                                
+                                
+                                    <td>60.0</td>
+                                
+                                
+                                    <td>10</td>
+                                
+                            </tr>
+                        
+                        
+                            <tr>
+                                
+                                    <td>Flat Car</td>
+                                
+                                
+                                    <td>0</td>
+                                
+                                
+                                    <td>85</td>
+                                
+                                
+                                    <td>12</td>
+                                
+                                
+                                    <td>0.3</td>
+                                
+                                
+                                    <td>1945</td>
+                                
+                                
+                                    <td>40</td>
+                                
+                                
+                                    <td>-none</td>
+                                
+                                
+                                    <td>60.0</td>
+                                
+                                
+                                    <td>10</td>
+                                
+                            </tr>
+                        
+                        
+                            <tr>
+                                
+                                    <td>Livestock Car</td>
+                                
+                                
+                                    <td>0</td>
+                                
+                                
+                                    <td>85</td>
+                                
+                                
+                                    <td>24</td>
+                                
+                                
+                                    <td>0.3</td>
+                                
+                                
+                                    <td>1950</td>
+                                
+                                
+                                    <td>40</td>
+                                
+                                
+                                    <td>-none</td>
+                                
+                                
+                                    <td>60.0</td>
+                                
+                                
+                                    <td>10</td>
+                                
+                            </tr>
+                        
+                        
+                            <tr>
+                                
+                                    <td>Covered Hopper Car</td>
+                                
+                                
+                                    <td>0</td>
+                                
+                                
+                                    <td>100</td>
+                                
+                                
+                                    <td>30</td>
+                                
+                                
+                                    <td>0.3</td>
+                                
+                                
+                                    <td>1960</td>
+                                
+                                
+                                    <td>40</td>
+                                
+                                
+                                    <td>-none</td>
+                                
+                                
+                                    <td>77.5</td>
+                                
+                                
+                                    <td>12</td>
+                                
+                            </tr>
+                        
+                        
+                            <tr>
+                                
+                                    <td>Intermodal Flat Car</td>
+                                
+                                
+                                    <td>0</td>
+                                
+                                
+                                    <td></td>
+                                
+                                
+                                    <td>20</td>
+                                
+                                
+                                    <td>0.3</td>
+                                
+                                
+                                    <td>1960</td>
+                                
+                                
+                                    <td>40</td>
+                                
+                                
+                                    <td>-none</td>
+                                
+                                
+                                    <td>86.5</td>
+                                
+                                
+                                    <td>15</td>
+                                
+                            </tr>
+                        
+                        
+                            <tr>
+                                
+                                    <td>Tank Car</td>
+                                
+                                
+                                    <td>0</td>
+                                
+                                
+                                    <td>85</td>
+                                
+                                
+                                    <td>40</td>
+                                
+                                
+                                    <td>0.3</td>
+                                
+                                
+                                    <td>1964</td>
+                                
+                                
+                                    <td>40</td>
+                                
+                                
+                                    <td>-none</td>
+                                
+                                
+                                    <td>70.0</td>
+                                
+                                
+                                    <td>10</td>
+                                
+                            </tr>
+                        
+                        
+                            <tr>
+                                
+                                    <td>Reefer Car</td>
+                                
+                                
+                                    <td>0</td>
+                                
+                                
+                                    <td></td>
+                                
+                                
+                                    <td>30</td>
+                                
+                                
+                                    <td>0.3</td>
+                                
+                                
+                                    <td>1964</td>
+                                
+                                
+                                    <td>40</td>
+                                
+                                
+                                    <td>-none</td>
+                                
+                                
+                                    <td>82.5</td>
+                                
+                                
+                                    <td>15</td>
+                                
+                            </tr>
+                        
+                        
+                            <tr>
+                                
+                                    <td>Hopper Car</td>
+                                
+                                
+                                    <td>0</td>
+                                
+                                
+                                    <td>85</td>
+                                
+                                
+                                    <td>20</td>
+                                
+                                
+                                    <td>0.3</td>
+                                
+                                
+                                    <td>1965</td>
+                                
+                                
+                                    <td>40</td>
+                                
+                                
+                                    <td>-none</td>
+                                
+                                
+                                    <td>70.0</td>
+                                
+                                
+                                    <td>10</td>
+                                
+                            </tr>
+                        
+                        
+                            <tr>
+                                
+                                    <td>Passenger Car</td>
+                                
+                                
+                                    <td>0</td>
+                                
+                                
+                                    <td></td>
+                                
+                                
+                                    <td>36</td>
+                                
+                                
+                                    <td>0.3</td>
+                                
+                                
+                                    <td>1985</td>
+                                
+                                
+                                    <td>40</td>
+                                
+                                
+                                    <td>-none</td>
+                                
+                                
+                                    <td>175.0</td>
+                                
+                                
+                                    <td>31</td>
+                                
+                            </tr>
+                        
+                        
+                            <tr>
+                                
+                                    <td>Mail Car</td>
+                                
+                                
+                                    <td>0</td>
+                                
+                                
+                                    <td></td>
+                                
+                                
+                                    <td>31</td>
+                                
+                                
+                                    <td>0.3</td>
+                                
+                                
+                                    <td>1985</td>
+                                
+                                
+                                    <td>40</td>
+                                
+                                
+                                    <td>-none</td>
+                                
+                                
+                                    <td>122.5</td>
+                                
+                                
+                                    <td>17</td>
+                                
+                            </tr>
+                        
+                        
+                            <tr>
+                                
+                                    <td>Edibles Tank Car</td>
+                                
+                                
+                                    <td>0</td>
+                                
+                                
+                                    <td></td>
+                                
+                                
+                                    <td>30</td>
+                                
+                                
+                                    <td>0.3</td>
+                                
+                                
+                                    <td>1988</td>
+                                
+                                
+                                    <td>40</td>
+                                
+                                
+                                    <td>-none</td>
+                                
+                                
+                                    <td>82.5</td>
+                                
+                                
+                                    <td>15</td>
+                                
+                            </tr>
+                        
+                        
+                            <tr>
+                                
+                                    <td>Box Car</td>
+                                
+                                
+                                    <td>0</td>
+                                
+                                
+                                    <td>100</td>
+                                
+                                
+                                    <td>25</td>
+                                
+                                
+                                    <td>0.3</td>
+                                
+                                
+                                    <td>1995</td>
+                                
+                                
+                                    <td>40</td>
+                                
+                                
+                                    <td>-none</td>
+                                
+                                
+                                    <td>77.5</td>
+                                
+                                
+                                    <td>12</td>
+                                
+                            </tr>
+                        
+                        
+                            <tr>
+                                
+                                    <td>Hopper Car</td>
+                                
+                                
+                                    <td>0</td>
+                                
+                                
+                                    <td>100</td>
+                                
+                                
+                                    <td>27</td>
+                                
+                                
+                                    <td>0.3</td>
+                                
+                                
+                                    <td>2010</td>
+                                
+                                
+                                    <td>40</td>
+                                
+                                
+                                    <td>-none</td>
+                                
+                                
+                                    <td>87.5</td>
+                                
+                                
+                                    <td>12</td>
+                                
+                            </tr>
+                        
+                    </tbody>
+                </table>
+                <br />
+            
+        
+        
+            
+                <h4>EngineConsist <small>Subclass</small></h4>
+                <p>
+    Intermediate class for engine consists to subclass from, provides some common properties.
+    This class should be sparse - only declare the most limited set of properties common to engine consists.
+    </p>
+                <table style="font-size:84%;" class="table table-striped table-condensed table-bordered tablesorter">
+                    <thead>
+                        <tr>
+                           
+                                <th style="background-color:#eee; vertical-align:top">Vehicle Name</th>
+                            
+                           
+                                <th style="background-color:#eee; vertical-align:top">HP</th>
+                            
+                           
+                                <th style="background-color:#eee; vertical-align:top">Speed (mph)</th>
+                            
+                           
+                                <th style="background-color:#eee; vertical-align:top">Weight (t)</th>
+                            
+                           
+                                <th style="background-color:#eee; vertical-align:top">TE coefficient</th>
+                            
+                           
+                                <th style="background-color:#eee; vertical-align:top">Intro Date</th>
+                            
+                           
+                                <th style="background-color:#eee; vertical-align:top">Vehicle Life</th>
+                            
+                           
+                                <th style="background-color:#eee; vertical-align:top">Replacement ID</th>
+                            
+                           
+                                <th style="background-color:#eee; vertical-align:top">Buy Cost</th>
+                            
+                           
+                                <th style="background-color:#eee; vertical-align:top">Running Cost</th>
+                            
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+                            <tr>
+                                
+                                    <td>2-4-0 Chaplin (Steam)</td>
+                                
+                                
+                                    <td>450</td>
+                                
+                                
+                                    <td>60</td>
+                                
+                                
+                                    <td>35</td>
+                                
+                                
+                                    <td>0.2</td>
+                                
+                                
+                                    <td>1860</td>
+                                
+                                
+                                    <td>40</td>
+                                
+                                
+                                    <td>-none</td>
+                                
+                                
+                                    <td>31.0</td>
+                                
+                                
+                                    <td>49.0</td>
+                                
+                            </tr>
+                        
+                        
+                            <tr>
+                                
+                                    <td>4-4-0 Standard (Steam)</td>
+                                
+                                
+                                    <td>1000</td>
+                                
+                                
+                                    <td>70</td>
+                                
+                                
+                                    <td>92</td>
+                                
+                                
+                                    <td>0.07</td>
+                                
+                                
+                                    <td>1860</td>
+                                
+                                
+                                    <td>40</td>
+                                
+                                
+                                    <td>-none</td>
+                                
+                                
+                                    <td>63.0</td>
+                                
+                                
+                                    <td>60.0</td>
+                                
+                            </tr>
+                        
+                        
+                            <tr>
+                                
+                                    <td>0-6-0 Ramsbottom (Steam)</td>
+                                
+                                
+                                    <td>800</td>
+                                
+                                
+                                    <td>55</td>
+                                
+                                
+                                    <td>89</td>
+                                
+                                
+                                    <td>0.22</td>
+                                
+                                
+                                    <td>1860</td>
+                                
+                                
+                                    <td>40</td>
+                                
+                                
+                                    <td>-none</td>
+                                
+                                
+                                    <td>47.0</td>
+                                
+                                
+                                    <td>50.0</td>
+                                
+                            </tr>
+                        
+                        
+                            <tr>
+                                
+                                    <td>Stewart (Steam)</td>
+                                
+                                
+                                    <td>350</td>
+                                
+                                
+                                    <td>40</td>
+                                
+                                
+                                    <td>35</td>
+                                
+                                
+                                    <td>0.2</td>
+                                
+                                
+                                    <td>1860</td>
+                                
+                                
+                                    <td>40</td>
+                                
+                                
+                                    <td>-none</td>
+                                
+                                
+                                    <td>18.0</td>
+                                
+                                
+                                    <td>23.0</td>
+                                
+                            </tr>
+                        
+                        
+                            <tr>
+                                
+                                    <td>0-8-0 Collier (Steam)</td>
+                                
+                                
+                                    <td>1300</td>
+                                
+                                
+                                    <td>45</td>
+                                
+                                
+                                    <td>130</td>
+                                
+                                
+                                    <td>0.29</td>
+                                
+                                
+                                    <td>1900</td>
+                                
+                                
+                                    <td>40</td>
+                                
+                                
+                                    <td>-none</td>
+                                
+                                
+                                    <td>48.0</td>
+                                
+                                
+                                    <td>57.0</td>
+                                
+                            </tr>
+                        
+                        
+                            <tr>
+                                
+                                    <td>Serpentine (Metro)</td>
+                                
+                                
+                                    <td>600</td>
+                                
+                                
+                                    <td>40</td>
+                                
+                                
+                                    <td>80</td>
+                                
+                                
+                                    <td>0.3</td>
+                                
+                                
+                                    <td>1900</td>
+                                
+                                
+                                    <td>40</td>
+                                
+                                
+                                    <td>-none</td>
+                                
+                                
+                                    <td>73.0</td>
+                                
+                                
+                                    <td>48.0</td>
+                                
+                            </tr>
+                        
+                        
+                            <tr>
+                                
+                                    <td>Mole (Metro)</td>
+                                
+                                
+                                    <td>800</td>
+                                
+                                
+                                    <td>45</td>
+                                
+                                
+                                    <td>65</td>
+                                
+                                
+                                    <td>0.3</td>
+                                
+                                
+                                    <td>1900</td>
+                                
+                                
+                                    <td>40</td>
+                                
+                                
+                                    <td>-none</td>
+                                
+                                
+                                    <td>47.0</td>
+                                
+                                
+                                    <td>52.0</td>
+                                
+                            </tr>
+                        
+                        
+                            <tr>
+                                
+                                    <td>4-4-2 High Flyer (Steam)</td>
+                                
+                                
+                                    <td>1300</td>
+                                
+                                
+                                    <td>80</td>
+                                
+                                
+                                    <td>120</td>
+                                
+                                
+                                    <td>0.1</td>
+                                
+                                
+                                    <td>1905</td>
+                                
+                                
+                                    <td>40</td>
+                                
+                                
+                                    <td>-none</td>
+                                
+                                
+                                    <td>76.0</td>
+                                
+                                
+                                    <td>76.0</td>
+                                
+                            </tr>
+                        
+                        
+                            <tr>
+                                
+                                    <td>Hudswell (Steam)</td>
+                                
+                                
+                                    <td>800</td>
+                                
+                                
+                                    <td>50</td>
+                                
+                                
+                                    <td>50</td>
+                                
+                                
+                                    <td>0.2</td>
+                                
+                                
+                                    <td>1910</td>
+                                
+                                
+                                    <td>40</td>
+                                
+                                
+                                    <td>-none</td>
+                                
+                                
+                                    <td>32.0</td>
+                                
+                                
+                                    <td>43.0</td>
+                                
+                            </tr>
+                        
+                        
+                            <tr>
+                                
+                                    <td>Raven (Electric)</td>
+                                
+                                
+                                    <td>1800</td>
+                                
+                                
+                                    <td>80</td>
+                                
+                                
+                                    <td>120</td>
+                                
+                                
+                                    <td>0.32</td>
+                                
+                                
+                                    <td>1919</td>
+                                
+                                
+                                    <td>40</td>
+                                
+                                
+                                    <td>-none</td>
+                                
+                                
+                                    <td>85.0</td>
+                                
+                                
+                                    <td>85.0</td>
+                                
+                            </tr>
+                        
+                        
+                            <tr>
+                                
+                                    <td>2-6-2 Suburban (Steam)</td>
+                                
+                                
+                                    <td>650</td>
+                                
+                                
+                                    <td>70</td>
+                                
+                                
+                                    <td>57</td>
+                                
+                                
+                                    <td>0.2</td>
+                                
+                                
+                                    <td>1930</td>
+                                
+                                
+                                    <td>40</td>
+                                
+                                
+                                    <td>-none</td>
+                                
+                                
+                                    <td>71.0</td>
+                                
+                                
+                                    <td>50.0</td>
+                                
+                            </tr>
+                        
+                        
+                            <tr>
+                                
+                                    <td>2-8-2 Northcock (Steam)</td>
+                                
+                                
+                                    <td>1750</td>
+                                
+                                
+                                    <td>100</td>
+                                
+                                
+                                    <td>170</td>
+                                
+                                
+                                    <td>0.2</td>
+                                
+                                
+                                    <td>1935</td>
+                                
+                                
+                                    <td>40</td>
+                                
+                                
+                                    <td>-none</td>
+                                
+                                
+                                    <td>101.333333333</td>
+                                
+                                
+                                    <td>101.333333333</td>
+                                
+                            </tr>
+                        
+                        
+                            <tr>
+                                
+                                    <td>4-8-0 Lemon (Steam)</td>
+                                
+                                
+                                    <td>2100</td>
+                                
+                                
+                                    <td>65</td>
+                                
+                                
+                                    <td>149</td>
+                                
+                                
+                                    <td>0.29</td>
+                                
+                                
+                                    <td>1935</td>
+                                
+                                
+                                    <td>40</td>
+                                
+                                
+                                    <td>-none</td>
+                                
+                                
+                                    <td>84.0</td>
+                                
+                                
+                                    <td>99.0</td>
+                                
+                            </tr>
+                        
+                        
+                            <tr>
+                                
+                                    <td>Westbourne (Metro)</td>
+                                
+                                
+                                    <td>900</td>
+                                
+                                
+                                    <td>55</td>
+                                
+                                
+                                    <td>80</td>
+                                
+                                
+                                    <td>0.3</td>
+                                
+                                
+                                    <td>1950</td>
+                                
+                                
+                                    <td>40</td>
+                                
+                                
+                                    <td>-none</td>
+                                
+                                
+                                    <td>116.0</td>
+                                
+                                
+                                    <td>71.0</td>
+                                
+                            </tr>
+                        
+                        
+                            <tr>
+                                
+                                    <td>Planet (Diesel)</td>
+                                
+                                
+                                    <td>500</td>
+                                
+                                
+                                    <td>55</td>
+                                
+                                
+                                    <td>40</td>
+                                
+                                
+                                    <td>0.3</td>
+                                
+                                
+                                    <td>1950</td>
+                                
+                                
+                                    <td>40</td>
+                                
+                                
+                                    <td>-none</td>
+                                
+                                
+                                    <td>32.0</td>
+                                
+                                
+                                    <td>32.0</td>
+                                
+                            </tr>
+                        
+                        
+                            <tr>
+                                
+                                    <td>Electra (Electric)</td>
+                                
+                                
+                                    <td>2400</td>
+                                
+                                
+                                    <td>90</td>
+                                
+                                
+                                    <td>105</td>
+                                
+                                
+                                    <td>0.32</td>
+                                
+                                
+                                    <td>1953</td>
+                                
+                                
+                                    <td>40</td>
+                                
+                                
+                                    <td>-none</td>
+                                
+                                
+                                    <td>100.666666667</td>
+                                
+                                
+                                    <td>105.666666667</td>
+                                
+                            </tr>
+                        
+                        
+                            <tr>
+                                
+                                    <td>Donnegal (Diesel)</td>
+                                
+                                
+                                    <td>250</td>
+                                
+                                
+                                    <td>55</td>
+                                
+                                
+                                    <td>30</td>
+                                
+                                
+                                    <td>0.3</td>
+                                
+                                
+                                    <td>1954</td>
+                                
+                                
+                                    <td>40</td>
+                                
+                                
+                                    <td>-none</td>
+                                
+                                
+                                    <td>32.0</td>
+                                
+                                
+                                    <td>20.0</td>
+                                
+                            </tr>
+                        
+                        
+                            <tr>
+                                
+                                    <td>Chinook (Diesel)</td>
+                                
+                                
+                                    <td>2000</td>
+                                
+                                
+                                    <td>85</td>
+                                
+                                
+                                    <td>160</td>
+                                
+                                
+                                    <td>0.3</td>
+                                
+                                
+                                    <td>1955</td>
+                                
+                                
+                                    <td>40</td>
+                                
+                                
+                                    <td>-none</td>
+                                
+                                
+                                    <td>100.333333333</td>
+                                
+                                
+                                    <td>99.3333333333</td>
+                                
+                            </tr>
+                        
+                        
+                            <tr>
+                                
+                                    <td>Walker (Diesel)</td>
+                                
+                                
+                                    <td>950</td>
+                                
+                                
+                                    <td>55</td>
+                                
+                                
+                                    <td>50</td>
+                                
+                                
+                                    <td>0.3</td>
+                                
+                                
+                                    <td>1959</td>
+                                
+                                
+                                    <td>40</td>
+                                
+                                
+                                    <td>-none</td>
+                                
+                                
+                                    <td>48.0</td>
+                                
+                                
+                                    <td>48.0</td>
+                                
+                            </tr>
+                        
+                        
+                            <tr>
+                                
+                                    <td>Slammer (Diesel)</td>
+                                
+                                
+                                    <td>300</td>
+                                
+                                
+                                    <td>75</td>
+                                
+                                
+                                    <td>65</td>
+                                
+                                
+                                    <td>0.3</td>
+                                
+                                
+                                    <td>1960</td>
+                                
+                                
+                                    <td>40</td>
+                                
+                                
+                                    <td>-none</td>
+                                
+                                
+                                    <td>77.0</td>
+                                
+                                
+                                    <td>30.0</td>
+                                
+                            </tr>
+                        
+                        
+                            <tr>
+                                
+                                    <td>Vulcan (Diesel)</td>
+                                
+                                
+                                    <td>2700</td>
+                                
+                                
+                                    <td>100</td>
+                                
+                                
+                                    <td>105</td>
+                                
+                                
+                                    <td>0.3</td>
+                                
+                                
+                                    <td>1963</td>
+                                
+                                
+                                    <td>40</td>
+                                
+                                
+                                    <td>-none</td>
+                                
+                                
+                                    <td>128.333333333</td>
+                                
+                                
+                                    <td>128.333333333</td>
+                                
+                            </tr>
+                        
+                        
+                            <tr>
+                                
+                                    <td>Little Bear (Diesel)</td>
+                                
+                                
+                                    <td>850</td>
+                                
+                                
+                                    <td>85</td>
+                                
+                                
+                                    <td>54</td>
+                                
+                                
+                                    <td>0.3</td>
+                                
+                                
+                                    <td>1964</td>
+                                
+                                
+                                    <td>40</td>
+                                
+                                
+                                    <td>-none</td>
+                                
+                                
+                                    <td>74.3333333333</td>
+                                
+                                
+                                    <td>46.3333333333</td>
+                                
+                            </tr>
+                        
+                        
+                            <tr>
+                                
+                                    <td>Gridiron (Diesel)</td>
+                                
+                                
+                                    <td>3700</td>
+                                
+                                
+                                    <td>85</td>
+                                
+                                
+                                    <td>125</td>
+                                
+                                
+                                    <td>0.4</td>
+                                
+                                
+                                    <td>1975</td>
+                                
+                                
+                                    <td>40</td>
+                                
+                                
+                                    <td>-none</td>
+                                
+                                
+                                    <td>136.333333333</td>
+                                
+                                
+                                    <td>121.333333333</td>
+                                
+                            </tr>
+                        
+                        
+                            <tr>
+                                
+                                    <td>Screamer (Electric)</td>
+                                
+                                
+                                    <td>6400</td>
+                                
+                                
+                                    <td>155</td>
+                                
+                                
+                                    <td>90</td>
+                                
+                                
+                                    <td>0.3</td>
+                                
+                                
+                                    <td>1990</td>
+                                
+                                
+                                    <td>40</td>
+                                
+                                
+                                    <td>-none</td>
+                                
+                                
+                                    <td>255.0</td>
+                                
+                                
+                                    <td>199.0</td>
+                                
+                            </tr>
+                        
+                        
+                            <tr>
+                                
+                                    <td>Tin Rocket (Diesel)</td>
+                                
+                                
+                                    <td>750</td>
+                                
+                                
+                                    <td>100</td>
+                                
+                                
+                                    <td>65</td>
+                                
+                                
+                                    <td>0.3</td>
+                                
+                                
+                                    <td>1998</td>
+                                
+                                
+                                    <td>40</td>
+                                
+                                
+                                    <td>-none</td>
+                                
+                                
+                                    <td>107.333333333</td>
+                                
+                                
+                                    <td>56.3333333333</td>
+                                
+                            </tr>
+                        
+                        
+                            <tr>
+                                
+                                    <td>Cargo Sprinter (Diesel)</td>
+                                
+                                
+                                    <td>1520</td>
+                                
+                                
+                                    <td>100</td>
+                                
+                                
+                                    <td>164</td>
+                                
+                                
+                                    <td>0.3</td>
+                                
+                                
+                                    <td>1999</td>
+                                
+                                
+                                    <td>40</td>
+                                
+                                
+                                    <td>-none</td>
+                                
+                                
+                                    <td>115.333333333</td>
+                                
+                                
+                                    <td>115.333333333</td>
+                                
+                            </tr>
+                        
+                        
+                            <tr>
+                                
+                                    <td>Cyclops (Diesel)</td>
+                                
+                                
+                                    <td>3200</td>
+                                
+                                
+                                    <td>125</td>
+                                
+                                
+                                    <td>95</td>
+                                
+                                
+                                    <td>0.3</td>
+                                
+                                
+                                    <td>1999</td>
+                                
+                                
+                                    <td>40</td>
+                                
+                                
+                                    <td>-none</td>
+                                
+                                
+                                    <td>149.0</td>
+                                
+                                
+                                    <td>149.0</td>
+                                
+                            </tr>
+                        
+                        
+                            <tr>
+                                
+                                    <td>Double Juice (Electro-Diesel)</td>
+                                
+                                
+                                    <td>6750</td>
+                                
+                                
+                                    <td>100</td>
+                                
+                                
+                                    <td>120</td>
+                                
+                                
+                                    <td>0.4</td>
+                                
+                                
+                                    <td>2000</td>
+                                
+                                
+                                    <td>40</td>
+                                
+                                
+                                    <td>-none</td>
+                                
+                                
+                                    <td>212.333333333</td>
+                                
+                                
+                                    <td>167.333333333</td>
+                                
+                            </tr>
+                        
+                        
+                            <tr>
+                                
+                                    <td>Fleet (Metro)</td>
+                                
+                                
+                                    <td>1100</td>
+                                
+                                
+                                    <td>65</td>
+                                
+                                
+                                    <td>60</td>
+                                
+                                
+                                    <td>0.3</td>
+                                
+                                
+                                    <td>2000</td>
+                                
+                                
+                                    <td>40</td>
+                                
+                                
+                                    <td>-none</td>
+                                
+                                
+                                    <td>155.0</td>
+                                
+                                
+                                    <td>90.0</td>
+                                
+                            </tr>
+                        
+                    </tbody>
+                </table>
+                <br />
+            
+        
+        <hr />
+        <h3>Numeric IDs</h3>
+        <p class="muted">Trailing parts of articulated vehicles are not listed here.</p>
+        <table class="table table-striped table-condensed table-bordered tablesorter">
+            <thead>
+                <th>Numeric ID</th>
+                <th>ID</th>
+                <th>Title</th>
+            </thead>
+            <tbody>
+                
+                    <tr>
+                        <td>1000</td>
+                        <td>standard</td>
+                        <td>4-4-0 Standard [Steam]</td>
+                    </tr>
+                
+                
+                    <tr>
+                        <td>1010</td>
+                        <td>chaplin</td>
+                        <td>2-4-0 Chaplin [Steam]</td>
+                    </tr>
+                
+                
+                    <tr>
+                        <td>1020</td>
+                        <td>ramsbottom</td>
+                        <td>0-6-0 Ramsbottom [Steam]</td>
+                    </tr>
+                
+                
+                    <tr>
+                        <td>1030</td>
+                        <td>collier</td>
+                        <td>0-8-0 Collier [Steam]</td>
+                    </tr>
+                
+                
+                    <tr>
+                        <td>1040</td>
+                        <td>high_flyer</td>
+                        <td>4-4-2 High Flyer [Steam]</td>
+                    </tr>
+                
+                
+                    <tr>
+                        <td>1050</td>
+                        <td>raven</td>
+                        <td>Raven [Electric]</td>
+                    </tr>
+                
+                
+                    <tr>
+                        <td>1060</td>
+                        <td>suburban</td>
+                        <td>2-6-2 Suburban [Steam]</td>
+                    </tr>
+                
+                
+                    <tr>
+                        <td>1070</td>
+                        <td>northcock</td>
+                        <td>2-8-2 Northcock [Steam]</td>
+                    </tr>
+                
+                
+                    <tr>
+                        <td>1080</td>
+                        <td>chinook</td>
+                        <td>Chinook [Diesel]</td>
+                    </tr>
+                
+                
+                    <tr>
+                        <td>1090</td>
+                        <td>electra</td>
+                        <td>Electra [Electric]</td>
+                    </tr>
+                
+                
+                    <tr>
+                        <td>1100</td>
+                        <td>cargo_sprinter</td>
+                        <td>Cargo Sprinter [Diesel]</td>
+                    </tr>
+                
+                
+                    <tr>
+                        <td>1110</td>
+                        <td>vulcan</td>
+                        <td>Vulcan [Diesel]</td>
+                    </tr>
+                
+                
+                    <tr>
+                        <td>1120</td>
+                        <td>gridiron</td>
+                        <td>Gridiron [Diesel]</td>
+                    </tr>
+                
+                
+                    <tr>
+                        <td>1130</td>
+                        <td>screamer</td>
+                        <td>Screamer [Electric]</td>
+                    </tr>
+                
+                
+                    <tr>
+                        <td>1140</td>
+                        <td>cyclops</td>
+                        <td>Cyclops [Diesel]</td>
+                    </tr>
+                
+                
+                    <tr>
+                        <td>1150</td>
+                        <td>double_juice</td>
+                        <td>Double Juice [ElectroDiesel]</td>
+                    </tr>
+                
+                
+                    <tr>
+                        <td>1160</td>
+                        <td>little_bear</td>
+                        <td>Little Bear [Diesel]</td>
+                    </tr>
+                
+                
+                    <tr>
+                        <td>1170</td>
+                        <td>lemon</td>
+                        <td>4-8-0 Lemon [Steam]</td>
+                    </tr>
+                
+                
+                    <tr>
+                        <td>1180</td>
+                        <td>slammer</td>
+                        <td>Slammer [Diesel]</td>
+                    </tr>
+                
+                
+                    <tr>
+                        <td>1190</td>
+                        <td>tin_rocket</td>
+                        <td>Tin Rocket [Diesel]</td>
+                    </tr>
+                
+                
+                    <tr>
+                        <td>1250</td>
+                        <td>caboose_car_brit_gen_1</td>
+                        <td>Caboose [Car]</td>
+                    </tr>
+                
+                
+                    <tr>
+                        <td>1260</td>
+                        <td>box_car_brit_gen_1</td>
+                        <td>Box [Car]</td>
+                    </tr>
+                
+                
+                    <tr>
+                        <td>1263</td>
+                        <td>box_car_brit_gen_2</td>
+                        <td>Box [Car]</td>
+                    </tr>
+                
+                
+                    <tr>
+                        <td>1266</td>
+                        <td>box_car_brit_gen_3</td>
+                        <td>Box [Car]</td>
+                    </tr>
+                
+                
+                    <tr>
+                        <td>1270</td>
+                        <td>covered_hopper_car_brit_gen_1</td>
+                        <td>Covered Hopper [Car]</td>
+                    </tr>
+                
+                
+                    <tr>
+                        <td>1276</td>
+                        <td>covered_hopper_car_brit_gen_3</td>
+                        <td>Covered Hopper [Car]</td>
+                    </tr>
+                
+                
+                    <tr>
+                        <td>1280</td>
+                        <td>flat_car_brit_gen_1</td>
+                        <td>Flat [Car]</td>
+                    </tr>
+                
+                
+                    <tr>
+                        <td>1283</td>
+                        <td>flat_car_brit_gen_2</td>
+                        <td>Flat [Car]</td>
+                    </tr>
+                
+                
+                    <tr>
+                        <td>1290</td>
+                        <td>hopper_car_brit_gen_1</td>
+                        <td>Hopper [Car]</td>
+                    </tr>
+                
+                
+                    <tr>
+                        <td>1293</td>
+                        <td>hopper_car_brit_gen_2</td>
+                        <td>Hopper [Car]</td>
+                    </tr>
+                
+                
+                    <tr>
+                        <td>1296</td>
+                        <td>hopper_car_brit_gen_3</td>
+                        <td>Hopper [Car]</td>
+                    </tr>
+                
+                
+                    <tr>
+                        <td>1300</td>
+                        <td>tank_car_brit_gen_1</td>
+                        <td>Tank [Car]</td>
+                    </tr>
+                
+                
+                    <tr>
+                        <td>1303</td>
+                        <td>tank_car_brit_gen_2</td>
+                        <td>Tank [Car]</td>
+                    </tr>
+                
+                
+                    <tr>
+                        <td>1310</td>
+                        <td>livestock_car_brit_gen_1</td>
+                        <td>Livestock [Car]</td>
+                    </tr>
+                
+                
+                    <tr>
+                        <td>1313</td>
+                        <td>livestock_car_brit_gen_2</td>
+                        <td>Livestock [Car]</td>
+                    </tr>
+                
+                
+                    <tr>
+                        <td>1320</td>
+                        <td>mail_car_brit_gen_1</td>
+                        <td>Mail [Car]</td>
+                    </tr>
+                
+                
+                    <tr>
+                        <td>1323</td>
+                        <td>mail_car_brit_gen_2</td>
+                        <td>Mail [Car]</td>
+                    </tr>
+                
+                
+                    <tr>
+                        <td>1326</td>
+                        <td>mail_car_brit_gen_3</td>
+                        <td>Mail [Car]</td>
+                    </tr>
+                
+                
+                    <tr>
+                        <td>1330</td>
+                        <td>reefer_car_brit_gen_1</td>
+                        <td>Reefer [Car]</td>
+                    </tr>
+                
+                
+                    <tr>
+                        <td>1336</td>
+                        <td>reefer_car_brit_gen_3</td>
+                        <td>Reefer [Car]</td>
+                    </tr>
+                
+                
+                    <tr>
+                        <td>1340</td>
+                        <td>open_car_brit_gen_1</td>
+                        <td>Open [Car]</td>
+                    </tr>
+                
+                
+                    <tr>
+                        <td>1343</td>
+                        <td>open_car_brit_gen_2</td>
+                        <td>Open [Car]</td>
+                    </tr>
+                
+                
+                    <tr>
+                        <td>1350</td>
+                        <td>passenger_car_brit_gen_1</td>
+                        <td>Passenger [Car]</td>
+                    </tr>
+                
+                
+                    <tr>
+                        <td>1353</td>
+                        <td>passenger_car_brit_gen_2</td>
+                        <td>Passenger [Car]</td>
+                    </tr>
+                
+                
+                    <tr>
+                        <td>1356</td>
+                        <td>passenger_car_brit_gen_3</td>
+                        <td>Passenger [Car]</td>
+                    </tr>
+                
+                
+                    <tr>
+                        <td>1360</td>
+                        <td>combine_car_brit_gen_1</td>
+                        <td>Combine [Car]</td>
+                    </tr>
+                
+                
+                    <tr>
+                        <td>1376</td>
+                        <td>intermodal_flat_car_brit_gen_3</td>
+                        <td>Intermodal Flat [Car]</td>
+                    </tr>
+                
+                
+                    <tr>
+                        <td>1380</td>
+                        <td>edibles_tank_car_brit_gen_1</td>
+                        <td>Edibles Tank [Car]</td>
+                    </tr>
+                
+                
+                    <tr>
+                        <td>1386</td>
+                        <td>edibles_tank_car_brit_gen_3</td>
+                        <td>Edibles Tank [Car]</td>
+                    </tr>
+                
+                
+                    <tr>
+                        <td>1400</td>
+                        <td>metro_car_brit_gen_1</td>
+                        <td>Mail [Metro Car]</td>
+                    </tr>
+                
+                
+                    <tr>
+                        <td>1500</td>
+                        <td>serpentine</td>
+                        <td>Serpentine [Metro Train]</td>
+                    </tr>
+                
+                
+                    <tr>
+                        <td>1510</td>
+                        <td>westbourne</td>
+                        <td>Westbourne [Metro Train]</td>
+                    </tr>
+                
+                
+                    <tr>
+                        <td>1520</td>
+                        <td>fleet</td>
+                        <td>Fleet [Metro Train]</td>
+                    </tr>
+                
+                
+                    <tr>
+                        <td>1530</td>
+                        <td>mole</td>
+                        <td>Mole [Metro Train]</td>
+                    </tr>
+                
+                
+                    <tr>
+                        <td>1540</td>
+                        <td>stewart</td>
+                        <td>Stewart [Steam]</td>
+                    </tr>
+                
+                
+                    <tr>
+                        <td>1550</td>
+                        <td>hudswell</td>
+                        <td>Hudswell [Steam]</td>
+                    </tr>
+                
+                
+                    <tr>
+                        <td>1560</td>
+                        <td>planet</td>
+                        <td>Planet [Diesel]</td>
+                    </tr>
+                
+                
+                    <tr>
+                        <td>1570</td>
+                        <td>walker</td>
+                        <td>Walker [Diesel]</td>
+                    </tr>
+                
+                
+                    <tr>
+                        <td>1580</td>
+                        <td>donegal</td>
+                        <td>Donnegal [Diesel]</td>
+                    </tr>
+                
+                
+                    <tr>
+                        <td>1760</td>
+                        <td>box_car_ng_brit_gen_1</td>
+                        <td>Narrow Gauge Box [Car]</td>
+                    </tr>
+                
+                
+                    <tr>
+                        <td>1780</td>
+                        <td>flat_car_ng_brit_gen_1</td>
+                        <td>Narrow Gauge Flat [Car]</td>
+                    </tr>
+                
+                
+                    <tr>
+                        <td>1800</td>
+                        <td>tank_car_ng_brit_gen_1</td>
+                        <td>Narrow Gauge Tank [Car]</td>
+                    </tr>
+                
+                
+                    <tr>
+                        <td>1810</td>
+                        <td>livestock_car_ng_brit_gen_1</td>
+                        <td>Narrow Gauge Livestock [Car]</td>
+                    </tr>
+                
+                
+                    <tr>
+                        <td>1840</td>
+                        <td>open_car_ng_brit_gen_1</td>
+                        <td>Narrow Gauge Open [Car]</td>
+                    </tr>
+                
+                
+                    <tr>
+                        <td>1850</td>
+                        <td>passenger_car_ng_brit_gen_1</td>
+                        <td>Narrow Gauge Passenger [Car]</td>
+                    </tr>
+                
+            </tbody>
+        </table>
+    </div>
+
+
+</div>
+    </div>
+    <div style="margin-top:30px; text-align:center; color:#999; padding:5px; background-color:#eee; border-top:solid 1px #ddd; box-shadow: inset 0px 1px 1px #ddd">
+        Iron Horse, with thanks to all who helped
+    </div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

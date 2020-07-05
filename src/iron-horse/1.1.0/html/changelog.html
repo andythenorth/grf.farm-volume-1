@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+    <title >Iron Horse</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link type="text/css" href="static/css/bootstrap.min.css" rel="stylesheet">
+    <link type="text/css" href="static/css/bootstrap-responsive.min.css" rel="stylesheet">
+    <link type="text/css" href="static/css/style.css" rel="stylesheet">
+
+    <script type="text/javascript" src="static/js/jquery-1.9.1.min.js"></script>
+
+    <script type="text/javascript" src="static/js/jquery.metadata.js"></script>
+    <script type="text/javascript" src="static/js/jquery.tablesorter.min.js"></script>
+    <script type="text/javascript" src="static/js/jquery.tablesorter.widgets.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $('.tablesorter').tablesorter({
+                textExtraction: function(node){
+                            var cell_value = $(node).text();
+                            var sort_value = $(node).data('value');
+                    return (sort_value != undefined) ? sort_value : cell_value;
+                 },
+            })
+        })
+    </script>
+</head>
+
+<body>
+    <div class="navbar navbar-inverse navbar-static-top" style="border-bottom:1px solid #000;">
+        <div class="navbar-inner">
+            <div class="container">
+                <ul class="nav pull-left">
+                    <li class="">
+                        <a href="get_started.html">Get Started</a>
+                    </li>
+                    <li class="">
+                        <a href="trains.html">Trains</a>
+                    </li>
+                    <li class="">
+                        <a href="code_reference.html">Code Reference</a>
+                    </li>
+                </ul>
+                <ul class="nav pull-right">
+                    <li class="">
+                        <a href="translations.html"><i class="icon-globe icon-white"></i> Help Translate Iron Horse</a>
+                    </li>
+                    <li>
+                        <a href="http://www.tt-forums.net/viewtopic.php?f=26&amp;t=44613"><i class="icon-comment icon-white"></i> Discuss at TT-Forums.net</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="hero-unit subhead">
+        <script language="JavaScript">
+        function random_img(){
+            var images=new Array("",
+                                 "");
+
+            var random_image=images[Math.floor(Math.random()*images.length)];
+            document.write('<a href="trains.html#' + random_image + '"><img class="pull-right" style="margin-top:-30px; margin-bottom:0;" src="static/img/industries/'+ random_image +'.png"></a>')
+        }
+        random_img()
+        </script>
+        <div class="container">
+            <h1 style="font-size:48px; padding-top:30px;">Iron Horse</h1>
+            <p class="lead">My Lovely <strike>Horse</strike> Train Set</p>
+        </div>
+    </div>
+    
+        
+    
+    <div class="container">
+        <div class="span12">
+    <h1>Changelog</h1>
+<hr />
+<h2>1.1.0 Release</h2>
+<p><em>New Features / Changes</em></p>
+<ul>
+<li>new sprites for Walker narrow gauge diesel</li>
+<li>removed Planet narrow gauge diesel</li>
+<li>adjusted narrow gauge vehicle stats for game balance</li>
+<li>flat cars no longer refit to express cargos, use open, box or mail cars instead</li>
+<li>edibles tank cars no longer refit rubber (yum yum chewy rubber)</li>
+<li>bumped minimum compatible version to avoid breaking savegames</li>
+</ul>
+<hr />
+<h2>1.0.0 Release</h2>
+<p><em>New Features / Changes</em></p>
+<ul>
+<li>improved sprites for Mole Metro loco and metro car</li>
+<li>it's 1.0.0...</li>
+</ul>
+<hr />
+<h2>Release Candidate 6</h2>
+<p><em>New Features / Changes</em></p>
+<ul>
+<li>randomly chosen 1st or 2nd company colour for hopper cars</li>
+<li>open wagons load state graphics for default and bulk cargos</li>
+<li>close mail car doors when 100% loaded</li>
+<li>increase Double Juice diesel power (a lot) and electric power (a bit) for game balance</li>
+<li>introduce Gridiron 5 years earlier for game balance</li>
+</ul>
+<p><em>Fixes</em></p>
+<ul>
+<li>Northock 2-8-2 not 4-8-2</li>
+<li>correct smoke position for engines with random graphics variations (reversed tank engines)</li>
+<li>wagons and cargo sprinters now use loaded graphics in depot if they are loaded</li>
+</ul>
+<p>*Code Changes</p>
+<ul>
+<li>removed a bunch of strings relating to buy menu extra text</li>
+<li>decided we'll never show buy menu extra text, sign of BAD FEATURES; read the docs instead</li>
+<li>made it easier to support tanktainer on cargo sprinter, and opening doors on box and reefer cars</li>
+<li>cleaned up some other nonsense around visual effects and power</li>
+<li>extended the Pixa pipeline for cargo recolouring to also handle 1cc/2cc swap</li>
+</ul>
+<hr />
+<h2>Release Candidate 5</h2>
+<p><em>New Features / Changes</em></p>
+<ul>
+<li>rejig tank cars<ul>
+<li>add two edibles tank cars, for food-type cargos (water, milk, alcohol etc)</li>
+<li>edibles tank cars have high speed limits, and cargo-aging bonus</li>
+<li>remove one standard tank car</li>
+<li>adjust speeds and intro dates for tank cars</li>
+<li>tank cars no longer refit to food-type cargos, use edibles tank car instead</li>
+</ul>
+</li>
+<li>introduce first-generation reefer car later, and make it faster (game balance)</li>
+<li>change order of wagons in buy menu (puts the most widely-refittable wagons first)</li>
+<li>randomly chosen 1st or 2nd company colour for:<ul>
+<li>edibles tank cars</li>
+<li>tank cars</li>
+<li>flat cars</li>
+<li>covered hopper cars</li>
+</ul>
+</li>
+<li>narrow gauge tank car is now black not company colour</li>
+</ul>
+<p><em>Fixes</em></p>
+<ul>
+<li>avoid refitting hoppers to fruit (fruit cargo often has bulk class for historical reasons)</li>
+<li>allow refitting box cars to refit fruit (same issue with bulk class on fruit)</li>
+<li>don't refit flat wagons to food, the birds will eat it</li>
+</ul>
+<hr />
+<h2>Release Candidate 4</h2>
+<p><em>New Features / Changes</em></p>
+<ul>
+<li>new sprites for third generation hopper car</li>
+<li>randomly chosen 1st or 2nd company colour for<ul>
+<li>box cars</li>
+<li>open cars</li>
+<li>reefer cars</li>
+</ul>
+</li>
+<li>covered hopper cars can now refit to Building Materials cargo</li>
+</ul>
+<hr />
+<h2>Release Candidate 3</h2>
+<p><em>Fixes</em></p>
+<ul>
+<li>Ramsbottom tender misaligned in \ view</li>
+<li>smoke correctly positioned for most vehicles</li>
+<li>Double Juice shows electric sparks or diesel smoke, depending on power type</li>
+</ul>
+<hr />
+<h2>Release Candidate 2</h2>
+<p><em>Fixes</em></p>
+<ul>
+<li>Cargo Sprinter wasn't refitting at stations correctly</li>
+<li>purple pixels on 2nd generation hopper car</li>
+<li>many vehicles had loading speeds which were too high</li>
+</ul>
+<hr />
+<h2>Release Candidate 1</h2>
+<p><em>New Features / Changes</em></p>
+<ul>
+<li>set buy and run costs for all wagons</li>
+<li>sprites for generation 3 hopper car</li>
+<li>use company colours on generation 3 box car</li>
+<li>separate speed limit for narrow gauge wagons</li>
+</ul>
+<p><em>Language Updates</em></p>
+<ul>
+<li>Afrikaans (Telanus)</li>
+</ul>
+<hr />
+<h2>Alpha 6</h2>
+<p><em>New Features / Changes</em></p>
+<ul>
+<li>Chaplin tank randomised reversed sprites</li>
+<li>adjust vehicle name to Mail Car (Metro)</li>
+<li>multiple tweaks to vehicle stats for game balance (too many to list)</li>
+</ul>
+<p><em>Fixes</em></p>
+<ul>
+<li>some pax coaches using wrong sprite template</li>
+<li>Hudswell length should be 7/8</li>
+<li>Donegal should be 7/8 long</li>
+<li>Walker has 6/8 length</li>
+<li>bad spritesheet for some views of Little Bear</li>
+<li>Lemon tender wrong position in \ view</li>
+<li>set refittable pax on Combine cars (closes #6931)</li>
+<li>Cyclops sprites out of place (closes #6893)</li>
+<li>set default cargo correctly on lead slice of articulated consist (closes #6894)</li>
+<li>apparent fix for (limited) auto-replace of caboose</li>
+<li>spritesheet issues resolved for Tin Rocket</li>
+<li>sprites borked for gen 2 hopper car</li>
+<li>NG livestock is 4/8 long</li>
+</ul>
+<p><em>Language Updates</em></p>
+<ul>
+<li>ca_ES: 1 change by juanjo</li>
+<li>lb_LU: 18 changes by Phreeze</li>
+<li>hr_HR: 1 change by Voyager1</li>
+<li>es_ES: 1 change by SilverSurferZzZ</li>
+<li>ru_RU: 1 change by George</li>
+<li>nl_NL: 5 changes by foobar</li>
+<li>ko_KR: 18 changes by kevin</li>
+<li>fi_FI: 4 changes by Arexander</li>
+</ul>
+<p><em>Code Changes</em></p>
+<ul>
+<li>partial compiles, very much faster for isolated changes</li>
+<li>removed some dead strings</li>
+<li>provide NO_MP make flag for use during debugging</li>
+</ul>
+<hr />
+<h2>Alpha 1-5</h2>
+<p>Yair, stuff.  Nothing to see here.</p>
+</div>
+    </div>
+    <div style="margin-top:30px; text-align:center; color:#999; padding:5px; background-color:#eee; border-top:solid 1px #ddd; box-shadow: inset 0px 1px 1px #ddd">
+        Iron Horse, with thanks to all who helped
+    </div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
