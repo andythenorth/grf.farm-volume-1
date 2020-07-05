@@ -3,7 +3,6 @@ import os
 currentdir = os.curdir
 import sys
 
-import codecs
 import grf_farm
 
 # add dir to path so we can do relative import of the Polar Fox python content for integrity checks
