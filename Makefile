@@ -5,11 +5,9 @@ FIND_FILES = bin/find-files
 
 .PHONY: dist clean install
 
-dist: docs $(shell $(FIND_FILES) --ext=.py src)
+# note we just build on any changed extension, this might be unwise, but is better than tracking down every possible webfont, js, image type etc
+dist: $(shell $(FIND_FILES) --ext=.py --ext=.* src)
 	@ $(PYTHON3) src/build_dist.py
-
-docs: $(shell $(FIND_FILES) --ext=.html --ext=.png src)
-	@ $(PYTHON3) src/render_docs.py
 
 install: dist
 	@ $(PYTHON3) src/install_dist.py
