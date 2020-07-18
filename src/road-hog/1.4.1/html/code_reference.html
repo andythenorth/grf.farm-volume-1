@@ -1,0 +1,3314 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+
+    <title >Road Hog</title>
+    <meta http-equiv="Content-Type" content="text/html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link type="text/css" href="static/css/bootstrap.min.css" rel="stylesheet">
+    <link type="text/css" href="static/css/bootstrap-responsive.min.css" rel="stylesheet">
+    <link type="text/css" href="static/css/style.css" rel="stylesheet">
+
+    <script type="text/javascript" src="static/js/jquery-1.9.1.min.js"></script>
+
+    <script type="text/javascript" src="static/js/jquery.metadata.js"></script>
+    <script type="text/javascript" src="static/js/jquery.tablesorter.min.js"></script>
+    <script type="text/javascript" src="static/js/jquery.tablesorter.widgets.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $('.tablesorter').tablesorter({
+                textExtraction: function(node){
+                            var cell_value = $(node).text();
+                            var sort_value = $(node).data('value');
+                    return (sort_value != undefined) ? sort_value : cell_value;
+                 },
+            })
+        })
+    </script>
+</head>
+
+<body>
+    <div class="navbar navbar-inverse navbar-static-top" style="border-bottom:1px solid #000;">
+        <div class="navbar-inner">
+            <div class="container">
+                <ul class="nav pull-left">
+                    <li class="">
+                        <a href="get_started.html">Get Started</a>
+                    </li>
+                    <li class="">
+                        <a href="road_vehicles.html">Road Vehicles</a>
+                    </li>
+                    <li class="active">
+                        <a href="code_reference.html">Code Reference</a>
+                    </li>
+                </ul>
+                <ul class="nav pull-right">
+                    <li class="">
+                        <a href="https://translator.openttdcoop.org/project/road-hog"><i class="icon-globe icon-white"></i> Help Translate Road Hog</a>
+                    </li>
+                    <li>
+                        <a href="http://www.tt-forums.net/viewtopic.php?f=26&amp;t=70241"><i class="icon-comment icon-white"></i> Discuss at TT-Forums.net</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="hero-unit subhead">
+        <div class="pull-right" style="margin-top:-30px; margin-bottom:0;">
+            <script language="JavaScript">
+                var images=new Array('ladycross_pax','tin_hatch_mail','buildwas_open','amblecote_box','stakebeck_flat','scrag_end_livestock','plumley_fruit_veg','scrooby_top_dump','drumbreck_tanker','griff_log','reaver_supplies','portland_open','rakeway_box','rackwood_flat','polangrain_covered_hopper','trotalong_livestock','applethwaite_fruit_veg','hawkmoor_dump','catchcan_tanker','fairlop_pax','foxley_mail','poptop_edibles_tanker','leyburn_pax','tallyho_mail','jinglepot_open','runwell_box','chainburn_flat','trefell_log','cowsleigh_livestock','flow_edge_edibles_tanker','boilingwell_tanker','winterfold_refrigerated','coleman_dump','crime_rigg_supplies','newbold_pax','stagrun_mail','thunder_pax','glenmore_pax_express','rattlebrook_open','easywheal_box','windergill_flat','brass_monkey_mail','brightling_open','colbiggan_box','stancliffe_flat','thurlbear_covered_hopper','nutbrook_fruit_veg','pigstick_livestock','shotover_livestock','greenscoe_tanker','beerwoods_edibles_tanker','nettlebridge_dump','oylbarral_tanker','bottlebrook_edibles_tanker','honister_dump','broadrock_dump','limebreach_covered_hopper','merrivale_refrigerated','knockdown_log','brigand_supplies','sparkford_refrigerated','steeraway_metal','northbeach_pax','strongbox_mail','highgate_pax','oxleas_pax_express','yeoman_open','quickset_box','towerhouse_flat','swineshead_livestock','goldmire_mail','waterperry_edibles_tanker','fortiscue_refrigerated','wookey_dump','meriden_tanker','ribble_covered_hopper','road_thief_supplies','topley_pax','acton_pax_express','twinhills_pax','singing_river_mail','buff_log','capo_open','speedwell_box','big_rigg_flat','littleduke_mail','coldfall_refrigerated','stungun_livestock','powerstock_dump','cloud_hill_tanker','silvertop_edibles_tanker','mcdowell_covered_hopper','witch_hill_dump');
+                function random_img(){
+                    var index = Math.floor(Math.random()*images.length);
+                    var random_image = images.splice(index, 1);
+                    document.write('<a href="road_vehicles.html#' + random_image + '" style="display:block; margin-bottom: 20px;"> \
+                                        <img src="static/img/'+ random_image + '.png" \
+                                             width="144" \
+                                             height="64"> \
+                                    </a>')
+                    return true;
+                }
+                // 3 random images
+                random_img();
+                random_img();
+                random_img();
+            </script>
+        </div>
+        <div class="container">
+            <h1 style="font-size:48px; padding-top:30px;">Road Hog</h1>
+            <p class="lead">A Big Fat Road Vehicle Set</p>
+        </div>
+    </div>
+    
+        
+    
+    <div class="container">
+        <div>
+    <div class="span12">
+        <h2>Code Reference</h2>
+        <h3>93 road vehicles and trams</h3>
+        <hr />
+        
+            
+                <h4>SuppliesHauler <small>Subclass</small></h4>
+                <p>
+    Specialist tram / truck with flatbed + crane, supplies and building materials.
+    </p>
+                <table style="font-size:84%;" class="table table-striped table-condensed table-bordered tablesorter">
+                    <thead>
+                        <tr>
+                           
+                                <th style="background-color:#eee; vertical-align:top">Vehicle Name</th>
+                            
+                                <th style="background-color:#eee; vertical-align:top">HP</th>
+                            
+                                <th style="background-color:#eee; vertical-align:top">Speed (mph)</th>
+                            
+                                <th style="background-color:#eee; vertical-align:top">Weight (t)</th>
+                            
+                                <th style="background-color:#eee; vertical-align:top">Intro Date</th>
+                            
+                                <th style="background-color:#eee; vertical-align:top">Vehicle Life</th>
+                            
+                                <th style="background-color:#eee; vertical-align:top">Capacity</th>
+                            
+                                <th style="background-color:#eee; vertical-align:top">Buy Cost Factor</th>
+                            
+                                <th style="background-color:#eee; vertical-align:top">Running Cost Factor</th>
+                            
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+                            <tr>
+                                
+                                    <td>Reaver Supplies Truck (Steam)</td>
+                                
+                                    <td>240</td>
+                                
+                                    <td>25</td>
+                                
+                                    <td>22</td>
+                                
+                                    <td>1875</td>
+                                
+                                    <td>40</td>
+                                
+                                    <td>45</td>
+                                
+                                    <td>28.18</td>
+                                
+                                    <td>56.36</td>
+                                
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>Crime Rigg Supplies Truck (Steam)</td>
+                                
+                                    <td>360</td>
+                                
+                                    <td>40</td>
+                                
+                                    <td>22</td>
+                                
+                                    <td>1920</td>
+                                
+                                    <td>40</td>
+                                
+                                    <td>45</td>
+                                
+                                    <td>34.09</td>
+                                
+                                    <td>68.18</td>
+                                
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>Brigand Supplies Truck (Diesel)</td>
+                                
+                                    <td>480</td>
+                                
+                                    <td>55</td>
+                                
+                                    <td>22</td>
+                                
+                                    <td>1953</td>
+                                
+                                    <td>40</td>
+                                
+                                    <td>45</td>
+                                
+                                    <td>39.25</td>
+                                
+                                    <td>78.51</td>
+                                
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>Road Thief Supplies Truck (Diesel)</td>
+                                
+                                    <td>720</td>
+                                
+                                    <td>80</td>
+                                
+                                    <td>22</td>
+                                
+                                    <td>1989</td>
+                                
+                                    <td>40</td>
+                                
+                                    <td>45</td>
+                                
+                                    <td>46.87</td>
+                                
+                                    <td>93.74</td>
+                                
+                            </tr>
+                        
+                    </tbody>
+                </table>
+                <br />
+            
+        
+            
+                <h4>MailHauler <small>Subclass</small></h4>
+                <p>
+    Truck or tram for mail, valuables etc.
+    </p>
+                <table style="font-size:84%;" class="table table-striped table-condensed table-bordered tablesorter">
+                    <thead>
+                        <tr>
+                           
+                                <th style="background-color:#eee; vertical-align:top">Vehicle Name</th>
+                            
+                                <th style="background-color:#eee; vertical-align:top">HP</th>
+                            
+                                <th style="background-color:#eee; vertical-align:top">Speed (mph)</th>
+                            
+                                <th style="background-color:#eee; vertical-align:top">Weight (t)</th>
+                            
+                                <th style="background-color:#eee; vertical-align:top">Intro Date</th>
+                            
+                                <th style="background-color:#eee; vertical-align:top">Vehicle Life</th>
+                            
+                                <th style="background-color:#eee; vertical-align:top">Capacity</th>
+                            
+                                <th style="background-color:#eee; vertical-align:top">Buy Cost Factor</th>
+                            
+                                <th style="background-color:#eee; vertical-align:top">Running Cost Factor</th>
+                            
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+                            <tr>
+                                
+                                    <td>Tin Hatch Courier Tram (Steam)</td>
+                                
+                                    <td>120</td>
+                                
+                                    <td>25</td>
+                                
+                                    <td>14</td>
+                                
+                                    <td>1860</td>
+                                
+                                    <td>40</td>
+                                
+                                    <td>48</td>
+                                
+                                    <td>28.77</td>
+                                
+                                    <td>57.53</td>
+                                
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>Foxley Courier Tram (Electric)</td>
+                                
+                                    <td>240</td>
+                                
+                                    <td>35</td>
+                                
+                                    <td>18</td>
+                                
+                                    <td>1903</td>
+                                
+                                    <td>40</td>
+                                
+                                    <td>60</td>
+                                
+                                    <td>39.1</td>
+                                
+                                    <td>78.19</td>
+                                
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>Tallyho Courier Truck (Diesel)</td>
+                                
+                                    <td>90</td>
+                                
+                                    <td>40</td>
+                                
+                                    <td>6</td>
+                                
+                                    <td>1909</td>
+                                
+                                    <td>40</td>
+                                
+                                    <td>30</td>
+                                
+                                    <td>24.55</td>
+                                
+                                    <td>49.11</td>
+                                
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>Stagrun Courier Tram (Electric)</td>
+                                
+                                    <td>360</td>
+                                
+                                    <td>45</td>
+                                
+                                    <td>21</td>
+                                
+                                    <td>1932</td>
+                                
+                                    <td>40</td>
+                                
+                                    <td>72</td>
+                                
+                                    <td>49.17</td>
+                                
+                                    <td>98.35</td>
+                                
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>Brass Monkey Courier Truck (Diesel)</td>
+                                
+                                    <td>140</td>
+                                
+                                    <td>55</td>
+                                
+                                    <td>6</td>
+                                
+                                    <td>1940</td>
+                                
+                                    <td>40</td>
+                                
+                                    <td>30</td>
+                                
+                                    <td>29.24</td>
+                                
+                                    <td>58.48</td>
+                                
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>Strongbox Courier Tram (Electric)</td>
+                                
+                                    <td>480</td>
+                                
+                                    <td>55</td>
+                                
+                                    <td>21</td>
+                                
+                                    <td>1961</td>
+                                
+                                    <td>40</td>
+                                
+                                    <td>72</td>
+                                
+                                    <td>53.25</td>
+                                
+                                    <td>106.51</td>
+                                
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>Goldmire Courier Truck (Diesel)</td>
+                                
+                                    <td>250</td>
+                                
+                                    <td>75</td>
+                                
+                                    <td>10</td>
+                                
+                                    <td>1971</td>
+                                
+                                    <td>40</td>
+                                
+                                    <td>50</td>
+                                
+                                    <td>45.06</td>
+                                
+                                    <td>90.12</td>
+                                
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>Singing River Courier Tram (Electric)</td>
+                                
+                                    <td>600</td>
+                                
+                                    <td>60</td>
+                                
+                                    <td>21</td>
+                                
+                                    <td>1990</td>
+                                
+                                    <td>40</td>
+                                
+                                    <td>72</td>
+                                
+                                    <td>56.5</td>
+                                
+                                    <td>113.0</td>
+                                
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>Littleduke Courier Truck (Diesel)</td>
+                                
+                                    <td>380</td>
+                                
+                                    <td>90</td>
+                                
+                                    <td>10</td>
+                                
+                                    <td>1998</td>
+                                
+                                    <td>40</td>
+                                
+                                    <td>50</td>
+                                
+                                    <td>49.9</td>
+                                
+                                    <td>99.8</td>
+                                
+                            </tr>
+                        
+                    </tbody>
+                </table>
+                <br />
+            
+        
+            
+                <h4>PaxExpressHauler <small>Subclass</small></h4>
+                <p>
+    Coach or express tram for pax.
+    </p>
+                <table style="font-size:84%;" class="table table-striped table-condensed table-bordered tablesorter">
+                    <thead>
+                        <tr>
+                           
+                                <th style="background-color:#eee; vertical-align:top">Vehicle Name</th>
+                            
+                                <th style="background-color:#eee; vertical-align:top">HP</th>
+                            
+                                <th style="background-color:#eee; vertical-align:top">Speed (mph)</th>
+                            
+                                <th style="background-color:#eee; vertical-align:top">Weight (t)</th>
+                            
+                                <th style="background-color:#eee; vertical-align:top">Intro Date</th>
+                            
+                                <th style="background-color:#eee; vertical-align:top">Vehicle Life</th>
+                            
+                                <th style="background-color:#eee; vertical-align:top">Capacity</th>
+                            
+                                <th style="background-color:#eee; vertical-align:top">Buy Cost Factor</th>
+                            
+                                <th style="background-color:#eee; vertical-align:top">Running Cost Factor</th>
+                            
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+                            <tr>
+                                
+                                    <td>Glenmore Coach (Diesel)</td>
+                                
+                                    <td>160</td>
+                                
+                                    <td>55</td>
+                                
+                                    <td>6</td>
+                                
+                                    <td>1935</td>
+                                
+                                    <td>40</td>
+                                
+                                    <td>30</td>
+                                
+                                    <td>29.03</td>
+                                
+                                    <td>58.06</td>
+                                
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>Oxleas Coach (Diesel)</td>
+                                
+                                    <td>240</td>
+                                
+                                    <td>75</td>
+                                
+                                    <td>8</td>
+                                
+                                    <td>1964</td>
+                                
+                                    <td>40</td>
+                                
+                                    <td>40</td>
+                                
+                                    <td>39.58</td>
+                                
+                                    <td>79.15</td>
+                                
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>Acton Coach (Diesel)</td>
+                                
+                                    <td>360</td>
+                                
+                                    <td>90</td>
+                                
+                                    <td>8</td>
+                                
+                                    <td>1990</td>
+                                
+                                    <td>40</td>
+                                
+                                    <td>40</td>
+                                
+                                    <td>44.3</td>
+                                
+                                    <td>88.6</td>
+                                
+                            </tr>
+                        
+                    </tbody>
+                </table>
+                <br />
+            
+        
+            
+                <h4>CoveredHopperHauler <small>Subclass</small></h4>
+                <p>
+    Covered hopper truck or tram for bulk powder cargos.
+    </p>
+                <table style="font-size:84%;" class="table table-striped table-condensed table-bordered tablesorter">
+                    <thead>
+                        <tr>
+                           
+                                <th style="background-color:#eee; vertical-align:top">Vehicle Name</th>
+                            
+                                <th style="background-color:#eee; vertical-align:top">HP</th>
+                            
+                                <th style="background-color:#eee; vertical-align:top">Speed (mph)</th>
+                            
+                                <th style="background-color:#eee; vertical-align:top">Weight (t)</th>
+                            
+                                <th style="background-color:#eee; vertical-align:top">Intro Date</th>
+                            
+                                <th style="background-color:#eee; vertical-align:top">Vehicle Life</th>
+                            
+                                <th style="background-color:#eee; vertical-align:top">Capacity</th>
+                            
+                                <th style="background-color:#eee; vertical-align:top">Buy Cost Factor</th>
+                            
+                                <th style="background-color:#eee; vertical-align:top">Running Cost Factor</th>
+                            
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+                            <tr>
+                                
+                                    <td>Polangrain Covered Hopper Tram (Electric)</td>
+                                
+                                    <td>480</td>
+                                
+                                    <td>35</td>
+                                
+                                    <td>33</td>
+                                
+                                    <td>1900</td>
+                                
+                                    <td>40</td>
+                                
+                                    <td>60</td>
+                                
+                                    <td>40.11</td>
+                                
+                                    <td>80.22</td>
+                                
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>Thurlbear Covered Hopper Tram (Electric)</td>
+                                
+                                    <td>720</td>
+                                
+                                    <td>45</td>
+                                
+                                    <td>39</td>
+                                
+                                    <td>1940</td>
+                                
+                                    <td>40</td>
+                                
+                                    <td>72</td>
+                                
+                                    <td>51.48</td>
+                                
+                                    <td>102.95</td>
+                                
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>Limebreach Covered Hopper Truck (Diesel)</td>
+                                
+                                    <td>250</td>
+                                
+                                    <td>55</td>
+                                
+                                    <td>13</td>
+                                
+                                    <td>1949</td>
+                                
+                                    <td>40</td>
+                                
+                                    <td>30</td>
+                                
+                                    <td>30.35</td>
+                                
+                                    <td>60.71</td>
+                                
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>Ribble Covered Hopper Truck (Diesel)</td>
+                                
+                                    <td>450</td>
+                                
+                                    <td>70</td>
+                                
+                                    <td>18</td>
+                                
+                                    <td>1978</td>
+                                
+                                    <td>40</td>
+                                
+                                    <td>40</td>
+                                
+                                    <td>40.67</td>
+                                
+                                    <td>81.33</td>
+                                
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>McDowell Covered Hopper Truck (Diesel)</td>
+                                
+                                    <td>700</td>
+                                
+                                    <td>80</td>
+                                
+                                    <td>18</td>
+                                
+                                    <td>2007</td>
+                                
+                                    <td>40</td>
+                                
+                                    <td>40</td>
+                                
+                                    <td>45.4</td>
+                                
+                                    <td>90.79</td>
+                                
+                            </tr>
+                        
+                    </tbody>
+                </table>
+                <br />
+            
+        
+            
+                <h4>DumpHauler <small>Subclass</small></h4>
+                <p>
+    Tram or truck for limited set of bulk (mineral) cargos.
+    </p>
+                <table style="font-size:84%;" class="table table-striped table-condensed table-bordered tablesorter">
+                    <thead>
+                        <tr>
+                           
+                                <th style="background-color:#eee; vertical-align:top">Vehicle Name</th>
+                            
+                                <th style="background-color:#eee; vertical-align:top">HP</th>
+                            
+                                <th style="background-color:#eee; vertical-align:top">Speed (mph)</th>
+                            
+                                <th style="background-color:#eee; vertical-align:top">Weight (t)</th>
+                            
+                                <th style="background-color:#eee; vertical-align:top">Intro Date</th>
+                            
+                                <th style="background-color:#eee; vertical-align:top">Vehicle Life</th>
+                            
+                                <th style="background-color:#eee; vertical-align:top">Capacity</th>
+                            
+                                <th style="background-color:#eee; vertical-align:top">Buy Cost Factor</th>
+                            
+                                <th style="background-color:#eee; vertical-align:top">Running Cost Factor</th>
+                            
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+                            <tr>
+                                
+                                    <td>Scrooby Top Dump Tram (Steam)</td>
+                                
+                                    <td>240</td>
+                                
+                                    <td>25</td>
+                                
+                                    <td>26</td>
+                                
+                                    <td>1870</td>
+                                
+                                    <td>40</td>
+                                
+                                    <td>48</td>
+                                
+                                    <td>29.37</td>
+                                
+                                    <td>58.73</td>
+                                
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>Hawkmoor Dump Tram (Electric)</td>
+                                
+                                    <td>480</td>
+                                
+                                    <td>35</td>
+                                
+                                    <td>33</td>
+                                
+                                    <td>1902</td>
+                                
+                                    <td>40</td>
+                                
+                                    <td>60</td>
+                                
+                                    <td>40.23</td>
+                                
+                                    <td>80.47</td>
+                                
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>Coleman Dump Truck (Steam)</td>
+                                
+                                    <td>150</td>
+                                
+                                    <td>40</td>
+                                
+                                    <td>10</td>
+                                
+                                    <td>1920</td>
+                                
+                                    <td>40</td>
+                                
+                                    <td>24</td>
+                                
+                                    <td>22.54</td>
+                                
+                                    <td>45.08</td>
+                                
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>Nettlebridge Dump Tram (Electric)</td>
+                                
+                                    <td>720</td>
+                                
+                                    <td>45</td>
+                                
+                                    <td>39</td>
+                                
+                                    <td>1944</td>
+                                
+                                    <td>40</td>
+                                
+                                    <td>72</td>
+                                
+                                    <td>51.73</td>
+                                
+                                    <td>103.45</td>
+                                
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>Honister Dump Truck (Diesel)</td>
+                                
+                                    <td>250</td>
+                                
+                                    <td>55</td>
+                                
+                                    <td>13</td>
+                                
+                                    <td>1947</td>
+                                
+                                    <td>40</td>
+                                
+                                    <td>30</td>
+                                
+                                    <td>30.23</td>
+                                
+                                    <td>60.46</td>
+                                
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>Broadrock Dump Truck (Diesel)</td>
+                                
+                                    <td>400</td>
+                                
+                                    <td>40</td>
+                                
+                                    <td>24</td>
+                                
+                                    <td>1947</td>
+                                
+                                    <td>40</td>
+                                
+                                    <td>55</td>
+                                
+                                    <td>40.98</td>
+                                
+                                    <td>101.96</td>
+                                
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>Wookey Dump Truck (Diesel)</td>
+                                
+                                    <td>450</td>
+                                
+                                    <td>70</td>
+                                
+                                    <td>18</td>
+                                
+                                    <td>1974</td>
+                                
+                                    <td>40</td>
+                                
+                                    <td>40</td>
+                                
+                                    <td>40.42</td>
+                                
+                                    <td>80.83</td>
+                                
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>Powerstock Dump Truck (Diesel)</td>
+                                
+                                    <td>700</td>
+                                
+                                    <td>80</td>
+                                
+                                    <td>18</td>
+                                
+                                    <td>2001</td>
+                                
+                                    <td>40</td>
+                                
+                                    <td>40</td>
+                                
+                                    <td>45.02</td>
+                                
+                                    <td>90.04</td>
+                                
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>Witch Hill Dump Truck (Diesel)</td>
+                                
+                                    <td>900</td>
+                                
+                                    <td>50</td>
+                                
+                                    <td>38</td>
+                                
+                                    <td>2007</td>
+                                
+                                    <td>40</td>
+                                
+                                    <td>85</td>
+                                
+                                    <td>63.9</td>
+                                
+                                    <td>157.79</td>
+                                
+                            </tr>
+                        
+                    </tbody>
+                </table>
+                <br />
+            
+        
+            
+                <h4>RefrigeratedHauler <small>Subclass</small></h4>
+                <p>
+    Refrigerated truck or tram.
+    Refits to limited range of refrigerated cargos, with 'improved' cargo decay rate.
+    </p>
+                <table style="font-size:84%;" class="table table-striped table-condensed table-bordered tablesorter">
+                    <thead>
+                        <tr>
+                           
+                                <th style="background-color:#eee; vertical-align:top">Vehicle Name</th>
+                            
+                                <th style="background-color:#eee; vertical-align:top">HP</th>
+                            
+                                <th style="background-color:#eee; vertical-align:top">Speed (mph)</th>
+                            
+                                <th style="background-color:#eee; vertical-align:top">Weight (t)</th>
+                            
+                                <th style="background-color:#eee; vertical-align:top">Intro Date</th>
+                            
+                                <th style="background-color:#eee; vertical-align:top">Vehicle Life</th>
+                            
+                                <th style="background-color:#eee; vertical-align:top">Capacity</th>
+                            
+                                <th style="background-color:#eee; vertical-align:top">Buy Cost Factor</th>
+                            
+                                <th style="background-color:#eee; vertical-align:top">Running Cost Factor</th>
+                            
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+                            <tr>
+                                
+                                    <td>Winterfold Refrigerated Tram (Electric)</td>
+                                
+                                    <td>480</td>
+                                
+                                    <td>35</td>
+                                
+                                    <td>36</td>
+                                
+                                    <td>1915</td>
+                                
+                                    <td>40</td>
+                                
+                                    <td>60</td>
+                                
+                                    <td>41.05</td>
+                                
+                                    <td>82.09</td>
+                                
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>Merrivale Refrigerated Truck (Diesel)</td>
+                                
+                                    <td>250</td>
+                                
+                                    <td>55</td>
+                                
+                                    <td>15</td>
+                                
+                                    <td>1949</td>
+                                
+                                    <td>40</td>
+                                
+                                    <td>30</td>
+                                
+                                    <td>30.35</td>
+                                
+                                    <td>60.71</td>
+                                
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>Sparkford Refrigerated Tram (Electric)</td>
+                                
+                                    <td>720</td>
+                                
+                                    <td>45</td>
+                                
+                                    <td>43</td>
+                                
+                                    <td>1955</td>
+                                
+                                    <td>40</td>
+                                
+                                    <td>72</td>
+                                
+                                    <td>52.41</td>
+                                
+                                    <td>104.83</td>
+                                
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>Fortiscue Refrigerated Truck (Diesel)</td>
+                                
+                                    <td>450</td>
+                                
+                                    <td>70</td>
+                                
+                                    <td>20</td>
+                                
+                                    <td>1972</td>
+                                
+                                    <td>40</td>
+                                
+                                    <td>40</td>
+                                
+                                    <td>40.29</td>
+                                
+                                    <td>80.58</td>
+                                
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>Coldfall Refrigerated Truck (Diesel)</td>
+                                
+                                    <td>700</td>
+                                
+                                    <td>80</td>
+                                
+                                    <td>20</td>
+                                
+                                    <td>1998</td>
+                                
+                                    <td>40</td>
+                                
+                                    <td>40</td>
+                                
+                                    <td>44.83</td>
+                                
+                                    <td>89.67</td>
+                                
+                            </tr>
+                        
+                    </tbody>
+                </table>
+                <br />
+            
+        
+            
+                <h4>LogHauler <small>Subclass</small></h4>
+                <p>
+    Gets wood.
+    </p>
+                <table style="font-size:84%;" class="table table-striped table-condensed table-bordered tablesorter">
+                    <thead>
+                        <tr>
+                           
+                                <th style="background-color:#eee; vertical-align:top">Vehicle Name</th>
+                            
+                                <th style="background-color:#eee; vertical-align:top">HP</th>
+                            
+                                <th style="background-color:#eee; vertical-align:top">Speed (mph)</th>
+                            
+                                <th style="background-color:#eee; vertical-align:top">Weight (t)</th>
+                            
+                                <th style="background-color:#eee; vertical-align:top">Intro Date</th>
+                            
+                                <th style="background-color:#eee; vertical-align:top">Vehicle Life</th>
+                            
+                                <th style="background-color:#eee; vertical-align:top">Capacity</th>
+                            
+                                <th style="background-color:#eee; vertical-align:top">Buy Cost Factor</th>
+                            
+                                <th style="background-color:#eee; vertical-align:top">Running Cost Factor</th>
+                            
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+                            <tr>
+                                
+                                    <td>Griff Logging Truck (Steam)</td>
+                                
+                                    <td>100</td>
+                                
+                                    <td>25</td>
+                                
+                                    <td>16</td>
+                                
+                                    <td>1870</td>
+                                
+                                    <td>40</td>
+                                
+                                    <td>40</td>
+                                
+                                    <td>24.67</td>
+                                
+                                    <td>49.33</td>
+                                
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>Trefell Logging Truck (Steam)</td>
+                                
+                                    <td>100</td>
+                                
+                                    <td>40</td>
+                                
+                                    <td>16</td>
+                                
+                                    <td>1910</td>
+                                
+                                    <td>40</td>
+                                
+                                    <td>40</td>
+                                
+                                    <td>29.67</td>
+                                
+                                    <td>59.33</td>
+                                
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>Knockdown Logging Truck (Diesel)</td>
+                                
+                                    <td>250</td>
+                                
+                                    <td>50</td>
+                                
+                                    <td>24</td>
+                                
+                                    <td>1950</td>
+                                
+                                    <td>40</td>
+                                
+                                    <td>60</td>
+                                
+                                    <td>44.58</td>
+                                
+                                    <td>89.17</td>
+                                
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>Buff Logging Truck (Diesel)</td>
+                                
+                                    <td>550</td>
+                                
+                                    <td>60</td>
+                                
+                                    <td>30</td>
+                                
+                                    <td>1994</td>
+                                
+                                    <td>40</td>
+                                
+                                    <td>75</td>
+                                
+                                    <td>58.0</td>
+                                
+                                    <td>116.0</td>
+                                
+                            </tr>
+                        
+                    </tbody>
+                </table>
+                <br />
+            
+        
+            
+                <h4>FruitVegHauler <small>Subclass</small></h4>
+                <p>
+    Fruit and vegetables truck or tram.
+    </p>
+                <table style="font-size:84%;" class="table table-striped table-condensed table-bordered tablesorter">
+                    <thead>
+                        <tr>
+                           
+                                <th style="background-color:#eee; vertical-align:top">Vehicle Name</th>
+                            
+                                <th style="background-color:#eee; vertical-align:top">HP</th>
+                            
+                                <th style="background-color:#eee; vertical-align:top">Speed (mph)</th>
+                            
+                                <th style="background-color:#eee; vertical-align:top">Weight (t)</th>
+                            
+                                <th style="background-color:#eee; vertical-align:top">Intro Date</th>
+                            
+                                <th style="background-color:#eee; vertical-align:top">Vehicle Life</th>
+                            
+                                <th style="background-color:#eee; vertical-align:top">Capacity</th>
+                            
+                                <th style="background-color:#eee; vertical-align:top">Buy Cost Factor</th>
+                            
+                                <th style="background-color:#eee; vertical-align:top">Running Cost Factor</th>
+                            
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+                            <tr>
+                                
+                                    <td>Plumley Fruit &amp; Vegetables Tram (Steam)</td>
+                                
+                                    <td>240</td>
+                                
+                                    <td>25</td>
+                                
+                                    <td>26</td>
+                                
+                                    <td>1865</td>
+                                
+                                    <td>40</td>
+                                
+                                    <td>48</td>
+                                
+                                    <td>29.37</td>
+                                
+                                    <td>58.73</td>
+                                
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>Applethwaite Fruit &amp; Vegetables Tram (Electric)</td>
+                                
+                                    <td>480</td>
+                                
+                                    <td>35</td>
+                                
+                                    <td>33</td>
+                                
+                                    <td>1901</td>
+                                
+                                    <td>40</td>
+                                
+                                    <td>60</td>
+                                
+                                    <td>40.17</td>
+                                
+                                    <td>80.34</td>
+                                
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>Nutbrook Fruit &amp; Vegetables Tram (Electric)</td>
+                                
+                                    <td>720</td>
+                                
+                                    <td>45</td>
+                                
+                                    <td>39</td>
+                                
+                                    <td>1940</td>
+                                
+                                    <td>40</td>
+                                
+                                    <td>72</td>
+                                
+                                    <td>51.48</td>
+                                
+                                    <td>102.95</td>
+                                
+                            </tr>
+                        
+                    </tbody>
+                </table>
+                <br />
+            
+        
+            
+                <h4>OpenHauler <small>Subclass</small></h4>
+                <p>
+    General cargo tram or truck - refits everything except mail, pax.
+    </p>
+                <table style="font-size:84%;" class="table table-striped table-condensed table-bordered tablesorter">
+                    <thead>
+                        <tr>
+                           
+                                <th style="background-color:#eee; vertical-align:top">Vehicle Name</th>
+                            
+                                <th style="background-color:#eee; vertical-align:top">HP</th>
+                            
+                                <th style="background-color:#eee; vertical-align:top">Speed (mph)</th>
+                            
+                                <th style="background-color:#eee; vertical-align:top">Weight (t)</th>
+                            
+                                <th style="background-color:#eee; vertical-align:top">Intro Date</th>
+                            
+                                <th style="background-color:#eee; vertical-align:top">Vehicle Life</th>
+                            
+                                <th style="background-color:#eee; vertical-align:top">Capacity</th>
+                            
+                                <th style="background-color:#eee; vertical-align:top">Buy Cost Factor</th>
+                            
+                                <th style="background-color:#eee; vertical-align:top">Running Cost Factor</th>
+                            
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+                            <tr>
+                                
+                                    <td>Buildwas Open Tram (Steam)</td>
+                                
+                                    <td>240</td>
+                                
+                                    <td>25</td>
+                                
+                                    <td>24</td>
+                                
+                                    <td>1860</td>
+                                
+                                    <td>40</td>
+                                
+                                    <td>48</td>
+                                
+                                    <td>29.37</td>
+                                
+                                    <td>58.73</td>
+                                
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>Portland Open Tram (Electric)</td>
+                                
+                                    <td>480</td>
+                                
+                                    <td>35</td>
+                                
+                                    <td>30</td>
+                                
+                                    <td>1900</td>
+                                
+                                    <td>40</td>
+                                
+                                    <td>60</td>
+                                
+                                    <td>40.11</td>
+                                
+                                    <td>80.22</td>
+                                
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>Jinglepot Open Truck (Steam)</td>
+                                
+                                    <td>150</td>
+                                
+                                    <td>40</td>
+                                
+                                    <td>9</td>
+                                
+                                    <td>1910</td>
+                                
+                                    <td>40</td>
+                                
+                                    <td>24</td>
+                                
+                                    <td>21.92</td>
+                                
+                                    <td>43.83</td>
+                                
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>Rattlebrook Open Truck (Diesel)</td>
+                                
+                                    <td>250</td>
+                                
+                                    <td>55</td>
+                                
+                                    <td>12</td>
+                                
+                                    <td>1939</td>
+                                
+                                    <td>40</td>
+                                
+                                    <td>30</td>
+                                
+                                    <td>29.73</td>
+                                
+                                    <td>59.46</td>
+                                
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>Brightling Open Tram (Electric)</td>
+                                
+                                    <td>720</td>
+                                
+                                    <td>45</td>
+                                
+                                    <td>36</td>
+                                
+                                    <td>1940</td>
+                                
+                                    <td>40</td>
+                                
+                                    <td>72</td>
+                                
+                                    <td>51.48</td>
+                                
+                                    <td>102.95</td>
+                                
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>Yeoman Open Truck (Diesel)</td>
+                                
+                                    <td>450</td>
+                                
+                                    <td>70</td>
+                                
+                                    <td>16</td>
+                                
+                                    <td>1968</td>
+                                
+                                    <td>40</td>
+                                
+                                    <td>40</td>
+                                
+                                    <td>40.04</td>
+                                
+                                    <td>80.08</td>
+                                
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>Capo Open Truck (Diesel)</td>
+                                
+                                    <td>700</td>
+                                
+                                    <td>80</td>
+                                
+                                    <td>16</td>
+                                
+                                    <td>1997</td>
+                                
+                                    <td>40</td>
+                                
+                                    <td>40</td>
+                                
+                                    <td>44.77</td>
+                                
+                                    <td>89.54</td>
+                                
+                            </tr>
+                        
+                    </tbody>
+                </table>
+                <br />
+            
+        
+            
+                <h4>EdiblesTanker <small>Subclass</small></h4>
+                <p>
+    Wine, milk, water etc.
+    </p>
+                <table style="font-size:84%;" class="table table-striped table-condensed table-bordered tablesorter">
+                    <thead>
+                        <tr>
+                           
+                                <th style="background-color:#eee; vertical-align:top">Vehicle Name</th>
+                            
+                                <th style="background-color:#eee; vertical-align:top">HP</th>
+                            
+                                <th style="background-color:#eee; vertical-align:top">Speed (mph)</th>
+                            
+                                <th style="background-color:#eee; vertical-align:top">Weight (t)</th>
+                            
+                                <th style="background-color:#eee; vertical-align:top">Intro Date</th>
+                            
+                                <th style="background-color:#eee; vertical-align:top">Vehicle Life</th>
+                            
+                                <th style="background-color:#eee; vertical-align:top">Capacity</th>
+                            
+                                <th style="background-color:#eee; vertical-align:top">Buy Cost Factor</th>
+                            
+                                <th style="background-color:#eee; vertical-align:top">Running Cost Factor</th>
+                            
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+                            <tr>
+                                
+                                    <td>Poptop Edibles Tanker Tram (Electric)</td>
+                                
+                                    <td>480</td>
+                                
+                                    <td>35</td>
+                                
+                                    <td>36</td>
+                                
+                                    <td>1906</td>
+                                
+                                    <td>40</td>
+                                
+                                    <td>60</td>
+                                
+                                    <td>40.48</td>
+                                
+                                    <td>80.97</td>
+                                
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>Flow Edge Edibles Tanker Truck (Steam)</td>
+                                
+                                    <td>150</td>
+                                
+                                    <td>40</td>
+                                
+                                    <td>12</td>
+                                
+                                    <td>1912</td>
+                                
+                                    <td>40</td>
+                                
+                                    <td>24</td>
+                                
+                                    <td>22.04</td>
+                                
+                                    <td>44.08</td>
+                                
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>Beerwoods Edibles Tanker Truck (Diesel)</td>
+                                
+                                    <td>250</td>
+                                
+                                    <td>55</td>
+                                
+                                    <td>15</td>
+                                
+                                    <td>1943</td>
+                                
+                                    <td>40</td>
+                                
+                                    <td>30</td>
+                                
+                                    <td>29.98</td>
+                                
+                                    <td>59.96</td>
+                                
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>Bottlebrook Edibles Tanker Tram (Electric)</td>
+                                
+                                    <td>720</td>
+                                
+                                    <td>45</td>
+                                
+                                    <td>43</td>
+                                
+                                    <td>1946</td>
+                                
+                                    <td>40</td>
+                                
+                                    <td>72</td>
+                                
+                                    <td>51.85</td>
+                                
+                                    <td>103.7</td>
+                                
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>Waterperry Edibles Tanker Truck (Diesel)</td>
+                                
+                                    <td>450</td>
+                                
+                                    <td>70</td>
+                                
+                                    <td>20</td>
+                                
+                                    <td>1972</td>
+                                
+                                    <td>40</td>
+                                
+                                    <td>40</td>
+                                
+                                    <td>40.29</td>
+                                
+                                    <td>80.58</td>
+                                
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>Silvertop Edibles Tanker Truck (Diesel)</td>
+                                
+                                    <td>700</td>
+                                
+                                    <td>80</td>
+                                
+                                    <td>20</td>
+                                
+                                    <td>2001</td>
+                                
+                                    <td>40</td>
+                                
+                                    <td>40</td>
+                                
+                                    <td>45.02</td>
+                                
+                                    <td>90.04</td>
+                                
+                            </tr>
+                        
+                    </tbody>
+                </table>
+                <br />
+            
+        
+            
+                <h4>LivestockHauler <small>Subclass</small></h4>
+                <p>
+    Livestock truck or tram.
+    </p>
+                <table style="font-size:84%;" class="table table-striped table-condensed table-bordered tablesorter">
+                    <thead>
+                        <tr>
+                           
+                                <th style="background-color:#eee; vertical-align:top">Vehicle Name</th>
+                            
+                                <th style="background-color:#eee; vertical-align:top">HP</th>
+                            
+                                <th style="background-color:#eee; vertical-align:top">Speed (mph)</th>
+                            
+                                <th style="background-color:#eee; vertical-align:top">Weight (t)</th>
+                            
+                                <th style="background-color:#eee; vertical-align:top">Intro Date</th>
+                            
+                                <th style="background-color:#eee; vertical-align:top">Vehicle Life</th>
+                            
+                                <th style="background-color:#eee; vertical-align:top">Capacity</th>
+                            
+                                <th style="background-color:#eee; vertical-align:top">Buy Cost Factor</th>
+                            
+                                <th style="background-color:#eee; vertical-align:top">Running Cost Factor</th>
+                            
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+                            <tr>
+                                
+                                    <td>Scrag End Livestock Tram (Steam)</td>
+                                
+                                    <td>240</td>
+                                
+                                    <td>25</td>
+                                
+                                    <td>26</td>
+                                
+                                    <td>1865</td>
+                                
+                                    <td>40</td>
+                                
+                                    <td>48</td>
+                                
+                                    <td>29.37</td>
+                                
+                                    <td>58.73</td>
+                                
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>Trotalong Livestock Tram (Electric)</td>
+                                
+                                    <td>480</td>
+                                
+                                    <td>35</td>
+                                
+                                    <td>33</td>
+                                
+                                    <td>1901</td>
+                                
+                                    <td>40</td>
+                                
+                                    <td>60</td>
+                                
+                                    <td>40.17</td>
+                                
+                                    <td>80.34</td>
+                                
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>Cowsleigh Livestock Truck (Steam)</td>
+                                
+                                    <td>150</td>
+                                
+                                    <td>40</td>
+                                
+                                    <td>10</td>
+                                
+                                    <td>1911</td>
+                                
+                                    <td>40</td>
+                                
+                                    <td>24</td>
+                                
+                                    <td>21.98</td>
+                                
+                                    <td>43.96</td>
+                                
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>Pigstick Livestock Truck (Diesel)</td>
+                                
+                                    <td>250</td>
+                                
+                                    <td>55</td>
+                                
+                                    <td>13</td>
+                                
+                                    <td>1941</td>
+                                
+                                    <td>40</td>
+                                
+                                    <td>30</td>
+                                
+                                    <td>29.85</td>
+                                
+                                    <td>59.71</td>
+                                
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>Shotover Livestock Tram (Electric)</td>
+                                
+                                    <td>720</td>
+                                
+                                    <td>45</td>
+                                
+                                    <td>39</td>
+                                
+                                    <td>1941</td>
+                                
+                                    <td>40</td>
+                                
+                                    <td>72</td>
+                                
+                                    <td>51.54</td>
+                                
+                                    <td>103.08</td>
+                                
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>Swineshead Livestock Truck (Diesel)</td>
+                                
+                                    <td>450</td>
+                                
+                                    <td>70</td>
+                                
+                                    <td>18</td>
+                                
+                                    <td>1970</td>
+                                
+                                    <td>40</td>
+                                
+                                    <td>40</td>
+                                
+                                    <td>40.17</td>
+                                
+                                    <td>80.33</td>
+                                
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>Stungun Livestock Truck (Diesel)</td>
+                                
+                                    <td>700</td>
+                                
+                                    <td>80</td>
+                                
+                                    <td>18</td>
+                                
+                                    <td>1999</td>
+                                
+                                    <td>40</td>
+                                
+                                    <td>40</td>
+                                
+                                    <td>44.9</td>
+                                
+                                    <td>89.79</td>
+                                
+                            </tr>
+                        
+                    </tbody>
+                </table>
+                <br />
+            
+        
+            
+                <h4>PaxHauler <small>Subclass</small></h4>
+                <p>
+    Bus or tram for pax.
+    </p>
+                <table style="font-size:84%;" class="table table-striped table-condensed table-bordered tablesorter">
+                    <thead>
+                        <tr>
+                           
+                                <th style="background-color:#eee; vertical-align:top">Vehicle Name</th>
+                            
+                                <th style="background-color:#eee; vertical-align:top">HP</th>
+                            
+                                <th style="background-color:#eee; vertical-align:top">Speed (mph)</th>
+                            
+                                <th style="background-color:#eee; vertical-align:top">Weight (t)</th>
+                            
+                                <th style="background-color:#eee; vertical-align:top">Intro Date</th>
+                            
+                                <th style="background-color:#eee; vertical-align:top">Vehicle Life</th>
+                            
+                                <th style="background-color:#eee; vertical-align:top">Capacity</th>
+                            
+                                <th style="background-color:#eee; vertical-align:top">Buy Cost Factor</th>
+                            
+                                <th style="background-color:#eee; vertical-align:top">Running Cost Factor</th>
+                            
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+                            <tr>
+                                
+                                    <td>Ladycross Passenger Tram (Steam)</td>
+                                
+                                    <td>240</td>
+                                
+                                    <td>25</td>
+                                
+                                    <td>16</td>
+                                
+                                    <td>1860</td>
+                                
+                                    <td>40</td>
+                                
+                                    <td>60</td>
+                                
+                                    <td>35.37</td>
+                                
+                                    <td>70.73</td>
+                                
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>Fairlop Passenger Tram (Electric)</td>
+                                
+                                    <td>480</td>
+                                
+                                    <td>35</td>
+                                
+                                    <td>21</td>
+                                
+                                    <td>1903</td>
+                                
+                                    <td>40</td>
+                                
+                                    <td>80</td>
+                                
+                                    <td>50.3</td>
+                                
+                                    <td>100.59</td>
+                                
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>Leyburn Bus (Diesel)</td>
+                                
+                                    <td>100</td>
+                                
+                                    <td>40</td>
+                                
+                                    <td>7</td>
+                                
+                                    <td>1909</td>
+                                
+                                    <td>40</td>
+                                
+                                    <td>44</td>
+                                
+                                    <td>31.6</td>
+                                
+                                    <td>63.21</td>
+                                
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>Newbold Passenger Tram (Electric)</td>
+                                
+                                    <td>720</td>
+                                
+                                    <td>45</td>
+                                
+                                    <td>27</td>
+                                
+                                    <td>1932</td>
+                                
+                                    <td>40</td>
+                                
+                                    <td>100</td>
+                                
+                                    <td>64.97</td>
+                                
+                                    <td>129.95</td>
+                                
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>Thunder Bus (Diesel)</td>
+                                
+                                    <td>160</td>
+                                
+                                    <td>45</td>
+                                
+                                    <td>8</td>
+                                
+                                    <td>1935</td>
+                                
+                                    <td>40</td>
+                                
+                                    <td>50</td>
+                                
+                                    <td>37.36</td>
+                                
+                                    <td>74.72</td>
+                                
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>Northbeach Passenger Tram (Electric)</td>
+                                
+                                    <td>960</td>
+                                
+                                    <td>55</td>
+                                
+                                    <td>32</td>
+                                
+                                    <td>1961</td>
+                                
+                                    <td>40</td>
+                                
+                                    <td>120</td>
+                                
+                                    <td>79.65</td>
+                                
+                                    <td>159.31</td>
+                                
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>Highgate Bus (Diesel)</td>
+                                
+                                    <td>240</td>
+                                
+                                    <td>50</td>
+                                
+                                    <td>10</td>
+                                
+                                    <td>1964</td>
+                                
+                                    <td>40</td>
+                                
+                                    <td>60</td>
+                                
+                                    <td>45.41</td>
+                                
+                                    <td>90.82</td>
+                                
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>Topley Bus (Diesel)</td>
+                                
+                                    <td>360</td>
+                                
+                                    <td>55</td>
+                                
+                                    <td>12</td>
+                                
+                                    <td>1990</td>
+                                
+                                    <td>40</td>
+                                
+                                    <td>72</td>
+                                
+                                    <td>54.47</td>
+                                
+                                    <td>108.93</td>
+                                
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>Twinhills Passenger Tram (Electric)</td>
+                                
+                                    <td>1200</td>
+                                
+                                    <td>60</td>
+                                
+                                    <td>37</td>
+                                
+                                    <td>1990</td>
+                                
+                                    <td>40</td>
+                                
+                                    <td>140</td>
+                                
+                                    <td>93.5</td>
+                                
+                                    <td>187.0</td>
+                                
+                            </tr>
+                        
+                    </tbody>
+                </table>
+                <br />
+            
+        
+            
+                <h4>Tanker <small>Subclass</small></h4>
+                <p>
+    Ronseal ("does what it says on the tin", for those without extensive knowledge of UK advertising).
+    </p>
+                <table style="font-size:84%;" class="table table-striped table-condensed table-bordered tablesorter">
+                    <thead>
+                        <tr>
+                           
+                                <th style="background-color:#eee; vertical-align:top">Vehicle Name</th>
+                            
+                                <th style="background-color:#eee; vertical-align:top">HP</th>
+                            
+                                <th style="background-color:#eee; vertical-align:top">Speed (mph)</th>
+                            
+                                <th style="background-color:#eee; vertical-align:top">Weight (t)</th>
+                            
+                                <th style="background-color:#eee; vertical-align:top">Intro Date</th>
+                            
+                                <th style="background-color:#eee; vertical-align:top">Vehicle Life</th>
+                            
+                                <th style="background-color:#eee; vertical-align:top">Capacity</th>
+                            
+                                <th style="background-color:#eee; vertical-align:top">Buy Cost Factor</th>
+                            
+                                <th style="background-color:#eee; vertical-align:top">Running Cost Factor</th>
+                            
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+                            <tr>
+                                
+                                    <td>Drumbreck Tanker Tram (Steam)</td>
+                                
+                                    <td>240</td>
+                                
+                                    <td>25</td>
+                                
+                                    <td>26</td>
+                                
+                                    <td>1870</td>
+                                
+                                    <td>40</td>
+                                
+                                    <td>48</td>
+                                
+                                    <td>29.37</td>
+                                
+                                    <td>58.73</td>
+                                
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>Catchcan Tanker Tram (Electric)</td>
+                                
+                                    <td>480</td>
+                                
+                                    <td>35</td>
+                                
+                                    <td>33</td>
+                                
+                                    <td>1902</td>
+                                
+                                    <td>40</td>
+                                
+                                    <td>60</td>
+                                
+                                    <td>40.23</td>
+                                
+                                    <td>80.47</td>
+                                
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>Boilingwell Tanker Truck (Steam)</td>
+                                
+                                    <td>150</td>
+                                
+                                    <td>40</td>
+                                
+                                    <td>10</td>
+                                
+                                    <td>1915</td>
+                                
+                                    <td>40</td>
+                                
+                                    <td>24</td>
+                                
+                                    <td>22.23</td>
+                                
+                                    <td>44.46</td>
+                                
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>Greenscoe Tanker Truck (Diesel)</td>
+                                
+                                    <td>250</td>
+                                
+                                    <td>55</td>
+                                
+                                    <td>13</td>
+                                
+                                    <td>1942</td>
+                                
+                                    <td>40</td>
+                                
+                                    <td>30</td>
+                                
+                                    <td>29.92</td>
+                                
+                                    <td>59.83</td>
+                                
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>Oylbarral Tanker Tram (Electric)</td>
+                                
+                                    <td>720</td>
+                                
+                                    <td>45</td>
+                                
+                                    <td>39</td>
+                                
+                                    <td>1945</td>
+                                
+                                    <td>40</td>
+                                
+                                    <td>72</td>
+                                
+                                    <td>51.79</td>
+                                
+                                    <td>103.58</td>
+                                
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>Meriden Tanker Truck (Diesel)</td>
+                                
+                                    <td>450</td>
+                                
+                                    <td>70</td>
+                                
+                                    <td>18</td>
+                                
+                                    <td>1974</td>
+                                
+                                    <td>40</td>
+                                
+                                    <td>40</td>
+                                
+                                    <td>40.42</td>
+                                
+                                    <td>80.83</td>
+                                
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>Cloud Hill Tanker Truck (Diesel)</td>
+                                
+                                    <td>700</td>
+                                
+                                    <td>80</td>
+                                
+                                    <td>18</td>
+                                
+                                    <td>2001</td>
+                                
+                                    <td>40</td>
+                                
+                                    <td>40</td>
+                                
+                                    <td>45.02</td>
+                                
+                                    <td>90.04</td>
+                                
+                            </tr>
+                        
+                    </tbody>
+                </table>
+                <br />
+            
+        
+            
+                <h4>FlatHauler <small>Subclass</small></h4>
+                <p>
+    Flatbed tram or truck - refits most cargos, not bulk.
+    </p>
+                <table style="font-size:84%;" class="table table-striped table-condensed table-bordered tablesorter">
+                    <thead>
+                        <tr>
+                           
+                                <th style="background-color:#eee; vertical-align:top">Vehicle Name</th>
+                            
+                                <th style="background-color:#eee; vertical-align:top">HP</th>
+                            
+                                <th style="background-color:#eee; vertical-align:top">Speed (mph)</th>
+                            
+                                <th style="background-color:#eee; vertical-align:top">Weight (t)</th>
+                            
+                                <th style="background-color:#eee; vertical-align:top">Intro Date</th>
+                            
+                                <th style="background-color:#eee; vertical-align:top">Vehicle Life</th>
+                            
+                                <th style="background-color:#eee; vertical-align:top">Capacity</th>
+                            
+                                <th style="background-color:#eee; vertical-align:top">Buy Cost Factor</th>
+                            
+                                <th style="background-color:#eee; vertical-align:top">Running Cost Factor</th>
+                            
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+                            <tr>
+                                
+                                    <td>Stakebeck Flatbed Tram (Steam)</td>
+                                
+                                    <td>240</td>
+                                
+                                    <td>25</td>
+                                
+                                    <td>24</td>
+                                
+                                    <td>1860</td>
+                                
+                                    <td>40</td>
+                                
+                                    <td>48</td>
+                                
+                                    <td>29.37</td>
+                                
+                                    <td>58.73</td>
+                                
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>Rackwood Flatbed Tram (Electric)</td>
+                                
+                                    <td>480</td>
+                                
+                                    <td>35</td>
+                                
+                                    <td>30</td>
+                                
+                                    <td>1900</td>
+                                
+                                    <td>40</td>
+                                
+                                    <td>60</td>
+                                
+                                    <td>40.11</td>
+                                
+                                    <td>80.22</td>
+                                
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>Chainburn Flatbed Truck (Steam)</td>
+                                
+                                    <td>150</td>
+                                
+                                    <td>40</td>
+                                
+                                    <td>9</td>
+                                
+                                    <td>1910</td>
+                                
+                                    <td>40</td>
+                                
+                                    <td>24</td>
+                                
+                                    <td>21.92</td>
+                                
+                                    <td>43.83</td>
+                                
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>Windergill Flatbed Truck (Diesel)</td>
+                                
+                                    <td>250</td>
+                                
+                                    <td>55</td>
+                                
+                                    <td>12</td>
+                                
+                                    <td>1939</td>
+                                
+                                    <td>40</td>
+                                
+                                    <td>30</td>
+                                
+                                    <td>29.73</td>
+                                
+                                    <td>59.46</td>
+                                
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>Stancliffe Flatbed Tram (Electric)</td>
+                                
+                                    <td>720</td>
+                                
+                                    <td>45</td>
+                                
+                                    <td>36</td>
+                                
+                                    <td>1940</td>
+                                
+                                    <td>40</td>
+                                
+                                    <td>72</td>
+                                
+                                    <td>51.48</td>
+                                
+                                    <td>102.95</td>
+                                
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>Towerhouse Flatbed Truck (Diesel)</td>
+                                
+                                    <td>450</td>
+                                
+                                    <td>70</td>
+                                
+                                    <td>16</td>
+                                
+                                    <td>1968</td>
+                                
+                                    <td>40</td>
+                                
+                                    <td>40</td>
+                                
+                                    <td>40.04</td>
+                                
+                                    <td>80.08</td>
+                                
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>Big Rigg Flatbed Truck (Diesel)</td>
+                                
+                                    <td>700</td>
+                                
+                                    <td>80</td>
+                                
+                                    <td>16</td>
+                                
+                                    <td>1997</td>
+                                
+                                    <td>40</td>
+                                
+                                    <td>40</td>
+                                
+                                    <td>44.77</td>
+                                
+                                    <td>89.54</td>
+                                
+                            </tr>
+                        
+                    </tbody>
+                </table>
+                <br />
+            
+        
+            
+                <h4>MetalHauler <small>Subclass</small></h4>
+                <p>
+    Specialist heavy haul tram / truck, e.g. multiwheel platform, steel mill hauler etc.
+    High capacity, not very fast, refits to small subset of finished metal cargos.
+    </p>
+                <table style="font-size:84%;" class="table table-striped table-condensed table-bordered tablesorter">
+                    <thead>
+                        <tr>
+                           
+                                <th style="background-color:#eee; vertical-align:top">Vehicle Name</th>
+                            
+                                <th style="background-color:#eee; vertical-align:top">HP</th>
+                            
+                                <th style="background-color:#eee; vertical-align:top">Speed (mph)</th>
+                            
+                                <th style="background-color:#eee; vertical-align:top">Weight (t)</th>
+                            
+                                <th style="background-color:#eee; vertical-align:top">Intro Date</th>
+                            
+                                <th style="background-color:#eee; vertical-align:top">Vehicle Life</th>
+                            
+                                <th style="background-color:#eee; vertical-align:top">Capacity</th>
+                            
+                                <th style="background-color:#eee; vertical-align:top">Buy Cost Factor</th>
+                            
+                                <th style="background-color:#eee; vertical-align:top">Running Cost Factor</th>
+                            
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+                            <tr>
+                                
+                                    <td>Steeraway Foundry Hauler (Diesel)</td>
+                                
+                                    <td>500</td>
+                                
+                                    <td>45</td>
+                                
+                                    <td>40</td>
+                                
+                                    <td>1960</td>
+                                
+                                    <td>80</td>
+                                
+                                    <td>100</td>
+                                
+                                    <td>65.62</td>
+                                
+                                    <td>131.25</td>
+                                
+                            </tr>
+                        
+                    </tbody>
+                </table>
+                <br />
+            
+        
+            
+                <h4>BoxHauler <small>Subclass</small></h4>
+                <p>
+    Box tram or truck - refits express, piece goods cargos, other selected cargos.
+    </p>
+                <table style="font-size:84%;" class="table table-striped table-condensed table-bordered tablesorter">
+                    <thead>
+                        <tr>
+                           
+                                <th style="background-color:#eee; vertical-align:top">Vehicle Name</th>
+                            
+                                <th style="background-color:#eee; vertical-align:top">HP</th>
+                            
+                                <th style="background-color:#eee; vertical-align:top">Speed (mph)</th>
+                            
+                                <th style="background-color:#eee; vertical-align:top">Weight (t)</th>
+                            
+                                <th style="background-color:#eee; vertical-align:top">Intro Date</th>
+                            
+                                <th style="background-color:#eee; vertical-align:top">Vehicle Life</th>
+                            
+                                <th style="background-color:#eee; vertical-align:top">Capacity</th>
+                            
+                                <th style="background-color:#eee; vertical-align:top">Buy Cost Factor</th>
+                            
+                                <th style="background-color:#eee; vertical-align:top">Running Cost Factor</th>
+                            
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+                            <tr>
+                                
+                                    <td>Amblecote Box Tram (Steam)</td>
+                                
+                                    <td>240</td>
+                                
+                                    <td>25</td>
+                                
+                                    <td>26</td>
+                                
+                                    <td>1860</td>
+                                
+                                    <td>40</td>
+                                
+                                    <td>48</td>
+                                
+                                    <td>29.37</td>
+                                
+                                    <td>58.73</td>
+                                
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>Rakeway Box Tram (Electric)</td>
+                                
+                                    <td>480</td>
+                                
+                                    <td>35</td>
+                                
+                                    <td>33</td>
+                                
+                                    <td>1900</td>
+                                
+                                    <td>40</td>
+                                
+                                    <td>60</td>
+                                
+                                    <td>40.11</td>
+                                
+                                    <td>80.22</td>
+                                
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>Runwell Box Truck (Steam)</td>
+                                
+                                    <td>150</td>
+                                
+                                    <td>40</td>
+                                
+                                    <td>10</td>
+                                
+                                    <td>1910</td>
+                                
+                                    <td>40</td>
+                                
+                                    <td>24</td>
+                                
+                                    <td>21.92</td>
+                                
+                                    <td>43.83</td>
+                                
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>Easywheal Box Truck (Diesel)</td>
+                                
+                                    <td>250</td>
+                                
+                                    <td>55</td>
+                                
+                                    <td>13</td>
+                                
+                                    <td>1939</td>
+                                
+                                    <td>40</td>
+                                
+                                    <td>30</td>
+                                
+                                    <td>29.73</td>
+                                
+                                    <td>59.46</td>
+                                
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>Colbiggan Box Tram (Electric)</td>
+                                
+                                    <td>720</td>
+                                
+                                    <td>45</td>
+                                
+                                    <td>39</td>
+                                
+                                    <td>1940</td>
+                                
+                                    <td>40</td>
+                                
+                                    <td>72</td>
+                                
+                                    <td>51.48</td>
+                                
+                                    <td>102.95</td>
+                                
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>Quickset Box Truck (Diesel)</td>
+                                
+                                    <td>450</td>
+                                
+                                    <td>70</td>
+                                
+                                    <td>18</td>
+                                
+                                    <td>1968</td>
+                                
+                                    <td>40</td>
+                                
+                                    <td>40</td>
+                                
+                                    <td>40.04</td>
+                                
+                                    <td>80.08</td>
+                                
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>Speedwell Box Truck (Diesel)</td>
+                                
+                                    <td>700</td>
+                                
+                                    <td>80</td>
+                                
+                                    <td>18</td>
+                                
+                                    <td>1997</td>
+                                
+                                    <td>40</td>
+                                
+                                    <td>40</td>
+                                
+                                    <td>44.77</td>
+                                
+                                    <td>89.54</td>
+                                
+                            </tr>
+                        
+                    </tbody>
+                </table>
+                <br />
+            
+        
+        <hr />
+        <h3>Numeric IDs</h3>
+        <p class="muted">Trailing parts of articulated vehicles are not listed here.</p>
+        <p class="muted">
+            Setting IDs for new vehicles?  The order and grouping doesn't matter.  Just fill any gaps, then add IDs to the
+            current end of the range for the roster. Trying to organise IDs by vehicle type or whatever is work with no benefit.
+        </p>
+        <table class="table table-striped table-condensed table-bordered tablesorter">
+            <thead>
+                <th>Numeric ID</th>
+                <th>ID</th>
+                <th>Title</th>
+            </thead>
+            <tbody>
+                
+                    <tr>
+                        <td>0</td>
+                        <td>ladycross_pax</td>
+                        <td>Ladycross Passenger Tram (Steam)</td>
+                    </tr>
+                
+                    <tr>
+                        <td>10</td>
+                        <td>fairlop_pax</td>
+                        <td>Fairlop Passenger Tram (Electric)</td>
+                    </tr>
+                
+                    <tr>
+                        <td>20</td>
+                        <td>leyburn_pax</td>
+                        <td>Leyburn Bus (Diesel)</td>
+                    </tr>
+                
+                    <tr>
+                        <td>30</td>
+                        <td>newbold_pax</td>
+                        <td>Newbold Passenger Tram (Electric)</td>
+                    </tr>
+                
+                    <tr>
+                        <td>40</td>
+                        <td>thunder_pax</td>
+                        <td>Thunder Bus (Diesel)</td>
+                    </tr>
+                
+                    <tr>
+                        <td>50</td>
+                        <td>glenmore_pax_express</td>
+                        <td>Glenmore Coach (Diesel)</td>
+                    </tr>
+                
+                    <tr>
+                        <td>60</td>
+                        <td>topley_pax</td>
+                        <td>Topley Bus (Diesel)</td>
+                    </tr>
+                
+                    <tr>
+                        <td>70</td>
+                        <td>twinhills_pax</td>
+                        <td>Twinhills Passenger Tram (Electric)</td>
+                    </tr>
+                
+                    <tr>
+                        <td>80</td>
+                        <td>amblecote_box</td>
+                        <td>Amblecote Box Tram (Steam)</td>
+                    </tr>
+                
+                    <tr>
+                        <td>90</td>
+                        <td>brightling_open</td>
+                        <td>Brightling Open Tram (Electric)</td>
+                    </tr>
+                
+                    <tr>
+                        <td>100</td>
+                        <td>broadrock_dump</td>
+                        <td>Broadrock Dump Truck (Diesel)</td>
+                    </tr>
+                
+                    <tr>
+                        <td>110</td>
+                        <td>buff_log</td>
+                        <td>Buff Logging Truck (Diesel)</td>
+                    </tr>
+                
+                    <tr>
+                        <td>120</td>
+                        <td>buildwas_open</td>
+                        <td>Buildwas Open Tram (Steam)</td>
+                    </tr>
+                
+                    <tr>
+                        <td>130</td>
+                        <td>cloud_hill_tanker</td>
+                        <td>Cloud Hill Tanker Truck (Diesel)</td>
+                    </tr>
+                
+                    <tr>
+                        <td>150</td>
+                        <td>coldfall_refrigerated</td>
+                        <td>Coldfall Refrigerated Truck (Diesel)</td>
+                    </tr>
+                
+                    <tr>
+                        <td>160</td>
+                        <td>easywheal_box</td>
+                        <td>Easywheal Box Truck (Diesel)</td>
+                    </tr>
+                
+                    <tr>
+                        <td>170</td>
+                        <td>yeoman_open</td>
+                        <td>Yeoman Open Truck (Diesel)</td>
+                    </tr>
+                
+                    <tr>
+                        <td>180</td>
+                        <td>fortiscue_refrigerated</td>
+                        <td>Fortiscue Refrigerated Truck (Diesel)</td>
+                    </tr>
+                
+                    <tr>
+                        <td>190</td>
+                        <td>foxley_mail</td>
+                        <td>Foxley Courier Tram (Electric)</td>
+                    </tr>
+                
+                    <tr>
+                        <td>200</td>
+                        <td>goldmire_mail</td>
+                        <td>Goldmire Courier Truck (Diesel)</td>
+                    </tr>
+                
+                    <tr>
+                        <td>210</td>
+                        <td>greenscoe_tanker</td>
+                        <td>Greenscoe Tanker Truck (Diesel)</td>
+                    </tr>
+                
+                    <tr>
+                        <td>220</td>
+                        <td>griff_log</td>
+                        <td>Griff Logging Truck (Steam)</td>
+                    </tr>
+                
+                    <tr>
+                        <td>230</td>
+                        <td>honister_dump</td>
+                        <td>Honister Dump Truck (Diesel)</td>
+                    </tr>
+                
+                    <tr>
+                        <td>240</td>
+                        <td>jinglepot_open</td>
+                        <td>Jinglepot Open Truck (Steam)</td>
+                    </tr>
+                
+                    <tr>
+                        <td>250</td>
+                        <td>knockdown_log</td>
+                        <td>Knockdown Logging Truck (Diesel)</td>
+                    </tr>
+                
+                    <tr>
+                        <td>260</td>
+                        <td>limebreach_covered_hopper</td>
+                        <td>Limebreach Covered Hopper Truck (Diesel)</td>
+                    </tr>
+                
+                    <tr>
+                        <td>270</td>
+                        <td>littleduke_mail</td>
+                        <td>Littleduke Courier Truck (Diesel)</td>
+                    </tr>
+                
+                    <tr>
+                        <td>280</td>
+                        <td>mcdowell_covered_hopper</td>
+                        <td>McDowell Covered Hopper Truck (Diesel)</td>
+                    </tr>
+                
+                    <tr>
+                        <td>290</td>
+                        <td>meriden_tanker</td>
+                        <td>Meriden Tanker Truck (Diesel)</td>
+                    </tr>
+                
+                    <tr>
+                        <td>300</td>
+                        <td>merrivale_refrigerated</td>
+                        <td>Merrivale Refrigerated Truck (Diesel)</td>
+                    </tr>
+                
+                    <tr>
+                        <td>310</td>
+                        <td>nettlebridge_dump</td>
+                        <td>Nettlebridge Dump Tram (Electric)</td>
+                    </tr>
+                
+                    <tr>
+                        <td>320</td>
+                        <td>oylbarral_tanker</td>
+                        <td>Oylbarral Tanker Tram (Electric)</td>
+                    </tr>
+                
+                    <tr>
+                        <td>330</td>
+                        <td>pigstick_livestock</td>
+                        <td>Pigstick Livestock Truck (Diesel)</td>
+                    </tr>
+                
+                    <tr>
+                        <td>340</td>
+                        <td>powerstock_dump</td>
+                        <td>Powerstock Dump Truck (Diesel)</td>
+                    </tr>
+                
+                    <tr>
+                        <td>350</td>
+                        <td>quickset_box</td>
+                        <td>Quickset Box Truck (Diesel)</td>
+                    </tr>
+                
+                    <tr>
+                        <td>360</td>
+                        <td>ribble_covered_hopper</td>
+                        <td>Ribble Covered Hopper Truck (Diesel)</td>
+                    </tr>
+                
+                    <tr>
+                        <td>370</td>
+                        <td>shotover_livestock</td>
+                        <td>Shotover Livestock Tram (Electric)</td>
+                    </tr>
+                
+                    <tr>
+                        <td>380</td>
+                        <td>silvertop_edibles_tanker</td>
+                        <td>Silvertop Edibles Tanker Truck (Diesel)</td>
+                    </tr>
+                
+                    <tr>
+                        <td>390</td>
+                        <td>sparkford_refrigerated</td>
+                        <td>Sparkford Refrigerated Tram (Electric)</td>
+                    </tr>
+                
+                    <tr>
+                        <td>400</td>
+                        <td>speedwell_box</td>
+                        <td>Speedwell Box Truck (Diesel)</td>
+                    </tr>
+                
+                    <tr>
+                        <td>410</td>
+                        <td>stancliffe_flat</td>
+                        <td>Stancliffe Flatbed Tram (Electric)</td>
+                    </tr>
+                
+                    <tr>
+                        <td>420</td>
+                        <td>beerwoods_edibles_tanker</td>
+                        <td>Beerwoods Edibles Tanker Truck (Diesel)</td>
+                    </tr>
+                
+                    <tr>
+                        <td>430</td>
+                        <td>stungun_livestock</td>
+                        <td>Stungun Livestock Truck (Diesel)</td>
+                    </tr>
+                
+                    <tr>
+                        <td>440</td>
+                        <td>swineshead_livestock</td>
+                        <td>Swineshead Livestock Truck (Diesel)</td>
+                    </tr>
+                
+                    <tr>
+                        <td>450</td>
+                        <td>tallyho_mail</td>
+                        <td>Tallyho Courier Truck (Diesel)</td>
+                    </tr>
+                
+                    <tr>
+                        <td>460</td>
+                        <td>thurlbear_covered_hopper</td>
+                        <td>Thurlbear Covered Hopper Tram (Electric)</td>
+                    </tr>
+                
+                    <tr>
+                        <td>470</td>
+                        <td>waterperry_edibles_tanker</td>
+                        <td>Waterperry Edibles Tanker Truck (Diesel)</td>
+                    </tr>
+                
+                    <tr>
+                        <td>480</td>
+                        <td>trefell_log</td>
+                        <td>Trefell Logging Truck (Steam)</td>
+                    </tr>
+                
+                    <tr>
+                        <td>490</td>
+                        <td>wookey_dump</td>
+                        <td>Wookey Dump Truck (Diesel)</td>
+                    </tr>
+                
+                    <tr>
+                        <td>500</td>
+                        <td>witch_hill_dump</td>
+                        <td>Witch Hill Dump Truck (Diesel)</td>
+                    </tr>
+                
+                    <tr>
+                        <td>510</td>
+                        <td>bottlebrook_edibles_tanker</td>
+                        <td>Bottlebrook Edibles Tanker Tram (Electric)</td>
+                    </tr>
+                
+                    <tr>
+                        <td>520</td>
+                        <td>steeraway_metal</td>
+                        <td>Steeraway Foundry Hauler (Diesel)</td>
+                    </tr>
+                
+                    <tr>
+                        <td>530</td>
+                        <td>crime_rigg_supplies</td>
+                        <td>Crime Rigg Supplies Truck (Steam)</td>
+                    </tr>
+                
+                    <tr>
+                        <td>540</td>
+                        <td>brigand_supplies</td>
+                        <td>Brigand Supplies Truck (Diesel)</td>
+                    </tr>
+                
+                    <tr>
+                        <td>550</td>
+                        <td>reaver_supplies</td>
+                        <td>Reaver Supplies Truck (Steam)</td>
+                    </tr>
+                
+                    <tr>
+                        <td>560</td>
+                        <td>road_thief_supplies</td>
+                        <td>Road Thief Supplies Truck (Diesel)</td>
+                    </tr>
+                
+                    <tr>
+                        <td>570</td>
+                        <td>brass_monkey_mail</td>
+                        <td>Brass Monkey Courier Truck (Diesel)</td>
+                    </tr>
+                
+                    <tr>
+                        <td>590</td>
+                        <td>highgate_pax</td>
+                        <td>Highgate Bus (Diesel)</td>
+                    </tr>
+                
+                    <tr>
+                        <td>600</td>
+                        <td>acton_pax_express</td>
+                        <td>Acton Coach (Diesel)</td>
+                    </tr>
+                
+                    <tr>
+                        <td>610</td>
+                        <td>oxleas_pax_express</td>
+                        <td>Oxleas Coach (Diesel)</td>
+                    </tr>
+                
+                    <tr>
+                        <td>630</td>
+                        <td>chainburn_flat</td>
+                        <td>Chainburn Flatbed Truck (Steam)</td>
+                    </tr>
+                
+                    <tr>
+                        <td>640</td>
+                        <td>windergill_flat</td>
+                        <td>Windergill Flatbed Truck (Diesel)</td>
+                    </tr>
+                
+                    <tr>
+                        <td>650</td>
+                        <td>towerhouse_flat</td>
+                        <td>Towerhouse Flatbed Truck (Diesel)</td>
+                    </tr>
+                
+                    <tr>
+                        <td>660</td>
+                        <td>big_rigg_flat</td>
+                        <td>Big Rigg Flatbed Truck (Diesel)</td>
+                    </tr>
+                
+                    <tr>
+                        <td>670</td>
+                        <td>rattlebrook_open</td>
+                        <td>Rattlebrook Open Truck (Diesel)</td>
+                    </tr>
+                
+                    <tr>
+                        <td>680</td>
+                        <td>capo_open</td>
+                        <td>Capo Open Truck (Diesel)</td>
+                    </tr>
+                
+                    <tr>
+                        <td>690</td>
+                        <td>northbeach_pax</td>
+                        <td>Northbeach Passenger Tram (Electric)</td>
+                    </tr>
+                
+                    <tr>
+                        <td>700</td>
+                        <td>scrooby_top_dump</td>
+                        <td>Scrooby Top Dump Tram (Steam)</td>
+                    </tr>
+                
+                    <tr>
+                        <td>710</td>
+                        <td>scrag_end_livestock</td>
+                        <td>Scrag End Livestock Tram (Steam)</td>
+                    </tr>
+                
+                    <tr>
+                        <td>720</td>
+                        <td>trotalong_livestock</td>
+                        <td>Trotalong Livestock Tram (Electric)</td>
+                    </tr>
+                
+                    <tr>
+                        <td>740</td>
+                        <td>rackwood_flat</td>
+                        <td>Rackwood Flatbed Tram (Electric)</td>
+                    </tr>
+                
+                    <tr>
+                        <td>750</td>
+                        <td>stakebeck_flat</td>
+                        <td>Stakebeck Flatbed Tram (Steam)</td>
+                    </tr>
+                
+                    <tr>
+                        <td>760</td>
+                        <td>hawkmoor_dump</td>
+                        <td>Hawkmoor Dump Tram (Electric)</td>
+                    </tr>
+                
+                    <tr>
+                        <td>770</td>
+                        <td>winterfold_refrigerated</td>
+                        <td>Winterfold Refrigerated Tram (Electric)</td>
+                    </tr>
+                
+                    <tr>
+                        <td>780</td>
+                        <td>poptop_edibles_tanker</td>
+                        <td>Poptop Edibles Tanker Tram (Electric)</td>
+                    </tr>
+                
+                    <tr>
+                        <td>790</td>
+                        <td>polangrain_covered_hopper</td>
+                        <td>Polangrain Covered Hopper Tram (Electric)</td>
+                    </tr>
+                
+                    <tr>
+                        <td>800</td>
+                        <td>drumbreck_tanker</td>
+                        <td>Drumbreck Tanker Tram (Steam)</td>
+                    </tr>
+                
+                    <tr>
+                        <td>810</td>
+                        <td>catchcan_tanker</td>
+                        <td>Catchcan Tanker Tram (Electric)</td>
+                    </tr>
+                
+                    <tr>
+                        <td>820</td>
+                        <td>tin_hatch_mail</td>
+                        <td>Tin Hatch Courier Tram (Steam)</td>
+                    </tr>
+                
+                    <tr>
+                        <td>830</td>
+                        <td>strongbox_mail</td>
+                        <td>Strongbox Courier Tram (Electric)</td>
+                    </tr>
+                
+                    <tr>
+                        <td>840</td>
+                        <td>stagrun_mail</td>
+                        <td>Stagrun Courier Tram (Electric)</td>
+                    </tr>
+                
+                    <tr>
+                        <td>850</td>
+                        <td>singing_river_mail</td>
+                        <td>Singing River Courier Tram (Electric)</td>
+                    </tr>
+                
+                    <tr>
+                        <td>860</td>
+                        <td>portland_open</td>
+                        <td>Portland Open Tram (Electric)</td>
+                    </tr>
+                
+                    <tr>
+                        <td>870</td>
+                        <td>rakeway_box</td>
+                        <td>Rakeway Box Tram (Electric)</td>
+                    </tr>
+                
+                    <tr>
+                        <td>880</td>
+                        <td>colbiggan_box</td>
+                        <td>Colbiggan Box Tram (Electric)</td>
+                    </tr>
+                
+                    <tr>
+                        <td>890</td>
+                        <td>runwell_box</td>
+                        <td>Runwell Box Truck (Steam)</td>
+                    </tr>
+                
+                    <tr>
+                        <td>900</td>
+                        <td>cowsleigh_livestock</td>
+                        <td>Cowsleigh Livestock Truck (Steam)</td>
+                    </tr>
+                
+                    <tr>
+                        <td>910</td>
+                        <td>coleman_dump</td>
+                        <td>Coleman Dump Truck (Steam)</td>
+                    </tr>
+                
+                    <tr>
+                        <td>920</td>
+                        <td>boilingwell_tanker</td>
+                        <td>Boilingwell Tanker Truck (Steam)</td>
+                    </tr>
+                
+                    <tr>
+                        <td>930</td>
+                        <td>flow_edge_edibles_tanker</td>
+                        <td>Flow Edge Edibles Tanker Truck (Steam)</td>
+                    </tr>
+                
+                    <tr>
+                        <td>940</td>
+                        <td>applethwaite_fruit_veg</td>
+                        <td>Applethwaite Fruit &amp; Vegetables Tram (Electric)</td>
+                    </tr>
+                
+                    <tr>
+                        <td>950</td>
+                        <td>plumley_fruit_veg</td>
+                        <td>Plumley Fruit &amp; Vegetables Tram (Steam)</td>
+                    </tr>
+                
+                    <tr>
+                        <td>960</td>
+                        <td>nutbrook_fruit_veg</td>
+                        <td>Nutbrook Fruit &amp; Vegetables Tram (Electric)</td>
+                    </tr>
+                
+            </tbody>
+        </table>
+    </div>
+
+
+</div>
+    </div>
+    <div style="margin-top:30px; text-align:center; color:#999; padding:5px; background-color:#eee; border-top:solid 1px #ddd; box-shadow: inset 0px 1px 1px #ddd">
+        Road Hog, with thanks to all who helped
+    </div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

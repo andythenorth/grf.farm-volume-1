@@ -1,0 +1,504 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+    <title >Road Hog</title>
+    <meta http-equiv="Content-Type" content="text/html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link type="text/css" href="static/css/bootstrap.min.css" rel="stylesheet">
+    <link type="text/css" href="static/css/bootstrap-responsive.min.css" rel="stylesheet">
+    <link type="text/css" href="static/css/style.css" rel="stylesheet">
+
+    <script type="text/javascript" src="static/js/jquery-1.9.1.min.js"></script>
+
+    <script type="text/javascript" src="static/js/jquery.metadata.js"></script>
+    <script type="text/javascript" src="static/js/jquery.tablesorter.min.js"></script>
+    <script type="text/javascript" src="static/js/jquery.tablesorter.widgets.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $('.tablesorter').tablesorter({
+                textExtraction: function(node){
+                            var cell_value = $(node).text();
+                            var sort_value = $(node).data('value');
+                    return (sort_value != undefined) ? sort_value : cell_value;
+                 },
+            })
+        })
+    </script>
+</head>
+
+<body>
+    <div class="navbar navbar-inverse navbar-static-top" style="border-bottom:1px solid #000;">
+        <div class="navbar-inner">
+            <div class="container">
+                <ul class="nav pull-left">
+                    <li class="">
+                        <a href="get_started.html">Get Started</a>
+                    </li>
+                    <li class="">
+                        <a href="road_vehicles.html">Road Vehicles</a>
+                    </li>
+                    <li class="">
+                        <a href="code_reference.html">Code Reference</a>
+                    </li>
+                </ul>
+                <ul class="nav pull-right">
+                    <li class="">
+                        <a href="https://translator.openttdcoop.org/project/road-hog"><i class="icon-globe icon-white"></i> Help Translate Road Hog</a>
+                    </li>
+                    <li>
+                        <a href="http://www.tt-forums.net/viewtopic.php?f=26&amp;t=70241"><i class="icon-comment icon-white"></i> Discuss at TT-Forums.net</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="hero-unit subhead">
+        <div class="pull-right" style="margin-top:-30px; margin-bottom:0;">
+            <script language="JavaScript">
+                var images=new Array('ladycross','tin_hatch','buildwas','amblecote','stakebeck','scrag_end','plumley','scrooby_top','drumbreck','griff','reaver','portland','rakeway','rackwood','polangrain','trotalong','applethwaite','hawkmoor','catchcan','fairlop','foxley','poptop','leyburn','tallyho','jinglepot','runwell','chainburn','trefell','cowsleigh','flow_edge','boilingwell','winterfold','coleman','crime_rigg','newbold','stagrun','thunder','glenmore','rattlebrook','easywheal','windergill','brass_monkey','brightling','colbiggan','stancliffe','thurlbear','nutbrook','pigstick','shotover','greenscoe','beerwoods','nettlebridge','oylbarral','bottlebrook','honister','broadrock','limebreach','merrivale','knockdown','brigand','sparkford','steeraway','northbeach','strongbox','highgate','oxleas','yeoman','quickset','towerhouse','swineshead','goldmire','waterperry','fortiscue','wookey','meriden','ribble','road_thief','topley','acton','twinhills','singing_river','buff','capo','speedwell','big_rigg','littleduke','coldfall','stungun','powerstock','cloud_hill','silvertop','mcdowell','witch_hill');
+                function random_img(){
+                    var index = Math.floor(Math.random()*images.length);
+                    var random_image = images.splice(index, 1);
+                    document.write('<a href="road_vehicles.html#' + random_image + '" style="display:block; margin-bottom: 20px;"> \
+                                        <img src="static/img/'+ random_image + '.png" \
+                                             width="144" \
+                                             height="64"> \
+                                    </a>')
+                    return true;
+                }
+                // 3 random images
+                random_img();
+                random_img();
+                random_img();
+            </script>
+        </div>
+        <div class="container">
+            <h1 style="font-size:48px; padding-top:30px;">Road Hog</h1>
+            <p class="lead">A Big Fat Road Vehicle Set</p>
+        </div>
+    </div>
+    
+        
+    
+    <div class="container">
+        <div class="span12">
+    <h1>Changelog</h1>
+<h2>1.3.0</h2>
+<p><em>Changes</em></p>
+<ul>
+<li>restore Steeraway foundry hauler</li>
+<li>cargo support for acid, chlorine, cement, explosives, fertiliser, kaolin, pig iron, salt, slag, soda ash, sulphur,</li>
+<li>supplies trucks show cargo when loaded</li>
+<li>'Fruit &amp; Vegetables Tram' not 'Fruit Tram'</li>
+</ul>
+<p><em>Docs</em></p>
+<ul>
+<li>improved text</li>
+<li>fixed vehicle image height bug</li>
+</ul>
+<p><em>Translations</em></p>
+<ul>
+<li>updated</li>
+<li>translator credits: http://bundles.openttdcoop.org/road-hog/releases/LATEST/credits.txt</li>
+</ul>
+<p><em>Codechanges</em></p>
+<ul>
+<li>refactored python compile (code quality, performance)</li>
+<li>refactored makefile (Alberth)</li>
+</ul>
+<h2>1.2.1</h2>
+<p><em>Fixes</em></p>
+<ul>
+<li>3 wagons for Scrag End livestock wagon not 2, correcting total length to 16/8</li>
+</ul>
+<p><em>Translations</em></p>
+<ul>
+<li>updated</li>
+<li>translator credits: http://bundles.openttdcoop.org/road-hog/releases/LATEST/credits.txt</li>
+</ul>
+<h2>1.2.0</h2>
+<p><em>Changes</em></p>
+<ul>
+<li>vehicle models now have expiry dates (if OpenTTD 'vehicles never expire' setting is 'off')</li>
+<li>cargo support for potash, quicklime</li>
+</ul>
+<p><em>Fixes</em></p>
+<ul>
+<li>bad sprite for Tin Hatch tram</li>
+</ul>
+<p><em>Translations</em></p>
+<ul>
+<li>updated</li>
+<li>translator credits: http://bundles.openttdcoop.org/road-hog/releases/LATEST/credits.txt</li>
+</ul>
+<p><em>Codechanges</em></p>
+<ul>
+<li>refactored graphics processing</li>
+</ul>
+<h2>1.1.0</h2>
+<p><em>Changes</em></p>
+<ul>
+<li>cargo graphics for cassava, coffee, fruit, nuts</li>
+</ul>
+<p><em>Fixes</em></p>
+<ul>
+<li>bad cargo mask for Portland tram in | views</li>
+</ul>
+<p><em>Translations</em></p>
+<ul>
+<li>updated</li>
+<li>translator credits: http://bundles.openttdcoop.org/road-hog/releases/LATEST/credits.txt</li>
+</ul>
+<h2>1.0.0</h2>
+<p><em>Changes</em></p>
+<ul>
+<li>rebalanced costs for all vehicles</li>
+<li>adjusted weights for all vehicles</li>
+</ul>
+<p><em>Docs</em></p>
+<ul>
+<li>updated html docs, including removal of stuff left over from the FISH Ate Squid docs</li>
+</ul>
+<p><em>Translations</em></p>
+<ul>
+<li>updated</li>
+<li>translator credits: http://bundles.openttdcoop.org/road-hog/releases/LATEST/credits.txt</li>
+</ul>
+<h2>Beta 8</h2>
+<p><em>Changes</em></p>
+<ul>
+<li>reworked passenger and courier trams</li>
+</ul>
+<p><em>Fixes</em></p>
+<ul>
+<li>Plumley fruit tram should be 3 wagons not 2</li>
+</ul>
+<p><em>Translations</em></p>
+<ul>
+<li>updated</li>
+<li>translator credits: http://bundles.openttdcoop.org/road-hog/releases/LATEST/credits.txt</li>
+</ul>
+<h2>Beta 7</h2>
+<p><em>Changes</em></p>
+<ul>
+<li>added three fruit trams</li>
+<li>reworked appearance of most freight trams</li>
+<li>adjusted freight tram capacity, generation 2 is now 60t and generation 3 is 72t</li>
+<li>adjusted freight tram weight, tractive effort and power</li>
+<li>use different sound effects for different vehicle types (tram, bus, truck etc)</li>
+<li>removed Steeraway foundry hauler, doesn't make gameplay / graphical sense in current form (might add it back later in revised form)</li>
+<li>cargo sprites<ul>
+<li>tarpaulins in 2nd company colour for generic piece cargo loads</li>
+<li>blue tarpaulins for farm supplies</li>
+<li>gold tarpaulins for engineering supplies</li>
+<li>red tarpaulins for building materials</li>
+<li>added potash</li>
+<li>added sugar beet</li>
+<li>improved clay</li>
+</ul>
+</li>
+<li>tanker colours<ul>
+<li>use dark red for rubber cargo</li>
+<li>use 2nd company colour for generic cargos</li>
+</ul>
+</li>
+</ul>
+<p><em>Docs</em></p>
+<ul>
+<li>list special features (if any) for each vehicle in vehicles page</li>
+</ul>
+<p><em>Codechanges</em></p>
+<ul>
+<li>tankers now automatically recoloured with pixa</li>
+</ul>
+<p><em>Translations</em></p>
+<ul>
+<li>updated</li>
+<li>translator credits: http://bundles.openttdcoop.org/road-hog/releases/LATEST/credits.txt</li>
+</ul>
+<h2>Beta 6</h2>
+<p><em>Changes</em></p>
+<ul>
+<li>cargo sprites for<ul>
+<li>steel / metal</li>
+<li>copper</li>
+<li>pyrite ore</li>
+<li>nitrates</li>
+<li>manganese</li>
+<li>alcohol, dyes, edible oil, milk, oil, petrol, chemicals, water</li>
+</ul>
+</li>
+</ul>
+<p><em>Fixes</em></p>
+<ul>
+<li>adjust cargo location points for a bunch of trucks</li>
+</ul>
+<h2>Beta 5</h2>
+<p>Beta 5 is not savegame compatible with previous releases.</p>
+<p><em>Changes</em></p>
+<ul>
+<li>cargo sprites for open and flatbed vehicles, including<ul>
+<li>paper</li>
+<li>wood</li>
+<li>lumber</li>
+<li>engineering supplies / farm supplies</li>
+<li>goods</li>
+</ul>
+</li>
+<li>reworked appearance of<ul>
+<li>open trams</li>
+<li>flatbed trams</li>
+<li>livestock trucks and trams</li>
+<li>covered hopper trucks</li>
+<li>tanker trucks</li>
+<li>edibles tanker trucks</li>
+<li>Scrooby Top mining tram</li>
+</ul>
+</li>
+</ul>
+<p><em>Fixes</em></p>
+<ul>
+<li>steam not sparks for Stakebeck tram</li>
+<li>Ladycross tram wrong length for some angles</li>
+<li>correct offsets for 3/8 long vehicles</li>
+</ul>
+<p><em>Codechanges</em></p>
+<ul>
+<li>cargo sprites compositor now works</li>
+<li>cargo templating reworked</li>
+<li>refactored from vehicle subclasses to consist subclasses</li>
+<li>provide multiprocessing support for grapics processor</li>
+<li>tidy some trivial mistakes in the compile</li>
+</ul>
+<p><em>Translations</em></p>
+<ul>
+<li>updated</li>
+<li>translator credits: http://bundles.openttdcoop.org/road-hog/releases/LATEST/credits.txt</li>
+</ul>
+<h2>Beta 4</h2>
+<p><em>Changes</em></p>
+<ul>
+<li>added Boilingwell steam tanker truck</li>
+<li>change trailers on Cowsleigh livestock truck (needs more work)</li>
+<li>reworked Merrivale, Fortiscue and Coldfall reefer trucks</li>
+<li>reworked Runwell and Easywheal box trucks</li>
+</ul>
+<p><em>Fixes</em></p>
+<ul>
+<li>Greenscoe tanker truck cab out of position (also copy improved pixels from Honister)</li>
+<li>tweak out-of-place pixels for multiple trucks</li>
+<li>set correct power value for Coleman dump truck</li>
+</ul>
+<h2>Beta 3</h2>
+<p><em>Changes</em></p>
+<ul>
+<li>added Coleman steam dump truck</li>
+<li>reworked appearance (adjusted lengths, wheels, body style)<ul>
+<li>all open, flat, box and dump trucks</li>
+<li>some tanker and livestock trucks</li>
+</ul>
+</li>
+<li>removed mining trucks, they don't make gameplay / graphical sense in current form (might add them back later in revised form)</li>
+</ul>
+<p><em>Codechanges</em></p>
+<ul>
+<li>reworked assignment of sprites to vehicles</li>
+<li>prepared compile to add cargo sprite compositing</li>
+</ul>
+<h2>Beta 2</h2>
+<p><em>Changes</em></p>
+<ul>
+<li>new sprites for Waterperry and Silvertop edibles tankers</li>
+<li>new sprites for Capo and Yeoman open trucks</li>
+<li>new sprites for Cowsleigh livestock truck</li>
+<li>cargo graphics finished for dump / mining trucks and trams</li>
+<li>improved appearance of flatbed trucks (deck style matches Iron Horse flat cars)</li>
+<li>capacity for 'armoured' cargos now same as mail capacity where relevant</li>
+<li>consistent colour for wheel hubs everywhere (including replacement of 2CC wheel hubs where drawn)</li>
+<li>(unfinished) Witch Hill Mining Truck has a trailer</li>
+</ul>
+<p><em>Fixes</em></p>
+<ul>
+<li>Scrooby Top mining tram showed wrong sprites when empty</li>
+<li>correct visual effects for Cowsleigh and Trefell steam trucks</li>
+<li>correct capacity for Capo and Rattlebrook open trucks</li>
+</ul>
+<p><em>Translations</em></p>
+<ul>
+<li>updated</li>
+<li>translator credits: http://bundles.openttdcoop.org/road-hog/releases/LATEST/credits.txt</li>
+</ul>
+<h2>Beta 1</h2>
+<p><em>Changes</em></p>
+<ul>
+<li>add support for edible oil, nuts and phosphate cargos</li>
+<li>white trailer for Ribble and McDowell covered hopper trucks, consistent with Iron Horse covered hoppers</li>
+<li>covered hoppers now refit sand cargo</li>
+<li>automagically split semi-truck capacity on first trailer to get correct TE on lead unit (otherwise they have gutless performance)</li>
+<li>set power correctly for most of the on-highway trucks</li>
+<li>rebalanced passenger tram power and weight</li>
+<li>rebalance bus and coach intro dates, power and weight (each bus and coach generation now has unified intro date and power)</li>
+<li>remove Big Sky coach, not needed</li>
+</ul>
+<p><em>Fixes</em></p>
+<ul>
+<li>wrong trailer position for Ribble and McDowell covered hopper trucks</li>
+<li>(codechange) don't set certain properties for trailing parts, they're not valid</li>
+</ul>
+<p><em>Translations</em></p>
+<ul>
+<li>updated</li>
+<li>translator credits: http://bundles.openttdcoop.org/road-hog/releases/LATEST/credits.txt</li>
+</ul>
+<h2>Alpha 18</h2>
+<p><em>Changes</em></p>
+<ul>
+<li>covered hopper trucks now refit rubber cargo</li>
+<li>mining trucks were a bit too fast, reduce speed</li>
+<li>replace some temporary sprites for flatbed trucks with better temporary sprites :P</li>
+<li>visible cargo states working for dump trucks and mining trucks (cargo colours don't cover all cargos for these trucks yet)</li>
+</ul>
+<p><em>Fixes</em></p>
+<ul>
+<li>wrong lengths for Towerhouse Flatbed Truck</li>
+<li>reset a bunch of speeds that were wrong after refactoring some code</li>
+<li>wrong trailer sprites for Buff, Trefell and Griff logging trucks</li>
+</ul>
+<h2>Alpha 17</h2>
+<p><em>Changes</em></p>
+<ul>
+<li>dibble TE way up, RV performance sucks</li>
+<li>fix some bugs</li>
+<li>add Cowsleigh livestock truck</li>
+<li>visible cargo for log trucks</li>
+<li>supplies haulers now refit to vehicles cargo</li>
+<li>use more appropriate sprites for some trucks</li>
+<li>set correct ‘faster’ speeds for some vehicles</li>
+</ul>
+<h2>Alpha 16</h2>
+<p>Changed the approach to vehicle types and reworked the whole roster.  Can't be helped, eh.</p>
+<ul>
+<li>very not finished, vehicles are missing, have wrong sprites, or wrong stats</li>
+<li>absolutely not savegame compatible with previous alphas</li>
+<li>it is fun, I've play-tested it</li>
+</ul>
+<p><em>Translations</em></p>
+<ul>
+<li>updated</li>
+<li>translator credits: http://bundles.openttdcoop.org/road-hog/releases/LATEST/credits.txt</li>
+</ul>
+<h2>Alpha 15</h2>
+<p><em>Fixes</em></p>
+<ul>
+<li>Road Thief power too low</li>
+<li>correct trailer sprite for Speedwell</li>
+</ul>
+<p><em>Translations</em></p>
+<ul>
+<li>updated</li>
+<li>translator credits: http://bundles.openttdcoop.org/road-hog/releases/LATEST/credits.txt</li>
+</ul>
+<h2>Alpha 14</h2>
+<ul>
+<li>Buff logging truck sprites were out of position</li>
+</ul>
+<p><em>New / improved sprites</em></p>
+<ul>
+<li>Road Thief supplies truck</li>
+<li>Speedwell general cargo truck</li>
+<li>Fortiscue reefer truck</li>
+<li>Coldfall reefer truck</li>
+<li>Stungun livestock truck</li>
+<li>Ribble covered hopper truck</li>
+<li>McDowell covered hopper truck</li>
+<li>Powerstock farm bulk truck</li>
+</ul>
+<h2>Alpha 13</h2>
+<ul>
+<li>unlucky for some</li>
+<li>remove Foreshore intermodal hauler (at least temporarily, possibly permanently)</li>
+</ul>
+<p><em>New sprites</em></p>
+<ul>
+<li>Amblecote tram</li>
+<li>Stancliffe foundry tram</li>
+<li>Steeraway foundry hauler</li>
+<li>Swineshead livestock truck</li>
+<li>Gravelhead mining truck</li>
+<li>Meriden tanker truck</li>
+<li>Quickset general cargo truck</li>
+<li>Brigand supplies truck</li>
+</ul>
+<p><em>Translations</em></p>
+<ul>
+<li>French</li>
+</ul>
+<h2>Alpha 12</h2>
+<p><em>New sprites</em></p>
+<ul>
+<li>Ladycross and Twinhills trams</li>
+<li>McDowell covered hopper truck</li>
+<li>Buff, Knockdown and Trefell logging trucks</li>
+<li>Goldmire courier truck</li>
+<li>Wookey farm truck</li>
+<li>Reaver, Crime Rigg and Brigand supplies trucks (some known bugs)</li>
+</ul>
+<p><em>Translations</em></p>
+<ul>
+<li>updated</li>
+</ul>
+<h2>Alpha 11</h2>
+<p>Changes since Alpha 9.  No changes were listed before Alpha 9, because eh, not valuable.</p>
+<p><em>New sprites</em></p>
+<ul>
+<li>Big Sky, Glenmore and Oxleas coaches</li>
+<li>Highgate and Topley buses</li>
+<li>Littleduke and Tallyho courier trucks</li>
+<li>Gravelhead mining truck</li>
+<li>Powerstock farm truck</li>
+<li>
+<p>Cloud Hill and Meriden tanker trucks</p>
+</li>
+<li>
+<p>add support for Beans and Nitrates cargos</p>
+</li>
+<li>edibles tankers refit to food</li>
+<li>fixes and tweaks to some vehicle properties</li>
+</ul>
+<p><em>Translations</em></p>
+<ul>
+<li>updated (non-comprehensive list includes): French, Hungarian, Russian, Italian, Spanish, Afrikaans</li>
+<li>(sorry if I missed any, doing this after sedation).</li>
+</ul>
+<p><em>Codechanges</em></p>
+<ul>
+<li>rebuilt the compile</li>
+<li>now uses Python 3 and nmlc 0.4.x</li>
+<li>now placated pyflakes</li>
+<li>removed dubious magic when importing modules</li>
+</ul>
+<h2>Fin</h2>
+</div>
+    </div>
+    <div style="margin-top:30px; text-align:center; color:#999; padding:5px; background-color:#eee; border-top:solid 1px #ddd; box-shadow: inset 0px 1px 1px #ddd">
+        Road Hog, with thanks to all who helped
+    </div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
