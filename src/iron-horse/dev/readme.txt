@@ -1,5 +1,5 @@
 ==================================
-Iron Horse 2.7.0-58-gac9ab4e0
+Iron Horse 2.7.0-152-g58ca6d77
 ==================================
 Trains, for OpenTTD
 
@@ -9,7 +9,7 @@ Iron Horse docs are published online:
 =======
 GRF Name: Iron Horse
 
-This version of Iron Horse is created using repository revision 4547
+This version of Iron Horse is created using repository revision 4641
 
 Thanks to *all* who helped create Iron Horse.
 
