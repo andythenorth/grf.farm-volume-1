@@ -1,0 +1,1154 @@
+digraph steeltown {
+	graph [fname="docs/html/steeltown.dot",
+		fontname="sans-serif",
+		nodesep=0.33,
+		rankdir=LR,
+		ranksep=0.44,
+		stylesheet="static/css/cargoflow_styles.css",
+		tooltip=Steeltown
+	];
+	C_acid	[fontname="sans-serif",
+		href="cargos.html#acid",
+		id=acid,
+		label=Acid,
+		shape=ellipse,
+		target=_top];
+	I_sheet_and_pipe_mill	[fontname="sans-serif",
+		href="industries.html#sheet_and_pipe_mill",
+		id=sheet_and_pipe_mill,
+		label=<
+            <table border="0" cellborder="0">
+                <tr><td>Sheet and Pipe Mill</td></tr>
+                
+                    
+                    
+                    
+                
+                    
+                    
+                    
+                
+                    
+                    
+                    
+                
+            </table>
+        >,
+		shape=box,
+		target=_top,
+		tooltip="Sheet and Pipe Mill"];
+	C_acid -> I_sheet_and_pipe_mill	[tooltip="Acid -> Sheet and Pipe Mill",
+		weight=3];
+	I_wire_and_section_mill	[fontname="sans-serif",
+		href="industries.html#wire_and_section_mill",
+		id=wire_and_section_mill,
+		label=<
+            <table border="0" cellborder="0">
+                <tr><td>Wire and Section Mill</td></tr>
+                
+                    
+                    
+                    
+                
+                    
+                    
+                    
+                
+                    
+                    
+                    
+                
+            </table>
+        >,
+		shape=box,
+		target=_top,
+		tooltip="Wire and Section Mill"];
+	C_acid -> I_wire_and_section_mill	[tooltip="Acid -> Wire and Section Mill",
+		weight=3];
+	C_alloy_steel	[fontname="sans-serif",
+		href="cargos.html#alloy_steel",
+		id=alloy_steel,
+		label="Alloy Steel",
+		shape=ellipse,
+		target=_top];
+	I_component_factory	[fontname="sans-serif",
+		href="industries.html#component_factory",
+		id=component_factory,
+		label=<
+            <table border="0" cellborder="0">
+                <tr><td>Component Factory</td></tr>
+                
+                    
+                    
+                    
+                
+                    
+                    
+                    
+                
+                    
+                    
+                    
+                
+                    
+                    
+                    
+                
+            </table>
+        >,
+		shape=box,
+		target=_top,
+		tooltip="Component Factory"];
+	C_alloy_steel -> I_component_factory	[tooltip="Alloy Steel -> Component Factory",
+		weight=4];
+	C_aluminium	[fontname="sans-serif",
+		href="cargos.html#aluminium",
+		id=aluminium,
+		label=Aluminium,
+		shape=ellipse,
+		target=_top];
+	I_engine_plant	[fontname="sans-serif",
+		href="industries.html#engine_plant",
+		id=engine_plant,
+		label=<
+            <table border="0" cellborder="0">
+                <tr><td>Engine plant</td></tr>
+                
+                    
+                    
+                    
+                
+                    
+                    
+                    
+                
+                    
+                    
+                    
+                
+            </table>
+        >,
+		shape=box,
+		target=_top,
+		tooltip="Engine plant"];
+	C_aluminium -> I_engine_plant	[tooltip="Aluminium -> Engine plant",
+		weight=3];
+	C_carbon_black	[fontname="sans-serif",
+		href="cargos.html#carbon_black",
+		id=carbon_black,
+		label="Carbon Black",
+		shape=ellipse,
+		target=_top];
+	I_tyre_plant	[fontname="sans-serif",
+		href="industries.html#tyre_plant",
+		id=tyre_plant,
+		label=<
+            <table border="0" cellborder="0">
+                <tr><td>Tyre Plant</td></tr>
+                
+                    
+                    
+                    
+                
+                    
+                    
+                    
+                
+                    
+                    
+                    
+                
+                    
+                    
+                    
+                
+            </table>
+        >,
+		shape=box,
+		target=_top,
+		tooltip="Tyre Plant"];
+	C_carbon_black -> I_tyre_plant	[tooltip="Carbon Black -> Tyre Plant",
+		weight=4];
+	C_carbon_steel	[fontname="sans-serif",
+		href="cargos.html#carbon_steel",
+		id=carbon_steel,
+		label="Carbon Steel",
+		shape=ellipse,
+		target=_top];
+	C_carbon_steel -> I_sheet_and_pipe_mill	[tooltip="Carbon Steel -> Sheet and Pipe Mill",
+		weight=3];
+	C_carbon_steel -> I_wire_and_section_mill	[tooltip="Carbon Steel -> Wire and Section Mill",
+		weight=3];
+	C_cast_iron	[fontname="sans-serif",
+		href="cargos.html#cast_iron",
+		id=cast_iron,
+		label="Cast Iron",
+		shape=ellipse,
+		target=_top];
+	C_cast_iron -> I_engine_plant	[tooltip="Cast Iron -> Engine plant",
+		weight=3];
+	C_cement	[fontname="sans-serif",
+		href="cargos.html#cement",
+		id=cement,
+		label=Cement,
+		shape=ellipse,
+		target=_top];
+	I_wharf	[fontname="sans-serif",
+		href="industries.html#wharf",
+		id=wharf,
+		label=<
+            <table border="0" cellborder="0">
+                <tr><td>Wharf</td></tr>
+                
+                    
+                    
+                    
+                
+                    
+                    
+                    
+                
+                    
+                    
+                    
+                
+                    
+                    
+                    
+                
+            </table>
+        >,
+		shape=box,
+		target=_top,
+		tooltip=Wharf];
+	C_cement -> I_wharf	[tooltip="Cement -> Wharf",
+		weight=4];
+	C_chlorine	[fontname="sans-serif",
+		href="cargos.html#chlorine",
+		id=chlorine,
+		label=Chlorine,
+		shape=ellipse,
+		target=_top];
+	I_bulk_terminal	[fontname="sans-serif",
+		href="industries.html#bulk_terminal",
+		id=bulk_terminal,
+		label=<
+            <table border="0" cellborder="0">
+                <tr><td>Bulk Terminal</td></tr>
+                
+                    
+                    
+                    
+                
+                    
+                    
+                    
+                
+                    
+                    
+                    
+                
+            </table>
+        >,
+		shape=box,
+		target=_top,
+		tooltip="Bulk Terminal"];
+	C_chlorine -> I_bulk_terminal	[tooltip="Chlorine -> Bulk Terminal",
+		weight=3];
+	C_cleaning_agents	[fontname="sans-serif",
+		href="cargos.html#cleaning_agents",
+		id=cleaning_agents,
+		label="Cleaning Agents",
+		shape=ellipse,
+		target=_top];
+	C_cleaning_agents -> I_wire_and_section_mill	[tooltip="Cleaning Agents -> Wire and Section Mill",
+		weight=3];
+	C_coal	[fontname="sans-serif",
+		href="cargos.html#coal",
+		id=coal,
+		label=Coal,
+		shape=ellipse,
+		target=_top];
+	I_coke_oven	[fontname="sans-serif",
+		href="industries.html#coke_oven",
+		id=coke_oven,
+		label=<
+            <table border="0" cellborder="0">
+                <tr><td>Coke Oven</td></tr>
+                
+                    
+                    
+                    
+                
+            </table>
+        >,
+		shape=box,
+		target=_top,
+		tooltip="Coke Oven"];
+	C_coal -> I_coke_oven	[tooltip="Coal -> Coke Oven",
+		weight=1];
+	C_coal_tar	[fontname="sans-serif",
+		href="cargos.html#coal_tar",
+		id=coal_tar,
+		label="Coal Tar",
+		shape=ellipse,
+		target=_top];
+	I_carbon_black_plant	[fontname="sans-serif",
+		href="industries.html#carbon_black_plant",
+		id=carbon_black_plant,
+		label=<
+            <table border="0" cellborder="0">
+                <tr><td>Carbon Black Plant</td></tr>
+                
+                    
+                    
+                    
+                
+            </table>
+        >,
+		shape=box,
+		target=_top,
+		tooltip="Carbon Black Plant"];
+	C_coal_tar -> I_carbon_black_plant	[tooltip="Coal Tar -> Carbon Black Plant",
+		weight=1];
+	C_coke	[fontname="sans-serif",
+		href="cargos.html#coke",
+		id=coke,
+		label=Coke,
+		shape=ellipse,
+		target=_top];
+	I_blast_furnace	[fontname="sans-serif",
+		href="industries.html#blast_furnace",
+		id=blast_furnace,
+		label=<
+            <table border="0" cellborder="0">
+                <tr><td>Blast Furnace</td></tr>
+                
+                    
+                    
+                    
+                
+                    
+                    
+                    
+                
+                    
+                    
+                    
+                
+            </table>
+        >,
+		shape=box,
+		target=_top,
+		tooltip="Blast Furnace"];
+	C_coke -> I_blast_furnace	[tooltip="Coke -> Blast Furnace",
+		weight=3];
+	C_electrical_parts	[fontname="sans-serif",
+		href="cargos.html#electrical_parts",
+		id=electrical_parts,
+		label="Electrical Parts",
+		shape=ellipse,
+		target=_top];
+	C_electrical_parts -> I_component_factory	[tooltip="Electrical Parts -> Component Factory",
+		weight=4];
+	C_ferrochrome	[fontname="sans-serif",
+		href="cargos.html#ferrochrome",
+		id=ferrochrome,
+		label=Ferrochrome,
+		shape=ellipse,
+		target=_top];
+	I_electric_arc_furnace	[fontname="sans-serif",
+		href="industries.html#electric_arc_furnace",
+		id=electric_arc_furnace,
+		label=<
+            <table border="0" cellborder="0">
+                <tr><td>Electric Arc Furnace</td></tr>
+                
+                    
+                    
+                    
+                
+                    
+                    
+                    
+                
+                    
+                    
+                    
+                
+                    
+                    
+                    
+                
+            </table>
+        >,
+		shape=box,
+		target=_top,
+		tooltip="Electric Arc Furnace"];
+	C_ferrochrome -> I_electric_arc_furnace	[tooltip="Ferrochrome -> Electric Arc Furnace",
+		weight=4];
+	C_food	[fontname="sans-serif",
+		href="cargos.html#food",
+		id=food,
+		label=Food,
+		shape=ellipse,
+		target=_top];
+	C_food -> I_bulk_terminal	[tooltip="Food -> Bulk Terminal",
+		weight=3];
+	C_glass	[fontname="sans-serif",
+		href="cargos.html#glass",
+		id=glass,
+		label=Glass,
+		shape=ellipse,
+		target=_top];
+	I_body_plant	[fontname="sans-serif",
+		href="industries.html#body_plant",
+		id=body_plant,
+		label=<
+            <table border="0" cellborder="0">
+                <tr><td>Body Plant</td></tr>
+                
+                    
+                    
+                    
+                
+                    
+                    
+                    
+                
+                    
+                    
+                    
+                
+            </table>
+        >,
+		shape=box,
+		target=_top,
+		tooltip="Body Plant"];
+	C_glass -> I_body_plant	[tooltip="Glass -> Body Plant",
+		weight=3];
+	C_iron_ore	[fontname="sans-serif",
+		href="cargos.html#iron_ore",
+		id=iron_ore,
+		label="Iron Ore",
+		shape=ellipse,
+		target=_top];
+	C_iron_ore -> I_blast_furnace	[tooltip="Iron Ore -> Blast Furnace",
+		weight=3];
+	C_limestone	[fontname="sans-serif",
+		href="cargos.html#limestone",
+		id=limestone,
+		label=Limestone,
+		shape=ellipse,
+		target=_top];
+	C_limestone -> I_blast_furnace	[tooltip="Limestone -> Blast Furnace",
+		weight=3];
+	I_lime_kiln	[fontname="sans-serif",
+		href="industries.html#lime_kiln",
+		id=lime_kiln,
+		label=<
+            <table border="0" cellborder="0">
+                <tr><td>Lime Kiln</td></tr>
+                
+                    
+                    
+                    
+                
+            </table>
+        >,
+		shape=box,
+		target=_top,
+		tooltip="Lime Kiln"];
+	C_limestone -> I_lime_kiln	[tooltip="Limestone -> Lime Kiln",
+		weight=1];
+	C_manganese	[fontname="sans-serif",
+		href="cargos.html#manganese",
+		id=manganese,
+		label=Manganese,
+		shape=ellipse,
+		target=_top];
+	I_basic_oxygen_furnace	[fontname="sans-serif",
+		href="industries.html#basic_oxygen_furnace",
+		id=basic_oxygen_furnace,
+		label=<
+            <table border="0" cellborder="0">
+                <tr><td>Basic Oxygen Furnace</td></tr>
+                
+                    
+                    
+                    
+                
+                    
+                    
+                    
+                
+                    
+                    
+                    
+                
+                    
+                    
+                    
+                
+            </table>
+        >,
+		shape=box,
+		target=_top,
+		tooltip="Basic Oxygen Furnace"];
+	C_manganese -> I_basic_oxygen_furnace	[tooltip="Manganese -> Basic Oxygen Furnace",
+		weight=4];
+	C_oxygen	[fontname="sans-serif",
+		href="cargos.html#oxygen",
+		id=oxygen,
+		label=Oxygen,
+		shape=ellipse,
+		target=_top];
+	C_oxygen -> I_basic_oxygen_furnace	[tooltip="Oxygen -> Basic Oxygen Furnace",
+		weight=4];
+	C_oxygen -> I_electric_arc_furnace	[tooltip="Oxygen -> Electric Arc Furnace",
+		weight=4];
+	C_paints_and_coatings	[fontname="sans-serif",
+		href="cargos.html#paints_and_coatings",
+		id=paints_and_coatings,
+		label="Paints &amp; Coatings",
+		shape=ellipse,
+		target=_top];
+	C_paints_and_coatings -> I_body_plant	[tooltip="Paints &amp; Coatings -> Body Plant",
+		weight=3];
+	C_pig_iron	[fontname="sans-serif",
+		href="cargos.html#pig_iron",
+		id=pig_iron,
+		label="Pig Iron",
+		shape=ellipse,
+		target=_top];
+	C_pig_iron -> I_basic_oxygen_furnace	[tooltip="Pig Iron -> Basic Oxygen Furnace",
+		weight=4];
+	C_pipe	[fontname="sans-serif",
+		href="cargos.html#pipe",
+		id=pipe,
+		label=Pipe,
+		shape=ellipse,
+		target=_top];
+	C_pipe -> I_wharf	[tooltip="Pipe -> Wharf",
+		weight=4];
+	C_plastics	[fontname="sans-serif",
+		href="cargos.html#plastics",
+		id=plastics,
+		label=Plastics,
+		shape=ellipse,
+		target=_top];
+	C_plastics -> I_component_factory	[tooltip="Plastics -> Component Factory",
+		weight=4];
+	C_potash	[fontname="sans-serif",
+		href="cargos.html#potash",
+		id=potash,
+		label=Potash,
+		shape=ellipse,
+		target=_top];
+	C_potash -> I_bulk_terminal	[tooltip="Potash -> Bulk Terminal",
+		weight=3];
+	C_quicklime	[fontname="sans-serif",
+		href="cargos.html#quicklime",
+		id=quicklime,
+		label=Quicklime,
+		shape=ellipse,
+		target=_top];
+	C_quicklime -> I_basic_oxygen_furnace	[tooltip="Quicklime -> Basic Oxygen Furnace",
+		weight=4];
+	C_quicklime -> I_electric_arc_furnace	[tooltip="Quicklime -> Electric Arc Furnace",
+		weight=4];
+	C_rubber	[fontname="sans-serif",
+		href="cargos.html#rubber",
+		id=rubber,
+		label=Rubber,
+		shape=ellipse,
+		target=_top];
+	C_rubber -> I_tyre_plant	[tooltip="Rubber -> Tyre Plant",
+		weight=4];
+	C_salt	[fontname="sans-serif",
+		href="cargos.html#salt",
+		id=salt,
+		label=Salt,
+		shape=ellipse,
+		target=_top];
+	I_chlor_alkali_plant	[fontname="sans-serif",
+		href="industries.html#chlor_alkali_plant",
+		id=chlor_alkali_plant,
+		label=<
+            <table border="0" cellborder="0">
+                <tr><td>Chlor-alkali Plant</td></tr>
+                
+                    
+                    
+                    
+                
+            </table>
+        >,
+		shape=box,
+		target=_top,
+		tooltip="Chlor-alkali Plant"];
+	C_salt -> I_chlor_alkali_plant	[tooltip="Salt -> Chlor-alkali Plant",
+		weight=1];
+	C_sand	[fontname="sans-serif",
+		href="cargos.html#sand",
+		id=sand,
+		label=Sand,
+		shape=ellipse,
+		target=_top];
+	C_sand -> I_engine_plant	[tooltip="Sand -> Engine plant",
+		weight=3];
+	I_glass_works	[fontname="sans-serif",
+		href="industries.html#glass_works",
+		id=glass_works,
+		label=<
+            <table border="0" cellborder="0">
+                <tr><td>Glass Works</td></tr>
+                
+                    
+                    
+                    
+                
+                    
+                    
+                    
+                
+            </table>
+        >,
+		shape=box,
+		target=_top,
+		tooltip="Glass Works"];
+	C_sand -> I_glass_works	[tooltip="Sand -> Glass Works",
+		weight=2];
+	C_scrap_metal	[fontname="sans-serif",
+		href="cargos.html#scrap_metal",
+		id=scrap_metal,
+		label="Scrap Metal",
+		shape=ellipse,
+		target=_top];
+	C_scrap_metal -> I_electric_arc_furnace	[tooltip="Scrap Metal -> Electric Arc Furnace",
+		weight=4];
+	C_slag	[fontname="sans-serif",
+		href="cargos.html#slag",
+		id=slag,
+		label=Slag,
+		shape=ellipse,
+		target=_top];
+	I_slag_grinding_plant	[fontname="sans-serif",
+		href="industries.html#slag_grinding_plant",
+		id=slag_grinding_plant,
+		label=<
+            <table border="0" cellborder="0">
+                <tr><td>Slag Grinding Plant</td></tr>
+                
+                    
+                    
+                    
+                
+            </table>
+        >,
+		shape=box,
+		target=_top,
+		tooltip="Slag Grinding Plant"];
+	C_slag -> I_slag_grinding_plant	[tooltip="Slag -> Slag Grinding Plant",
+		weight=1];
+	C_soda_ash	[fontname="sans-serif",
+		href="cargos.html#soda_ash",
+		id=soda_ash,
+		label="Soda Ash",
+		shape=ellipse,
+		target=_top];
+	C_soda_ash -> I_glass_works	[tooltip="Soda Ash -> Glass Works",
+		weight=2];
+	C_lye	[fontname="sans-serif",
+		href="cargos.html#lye",
+		id=lye,
+		label="Sodium Hydroxide",
+		shape=ellipse,
+		target=_top];
+	C_lye -> I_wharf	[tooltip="Sodium Hydroxide -> Wharf",
+		weight=4];
+	C_stainless_steel	[fontname="sans-serif",
+		href="cargos.html#stainless_steel",
+		id=stainless_steel,
+		label="Stainless Steel",
+		shape=ellipse,
+		target=_top];
+	C_stainless_steel -> I_component_factory	[tooltip="Stainless Steel -> Component Factory",
+		weight=4];
+	C_steel_sections	[fontname="sans-serif",
+		href="cargos.html#steel_sections",
+		id=steel_sections,
+		label="Steel Sections",
+		shape=ellipse,
+		target=_top];
+	C_steel_sections -> I_wharf	[tooltip="Steel Sections -> Wharf",
+		weight=4];
+	C_steel_sheet	[fontname="sans-serif",
+		href="cargos.html#steel_sheet",
+		id=steel_sheet,
+		label="Steel Sheet",
+		shape=ellipse,
+		target=_top];
+	C_steel_sheet -> I_body_plant	[tooltip="Steel Sheet -> Body Plant",
+		weight=3];
+	C_steel_wire_rod	[fontname="sans-serif",
+		href="cargos.html#steel_wire_rod",
+		id=steel_wire_rod,
+		label="Steel Wire Rod",
+		shape=ellipse,
+		target=_top];
+	C_steel_wire_rod -> I_tyre_plant	[tooltip="Steel Wire Rod -> Tyre Plant",
+		weight=4];
+	C_sulphur	[fontname="sans-serif",
+		href="cargos.html#sulphur",
+		id=sulphur,
+		label=Sulphur,
+		shape=ellipse,
+		target=_top];
+	C_sulphur -> I_tyre_plant	[tooltip="Sulphur -> Tyre Plant",
+		weight=4];
+	C_tyres	[fontname="sans-serif",
+		href="cargos.html#tyres",
+		id=tyres,
+		label=Tyres,
+		shape=ellipse,
+		target=_top];
+	I_assembly_plant	[fontname="sans-serif",
+		href="industries.html#assembly_plant",
+		id=assembly_plant,
+		label=<
+            <table border="0" cellborder="0">
+                <tr><td>Assembly Plant</td></tr>
+                
+                    
+                    
+                    
+                
+                    
+                    
+                    
+                
+                    
+                    
+                    
+                
+                    
+                    
+                    
+                
+            </table>
+        >,
+		shape=box,
+		target=_top,
+		tooltip="Assembly Plant"];
+	C_tyres -> I_assembly_plant	[tooltip="Tyres -> Assembly Plant",
+		weight=4];
+	C_vehicle_bodies	[fontname="sans-serif",
+		href="cargos.html#vehicle_bodies",
+		id=vehicle_bodies,
+		label="Vehicle Bodies",
+		shape=ellipse,
+		target=_top];
+	C_vehicle_bodies -> I_assembly_plant	[tooltip="Vehicle Bodies -> Assembly Plant",
+		weight=4];
+	C_vehicle_engines	[fontname="sans-serif",
+		href="cargos.html#vehicle_engines",
+		id=vehicle_engines,
+		label="Vehicle Engines",
+		shape=ellipse,
+		target=_top];
+	C_vehicle_engines -> I_assembly_plant	[tooltip="Vehicle Engines -> Assembly Plant",
+		weight=4];
+	C_vehicle_parts	[fontname="sans-serif",
+		href="cargos.html#vehicle_parts",
+		id=vehicle_parts,
+		label="Vehicle Parts",
+		shape=ellipse,
+		target=_top];
+	C_vehicle_parts -> I_assembly_plant	[tooltip="Vehicle Parts -> Assembly Plant",
+		weight=4];
+	C_vehicles	[fontname="sans-serif",
+		href="cargos.html#vehicles",
+		id=vehicles,
+		label=Vehicles,
+		shape=ellipse,
+		target=_top];
+	C_zinc	[fontname="sans-serif",
+		href="cargos.html#zinc",
+		id=zinc,
+		label=Zinc,
+		shape=ellipse,
+		target=_top];
+	C_zinc -> I_sheet_and_pipe_mill	[tooltip="Zinc -> Sheet and Pipe Mill",
+		weight=3];
+	I_assembly_plant -> C_vehicles	[tooltip="Assembly Plant -> Vehicles",
+		weight=3];
+	C_engineering_supplies_assembly_plant	[fontname="sans-serif",
+		href="cargos.html#engineering_supplies",
+		id=engineering_supplies,
+		label="Engineering Supplies",
+		shape=ellipse,
+		target=_top];
+	I_assembly_plant -> C_engineering_supplies_assembly_plant	[tooltip="Assembly Plant -> Engineering Supplies",
+		weight=3];
+	C_farm_supplies_assembly_plant	[fontname="sans-serif",
+		href="cargos.html#farm_supplies",
+		id=farm_supplies,
+		label="Farm Supplies",
+		shape=ellipse,
+		target=_top];
+	I_assembly_plant -> C_farm_supplies_assembly_plant	[tooltip="Assembly Plant -> Farm Supplies",
+		weight=3];
+	I_basic_oxygen_furnace -> C_alloy_steel	[tooltip="Basic Oxygen Furnace -> Alloy Steel",
+		weight=3];
+	I_basic_oxygen_furnace -> C_carbon_steel	[tooltip="Basic Oxygen Furnace -> Carbon Steel",
+		weight=3];
+	I_basic_oxygen_furnace -> C_slag	[tooltip="Basic Oxygen Furnace -> Slag",
+		weight=3];
+	I_blast_furnace -> C_cast_iron	[tooltip="Blast Furnace -> Cast Iron",
+		weight=3];
+	I_blast_furnace -> C_pig_iron	[tooltip="Blast Furnace -> Pig Iron",
+		weight=3];
+	I_blast_furnace -> C_slag	[tooltip="Blast Furnace -> Slag",
+		weight=3];
+	I_body_plant -> C_vehicle_bodies	[tooltip="Body Plant -> Vehicle Bodies",
+		weight=1];
+	I_builders_yard	[fontname="sans-serif",
+		href="industries.html#builders_yard",
+		id=builders_yard,
+		label=<
+            <table border="0" cellborder="0">
+                <tr><td>Builders Yard</td></tr>
+                
+                    
+                    
+                    
+                        <tr><td>[Cement]</td></tr>
+                    
+                
+                    
+                    
+                    
+                        <tr><td>[Pipe]</td></tr>
+                    
+                
+                    
+                    
+                    
+                        <tr><td>[Steel Sections]</td></tr>
+                    
+                
+            </table>
+        >,
+		shape=box,
+		target=_top,
+		tooltip="Builders Yard"];
+	I_bulk_terminal -> C_aluminium	[tooltip="Bulk Terminal -> Aluminium",
+		weight=5];
+	I_bulk_terminal -> C_ferrochrome	[tooltip="Bulk Terminal -> Ferrochrome",
+		weight=5];
+	I_bulk_terminal -> C_manganese	[tooltip="Bulk Terminal -> Manganese",
+		weight=5];
+	I_bulk_terminal -> C_plastics	[tooltip="Bulk Terminal -> Plastics",
+		weight=5];
+	I_bulk_terminal -> C_rubber	[tooltip="Bulk Terminal -> Rubber",
+		weight=5];
+	I_carbon_black_plant -> C_carbon_black	[tooltip="Carbon Black Plant -> Carbon Black",
+		weight=1];
+	I_chlor_alkali_plant -> C_acid	[tooltip="Chlor-alkali Plant -> Acid",
+		weight=3];
+	I_chlor_alkali_plant -> C_chlorine	[tooltip="Chlor-alkali Plant -> Chlorine",
+		weight=3];
+	I_chlor_alkali_plant -> C_lye	[tooltip="Chlor-alkali Plant -> Sodium Hydroxide",
+		weight=3];
+	I_coal_mine	[fontname="sans-serif",
+		href="industries.html#coal_mine",
+		id=coal_mine,
+		label=<
+            <table border="0" cellborder="0">
+                <tr><td>Coal Mine</td></tr>
+                
+                    
+                        <tr><td>[Engineering Supplies]</td></tr>
+                    
+                    
+                    
+                
+            </table>
+        >,
+		shape=box,
+		target=_top,
+		tooltip="Coal Mine"];
+	I_coal_mine -> C_coal	[tooltip="Coal Mine -> Coal",
+		weight=1];
+	I_coke_oven -> C_coal_tar	[tooltip="Coke Oven -> Coal Tar",
+		weight=3];
+	I_coke_oven -> C_coke	[tooltip="Coke Oven -> Coke",
+		weight=3];
+	I_coke_oven -> C_sulphur	[tooltip="Coke Oven -> Sulphur",
+		weight=3];
+	I_component_factory -> C_vehicle_parts	[tooltip="Component Factory -> Vehicle Parts",
+		weight=1];
+	I_cryo_plant	[fontname="sans-serif",
+		href="industries.html#cryo_plant",
+		id=cryo_plant,
+		label=<
+            <table border="0" cellborder="0">
+                <tr><td>Cryo Plant</td></tr>
+                
+            </table>
+        >,
+		shape=box,
+		target=_top,
+		tooltip="Cryo Plant"];
+	I_cryo_plant -> C_oxygen	[tooltip="Cryo Plant -> Oxygen",
+		weight=1];
+	I_electric_arc_furnace -> C_carbon_steel	[tooltip="Electric Arc Furnace -> Carbon Steel",
+		weight=3];
+	I_electric_arc_furnace -> C_slag	[tooltip="Electric Arc Furnace -> Slag",
+		weight=3];
+	I_electric_arc_furnace -> C_stainless_steel	[tooltip="Electric Arc Furnace -> Stainless Steel",
+		weight=3];
+	I_engine_plant -> C_vehicle_engines	[tooltip="Engine plant -> Vehicle Engines",
+		weight=1];
+	I_farm	[fontname="sans-serif",
+		href="industries.html#farm",
+		id=farm,
+		label=<
+            <table border="0" cellborder="0">
+                <tr><td>Farm</td></tr>
+                
+                    
+                        <tr><td>[Farm Supplies]</td></tr>
+                    
+                    
+                    
+                
+            </table>
+        >,
+		shape=box,
+		target=_top,
+		tooltip=Farm];
+	I_farm -> C_food	[tooltip="Farm -> Food",
+		weight=1];
+	I_general_store	[fontname="sans-serif",
+		href="industries.html#general_store",
+		id=general_store,
+		label=<
+            <table border="0" cellborder="0">
+                <tr><td>General Store</td></tr>
+                
+                    
+                    
+                    
+                        <tr><td>[Food]</td></tr>
+                    
+                
+            </table>
+        >,
+		shape=box,
+		target=_top,
+		tooltip="General Store"];
+	I_glass_works -> C_glass	[tooltip="Glass Works -> Glass",
+		weight=1];
+	I_iron_ore_mine	[fontname="sans-serif",
+		href="industries.html#iron_ore_mine",
+		id=iron_ore_mine,
+		label=<
+            <table border="0" cellborder="0">
+                <tr><td>Iron Ore Mine</td></tr>
+                
+                    
+                        <tr><td>[Engineering Supplies]</td></tr>
+                    
+                    
+                    
+                
+            </table>
+        >,
+		shape=box,
+		target=_top,
+		tooltip="Iron Ore Mine"];
+	I_iron_ore_mine -> C_iron_ore	[tooltip="Iron Ore Mine -> Iron Ore",
+		weight=1];
+	I_lime_kiln -> C_quicklime	[tooltip="Lime Kiln -> Quicklime",
+		weight=2];
+	C_farm_supplies_lime_kiln	[fontname="sans-serif",
+		href="cargos.html#farm_supplies",
+		id=farm_supplies,
+		label="Farm Supplies",
+		shape=ellipse,
+		target=_top];
+	I_lime_kiln -> C_farm_supplies_lime_kiln	[tooltip="Lime Kiln -> Farm Supplies",
+		weight=2];
+	I_limestone_mine	[fontname="sans-serif",
+		href="industries.html#limestone_mine",
+		id=limestone_mine,
+		label=<
+            <table border="0" cellborder="0">
+                <tr><td>Limestone Mine</td></tr>
+                
+                    
+                        <tr><td>[Engineering Supplies]</td></tr>
+                    
+                    
+                    
+                
+            </table>
+        >,
+		shape=box,
+		target=_top,
+		tooltip="Limestone Mine"];
+	I_limestone_mine -> C_limestone	[tooltip="Limestone Mine -> Limestone",
+		weight=1];
+	I_potash_mine	[fontname="sans-serif",
+		href="industries.html#potash_mine",
+		id=potash_mine,
+		label=<
+            <table border="0" cellborder="0">
+                <tr><td>Potash Mine</td></tr>
+                
+                    
+                        <tr><td>[Engineering Supplies]</td></tr>
+                    
+                    
+                    
+                
+            </table>
+        >,
+		shape=box,
+		target=_top,
+		tooltip="Potash Mine"];
+	I_potash_mine -> C_potash	[tooltip="Potash Mine -> Potash",
+		weight=2];
+	I_potash_mine -> C_salt	[tooltip="Potash Mine -> Salt",
+		weight=2];
+	I_quarry	[fontname="sans-serif",
+		href="industries.html#quarry",
+		id=quarry,
+		label=<
+            <table border="0" cellborder="0">
+                <tr><td>Quarry</td></tr>
+                
+                    
+                        <tr><td>[Engineering Supplies]</td></tr>
+                    
+                    
+                    
+                
+            </table>
+        >,
+		shape=box,
+		target=_top,
+		tooltip=Quarry];
+	I_quarry -> C_limestone	[tooltip="Quarry -> Limestone",
+		weight=2];
+	I_quarry -> C_sand	[tooltip="Quarry -> Sand",
+		weight=2];
+	I_junk_yard	[fontname="sans-serif",
+		href="industries.html#junk_yard",
+		id=junk_yard,
+		label=<
+            <table border="0" cellborder="0">
+                <tr><td>Scrap Yard</td></tr>
+                
+            </table>
+        >,
+		shape=box,
+		target=_top,
+		tooltip="Scrap Yard"];
+	I_junk_yard -> C_scrap_metal	[tooltip="Scrap Yard -> Scrap Metal",
+		weight=1];
+	I_sheet_and_pipe_mill -> C_pipe	[tooltip="Sheet and Pipe Mill -> Pipe",
+		weight=3];
+	I_sheet_and_pipe_mill -> C_steel_sheet	[tooltip="Sheet and Pipe Mill -> Steel Sheet",
+		weight=3];
+	C_engineering_supplies_sheet_and_pipe_mill	[fontname="sans-serif",
+		href="cargos.html#engineering_supplies",
+		id=engineering_supplies,
+		label="Engineering Supplies",
+		shape=ellipse,
+		target=_top];
+	I_sheet_and_pipe_mill -> C_engineering_supplies_sheet_and_pipe_mill	[tooltip="Sheet and Pipe Mill -> Engineering Supplies",
+		weight=3];
+	I_slag_grinding_plant -> C_cement	[tooltip="Slag Grinding Plant -> Cement",
+		weight=2];
+	C_farm_supplies_slag_grinding_plant	[fontname="sans-serif",
+		href="cargos.html#farm_supplies",
+		id=farm_supplies,
+		label="Farm Supplies",
+		shape=ellipse,
+		target=_top];
+	I_slag_grinding_plant -> C_farm_supplies_slag_grinding_plant	[tooltip="Slag Grinding Plant -> Farm Supplies",
+		weight=2];
+	I_soda_ash_mine	[fontname="sans-serif",
+		href="industries.html#soda_ash_mine",
+		id=soda_ash_mine,
+		label=<
+            <table border="0" cellborder="0">
+                <tr><td>Soda Ash Mine</td></tr>
+                
+                    
+                        <tr><td>[Engineering Supplies]</td></tr>
+                    
+                    
+                    
+                
+            </table>
+        >,
+		shape=box,
+		target=_top,
+		tooltip="Soda Ash Mine"];
+	I_soda_ash_mine -> C_salt	[tooltip="Soda Ash Mine -> Salt",
+		weight=2];
+	I_soda_ash_mine -> C_soda_ash	[tooltip="Soda Ash Mine -> Soda Ash",
+		weight=2];
+	I_tyre_plant -> C_tyres	[tooltip="Tyre Plant -> Tyres",
+		weight=1];
+	I_vehicle_distributor	[fontname="sans-serif",
+		href="industries.html#vehicle_distributor",
+		id=vehicle_distributor,
+		label=<
+            <table border="0" cellborder="0">
+                <tr><td>Vehicle Distributor</td></tr>
+                
+                    
+                    
+                    
+                        <tr><td>[Vehicles]</td></tr>
+                    
+                
+            </table>
+        >,
+		shape=box,
+		target=_top,
+		tooltip="Vehicle Distributor"];
+	I_wharf -> C_cleaning_agents	[tooltip="Wharf -> Cleaning Agents",
+		weight=5];
+	I_wharf -> C_electrical_parts	[tooltip="Wharf -> Electrical Parts",
+		weight=5];
+	I_wharf -> C_paints_and_coatings	[tooltip="Wharf -> Paints &amp; Coatings",
+		weight=5];
+	I_wharf -> C_zinc	[tooltip="Wharf -> Zinc",
+		weight=5];
+	C_engineering_supplies_wharf	[fontname="sans-serif",
+		href="cargos.html#engineering_supplies",
+		id=engineering_supplies,
+		label="Engineering Supplies",
+		shape=ellipse,
+		target=_top];
+	I_wharf -> C_engineering_supplies_wharf	[tooltip="Wharf -> Engineering Supplies",
+		weight=5];
+	I_wire_and_section_mill -> C_steel_sections	[tooltip="Wire and Section Mill -> Steel Sections",
+		weight=3];
+	I_wire_and_section_mill -> C_steel_wire_rod	[tooltip="Wire and Section Mill -> Steel Wire Rod",
+		weight=3];
+	C_engineering_supplies_wire_and_section_mill	[fontname="sans-serif",
+		href="cargos.html#engineering_supplies",
+		id=engineering_supplies,
+		label="Engineering Supplies",
+		shape=ellipse,
+		target=_top];
+	I_wire_and_section_mill -> C_engineering_supplies_wire_and_section_mill	[tooltip="Wire and Section Mill -> Engineering Supplies",
+		weight=3];
+}

@@ -1,0 +1,1255 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+    <title >Iron Horse</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link type="text/css" href="static/css/bootstrap.min.css" rel="stylesheet">
+    <link type="text/css" href="static/css/bootstrap-responsive.min.css" rel="stylesheet">
+    <link type="text/css" href="static/css/style.css" rel="stylesheet">
+
+    <script type="text/javascript" src="static/js/jquery-1.9.1.min.js"></script>
+
+    <script type="text/javascript" src="static/js/jquery.metadata.js"></script>
+    <script type="text/javascript" src="static/js/jquery.tablesorter.min.js"></script>
+    <script type="text/javascript" src="static/js/jquery.tablesorter.widgets.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $('.tablesorter').tablesorter({
+                textExtraction: function(node){
+                            var cell_value = $(node).text();
+                            var sort_value = $(node).data('value');
+                    return (sort_value != undefined) ? sort_value : cell_value;
+                 },
+            })
+        })
+    </script>
+</head>
+
+<body>
+    <div class="navbar navbar-inverse navbar-static-top" style="border-bottom:1px solid #000;">
+        <div class="navbar-inner">
+            <div class="container">
+                <ul class="nav pull-left">
+                    <li class="">
+                        <a href="get_started.html">Get started</a>
+                    </li>
+                    <li class="">
+                        <a href="trains.html">Trains</a>
+                    </li>
+                    <li class="">
+                        <a href="tech_tree_table_red.html">Tech tree</a>
+                    </li>
+                    <li class="">
+                        <a href="code_reference.html">Code reference</a>
+                    </li>
+                    <li class="">
+                        <a href="train_whack.html">Train Whack!</a>
+                    </li>
+                </ul>
+                <ul class="nav pull-right">
+                    <li class="">
+                        <a href="translations.html"><i class="icon-globe icon-white"></i> Help translate Iron Horse</a>
+                    </li>
+                    <li>
+                        <a href="https://www.tt-forums.net/viewtopic.php?f=67&amp;t=71219"><i class="icon-comment icon-white"></i> Discuss at TT-Forums.net</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="hero-unit subhead">
+        <div class="container">
+            <div class="pull-right" style="margin-top:-30px; margin-bottom:20px;">
+                <script language="JavaScript">
+                    var all_consists_grouped=JSON.parse('{"sorted_by_vehicle_type": {"engines": [["lark", "25", 110], ["merrylegs", "25", 500], ["proper_job", "25", 1300], ["stoat", "25", 3340], ["pinhorse", "25", 3250], ["shoebox", "25", 280], ["super_shoebox", "25", 880], ["ultra_shoebox", "25", 2170], ["reliance", "33", 4890], ["kelpie", "25", 900], ["griffon", "25", 2840], ["spinner", "33", 480], ["carrack", "33", 1040], ["tencendur", "33", 890], ["merlion", "33", 4920], ["shredder", "33", 2830], ["thunderer", "41", 4830], ["swift", "41", 230], ["strongbow", "41", 4320], ["streamer", "41", 4840], ["wyvern", "33", 2950], ["intrepid", "33", 4810], ["vanguard", "33", 3090], ["resilient", "33", 4940], ["evolution", "33", 4970], ["revolution", "33", 3500], ["pegasus", "49", 300], ["dragon", "33", 420], ["vulcan", "33", 4930], ["onslaught", "33", 4290], ["relentless", "33", 4400], ["hurly_burly", "33", 390], ["moor_gallop", "33", 170], ["roarer", "33", 2230], ["fury", "33", 2180], ["zebedee", "33", 4950], ["screamer", "33", 450], ["avenger", "33", 4860], ["sizzler", "33", 3150], ["driving_cab_pony_gen_5", "33", 3980], ["driving_cab_pony_gen_6", "33", 3990], ["buffalo", "25", 4900], ["saxon", "25", 1330], ["little_bear", "25", 1730], ["captain_steel", "25", 4990], ["goliath", "25", 1720], ["hercules", "33", 380], ["braf", "33", 0], ["diablo", "33", 4910], ["haar", "33", 1880], ["viking", "33", 780], ["growler", "33", 2240], ["slug", "33", 1000], ["phoenix", "33", 160], ["vigilant", "41", 4870], ["blind_smuir", "41", 4850], ["girt_licker", "41", 70], ["lemon", "49", 270], ["esk", "49", 4050], ["chinook", "49", 120], ["grid", "33", 3350], ["bone", "33", 4820], ["blackthorn", "33", 3470], ["endeavour", "33", 4250], ["cheddar_valley", "33", 220], ["toaster", "33", 4800], ["flindermouse", "49", 790], ["peasweep", "49", 1750], ["flanders_storm", "33", 1740], ["triton", "33", 3910], ["grub", "17", 4010], ["lamia", "17", 4880], ["gronk", "17", 3970], ["chuggypig", "17", 4980], ["magnum_70", "17", 4960], ["snowplough_pony_gen_2", "17", 4000], ["auto_coach_pony_gen_2", "41", 4690], ["deasil", "33", 1770], ["slammer", "33", 470], ["tin_rocket", "33", 530], ["happy_train", "33", 100], ["gowsty", "33", 1760], ["scooby", "33", 3070], ["plastic_postbox", "33", 3080], ["mail_rail", "33", 3000], ["athena", "33", 2150], ["geronimo", "33", 2140], ["breeze", "33", 3200], ["zeus", "33", 3210], ["ares", "33", 2130], ["dover", "33", 700], ["jupiter", "33", 3190], ["pylon", "33", 2120], ["high_flyer", "33", 4220], ["sunshine_coast", "33", 3040], ["olympic", "33", 3770], ["bright_country", "33", 3800], ["firebird", "65", 3830], ["blaze", "65", 3330], ["scorcher", "65", 3320], ["helm_wind_cab", "65", 3060], ["helm_wind_middle", "65", 2890], ["brenner_cab", "65", 130], ["brenner_middle", "65", 2880], ["serpentine", "65", 460], ["westbourne", "65", 360], ["fleet", "65", 210], ["longwater", "65", 290], ["tyburn", "65", 2190], ["tideway", "65", 2200], ["cheese_bug", "17", 490], ["bean_feast", "17", 240], ["pikel", "17", 430], ["boar_cat", "17", 1320], ["mumble", "25", 140], ["snapper", "25", 590], ["workish", "25", 260], ["zorro", "25", 310]], "wagons": [["hst_passenger_car_pony_gen_4U", "33", 3900], ["hst_passenger_car_pony_gen_5U", "33", 3480], ["hst_passenger_car_pony_gen_6U", "33", 3490], ["passenger_railcar_trailer_car_ng_pony_gen_3U", "25", 990], ["passenger_railcar_trailer_car_ng_pony_gen_4U", "25", 4470], ["passenger_railcar_trailer_car_pony_gen_4U", "33", 2940], ["passenger_railcar_trailer_car_pony_gen_5U", "33", 2910], ["passenger_railcar_trailer_car_pony_gen_6U", "33", 2050], ["luxury_passenger_railcar_trailer_car_pony_gen_3U", "33", 4680], ["luxury_passenger_railcar_trailer_car_pony_gen_4U", "33", 4540], ["luxury_passenger_railcar_trailer_car_pony_gen_5U", "33", 4600], ["luxury_passenger_railcar_trailer_car_pony_gen_6U", "33", 4610], ["passenger_car_ng_pony_gen_1U", "17", 770], ["passenger_car_ng_pony_gen_3U", "17", 800], ["passenger_car_ng_pony_gen_4U", "17", 860], ["passenger_car_pony_gen_1A", "17", 3300], ["passenger_car_pony_gen_1B", "25", 740], ["passenger_car_pony_gen_2A", "17", 3310], ["passenger_car_pony_gen_2B", "25", 750], ["passenger_car_pony_gen_3A", "17", 3290], ["passenger_car_pony_gen_3B", "25", 760], ["passenger_car_pony_gen_3C", "33", 4570], ["passenger_car_pony_gen_4B", "25", 3110], ["passenger_car_pony_gen_4C", "33", 3260], ["passenger_car_pony_gen_5B", "25", 3100], ["passenger_car_pony_gen_5C", "33", 3280], ["passenger_car_pony_gen_6B", "25", 1580], ["passenger_car_pony_gen_6C", "33", 3270], ["luxury_passenger_car_ng_pony_gen_1U", "25", 1530], ["luxury_passenger_car_ng_pony_gen_3U", "25", 600], ["luxury_passenger_car_ng_pony_gen_4U", "25", 660], ["luxury_passenger_car_pony_gen_1U", "33", 2250], ["luxury_passenger_car_pony_gen_2U", "33", 2260], ["luxury_passenger_car_pony_gen_3U", "33", 2270], ["luxury_passenger_car_pony_gen_4U", "33", 3120], ["luxury_passenger_car_pony_gen_5U", "33", 3130], ["luxury_passenger_car_pony_gen_6U", "33", 1860], ["mail_car_ng_pony_gen_1U", "17", 950], ["mail_car_ng_pony_gen_3U", "17", 610], ["mail_car_ng_pony_gen_4U", "17", 670], ["mail_car_pony_gen_1A", "17", 2280], ["mail_car_pony_gen_1B", "25", 2220], ["mail_car_pony_gen_2A", "17", 2290], ["mail_car_pony_gen_2B", "25", 920], ["mail_car_pony_gen_3A", "17", 1830], ["mail_car_pony_gen_3B", "25", 2300], ["mail_car_pony_gen_3C", "33", 940], ["mail_car_pony_gen_4A", "17", 1430], ["mail_car_pony_gen_4B", "25", 3160], ["mail_car_pony_gen_4C", "33", 3170], ["mail_car_pony_gen_5A", "17", 520], ["mail_car_pony_gen_5B", "25", 970], ["mail_car_pony_gen_5C", "33", 3140], ["mail_car_pony_gen_6A", "17", 870], ["mail_car_pony_gen_6B", "25", 1950], ["mail_car_pony_gen_6C", "33", 10], ["express_car_pony_gen_1A", "17", 1050], ["express_car_pony_gen_2A", "17", 1060], ["express_car_pony_gen_2B", "25", 1100], ["express_car_pony_gen_3A", "17", 1110], ["express_car_pony_gen_3B", "25", 1120], ["express_car_pony_gen_4A", "17", 1390], ["express_car_pony_gen_4B", "25", 1400], ["express_car_pony_gen_4C", "33", 3220], ["express_car_pony_gen_5A", "17", 1410], ["express_car_pony_gen_5B", "25", 1420], ["express_car_pony_gen_5C", "33", 3240], ["express_car_pony_gen_6B", "25", 1510], ["express_car_pony_gen_6C", "33", 3230], ["express_intermodal_car_pony_gen_5B", "25", 3920], ["express_intermodal_car_pony_gen_5C", "33", 3930], ["express_intermodal_car_pony_gen_6B", "25", 3940], ["express_intermodal_car_pony_gen_6C", "33", 3950], ["intermodal_car_ng_pony_gen_4U", "17", 3960], ["intermodal_car_pony_gen_4A", "17", 3880], ["intermodal_car_pony_gen_4B", "25", 3890], ["intermodal_car_pony_gen_4C", "33", 3710], ["intermodal_car_pony_gen_5A", "17", 3720], ["intermodal_car_pony_gen_5B", "25", 3730], ["intermodal_car_pony_gen_5C", "33", 3740], ["intermodal_car_pony_gen_6B", "25", 3750], ["intermodal_car_pony_gen_6C", "33", 3760], ["open_car_ng_pony_gen_1U", "17", 850], ["open_car_ng_pony_gen_3U", "17", 2160], ["open_car_ng_pony_gen_4U", "17", 910], ["open_car_pony_gen_1A", "17", 820], ["open_car_pony_gen_2B", "25", 830], ["open_car_pony_gen_3A", "17", 840], ["open_car_pony_gen_3B", "25", 2440], ["open_car_pony_gen_4A", "17", 1450], ["open_car_pony_gen_4B", "25", 2450], ["open_car_pony_gen_5B", "25", 2460], ["open_car_pony_gen_5C", "33", 2470], ["open_car_pony_gen_6B", "25", 1650], ["open_car_pony_gen_6C", "33", 1660], ["box_car_ng_pony_gen_1U", "17", 580], ["box_car_ng_pony_gen_3U", "17", 1180], ["box_car_ng_pony_gen_4U", "17", 810], ["box_car_pony_gen_1A", "17", 1780], ["box_car_pony_gen_2B", "25", 550], ["box_car_pony_gen_3A", "17", 560], ["box_car_pony_gen_3B", "25", 2340], ["box_car_pony_gen_4A", "17", 570], ["box_car_pony_gen_4B", "25", 2500], ["box_car_pony_gen_4C", "33", 1980], ["box_car_pony_gen_5B", "25", 2480], ["box_car_pony_gen_5C", "33", 2490], ["box_car_pony_gen_6B", "25", 1670], ["box_car_pony_gen_6C", "33", 1680], ["curtain_side_box_car_pony_gen_4B", "25", 540], ["curtain_side_box_car_pony_gen_4C", "33", 510], ["curtain_side_box_car_pony_gen_5B", "25", 710], ["curtain_side_box_car_pony_gen_5C", "33", 980], ["curtain_side_box_car_pony_gen_6B", "25", 1440], ["curtain_side_box_car_pony_gen_6C", "33", 1460], ["sliding_wall_car_pony_gen_4B", "25", 1570], ["sliding_wall_car_pony_gen_4C", "33", 1790], ["sliding_wall_car_pony_gen_5B", "25", 410], ["sliding_wall_car_pony_gen_5C", "33", 440], ["sliding_wall_car_pony_gen_6B", "25", 330], ["sliding_wall_car_pony_gen_6C", "33", 320], ["vehicle_parts_box_car_pony_gen_4B", "25", 4620], ["vehicle_parts_box_car_pony_gen_4C", "33", 4630], ["vehicle_parts_box_car_pony_gen_5B", "25", 4640], ["vehicle_parts_box_car_pony_gen_5C", "33", 4650], ["vehicle_parts_box_car_pony_gen_6B", "25", 4660], ["vehicle_parts_box_car_pony_gen_6C", "33", 4670], ["plate_car_pony_gen_1A", "17", 1480], ["plate_car_pony_gen_2B", "25", 1490], ["plate_car_pony_gen_3A", "17", 1500], ["plate_car_pony_gen_3B", "25", 1540], ["plate_car_pony_gen_3C", "33", 1590], ["plate_car_pony_gen_4A", "17", 1550], ["plate_car_pony_gen_4B", "25", 1470], ["plate_car_pony_gen_4C", "33", 1840], ["plate_car_pony_gen_5B", "25", 1800], ["plate_car_pony_gen_5C", "33", 1870], ["plate_car_pony_gen_6B", "25", 1960], ["plate_car_pony_gen_6C", "33", 1970], ["flat_car_ng_pony_gen_1U", "17", 1170], ["flat_car_ng_pony_gen_3U", "17", 1130], ["flat_car_ng_pony_gen_4U", "17", 1370], ["flat_car_pony_gen_1A", "17", 1140], ["flat_car_pony_gen_2B", "25", 1150], ["flat_car_pony_gen_3A", "17", 1350], ["flat_car_pony_gen_3B", "25", 1160], ["flat_car_pony_gen_3C", "33", 2550], ["flat_car_pony_gen_4A", "17", 1560], ["flat_car_pony_gen_4B", "25", 2540], ["flat_car_pony_gen_4C", "33", 2530], ["flat_car_pony_gen_5B", "25", 2520], ["flat_car_pony_gen_5C", "33", 2510], ["flat_car_pony_gen_6B", "25", 1630], ["flat_car_pony_gen_6C", "33", 1640], ["bulkhead_flat_car_pony_gen_3A", "17", 4700], ["bulkhead_flat_car_pony_gen_3B", "25", 4710], ["bulkhead_flat_car_pony_gen_3C", "33", 4720], ["bulkhead_flat_car_pony_gen_4A", "17", 4730], ["bulkhead_flat_car_pony_gen_4B", "25", 4740], ["bulkhead_flat_car_pony_gen_4C", "33", 4750], ["bulkhead_flat_car_pony_gen_5B", "25", 4760], ["bulkhead_flat_car_pony_gen_5C", "33", 4770], ["bulkhead_flat_car_pony_gen_6B", "25", 4780], ["bulkhead_flat_car_pony_gen_6C", "33", 4790], ["tarpaulin_car_pony_gen_5B", "25", 340], ["tarpaulin_car_pony_gen_5C", "33", 350], ["tarpaulin_car_pony_gen_6B", "25", 370], ["tarpaulin_car_pony_gen_6C", "33", 400], ["coil_car_pony_gen_4B", "25", 3510], ["coil_car_pony_gen_4C", "33", 3520], ["coil_car_pony_gen_5B", "25", 3530], ["coil_car_pony_gen_5C", "33", 3540], ["coil_car_pony_gen_6B", "25", 3550], ["coil_car_pony_gen_6C", "33", 3560], ["stake_car_pony_gen_2A", "17", 2740], ["stake_car_pony_gen_3A", "17", 2730], ["stake_car_pony_gen_3B", "25", 2750], ["stake_car_pony_gen_4A", "17", 1710], ["stake_car_pony_gen_4B", "25", 2760], ["stake_car_pony_gen_4C", "33", 1930], ["stake_car_pony_gen_5B", "25", 2770], ["stake_car_pony_gen_5C", "33", 930], ["stake_car_pony_gen_6B", "25", 1910], ["stake_car_pony_gen_6C", "33", 1920], ["hopper_car_ng_pony_gen_1U", "17", 3590], ["hopper_car_ng_pony_gen_3U", "17", 3600], ["hopper_car_ng_pony_gen_4U", "17", 3610], ["hopper_car_pony_gen_2A", "17", 2030], ["hopper_car_pony_gen_3A", "17", 2040], ["hopper_car_pony_gen_4A", "17", 2320], ["hopper_car_pony_gen_4B", "25", 1380], ["hopper_car_pony_gen_5B", "25", 1090], ["hopper_car_pony_gen_5C", "33", 2780], ["hopper_car_pony_gen_6B", "25", 3010], ["hopper_car_pony_gen_6C", "33", 3020], ["rock_hopper_car_pony_gen_2A", "17", 2310], ["rock_hopper_car_pony_gen_3A", "17", 1070], ["rock_hopper_car_pony_gen_3B", "25", 2330], ["rock_hopper_car_pony_gen_4A", "17", 1080], ["rock_hopper_car_pony_gen_4B", "25", 2000], ["rock_hopper_car_pony_gen_4C", "33", 2010], ["rock_hopper_car_pony_gen_5A", "17", 1610], ["rock_hopper_car_pony_gen_5B", "25", 1600], ["rock_hopper_car_pony_gen_5C", "33", 1620], ["rock_hopper_car_pony_gen_6B", "25", 2020], ["rock_hopper_car_pony_gen_6C", "33", 1990], ["ore_hopper_car_pony_gen_2A", "17", 4100], ["ore_hopper_car_pony_gen_3A", "17", 4110], ["ore_hopper_car_pony_gen_3B", "25", 4390], ["ore_hopper_car_pony_gen_4A", "17", 4120], ["ore_hopper_car_pony_gen_4B", "25", 4130], ["ore_hopper_car_pony_gen_5A", "17", 4380], ["ore_hopper_car_pony_gen_5B", "25", 4140], ["ore_hopper_car_pony_gen_5C", "33", 4150], ["ore_hopper_car_pony_gen_6B", "25", 4160], ["ore_hopper_car_pony_gen_6C", "33", 4170], ["dump_car_ng_pony_gen_2U", "17", 4020], ["dump_car_ng_pony_gen_3U", "17", 30], ["dump_car_ng_pony_gen_4U", "17", 40], ["dump_car_pony_gen_2A", "17", 2960], ["dump_car_pony_gen_3A", "17", 2350], ["dump_car_pony_gen_3B", "25", 2360], ["dump_car_pony_gen_4A", "17", 2370], ["dump_car_pony_gen_4B", "25", 2380], ["dump_car_pony_gen_5B", "25", 1810], ["dump_car_pony_gen_5C", "33", 2110], ["dump_car_pony_gen_6B", "25", 2400], ["dump_car_pony_gen_6C", "33", 2390], ["dump_car_high_side_pony_gen_3A", "17", 3860], ["dump_car_high_side_pony_gen_3B", "25", 3870], ["dump_car_high_side_pony_gen_4A", "17", 3780], ["dump_car_high_side_pony_gen_4B", "25", 3790], ["dump_car_high_side_pony_gen_5B", "25", 3810], ["dump_car_high_side_pony_gen_5C", "33", 3820], ["dump_car_high_side_pony_gen_6B", "25", 3840], ["dump_car_high_side_pony_gen_6C", "33", 3850], ["scrap_metal_car_pony_gen_3A", "17", 4180], ["scrap_metal_car_pony_gen_3B", "25", 4190], ["scrap_metal_car_pony_gen_4A", "17", 4200], ["scrap_metal_car_pony_gen_4B", "25", 4210], ["scrap_metal_car_pony_gen_5B", "25", 4230], ["scrap_metal_car_pony_gen_5C", "33", 4240], ["scrap_metal_car_pony_gen_6B", "25", 4260], ["scrap_metal_car_pony_gen_6C", "33", 4270], ["tank_car_ng_pony_gen_1U", "17", 650], ["tank_car_ng_pony_gen_3U", "17", 2980], ["tank_car_ng_pony_gen_4U", "17", 690], ["tank_car_pony_gen_1A", "17", 1200], ["tank_car_pony_gen_2B", "25", 3180], ["tank_car_pony_gen_3A", "17", 630], ["tank_car_pony_gen_3B", "25", 2430], ["tank_car_pony_gen_3C", "33", 2900], ["tank_car_pony_gen_4A", "17", 640], ["tank_car_pony_gen_4B", "25", 960], ["tank_car_pony_gen_4C", "33", 1250], ["tank_car_pony_gen_5A", "17", 2410], ["tank_car_pony_gen_5B", "25", 2420], ["tank_car_pony_gen_5C", "33", 2930], ["tank_car_pony_gen_6A", "17", 2920], ["tank_car_pony_gen_6B", "25", 2970], ["tank_car_pony_gen_6C", "33", 2790], ["product_tank_car_pony_gen_2A", "17", 2860], ["product_tank_car_pony_gen_3A", "17", 3360], ["product_tank_car_pony_gen_3B", "25", 3370], ["product_tank_car_pony_gen_3C", "33", 3460], ["product_tank_car_pony_gen_4A", "17", 3380], ["product_tank_car_pony_gen_4B", "25", 3390], ["product_tank_car_pony_gen_4C", "33", 3400], ["product_tank_car_pony_gen_5A", "17", 3410], ["product_tank_car_pony_gen_5B", "25", 3420], ["product_tank_car_pony_gen_5C", "33", 3430], ["product_tank_car_pony_gen_6B", "25", 3440], ["product_tank_car_pony_gen_6C", "33", 3450], ["cryo_tank_car_pony_gen_2A", "17", 80], ["cryo_tank_car_pony_gen_3A", "17", 180], ["cryo_tank_car_pony_gen_3B", "25", 250], ["cryo_tank_car_pony_gen_4A", "17", 20], ["cryo_tank_car_pony_gen_4B", "25", 50], ["cryo_tank_car_pony_gen_4C", "33", 60], ["cryo_tank_car_pony_gen_5B", "25", 90], ["cryo_tank_car_pony_gen_5C", "33", 150], ["cryo_tank_car_pony_gen_6B", "25", 190], ["cryo_tank_car_pony_gen_6C", "33", 200], ["covered_hopper_car_pony_gen_2A", "17", 4500], ["covered_hopper_car_pony_gen_3A", "17", 4510], ["covered_hopper_car_pony_gen_4A", "17", 4520], ["covered_hopper_car_pony_gen_4B", "25", 4530], ["covered_hopper_car_pony_gen_5B", "25", 4550], ["covered_hopper_car_pony_gen_5C", "33", 4560], ["covered_hopper_car_pony_gen_6B", "25", 4580], ["covered_hopper_car_pony_gen_6C", "33", 4590], ["grain_hopper_car_pony_gen_2A", "17", 2850], ["grain_hopper_car_pony_gen_3A", "17", 2870], ["grain_hopper_car_pony_gen_4A", "17", 2080], ["grain_hopper_car_pony_gen_4B", "25", 2670], ["grain_hopper_car_pony_gen_5B", "25", 2800], ["grain_hopper_car_pony_gen_5C", "33", 2690], ["grain_hopper_car_pony_gen_6B", "25", 2810], ["grain_hopper_car_pony_gen_6C", "33", 2820], ["pellet_hopper_car_pony_gen_2A", "17", 4280], ["pellet_hopper_car_pony_gen_3A", "17", 4300], ["pellet_hopper_car_pony_gen_4A", "17", 4310], ["pellet_hopper_car_pony_gen_4B", "25", 4330], ["pellet_hopper_car_pony_gen_5B", "25", 4340], ["pellet_hopper_car_pony_gen_5C", "33", 4350], ["pellet_hopper_car_pony_gen_6B", "25", 4360], ["pellet_hopper_car_pony_gen_6C", "33", 4370], ["silo_car_pony_gen_4A", "17", 3680], ["silo_car_pony_gen_4B", "25", 3690], ["silo_car_pony_gen_4C", "33", 3700], ["silo_car_pony_gen_5A", "17", 3620], ["silo_car_pony_gen_5B", "25", 3630], ["silo_car_pony_gen_5C", "33", 3640], ["silo_car_pony_gen_6A", "17", 3650], ["silo_car_pony_gen_6B", "25", 3660], ["silo_car_pony_gen_6C", "33", 3670], ["cement_silo_car_pony_gen_4A", "17", 1230], ["cement_silo_car_pony_gen_4B", "25", 1240], ["cement_silo_car_pony_gen_4C", "33", 1260], ["cement_silo_car_pony_gen_5A", "17", 1270], ["cement_silo_car_pony_gen_5B", "25", 1340], ["cement_silo_car_pony_gen_5C", "33", 1940], ["cement_silo_car_pony_gen_6A", "17", 2060], ["cement_silo_car_pony_gen_6B", "25", 2070], ["cement_silo_car_pony_gen_6C", "33", 2700], ["livestock_car_ng_pony_gen_1U", "17", 1030], ["livestock_car_ng_pony_gen_3U", "17", 620], ["livestock_car_ng_pony_gen_4U", "17", 680], ["livestock_car_pony_gen_1A", "17", 1010], ["livestock_car_pony_gen_3A", "17", 2680], ["livestock_car_pony_gen_4A", "17", 1020], ["livestock_car_pony_gen_5C", "33", 2720], ["livestock_car_pony_gen_6C", "33", 2710], ["edibles_tank_car_pony_gen_2A", "17", 3030], ["edibles_tank_car_pony_gen_3A", "17", 1190], ["edibles_tank_car_pony_gen_4A", "17", 2990], ["edibles_tank_car_pony_gen_4B", "25", 1690], ["edibles_tank_car_pony_gen_4C", "33", 1220], ["edibles_tank_car_pony_gen_5A", "17", 1210], ["edibles_tank_car_pony_gen_5B", "25", 1700], ["edibles_tank_car_pony_gen_5C", "33", 3050], ["edibles_tank_car_pony_gen_6B", "25", 2100], ["edibles_tank_car_pony_gen_6C", "33", 2090], ["reefer_car_pony_gen_2A", "17", 730], ["reefer_car_pony_gen_3A", "17", 720], ["reefer_car_pony_gen_4A", "17", 2560], ["reefer_car_pony_gen_4B", "25", 2590], ["reefer_car_pony_gen_4C", "33", 3580], ["reefer_car_pony_gen_5B", "25", 2570], ["reefer_car_pony_gen_5C", "33", 2580], ["reefer_car_pony_gen_6B", "25", 1820], ["reefer_car_pony_gen_6C", "33", 1850], ["fruit_veg_car_ng_pony_gen_1U", "17", 1310], ["fruit_veg_car_ng_pony_gen_3U", "17", 1360], ["fruit_veg_car_ng_pony_gen_4U", "17", 1520], ["fruit_veg_car_pony_gen_2A", "17", 2640], ["fruit_veg_car_pony_gen_3A", "17", 2630], ["fruit_veg_car_pony_gen_3B", "25", 2620], ["fruit_veg_car_pony_gen_4A", "17", 2600], ["fruit_veg_car_pony_gen_4B", "25", 2610], ["fruit_veg_car_pony_gen_4C", "33", 3570], ["fruit_veg_car_pony_gen_5B", "25", 2650], ["fruit_veg_car_pony_gen_5C", "33", 2660], ["fruit_veg_car_pony_gen_6B", "25", 1890], ["fruit_veg_car_pony_gen_6C", "33", 1900], ["carbon_black_hopper_car_pony_gen_3A", "17", 4410], ["carbon_black_hopper_car_pony_gen_4A", "17", 4420], ["carbon_black_hopper_car_pony_gen_4B", "25", 4430], ["carbon_black_hopper_car_pony_gen_5B", "25", 4450], ["carbon_black_hopper_car_pony_gen_5C", "33", 4460], ["carbon_black_hopper_car_pony_gen_6B", "25", 4480], ["carbon_black_hopper_car_pony_gen_6C", "33", 4490], ["torpedo_car_pony_gen_2U", "49", 4060], ["torpedo_car_pony_gen_3U", "49", 4070], ["torpedo_car_pony_gen_4U", "49", 4080], ["torpedo_car_pony_gen_5U", "49", 4090], ["slag_ladle_car_ng_pony_gen_1U", "17", 4440], ["slag_ladle_car_pony_gen_1U", "17", 4030], ["slag_ladle_car_pony_gen_4U", "17", 4040], ["caboose_car_ng_pony_gen_1U", "17", 1290], ["caboose_car_pony_gen_1A", "17", 1280], ["caboose_car_pony_gen_1B", "25", 2210]]}, "sorted_by_base_track_type_and_vehicle_type": {"RAIL": {"engines": [["lark", "25", 110], ["merrylegs", "25", 500], ["proper_job", "25", 1300], ["stoat", "25", 3340], ["pinhorse", "25", 3250], ["shoebox", "25", 280], ["super_shoebox", "25", 880], ["ultra_shoebox", "25", 2170], ["reliance", "33", 4890], ["kelpie", "25", 900], ["griffon", "25", 2840], ["spinner", "33", 480], ["carrack", "33", 1040], ["tencendur", "33", 890], ["merlion", "33", 4920], ["shredder", "33", 2830], ["thunderer", "41", 4830], ["swift", "41", 230], ["strongbow", "41", 4320], ["streamer", "41", 4840], ["wyvern", "33", 2950], ["intrepid", "33", 4810], ["vanguard", "33", 3090], ["resilient", "33", 4940], ["evolution", "33", 4970], ["revolution", "33", 3500], ["pegasus", "49", 300], ["dragon", "33", 420], ["vulcan", "33", 4930], ["onslaught", "33", 4290], ["relentless", "33", 4400], ["hurly_burly", "33", 390], ["moor_gallop", "33", 170], ["roarer", "33", 2230], ["fury", "33", 2180], ["zebedee", "33", 4950], ["screamer", "33", 450], ["avenger", "33", 4860], ["sizzler", "33", 3150], ["driving_cab_pony_gen_5", "33", 3980], ["driving_cab_pony_gen_6", "33", 3990], ["buffalo", "25", 4900], ["saxon", "25", 1330], ["little_bear", "25", 1730], ["captain_steel", "25", 4990], ["goliath", "25", 1720], ["hercules", "33", 380], ["braf", "33", 0], ["diablo", "33", 4910], ["haar", "33", 1880], ["viking", "33", 780], ["growler", "33", 2240], ["slug", "33", 1000], ["phoenix", "33", 160], ["vigilant", "41", 4870], ["blind_smuir", "41", 4850], ["girt_licker", "41", 70], ["lemon", "49", 270], ["esk", "49", 4050], ["chinook", "49", 120], ["grid", "33", 3350], ["bone", "33", 4820], ["blackthorn", "33", 3470], ["endeavour", "33", 4250], ["cheddar_valley", "33", 220], ["toaster", "33", 4800], ["flindermouse", "49", 790], ["peasweep", "49", 1750], ["flanders_storm", "33", 1740], ["triton", "33", 3910], ["grub", "17", 4010], ["lamia", "17", 4880], ["gronk", "17", 3970], ["chuggypig", "17", 4980], ["magnum_70", "17", 4960], ["snowplough_pony_gen_2", "17", 4000], ["auto_coach_pony_gen_2", "41", 4690], ["deasil", "33", 1770], ["slammer", "33", 470], ["tin_rocket", "33", 530], ["happy_train", "33", 100], ["gowsty", "33", 1760], ["scooby", "33", 3070], ["plastic_postbox", "33", 3080], ["mail_rail", "33", 3000], ["athena", "33", 2150], ["geronimo", "33", 2140], ["breeze", "33", 3200], ["zeus", "33", 3210], ["ares", "33", 2130], ["dover", "33", 700], ["jupiter", "33", 3190], ["pylon", "33", 2120], ["high_flyer", "33", 4220], ["sunshine_coast", "33", 3040], ["olympic", "33", 3770], ["bright_country", "33", 3800], ["firebird", "65", 3830], ["blaze", "65", 3330], ["scorcher", "65", 3320], ["helm_wind_cab", "65", 3060], ["helm_wind_middle", "65", 2890], ["brenner_cab", "65", 130], ["brenner_middle", "65", 2880]], "wagons": [["hst_passenger_car_pony_gen_4U", "33", 3900], ["hst_passenger_car_pony_gen_5U", "33", 3480], ["hst_passenger_car_pony_gen_6U", "33", 3490], ["passenger_railcar_trailer_car_pony_gen_4U", "33", 2940], ["passenger_railcar_trailer_car_pony_gen_5U", "33", 2910], ["passenger_railcar_trailer_car_pony_gen_6U", "33", 2050], ["luxury_passenger_railcar_trailer_car_pony_gen_3U", "33", 4680], ["luxury_passenger_railcar_trailer_car_pony_gen_4U", "33", 4540], ["luxury_passenger_railcar_trailer_car_pony_gen_5U", "33", 4600], ["luxury_passenger_railcar_trailer_car_pony_gen_6U", "33", 4610], ["passenger_car_pony_gen_1A", "17", 3300], ["passenger_car_pony_gen_1B", "25", 740], ["passenger_car_pony_gen_2A", "17", 3310], ["passenger_car_pony_gen_2B", "25", 750], ["passenger_car_pony_gen_3A", "17", 3290], ["passenger_car_pony_gen_3B", "25", 760], ["passenger_car_pony_gen_3C", "33", 4570], ["passenger_car_pony_gen_4B", "25", 3110], ["passenger_car_pony_gen_4C", "33", 3260], ["passenger_car_pony_gen_5B", "25", 3100], ["passenger_car_pony_gen_5C", "33", 3280], ["passenger_car_pony_gen_6B", "25", 1580], ["passenger_car_pony_gen_6C", "33", 3270], ["luxury_passenger_car_pony_gen_1U", "33", 2250], ["luxury_passenger_car_pony_gen_2U", "33", 2260], ["luxury_passenger_car_pony_gen_3U", "33", 2270], ["luxury_passenger_car_pony_gen_4U", "33", 3120], ["luxury_passenger_car_pony_gen_5U", "33", 3130], ["luxury_passenger_car_pony_gen_6U", "33", 1860], ["mail_car_pony_gen_1A", "17", 2280], ["mail_car_pony_gen_1B", "25", 2220], ["mail_car_pony_gen_2A", "17", 2290], ["mail_car_pony_gen_2B", "25", 920], ["mail_car_pony_gen_3A", "17", 1830], ["mail_car_pony_gen_3B", "25", 2300], ["mail_car_pony_gen_3C", "33", 940], ["mail_car_pony_gen_4A", "17", 1430], ["mail_car_pony_gen_4B", "25", 3160], ["mail_car_pony_gen_4C", "33", 3170], ["mail_car_pony_gen_5A", "17", 520], ["mail_car_pony_gen_5B", "25", 970], ["mail_car_pony_gen_5C", "33", 3140], ["mail_car_pony_gen_6A", "17", 870], ["mail_car_pony_gen_6B", "25", 1950], ["mail_car_pony_gen_6C", "33", 10], ["express_car_pony_gen_1A", "17", 1050], ["express_car_pony_gen_2A", "17", 1060], ["express_car_pony_gen_2B", "25", 1100], ["express_car_pony_gen_3A", "17", 1110], ["express_car_pony_gen_3B", "25", 1120], ["express_car_pony_gen_4A", "17", 1390], ["express_car_pony_gen_4B", "25", 1400], ["express_car_pony_gen_4C", "33", 3220], ["express_car_pony_gen_5A", "17", 1410], ["express_car_pony_gen_5B", "25", 1420], ["express_car_pony_gen_5C", "33", 3240], ["express_car_pony_gen_6B", "25", 1510], ["express_car_pony_gen_6C", "33", 3230], ["express_intermodal_car_pony_gen_5B", "25", 3920], ["express_intermodal_car_pony_gen_5C", "33", 3930], ["express_intermodal_car_pony_gen_6B", "25", 3940], ["express_intermodal_car_pony_gen_6C", "33", 3950], ["intermodal_car_pony_gen_4A", "17", 3880], ["intermodal_car_pony_gen_4B", "25", 3890], ["intermodal_car_pony_gen_4C", "33", 3710], ["intermodal_car_pony_gen_5A", "17", 3720], ["intermodal_car_pony_gen_5B", "25", 3730], ["intermodal_car_pony_gen_5C", "33", 3740], ["intermodal_car_pony_gen_6B", "25", 3750], ["intermodal_car_pony_gen_6C", "33", 3760], ["open_car_pony_gen_1A", "17", 820], ["open_car_pony_gen_2B", "25", 830], ["open_car_pony_gen_3A", "17", 840], ["open_car_pony_gen_3B", "25", 2440], ["open_car_pony_gen_4A", "17", 1450], ["open_car_pony_gen_4B", "25", 2450], ["open_car_pony_gen_5B", "25", 2460], ["open_car_pony_gen_5C", "33", 2470], ["open_car_pony_gen_6B", "25", 1650], ["open_car_pony_gen_6C", "33", 1660], ["box_car_pony_gen_1A", "17", 1780], ["box_car_pony_gen_2B", "25", 550], ["box_car_pony_gen_3A", "17", 560], ["box_car_pony_gen_3B", "25", 2340], ["box_car_pony_gen_4A", "17", 570], ["box_car_pony_gen_4B", "25", 2500], ["box_car_pony_gen_4C", "33", 1980], ["box_car_pony_gen_5B", "25", 2480], ["box_car_pony_gen_5C", "33", 2490], ["box_car_pony_gen_6B", "25", 1670], ["box_car_pony_gen_6C", "33", 1680], ["curtain_side_box_car_pony_gen_4B", "25", 540], ["curtain_side_box_car_pony_gen_4C", "33", 510], ["curtain_side_box_car_pony_gen_5B", "25", 710], ["curtain_side_box_car_pony_gen_5C", "33", 980], ["curtain_side_box_car_pony_gen_6B", "25", 1440], ["curtain_side_box_car_pony_gen_6C", "33", 1460], ["sliding_wall_car_pony_gen_4B", "25", 1570], ["sliding_wall_car_pony_gen_4C", "33", 1790], ["sliding_wall_car_pony_gen_5B", "25", 410], ["sliding_wall_car_pony_gen_5C", "33", 440], ["sliding_wall_car_pony_gen_6B", "25", 330], ["sliding_wall_car_pony_gen_6C", "33", 320], ["vehicle_parts_box_car_pony_gen_4B", "25", 4620], ["vehicle_parts_box_car_pony_gen_4C", "33", 4630], ["vehicle_parts_box_car_pony_gen_5B", "25", 4640], ["vehicle_parts_box_car_pony_gen_5C", "33", 4650], ["vehicle_parts_box_car_pony_gen_6B", "25", 4660], ["vehicle_parts_box_car_pony_gen_6C", "33", 4670], ["plate_car_pony_gen_1A", "17", 1480], ["plate_car_pony_gen_2B", "25", 1490], ["plate_car_pony_gen_3A", "17", 1500], ["plate_car_pony_gen_3B", "25", 1540], ["plate_car_pony_gen_3C", "33", 1590], ["plate_car_pony_gen_4A", "17", 1550], ["plate_car_pony_gen_4B", "25", 1470], ["plate_car_pony_gen_4C", "33", 1840], ["plate_car_pony_gen_5B", "25", 1800], ["plate_car_pony_gen_5C", "33", 1870], ["plate_car_pony_gen_6B", "25", 1960], ["plate_car_pony_gen_6C", "33", 1970], ["flat_car_pony_gen_1A", "17", 1140], ["flat_car_pony_gen_2B", "25", 1150], ["flat_car_pony_gen_3A", "17", 1350], ["flat_car_pony_gen_3B", "25", 1160], ["flat_car_pony_gen_3C", "33", 2550], ["flat_car_pony_gen_4A", "17", 1560], ["flat_car_pony_gen_4B", "25", 2540], ["flat_car_pony_gen_4C", "33", 2530], ["flat_car_pony_gen_5B", "25", 2520], ["flat_car_pony_gen_5C", "33", 2510], ["flat_car_pony_gen_6B", "25", 1630], ["flat_car_pony_gen_6C", "33", 1640], ["bulkhead_flat_car_pony_gen_3A", "17", 4700], ["bulkhead_flat_car_pony_gen_3B", "25", 4710], ["bulkhead_flat_car_pony_gen_3C", "33", 4720], ["bulkhead_flat_car_pony_gen_4A", "17", 4730], ["bulkhead_flat_car_pony_gen_4B", "25", 4740], ["bulkhead_flat_car_pony_gen_4C", "33", 4750], ["bulkhead_flat_car_pony_gen_5B", "25", 4760], ["bulkhead_flat_car_pony_gen_5C", "33", 4770], ["bulkhead_flat_car_pony_gen_6B", "25", 4780], ["bulkhead_flat_car_pony_gen_6C", "33", 4790], ["tarpaulin_car_pony_gen_5B", "25", 340], ["tarpaulin_car_pony_gen_5C", "33", 350], ["tarpaulin_car_pony_gen_6B", "25", 370], ["tarpaulin_car_pony_gen_6C", "33", 400], ["coil_car_pony_gen_4B", "25", 3510], ["coil_car_pony_gen_4C", "33", 3520], ["coil_car_pony_gen_5B", "25", 3530], ["coil_car_pony_gen_5C", "33", 3540], ["coil_car_pony_gen_6B", "25", 3550], ["coil_car_pony_gen_6C", "33", 3560], ["stake_car_pony_gen_2A", "17", 2740], ["stake_car_pony_gen_3A", "17", 2730], ["stake_car_pony_gen_3B", "25", 2750], ["stake_car_pony_gen_4A", "17", 1710], ["stake_car_pony_gen_4B", "25", 2760], ["stake_car_pony_gen_4C", "33", 1930], ["stake_car_pony_gen_5B", "25", 2770], ["stake_car_pony_gen_5C", "33", 930], ["stake_car_pony_gen_6B", "25", 1910], ["stake_car_pony_gen_6C", "33", 1920], ["hopper_car_pony_gen_2A", "17", 2030], ["hopper_car_pony_gen_3A", "17", 2040], ["hopper_car_pony_gen_4A", "17", 2320], ["hopper_car_pony_gen_4B", "25", 1380], ["hopper_car_pony_gen_5B", "25", 1090], ["hopper_car_pony_gen_5C", "33", 2780], ["hopper_car_pony_gen_6B", "25", 3010], ["hopper_car_pony_gen_6C", "33", 3020], ["rock_hopper_car_pony_gen_2A", "17", 2310], ["rock_hopper_car_pony_gen_3A", "17", 1070], ["rock_hopper_car_pony_gen_3B", "25", 2330], ["rock_hopper_car_pony_gen_4A", "17", 1080], ["rock_hopper_car_pony_gen_4B", "25", 2000], ["rock_hopper_car_pony_gen_4C", "33", 2010], ["rock_hopper_car_pony_gen_5A", "17", 1610], ["rock_hopper_car_pony_gen_5B", "25", 1600], ["rock_hopper_car_pony_gen_5C", "33", 1620], ["rock_hopper_car_pony_gen_6B", "25", 2020], ["rock_hopper_car_pony_gen_6C", "33", 1990], ["ore_hopper_car_pony_gen_2A", "17", 4100], ["ore_hopper_car_pony_gen_3A", "17", 4110], ["ore_hopper_car_pony_gen_3B", "25", 4390], ["ore_hopper_car_pony_gen_4A", "17", 4120], ["ore_hopper_car_pony_gen_4B", "25", 4130], ["ore_hopper_car_pony_gen_5A", "17", 4380], ["ore_hopper_car_pony_gen_5B", "25", 4140], ["ore_hopper_car_pony_gen_5C", "33", 4150], ["ore_hopper_car_pony_gen_6B", "25", 4160], ["ore_hopper_car_pony_gen_6C", "33", 4170], ["dump_car_pony_gen_2A", "17", 2960], ["dump_car_pony_gen_3A", "17", 2350], ["dump_car_pony_gen_3B", "25", 2360], ["dump_car_pony_gen_4A", "17", 2370], ["dump_car_pony_gen_4B", "25", 2380], ["dump_car_pony_gen_5B", "25", 1810], ["dump_car_pony_gen_5C", "33", 2110], ["dump_car_pony_gen_6B", "25", 2400], ["dump_car_pony_gen_6C", "33", 2390], ["dump_car_high_side_pony_gen_3A", "17", 3860], ["dump_car_high_side_pony_gen_3B", "25", 3870], ["dump_car_high_side_pony_gen_4A", "17", 3780], ["dump_car_high_side_pony_gen_4B", "25", 3790], ["dump_car_high_side_pony_gen_5B", "25", 3810], ["dump_car_high_side_pony_gen_5C", "33", 3820], ["dump_car_high_side_pony_gen_6B", "25", 3840], ["dump_car_high_side_pony_gen_6C", "33", 3850], ["scrap_metal_car_pony_gen_3A", "17", 4180], ["scrap_metal_car_pony_gen_3B", "25", 4190], ["scrap_metal_car_pony_gen_4A", "17", 4200], ["scrap_metal_car_pony_gen_4B", "25", 4210], ["scrap_metal_car_pony_gen_5B", "25", 4230], ["scrap_metal_car_pony_gen_5C", "33", 4240], ["scrap_metal_car_pony_gen_6B", "25", 4260], ["scrap_metal_car_pony_gen_6C", "33", 4270], ["tank_car_pony_gen_1A", "17", 1200], ["tank_car_pony_gen_2B", "25", 3180], ["tank_car_pony_gen_3A", "17", 630], ["tank_car_pony_gen_3B", "25", 2430], ["tank_car_pony_gen_3C", "33", 2900], ["tank_car_pony_gen_4A", "17", 640], ["tank_car_pony_gen_4B", "25", 960], ["tank_car_pony_gen_4C", "33", 1250], ["tank_car_pony_gen_5A", "17", 2410], ["tank_car_pony_gen_5B", "25", 2420], ["tank_car_pony_gen_5C", "33", 2930], ["tank_car_pony_gen_6A", "17", 2920], ["tank_car_pony_gen_6B", "25", 2970], ["tank_car_pony_gen_6C", "33", 2790], ["product_tank_car_pony_gen_2A", "17", 2860], ["product_tank_car_pony_gen_3A", "17", 3360], ["product_tank_car_pony_gen_3B", "25", 3370], ["product_tank_car_pony_gen_3C", "33", 3460], ["product_tank_car_pony_gen_4A", "17", 3380], ["product_tank_car_pony_gen_4B", "25", 3390], ["product_tank_car_pony_gen_4C", "33", 3400], ["product_tank_car_pony_gen_5A", "17", 3410], ["product_tank_car_pony_gen_5B", "25", 3420], ["product_tank_car_pony_gen_5C", "33", 3430], ["product_tank_car_pony_gen_6B", "25", 3440], ["product_tank_car_pony_gen_6C", "33", 3450], ["cryo_tank_car_pony_gen_2A", "17", 80], ["cryo_tank_car_pony_gen_3A", "17", 180], ["cryo_tank_car_pony_gen_3B", "25", 250], ["cryo_tank_car_pony_gen_4A", "17", 20], ["cryo_tank_car_pony_gen_4B", "25", 50], ["cryo_tank_car_pony_gen_4C", "33", 60], ["cryo_tank_car_pony_gen_5B", "25", 90], ["cryo_tank_car_pony_gen_5C", "33", 150], ["cryo_tank_car_pony_gen_6B", "25", 190], ["cryo_tank_car_pony_gen_6C", "33", 200], ["covered_hopper_car_pony_gen_2A", "17", 4500], ["covered_hopper_car_pony_gen_3A", "17", 4510], ["covered_hopper_car_pony_gen_4A", "17", 4520], ["covered_hopper_car_pony_gen_4B", "25", 4530], ["covered_hopper_car_pony_gen_5B", "25", 4550], ["covered_hopper_car_pony_gen_5C", "33", 4560], ["covered_hopper_car_pony_gen_6B", "25", 4580], ["covered_hopper_car_pony_gen_6C", "33", 4590], ["grain_hopper_car_pony_gen_2A", "17", 2850], ["grain_hopper_car_pony_gen_3A", "17", 2870], ["grain_hopper_car_pony_gen_4A", "17", 2080], ["grain_hopper_car_pony_gen_4B", "25", 2670], ["grain_hopper_car_pony_gen_5B", "25", 2800], ["grain_hopper_car_pony_gen_5C", "33", 2690], ["grain_hopper_car_pony_gen_6B", "25", 2810], ["grain_hopper_car_pony_gen_6C", "33", 2820], ["pellet_hopper_car_pony_gen_2A", "17", 4280], ["pellet_hopper_car_pony_gen_3A", "17", 4300], ["pellet_hopper_car_pony_gen_4A", "17", 4310], ["pellet_hopper_car_pony_gen_4B", "25", 4330], ["pellet_hopper_car_pony_gen_5B", "25", 4340], ["pellet_hopper_car_pony_gen_5C", "33", 4350], ["pellet_hopper_car_pony_gen_6B", "25", 4360], ["pellet_hopper_car_pony_gen_6C", "33", 4370], ["silo_car_pony_gen_4A", "17", 3680], ["silo_car_pony_gen_4B", "25", 3690], ["silo_car_pony_gen_4C", "33", 3700], ["silo_car_pony_gen_5A", "17", 3620], ["silo_car_pony_gen_5B", "25", 3630], ["silo_car_pony_gen_5C", "33", 3640], ["silo_car_pony_gen_6A", "17", 3650], ["silo_car_pony_gen_6B", "25", 3660], ["silo_car_pony_gen_6C", "33", 3670], ["cement_silo_car_pony_gen_4A", "17", 1230], ["cement_silo_car_pony_gen_4B", "25", 1240], ["cement_silo_car_pony_gen_4C", "33", 1260], ["cement_silo_car_pony_gen_5A", "17", 1270], ["cement_silo_car_pony_gen_5B", "25", 1340], ["cement_silo_car_pony_gen_5C", "33", 1940], ["cement_silo_car_pony_gen_6A", "17", 2060], ["cement_silo_car_pony_gen_6B", "25", 2070], ["cement_silo_car_pony_gen_6C", "33", 2700], ["livestock_car_pony_gen_1A", "17", 1010], ["livestock_car_pony_gen_3A", "17", 2680], ["livestock_car_pony_gen_4A", "17", 1020], ["livestock_car_pony_gen_5C", "33", 2720], ["livestock_car_pony_gen_6C", "33", 2710], ["edibles_tank_car_pony_gen_2A", "17", 3030], ["edibles_tank_car_pony_gen_3A", "17", 1190], ["edibles_tank_car_pony_gen_4A", "17", 2990], ["edibles_tank_car_pony_gen_4B", "25", 1690], ["edibles_tank_car_pony_gen_4C", "33", 1220], ["edibles_tank_car_pony_gen_5A", "17", 1210], ["edibles_tank_car_pony_gen_5B", "25", 1700], ["edibles_tank_car_pony_gen_5C", "33", 3050], ["edibles_tank_car_pony_gen_6B", "25", 2100], ["edibles_tank_car_pony_gen_6C", "33", 2090], ["reefer_car_pony_gen_2A", "17", 730], ["reefer_car_pony_gen_3A", "17", 720], ["reefer_car_pony_gen_4A", "17", 2560], ["reefer_car_pony_gen_4B", "25", 2590], ["reefer_car_pony_gen_4C", "33", 3580], ["reefer_car_pony_gen_5B", "25", 2570], ["reefer_car_pony_gen_5C", "33", 2580], ["reefer_car_pony_gen_6B", "25", 1820], ["reefer_car_pony_gen_6C", "33", 1850], ["fruit_veg_car_pony_gen_2A", "17", 2640], ["fruit_veg_car_pony_gen_3A", "17", 2630], ["fruit_veg_car_pony_gen_3B", "25", 2620], ["fruit_veg_car_pony_gen_4A", "17", 2600], ["fruit_veg_car_pony_gen_4B", "25", 2610], ["fruit_veg_car_pony_gen_4C", "33", 3570], ["fruit_veg_car_pony_gen_5B", "25", 2650], ["fruit_veg_car_pony_gen_5C", "33", 2660], ["fruit_veg_car_pony_gen_6B", "25", 1890], ["fruit_veg_car_pony_gen_6C", "33", 1900], ["carbon_black_hopper_car_pony_gen_3A", "17", 4410], ["carbon_black_hopper_car_pony_gen_4A", "17", 4420], ["carbon_black_hopper_car_pony_gen_4B", "25", 4430], ["carbon_black_hopper_car_pony_gen_5B", "25", 4450], ["carbon_black_hopper_car_pony_gen_5C", "33", 4460], ["carbon_black_hopper_car_pony_gen_6B", "25", 4480], ["carbon_black_hopper_car_pony_gen_6C", "33", 4490], ["torpedo_car_pony_gen_2U", "49", 4060], ["torpedo_car_pony_gen_3U", "49", 4070], ["torpedo_car_pony_gen_4U", "49", 4080], ["torpedo_car_pony_gen_5U", "49", 4090], ["slag_ladle_car_pony_gen_1U", "17", 4030], ["slag_ladle_car_pony_gen_4U", "17", 4040], ["caboose_car_pony_gen_1A", "17", 1280], ["caboose_car_pony_gen_1B", "25", 2210]]}, "NG": {"engines": [["cheese_bug", "17", 490], ["bean_feast", "17", 240], ["pikel", "17", 430], ["boar_cat", "17", 1320], ["mumble", "25", 140], ["snapper", "25", 590], ["workish", "25", 260], ["zorro", "25", 310]], "wagons": [["passenger_railcar_trailer_car_ng_pony_gen_3U", "25", 990], ["passenger_railcar_trailer_car_ng_pony_gen_4U", "25", 4470], ["passenger_car_ng_pony_gen_1U", "17", 770], ["passenger_car_ng_pony_gen_3U", "17", 800], ["passenger_car_ng_pony_gen_4U", "17", 860], ["luxury_passenger_car_ng_pony_gen_1U", "25", 1530], ["luxury_passenger_car_ng_pony_gen_3U", "25", 600], ["luxury_passenger_car_ng_pony_gen_4U", "25", 660], ["mail_car_ng_pony_gen_1U", "17", 950], ["mail_car_ng_pony_gen_3U", "17", 610], ["mail_car_ng_pony_gen_4U", "17", 670], ["intermodal_car_ng_pony_gen_4U", "17", 3960], ["open_car_ng_pony_gen_1U", "17", 850], ["open_car_ng_pony_gen_3U", "17", 2160], ["open_car_ng_pony_gen_4U", "17", 910], ["box_car_ng_pony_gen_1U", "17", 580], ["box_car_ng_pony_gen_3U", "17", 1180], ["box_car_ng_pony_gen_4U", "17", 810], ["flat_car_ng_pony_gen_1U", "17", 1170], ["flat_car_ng_pony_gen_3U", "17", 1130], ["flat_car_ng_pony_gen_4U", "17", 1370], ["hopper_car_ng_pony_gen_1U", "17", 3590], ["hopper_car_ng_pony_gen_3U", "17", 3600], ["hopper_car_ng_pony_gen_4U", "17", 3610], ["dump_car_ng_pony_gen_2U", "17", 4020], ["dump_car_ng_pony_gen_3U", "17", 30], ["dump_car_ng_pony_gen_4U", "17", 40], ["tank_car_ng_pony_gen_1U", "17", 650], ["tank_car_ng_pony_gen_3U", "17", 2980], ["tank_car_ng_pony_gen_4U", "17", 690], ["livestock_car_ng_pony_gen_1U", "17", 1030], ["livestock_car_ng_pony_gen_3U", "17", 620], ["livestock_car_ng_pony_gen_4U", "17", 680], ["fruit_veg_car_ng_pony_gen_1U", "17", 1310], ["fruit_veg_car_ng_pony_gen_3U", "17", 1360], ["fruit_veg_car_ng_pony_gen_4U", "17", 1520], ["slag_ladle_car_ng_pony_gen_1U", "17", 4440], ["caboose_car_ng_pony_gen_1U", "17", 1290]]}, "METRO": {"engines": [["serpentine", "65", 460], ["westbourne", "65", 360], ["fleet", "65", 210], ["longwater", "65", 290], ["tyburn", "65", 2190], ["tideway", "65", 2200]]}}}');
+                    function random_img(){
+                        var vehicle_type_keys = Object.keys(all_consists_grouped['sorted_by_vehicle_type']);
+                        var vehicle_type_key = vehicle_type_keys[Math.floor(Math.random()*vehicle_type_keys.length)];
+                        var images = all_consists_grouped['sorted_by_vehicle_type'][vehicle_type_key];
+                        var index = Math.floor(Math.random()*images.length);
+                        var random_image = images.splice(index, 1)[0]; // splice returns an array, and we need the nested array inside it
+                        document.write('<a href="trains.html#' + random_image[0] + '" style="display:inline; margin-bottom: 20px;"> \
+                                            <img src="static/img/'+ random_image[0] + '_red_white.png" \
+                                                 width="' + 4 * random_image[1] + '" \
+                                                 height="64"> \
+                                        </a>')
+                        return true;
+                    }
+                </script>
+                <div class="text-right">
+                    <script language="JavaScript">
+                        random_img();
+                        random_img();
+                        random_img();
+                        random_img();
+                        random_img();
+                    </script>
+                </div>
+                <div class="text-right">
+                    <script language="JavaScript">
+                        random_img();
+                        random_img();
+                        random_img();
+                        random_img();
+                        random_img();
+                    </script>
+                </div>
+                <div class="text-right">
+                    <script language="JavaScript">
+                        random_img();
+                        random_img();
+                        random_img();
+                        random_img();
+                        random_img();
+                    </script>
+                </div>
+            </div>
+            <h1 style="font-size:48px; padding-top:40px;">Iron Horse</h1>
+            <p class="lead">My Lovely <strike>Horse</strike> Train Set</p>
+        </div>
+    </div>
+    <div class="span12">
+        <h1>Changelog</h1>
+<hr />
+<h2>2.10.1 Release</h2>
+<p><em>Fixes</em></p>
+<ul>
+<li>remove experimental company colour handling for wagons, which was accidentally shipped in versions 2.8.0 thru 2.10.0<ul>
+<li>this is a revert of https://github.com/andythenorth/iron-horse/commit/5b3b0b015ad2bbf48f4e148ce763ac564f5d617c</li>
+</ul>
+</li>
+</ul>
+<hr />
+<h2>2.10.0 Release</h2>
+<p><em>Changes</em></p>
+<ul>
+<li>added Captain Steel branch freight engine, alternative to Little Bear<ul>
+<li>available around 1960</li>
+<li>75mph / 1150hp</li>
+<li>inspired by Alco S1, EMD switchers, Brush Bagnall steelworks locos</li>
+</ul>
+</li>
+</ul>
+<hr />
+<h2>2.9.1 Release</h2>
+<p><em>Translations</em></p>
+<ul>
+<li>French translation (Arikover)</li>
+</ul>
+<hr />
+<h2>2.9.0 Release</h2>
+<p><em>Changes</em></p>
+<ul>
+<li>added Chuggypig joker engine, as alternative to Gronk<ul>
+<li>available around 1960</li>
+<li>35mph / 400hp</li>
+<li>inspired by Thomas Hill Steelman, BR Class 07, miscellaneous industrial diesel shunters</li>
+</ul>
+</li>
+<li>added Autocoach Set<ul>
+<li>available around 1915</li>
+<li>attach to front or rear of a train with at least one other engine</li>
+<li>for OpenTTD reasons, vehicles must have power to lead a train, so these vehicles include a small amount of power</li>
+<li>75mph, combined pax and mail capacity (not refittable)</li>
+<li>inspired by SR and LMS auto-coach sets, LNER articulated coach sets</li>
+</ul>
+</li>
+<li>increase Lemon speed to 75mph, so it can stick around for longer in steam-diesel transition period, similar to Diablo and Blind Smuir</li>
+<li>link to grf.farm docs from in-game</li>
+</ul>
+<p><em>Fixes</em></p>
+<ul>
+<li>Chinook run cost was too high</li>
+<li>incorrect pixels for some liveries for gen 4B mail car</li>
+</ul>
+<p><em>Docs</em></p>
+<ul>
+<li>link to grf.farm docs from readme</li>
+<li>adjust Gronk description</li>
+<li>change the majority of headings in html docs from title case to sentence case</li>
+</ul>
+<hr />
+<h2>2.8.0 Release</h2>
+<p>"We were in the jungle, there were too many of us, we had access to too much money, too much equipment, and little by little we went insane" - Francis Ford Coppola</p>
+<p>Not savegame compatible with previous Iron Horse releases.</p>
+<p><em>New and Re-Balanced Engines</em></p>
+<ul>
+<li>the engine tech tree has been re-worked<ul>
+<li>many engines now have one or more equivalent alternates<ul>
+<li>this is primarily an eye-candy feature, the gameplay difference between alternates is negligible</li>
+<li>the new parameter option for simplified gameplay mode will hide the alternates</li>
+</ul>
+</li>
+<li>more engines are available in early game, making early game more interesting</li>
+<li>more engines (and more varied engines) are available in late game, which was previously bland</li>
+<li>some engines have longer lifespan, and can be used across several generations, particularly express engines moving to a freight role in later years</li>
+<li>some gaps in power ranges are filled, especially for electric engines in later game</li>
+</ul>
+</li>
+<li>new or significantly changed engines<ul>
+<li>Avenger, inspired by BR Class 89</li>
+<li>Blind Smuir, inspired by LMS Class 5 Black Five, BR Standard 5 Class</li>
+<li>Bone, inspired by BR Class 58</li>
+<li>Buffalo, inspired by LNWR Webb Coal Tank</li>
+<li>Diablo, inspired by LMS Hughes Crab, BR Standard Class 4 2-6-0</li>
+<li>Endeavour, inspired by EMD / Progress Rail JT42CWR (Class 66)</li>
+<li>Esk, inspired by LMS Garratt</li>
+<li>Evolution, inspired by BR Class 47, Brush Class 57, original TTD UU '47'</li>
+<li>Goliath, inspired by YEC Janus, Corus Trojan, Corus Hunslet Bo-bo</li>
+<li>Intrepid, inspired by BR Class 35 Hymek, Brush Falcon prototype and BRCW Lion prototype</li>
+<li>Lamia, inspired by Bagnall saddle tanks</li>
+<li>Magnum 70, inspired by Clayton CB40/CBD80/CBD90</li>
+<li>Merlion, inspired by BR Class 31</li>
+<li>Resilient, inspired by BR Class 47, Brush Class 57, original TTD UU '47'</li>
+<li>Shredder, inspired by EMD JT42HW-HS (Class 67)</li>
+<li>Streamer, inspired by LNER V2, LNER streamlined B17/A4/P2</li>
+<li>Swift, inspired GNR Class C1, Class C2 Klondike</li>
+<li>Thunderer, inspired by GWR 2900 Saint Class, GWR 4000 Star Class</li>
+<li>Toaster, inspired by GE Class 70 Powerhaul</li>
+<li>Vigilant, inspired by GCR Class 8K / ROD 2-8-0, GWR 2800 Class</li>
+<li>Viking, inspired by MaK / Vossloh G1206/G1700), Corus Di8, Eurotunnel Class 0001 (Class 21)</li>
+<li>Vulcan, inspired by English Electric DP2 prototype</li>
+<li>Zebedee, inspired by BR Class 87, Class 86</li>
+</ul>
+</li>
+<li>engines with minor changes for balance with the revised tech tree<ul>
+<li>Blackthorn, Blaze, Carrack, Cheddar Valley, Fury, Girt Licker, Grub, Phoenix, Revolution, Roarer, Scorcher, Screamer, Strongbow, Super Shoebox, Tencendur, Ultra Shoebox</li>
+</ul>
+</li>
+<li>renamed<ul>
+<li>Gwynt is renamed to Hercules</li>
+</ul>
+</li>
+<li>removed<ul>
+<li>Hercules branch freight diesel engine (Hercules name re-used for freight steam engine)</li>
+</ul>
+</li>
+</ul>
+<p><em>Changes</em></p>
+<ul>
+<li>alternative liveries for some company colour combinations<ul>
+<li>more information in html docs https://grf.farm/</li>
+</ul>
+</li>
+<li>increased gen 5 freight speed to 87 mph</li>
+<li>cap gen 6 freight speed to same 87 mph, as the forced gen 5-&gt;6 transition is low yield for gameplay interest, and should be optional<ul>
+<li>this also means that some gen 5 engines remain relevant for gen 6;</li>
+<li>increased gen 6 wagon capacity and reduced tare weight to reward upgrading if players want to take the option</li>
+</ul>
+</li>
+<li>increased gen 6 railcar speeds to 99 mph</li>
+<li>extended model life for Gronk! type engines</li>
+<li>added a trailer car for High Flyer luxury railcar</li>
+<li>significantly increased power for all luxury railcars, so they function better with trailers</li>
+<li>gen 6 Torpedo Car isn't required, stop at gen 5</li>
+<li>renamed 'Vehicle Parts Box Car' to 'Vehicle Parts Van'</li>
+<li>adjusted gen 2A hopper sprite to look older</li>
+<li>use 2CC for high-side dump cars to create contrast with standard dump cars in buy menu</li>
+<li>improve Growler roof appearance</li>
+<li>improved Slug and Phoenix sprites</li>
+<li>tweaks to Dragon sprites</li>
+<li>added nameplate to Moor Gallop sprite</li>
+<li>tweak Onslaught engine room window positions</li>
+<li>tweak to Roarer sprite</li>
+<li>moved Sunshine Coast pans to front of unit</li>
+<li>Helm Wind looks better with reversed pantograph</li>
+</ul>
+<p><em>Docs</em></p>
+<ul>
+<li>added Train Whack pointless mini-game</li>
+<li>much improved vehicle details page</li>
+<li>improved ordering of role branches in Tech Tree</li>
+<li>set titles for docs html pages</li>
+<li>added anchor links (element ids) to vehicle details headings for deep linking</li>
+<li>improved Tech Tree vehicle box border contrast</li>
+<li>added space between value and unit suffixes (hp, mph etc)</li>
+</ul>
+<p><em>Codechanges</em></p>
+<ul>
+<li>refactored spritelayer_cargo templating</li>
+<li>refactored handling of vehicle role and role child branch</li>
+<li>use the generated vehicle image (with caution) in pantograph debug image, not the raw input image, as it contains the rendered roof and chassis, so is a better debug image (can also then be used in docs)</li>
+<li>re-implemented docs image randomiser using json, with nested engines / wagons</li>
+</ul>
+<hr />
+<h2>2.7.0 Release</h2>
+<p><em>Changes</em></p>
+<ul>
+<li>added Vehicle Parts Vans<ul>
+<li>same refits as Box Vans</li>
+<li>intended particularly for use with FIRS Steeltown</li>
+</ul>
+</li>
+<li>added Bulkhead Flat Wagons<ul>
+<li>same refits as Flat Wagons, different appearance</li>
+<li>intended particularly for metals cargos</li>
+</ul>
+</li>
+<li>adjusted appearance of Flat Wagons</li>
+<li>improved appearance of coil and log cargo sprites</li>
+<li>slightly increased power for Growler, Slug and Phoenix diesel engines</li>
+</ul>
+<p><em>Fixes</em></p>
+<ul>
+<li>corrected shading on narrow gauge Tankers</li>
+</ul>
+<hr />
+<h2>2.6.0 Release</h2>
+<p><em>Changes</em></p>
+<ul>
+<li>added generation 2 Mineral Wagon</li>
+<li>added generation 3 large Passenger Coach</li>
+<li>added unpowered Railcar Passenger Trailers and Railcar Luxury Trailers<ul>
+<li>these will combine with either railcars or luxury railcars of the same generation, as appropriate</li>
+</ul>
+</li>
+<li>reduced railcar running costs which had been power-crept by cost reductions in other vehicles, leaving railcars uncompetitive on target routes</li>
+<li>renamed 'Coil Car' to 'Coil Carrier'</li>
+<li>added support for FIRS steel sheet cargo</li>
+<li>tweaks to railcar chassis sprites</li>
+</ul>
+<p><em>Fixes</em></p>
+<ul>
+<li>use correct pantograph for High Flyer</li>
+<li>electric railcars generally had weights too high; should be lower than equivalent diesel railcar in most cases</li>
+<li>don't show brake car sprites for passenger coaches when the neighbouring vehicle is also a passenger car even if a different type</li>
+<li>removed spurious door light pixels in generation 4 Passenger Coach (Medium)</li>
+</ul>
+<p><em>Docs</em></p>
+<ul>
+<li>re-implemented vehicle images in global header</li>
+<li>note that translations page is outdated</li>
+<li>improvements to trains page</li>
+<li>provided page per vehicle giving more details about the vehicle (experimental feature)</li>
+</ul>
+<p><em>Translations</em></p>
+<ul>
+<li>removed doubled parens in en-us translation (desmondgc)</li>
+</ul>
+<hr />
+<h2>2.5.0 Release</h2>
+<p><em>Changes</em></p>
+<ul>
+<li>reduced Hurly Burly electric engine run costs for balance with same-era steam engines</li>
+<li>added a gen 2 Cryo Tanker, available around 1900</li>
+<li>adjusted intro date for gen 2 Hopper and Product Tanker, now available around 1890</li>
+</ul>
+<hr />
+<h2>2.4.0 Release</h2>
+<p>Not savegame compatible with previous Iron Horse releases.</p>
+<p><em>New and Changed Engines</em></p>
+<ul>
+<li>reworked medium-power general/purpose express engines<ul>
+<li>reduced running costs on these to make them genuinely viable for general freight as well as express trains</li>
+<li>provided more generations of these engines as they're very useful for trains around 5-6 tiles long</li>
+<li>renamed 4-6-0 Upcountry to 4-6-0 Thunderer</li>
+<li>added 4-6-0 Strongbow express / general purpose steam engine<ul>
+<li>inspired by Jubilee / Royal Scot, as featured in original TTD</li>
+<li>available around 1930</li>
+</ul>
+</li>
+<li>added Vanguard express / general purpose diesel engine<ul>
+<li>inspired by the never-built British Rail class 38, a medium-power engine using a class 60 bodyshell</li>
+<li>available around 1992</li>
+</ul>
+</li>
+<li>removed Thunderbird</li>
+<li>Revolution bi-mode engine adjusted to better fit medium-power general purpose/express role<ul>
+<li>in diesel mode, Revolution follows Vanguard</li>
+<li>in electric mode, power is increased, Revolution follows Fury</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>reworked high-power general purpose express engines<ul>
+<li>added Onslaught diesel engine, follows Dragon<ul>
+<li>inspired by British Rail class 50 and the never-built 'Super Deltic'</li>
+<li>available around 1982</li>
+</ul>
+</li>
+<li>added Relentless diesel engine, follows Onslaught<ul>
+<li>inspired by Vossloh and similar European diesel engines</li>
+</ul>
+</li>
+<li>Screamer and Sizzler electric engine power reduced for game balance</li>
+</ul>
+</li>
+<li>electric heavy freight engine changes<ul>
+<li>renamed Gosling Blast to Triton</li>
+<li>repainted Triton to be boxy, too many cheese-slope electric locomotives</li>
+<li>reduced power of Flanders Storm and Triton for game balance</li>
+</ul>
+</li>
+<li>diesel heavy freight engine changes<ul>
+<li>renamed Chimera to Endeavour</li>
+<li>repainted Endeavour, I didn't like the class 70-ish sprite, it's now class 66-ish (livery inspired by Freightliner)</li>
+<li>reduced power of Cheddar Valley and Endeavour for game balance</li>
+</ul>
+</li>
+<li>added luxury passenger railcars<ul>
+<li>these run at express train speeds, and have more power but lower capacity than standard railcars</li>
+<li>High Flyer (available around 1930)</li>
+<li>Sunshine Coast (available around 1960)</li>
+<li>Olympic (available around 1990)</li>
+<li>Bright Country (available around 2020)</li>
+<li>electric railcar power adjusted to balance with the new luxury railcars</li>
+</ul>
+</li>
+<li>added Firebird high speed train<ul>
+<li>inspired by UK Blue Pullman train, but featuring Deltic-type power and speed</li>
+<li>available around 1960</li>
+</ul>
+</li>
+<li>increased power of Driving Cab Cars a little, as it's of benefit for diesel express trains</li>
+<li>most steam engines redrawn for improved appearance</li>
+<li>changed livery for<ul>
+<li>Fury (inspired by UK Freightliner livery)</li>
+<li>Revolution (freestyle livery matching generation 6 driving carb car)</li>
+<li>Tencendur (to provide variety in steam engines)</li>
+</ul>
+</li>
+<li>tweaks to sprites for<ul>
+<li>Athena</li>
+<li>Blaze</li>
+<li>Blackthorn</li>
+<li>Dover</li>
+<li>Dragon</li>
+<li>Flanders Storm</li>
+<li>Geronimo</li>
+<li>Grid</li>
+<li>Happy Train</li>
+<li>Jupiter</li>
+<li>Plastic Postbox</li>
+<li>Scooby</li>
+<li>Scorcher</li>
+<li>Sizzler</li>
+<li>Slammer</li>
+<li>Zeus</li>
+</ul>
+</li>
+<li>rebalanced power and weight for many engines<ul>
+<li>based on a ratio derived from power, weight and maximum speed</li>
+<li>relative performance differences across multiple generations for each engine role are now more deliberately designed</li>
+</ul>
+</li>
+</ul>
+<p><em>New and Changed Wagons</em></p>
+<ul>
+<li>added 7 Carbon Black Hoppers<ul>
+<li>dedicated to carbon black cargo (found in FIRS v4 Steeltown economy)</li>
+</ul>
+</li>
+<li>added 5 Torpedo Wagons<ul>
+<li>dedicated to pig iron cargo (found in FIRS v4 Steeltown economy)</li>
+</ul>
+</li>
+<li>added 3 Slag Ladle Wagons<ul>
+<li>2 standard gauge, 1 narrow gauge</li>
+<li>dedicated to slag cargo (found in FIRS v4 Steeltown economy)</li>
+<li>limited to 35mph due to carrying red-hot molten slag in open top ladles</li>
+</ul>
+</li>
+<li>adjusted some wagon types that had an alternative hand-drawn livery using ctrl-click in depot<ul>
+<li>for most wagon types ctrl-click in depot now only toggles 1st / 2nd company colour</li>
+<li>some wagon types have been split or combined</li>
+</ul>
+</li>
+<li>hopper-type wagons adjusted to<ul>
+<li>Hopper (grey)</li>
+<li>Rock Hopper (company colour)</li>
+<li>Ore Hopper (brown)</li>
+</ul>
+</li>
+<li>mineral-type wagons adjusted to<ul>
+<li>Mineral Wagon (company colour)</li>
+<li>High Side Mineral Wagon (company colour)</li>
+<li>Scrap Wagon (black)</li>
+</ul>
+</li>
+<li>covered-hopper type wagons adjusted to<ul>
+<li>Covered Hopper (brown)</li>
+<li>Grain Hopper (company color + grey)</li>
+<li>Pellet Hopper (grey)</li>
+</ul>
+</li>
+<li>silo type wagons adjusted to<ul>
+<li>Silo Wagon (company colour)</li>
+<li>Cement Silo Wagon (dirty grey colour)</li>
+</ul>
+</li>
+<li>removed Chemicals Tanker in favour of Product Tanker<ul>
+<li>same refits as Tanker</li>
+<li>shiny appearance</li>
+</ul>
+</li>
+<li>removed some generation 6 short wagons, not needed</li>
+<li>improved appearance for<ul>
+<li>Tarpaulin Cars</li>
+<li>generation 6 Passenger Coaches (all types)</li>
+</ul>
+</li>
+<li>use mail as default cargo for Express Vans, not engineering supplies, avoids confusion when adding Express Vans to mail trains</li>
+</ul>
+<p><em>Changes</em></p>
+<ul>
+<li>play-testing showed that running costs were too high in many cases<ul>
+<li>running costs reduced for many trains</li>
+<li>should generally aid profitability, too little profit is a bigger gameplay evil than too much profit</li>
+<li>notably routes involving transfers should be more profitable</li>
+</ul>
+</li>
+<li>minor reduction of speeds of railcars / freight vehicles in later game<ul>
+<li>84mph for generation 5 (around 1990), previously 87mph</li>
+<li>93mph generation 6 (around 2020), previously 96mph</li>
+</ul>
+</li>
+<li>increased spacing of buffer pixels in - views</li>
+<li>added description text for Jokers parameter</li>
+<li>use 3-unit sets for some electric mail railcars (previously 2-unit sets)</li>
+</ul>
+<p><em>Fixes</em></p>
+<ul>
+<li>haulage speed bonus calculation was broken, causing electric railcar default speed to be too high</li>
+<li>HST coaches were too heavy</li>
+<li>adjusted HST coach buy cost to be about same as luxury passenger coach</li>
+<li>removed alternative company livery option that was added for certain wagon types in 2.3, on reflection it was a flawed idea</li>
+</ul>
+<p><em>Docs</em></p>
+<ul>
+<li>show hp/speed ratio in docs, as a guide to relative performance of engines</li>
+<li>option for tech tree table in 1CC (blue) or 2CC (red &amp; white)</li>
+<li>show both power ratings for bi-mode engines in tech-tree table</li>
+<li>show 'replaced by' info in tech tree table</li>
+<li>add anchor links to sections on code reference page</li>
+</ul>
+<p><em>Codechanges</em></p>
+<ul>
+<li>local refactoring including removal of unused legacy vars and simplifying of templates</li>
+<li>Makefile fixes<ul>
+<li>some shells expanded the roster asterisk in the Makefile, use ALL instead</li>
+<li>NML needs the graphics sources at least on first run, so add them as order-only dependencies</li>
+<li>don't use directories as dependencies in Makefiles</li>
+</ul>
+</li>
+<li>compile optimisation for speed and filesize<ul>
+<li>save 5k realsprites by setting purchase sprites to [] when no realsprites is needed</li>
+<li>set additional grfcodec container and compression options in makefile</li>
+<li>forcibly suppress animated pixel warnings</li>
+<li>remove around ~7k duplicated realsprites by only providing 4 realsprites for some symmetrical 8/8 vehicles</li>
+<li>use stored procedures in multiple places, significantly reducing NML switch counts</li>
+<li>use global switches for tail-lights, not per vehicle, significantly reducing NML switch counts</li>
+</ul>
+</li>
+</ul>
+<p><em>Lang</em></p>
+<ul>
+<li>removed some outdated/unused lang strings</li>
+</ul>
+<hr />
+<h2>2.3.0 Release</h2>
+<p><em>Features</em></p>
+<ul>
+<li>added 9 Silo Wagons<ul>
+<li>multiple liveries, livery shown depends on vehicle cargo and/or user choice (depot flip the vehicle to toggle cargo livery / solid company colour)</li>
+</ul>
+</li>
+<li>added alternative solid company livery (toggle by depot-flipping the vehicle) for the following vehicle types:<ul>
+<li>Chemicals Tankers</li>
+<li>Cryo Tankers</li>
+<li>Edibles Tankers</li>
+<li>Tankers</li>
+</ul>
+</li>
+<li>improved Covered Hopper appearance, including some cargo-specific liveries and tweaks to pixels</li>
+<li>added opening doors to Livestock Wagons</li>
+<li>adjusted which default cargo will be set for some vehicles (depends on which cargos are available in game)</li>
+</ul>
+<hr />
+<h2>2.2.0 - 2.2.1 Release</h2>
+<p>Not savegame compatible with previous versions of Iron Horse.</p>
+<p>The wrong version of 2.2.0 was released to bananas, so 2.2.1 replaces that.</p>
+<p><em>Features</em></p>
+<ul>
+<li>added 2 Driving Van Trailers (driving cab cars)<ul>
+<li>attach to front or rear of a train with at least one other engine</li>
+<li>for OpenTTD reasons, vehicles must have power to lead a train, so these vehicles include a small amount of power</li>
+<li>refittable to mail and express freight cargos</li>
+<li>first available around 1990</li>
+<li>multiple liveries, livery shown depends on consist cargo and user choice (depot flip the vehicle)</li>
+<li>automatically flips if last vehicle in train</li>
+</ul>
+</li>
+<li>added 3 Joker vehicles with limited gameplay benefit<ul>
+<li>Grub small steam engine (1860), 35mph, 250hp</li>
+<li>Gronk small diesel engine (1951), 35mph, 400hp</li>
+<li>Snowplough (1900)<ul>
+<li>has a small amount of power set so it can lead a train</li>
+<li>can transport a small amount of mail or express freight cargos</li>
+<li>automatically flips if last vehicle in train</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>added parameter to disable Joker vehicles (enabled by default)</li>
+<li>added narrow gauge mineral wagon for gen 2 (around 1905)</li>
+<li>improved appearance of steam engines, diesel shunters, some electric engines by reducing contrast of pixels in the wheel area</li>
+</ul>
+<p><em>Fixes</em></p>
+<ul>
+<li>Zeus railcar had incorrect electric power value when built (buy menu showed correct value)</li>
+<li>Scooby and Dover railcars had incorrect sprites for 2 angles</li>
+</ul>
+<p><em>Docs</em></p>
+<ul>
+<li>added experimental tech tree page, showing engine progression</li>
+</ul>
+<p><em>Codechanges</em></p>
+<ul>
+<li>ported version / revision info from hg to git</li>
+<li>rewrote parts of compile for compatibility with python 3.8</li>
+<li>rewrote parts of compile for speed</li>
+<li>using combination of python 3.8 and pypy interpreters, compile speed reduced by 40% in local tests</li>
+</ul>
+<hr />
+<h2>2.1.1 Release</h2>
+<p><em>Fixes</em></p>
+<ul>
+<li>medium container wagon sprites were misaligned in \ angle</li>
+<li>mail railcars had reversed sprites for some angles</li>
+</ul>
+<p><em>Translations</em></p>
+<ul>
+<li>some languages updated</li>
+<li>translator credits http://bundles.openttdcoop.org/iron-horse/push/LATEST/credits.txt</li>
+</ul>
+<hr />
+<h2>2.1.0 Release</h2>
+<p><em>Container Wagons</em></p>
+<ul>
+<li>added Container Wagons in small, medium and large sizes</li>
+<li>added Express Container Wagons (high speed, low capacity) in medium and large sizes</li>
+<li>narrow gauge Container Wagon</li>
+<li>first available around 1960</li>
+<li>around 300 different container sprites and colour combinations, chosen automatically depending on cargo from<ul>
+<li>box containers</li>
+<li>curtain side containers</li>
+<li>bulk cargo containers</li>
+<li>tanktainers</li>
+<li>chemicals tanktainers</li>
+<li>cryogenic tanktainers</li>
+<li>edible cargos tanktainers</li>
+<li>refrigerated containers</li>
+<li>livestock containers</li>
+<li>flatracks with wood</li>
+</ul>
+</li>
+<li>container sprites may randomise when wagon reloads</li>
+<li>use depot-flip to show alternate livery for container wagons</li>
+<li>container wagons automatically combine into articulated sets when built</li>
+</ul>
+<p><em>Other Features</em></p>
+<ul>
+<li>introduce first Tanker in generation 1 (1860) not gen 2 (1900)</li>
+<li>add large generation 4 Fruit &amp; Vegetables Van</li>
+<li>add large generation 4 Refrigerated Van</li>
+<li>added narrow gauge Hoppers</li>
+<li>add High Side Mineral Wagons, split from Mineral Wagons</li>
+<li>improved selection of default cargos for some wagon types</li>
+</ul>
+<p><em>Fixes</em></p>
+<ul>
+<li>tweaks to fix minor errors in multiple sprites</li>
+<li>force intro dates for generation 1 trains to all be identical, avoiding situation where engines are missing wagons or vice versa around 1860</li>
+</ul>
+<p><em>Docs</em></p>
+<ul>
+<li>show vehicle sprites in code reference page</li>
+<li>better formatting of role string in trains page</li>
+</ul>
+<p><em>Translations</em></p>
+<ul>
+<li>some languages updated</li>
+<li>translator credits http://bundles.openttdcoop.org/iron-horse/push/LATEST/credits.txt</li>
+</ul>
+<hr />
+<h2>2.0.0 Release</h2>
+<p>"Whoa Runaway horses...Racing through the darkness....Runaway Horses." - Belinda Carlisle</p>
+<p>2 years in the making, Iron Horse 2 is an end-to-end rework of Iron Horse.</p>
+<p>Same focus on gameplay.</p>
+<p>Greatly expanded set of vehicles, strongly inspired by British trains.</p>
+<p>All sprites redrawn.</p>
+<p>Dive in and play.</p>
+<p><em>Recommended OpenTTD settings</em></p>
+<ul>
+<li>'Vehicles never expire: Off'</li>
+<li>'Weight multiplier for freight to simulate heavy trains: 1'</li>
+<li>'Enable wagon speed limits: On'</li>
+<li>these settings are recommended, but not required</li>
+</ul>
+<p><em>Improved Tech Tree</em></p>
+<ul>
+<li>6 distinct generations of vehicles</li>
+<li>first trains introduced around 1860</li>
+<li>last new trains introduced around 2022</li>
+<li>engines now have clear roles, displayed in buy menu<ul>
+<li>freight</li>
+<li>general purpose / express</li>
+<li>high speed / very high speed</li>
+<li>high capacity urban</li>
+</ul>
+</li>
+<li>engine roles depend on OpenTTD setting 'Enable wagon speed limits: On'<ul>
+<li>without this setting Iron Horse 2 works fine, but some freight engines will overlap general purpose / express engines</li>
+</ul>
+</li>
+<li>greatly expanded range of vehicles</li>
+<li>some Iron Horse 1 vehicles have been kept, with new stats and sprites, all other vehicles are new</li>
+<li>all stats rebalanced, including speeds, power and costs</li>
+<li>357 trains in total, Iron Horse 2 is designed to be used with OpenTTD setting 'Vehicles never expire: Off'</li>
+</ul>
+<p><em>Engines</em></p>
+<ul>
+<li>added wider range of low-power, medium-power and high-power engines<ul>
+<li>Iron Horse 1 had gaps where there wasn't really an appropriate engine for some routes</li>
+<li>medium-power engines were especially lacking in Iron Horse 1 after 1935</li>
+</ul>
+</li>
+<li>electric engine roster expanded to 16<ul>
+<li>12 electric</li>
+<li>4 electro-diesel (bi-mode)</li>
+<li>first electric engine available around 1905</li>
+<li>Iron Horse 1 included only 4 electric engines</li>
+</ul>
+</li>
+</ul>
+<p><em>Railcars</em></p>
+<ul>
+<li>expanded railcars to 20<ul>
+<li>16 standard gauge and 4 narrow gauge</li>
+<li>Iron Horse 1 included only 3 railcars</li>
+</ul>
+</li>
+<li>dedicated variants for<ul>
+<li>passengers</li>
+<li>mail/express freight</li>
+<li>Iron Horse 1 relied on refitting passenger railcars to handle mail/express freight, which was faff, and can't be used reliably with auto-refit in stations</li>
+</ul>
+</li>
+<li>added electric and electro-diesel railcars</li>
+<li>first railcars now available around 1925</li>
+<li>railcar appearance will automatically adapt to consist, creating single cars, or multiple-unit trains</li>
+</ul>
+<p><em>High Speed / Very High Speed Trains</em></p>
+<ul>
+<li>added dedicated high speed and very high speed trains</li>
+<li>fastest train in Iron Horse 2 is 186mph (Brenner, available around 2018)<ul>
+<li>155mph Screamer from Iron Horse 1 is removed, these trains replace it</li>
+</ul>
+</li>
+<li>maximum speed will only be available with dedicated passenger coaches</li>
+<li>first high speed train available around 1980</li>
+<li>first very high speed train available around 1987</li>
+<li>very high speed trains include<ul>
+<li>distributed power: all coaches are powered</li>
+<li>tilt bonus for faster speed through curves</li>
+</ul>
+</li>
+</ul>
+<p><em>Wagons and Coaches</em></p>
+<ul>
+<li>added wider range of wagons and coaches<ul>
+<li>Luxury Passenger Coach</li>
+<li>Express Van</li>
+<li>Curtain Side Van</li>
+<li>Sliding Wall Van</li>
+<li>Tarpaulin Wagon</li>
+<li>Coil Car</li>
+<li>Plate Wagon</li>
+<li>Stake Wagon</li>
+<li>Coal Hopper</li>
+<li>Mineral Wagon</li>
+<li>Chemicals Tanker</li>
+<li>Cryo Tanker</li>
+<li>Grain Hopper</li>
+<li>Fruit &amp; Vegetables Van</li>
+<li>multiple lengths for wagons and coaches, increasing visual variety</li>
+</ul>
+</li>
+<li>some Iron Horse 1 wagons are missing from Iron Horse 2, but will be restored in future when sprites are finished<ul>
+<li>Intermodal Flat Car</li>
+<li>Metal Car (torpedo wagon)</li>
+<li>Supplies Car</li>
+<li>Vehicle Transporter Car</li>
+</ul>
+</li>
+<li>Combine Car is removed permanently, as it cannot work with OpenTTD autoreplace</li>
+<li>passenger coach and mail van appearance automatically adapts to consist<ul>
+<li>alternative liveries depending on attached engine</li>
+<li>sprite variants such as brake coaches, restaurant cars, post office vans as appropriate</li>
+</ul>
+</li>
+</ul>
+<p><em>Narrow Gauge Trains</em></p>
+<ul>
+<li>simpler but more useful narrow gauge engine roster</li>
+<li>expanded narrow gauge railcars, first available around 1950</li>
+<li>expanded narrow gauge wagon and coach types</li>
+<li>narrow gauge engines and railcars are somewhat 'inspired by' French and Corsican trains, as British and Irish narrow gauge is more limited</li>
+</ul>
+<p><em>Metro Trains</em></p>
+<ul>
+<li>sprites redrawn</li>
+<li>minor stats adjustments</li>
+</ul>
+<p><em>Improved Visual Appearance</em></p>
+<ul>
+<li>reworked all sprites</li>
+<li>added multiple livery options for many vehicles (random, or when vehicle is flipped in depot)</li>
+<li>all vehicle lengths now 4/8, 6/8, 8/8, 10/8, or 12/8<ul>
+<li>easy to make exact tile-length trains if desired</li>
+</ul>
+</li>
+<li>depot flip enabled for many vehicles (was disabled in Iron Horse 1 as a side effect of how vehicles were coded)</li>
+<li>more accurately positioned visual effects</li>
+<li>rear lights on consists</li>
+<li>electric vehicle pantographs are raised on electric rails, otherwise lowered</li>
+<li>doors open on many vehicles when loading/unloading</li>
+</ul>
+<p><em>Cargos</em></p>
+<ul>
+<li>updated cargo support for FIRS</li>
+<li>improved assignment of default cargos for wagons (noticeable when using different climates, industry newgrfs etc)</li>
+</ul>
+<p><em>Docs</em></p>
+<ul>
+<li>improved display of trains</li>
+<li>better navigation</li>
+<li>added a basic gameplay guide</li>
+</ul>
+<p><em>Translations</em></p>
+<ul>
+<li>default translations now appropriate to British English (previously used US English)</li>
+<li>multiple languages updated</li>
+</ul>
+<p><em>Codechanges</em></p>
+<ul>
+<li>reworked Makefile and general approach to compiling</li>
+<li>improved compile speed, including very fast compiles if only sprites are changed</li>
+<li>removed the requirement that all vehicles are articulated (was used to support vehicles with sprites longer than 8/8)</li>
+<li>reworked graphics generation<ul>
+<li>automated buy menu sprites</li>
+<li>automated cargo sprites</li>
+<li>automated chassis and roofs</li>
+<li>automated pantographs</li>
+</ul>
+</li>
+<li>added shared library of cargo sprites, cargo refits etc with Road Hog and Unsinkable Sam</li>
+<li>refactored classes and templates</li>
+<li>simplified vehicle definitions, removing boilerplate and redundancy</li>
+</ul>
+<p><em>Known issues for 2.0.0 release</em></p>
+<ul>
+<li>there may be a period during 1860s when engines are available, but no suitable wagons (or wagons but no suitable engines), this is due to randomised vehicle introduction dates and will be fixed in future</li>
+<li>loading speeds are unbalanced, and some vehicle types may load too slowly or too quickly, this will be fixed in future</li>
+<li>electric and electro-diesel engines might behave incorrectly on electric railtypes where the label isn't 'ELRL', this may be fixed in future</li>
+<li>Iron Horse 2 grf and docs are not published on #openttdcoop bundles server, this may be fixed in future</li>
+<li>Brenner cab doors do not open when loading, this will not be fixed</li>
+</ul>
+<hr />
+<h2>1.9.1 Release</h2>
+<p><em>Fixes</em></p>
+<ul>
+<li>weight was too high for Slammer and Tin Rocket, now reduced</li>
+<li>Tin Rocket HP reduced in line with reduced weight</li>
+</ul>
+<hr />
+<h2>1.9.0 Release</h2>
+<p><em>Features</em></p>
+<ul>
+<li>rename the 'Brit' roster to 'Iron Pony'</li>
+<li>added 'Longwater', 'Tyburn' and 'Tidewater' metro freight units</li>
+<li>removed 'Mole' metro locomotive and metro freight car</li>
+<li>covered hoppers now refit to sand cargo</li>
+</ul>
+<p><em>Fixes</em></p>
+<ul>
+<li>correct offsets for some vehicles at 4/8 and 6/8 lengths</li>
+<li>some sprites out of place for passenger metros</li>
+</ul>
+<p><em>Codechanges</em></p>
+<ul>
+<li>removed incremental compile support</li>
+<li>sped up the compile in a few places</li>
+<li>support for compiling a single roster using a compile-time parameter</li>
+<li>random sprites now use random bits from lead unit of articulated-consist, not per-unit, allowing the whole vehicle to use the same randomly chosen set of sprites</li>
+</ul>
+<p><em>Language Updates</em></p>
+<ul>
+<li>translator credits http://bundles.openttdcoop.org/iron-horse/push/LATEST/credits.txt</li>
+</ul>
+<hr />
+<h2>1.8.0 Release</h2>
+<p>Not savegame compatible with previous versions of Iron Horse.</p>
+<p><em>Features</em></p>
+<ul>
+<li>add Aberdare 2-6-0 freight engine</li>
+<li>rebalanced power of early freight engines (previously for many routes it made more sense to use the equivalent express engine, as it had more power)</li>
+<li>re-balanced Cargo Sprinter for express freight<ul>
+<li>lower power, but with very low costs</li>
+<li>with no wagons attached, Cargo Sprinter will reach top speed quickly</li>
+<li>1 or 2 wagons can be hauled per Cargo Sprinter, but acceleration will be slower</li>
+<li>add as many Cargo Sprinters to the consist as you need, they're affordable</li>
+</ul>
+</li>
+<li>add vehicle transporter car (no cargo graphics yet)</li>
+<li>covered hoppers now refit to rubber cargo</li>
+<li>refit support for FIRS Cassava, Edible Oil, Nuts and Vehicles cargos</li>
+<li>refit and cargo graphics for FIRS Phosphate</li>
+</ul>
+<p><em>Fixes</em></p>
+<ul>
+<li>improved offsets for vehicles longer than 8/8</li>
+<li>Cargo Sprinter refits didn't match intermodal cars</li>
+</ul>
+<p><em>Language Updates</em></p>
+<ul>
+<li>many languages</li>
+<li>translator credits http://bundles.openttdcoop.org/iron-horse/push/LATEST/credits.txt</li>
+</ul>
+<hr />
+<h2>1.7.0 Release</h2>
+<p><em>Features</em></p>
+<ul>
+<li>scrap metal cargo graphics for hopper and open cars</li>
+<li>tank cars show different livery depending on cargo refit</li>
+</ul>
+<p><em>Fixes</em></p>
+<ul>
+<li>all vehicles were 1px out of position for North-facing \ and / views</li>
+<li>Cargo Sprinter sprites were broken in multiple ways</li>
+<li>Cargo Sprinter weight and vehicle length were wrong</li>
+<li>Little Bear, some sprites were 1px out of position</li>
+<li>narrow gauge mail car, some sprites were out of position and/or too high</li>
+<li>bad purple pixels in Tin Rocket and narrow gauge open car</li>
+<li>tweaks to Slammer \ and / views</li>
+<li>covered hopper car was out of position</li>
+</ul>
+<hr />
+<h2>1.6.1 Release</h2>
+<p><em>Fixes</em></p>
+<ul>
+<li>Big Bertha tractive effort was a little too low</li>
+<li>2nd generation reefer car sprites were out of position</li>
+</ul>
+<p><em>Language Updates</em></p>
+<ul>
+<li>dutch</li>
+<li>translator credits http://bundles.openttdcoop.org/iron-horse/push/LATEST/credits.txt</li>
+</ul>
+<hr />
+<h2>1.6.0 Release</h2>
+<p><em>New Features / Changes</em></p>
+<ul>
+<li>metal cars (3 generations)</li>
+<li>caboose car for narrow gauge</li>
+<li>'0-8-0 Collier' is now '0-10-0 Big Bertha' with even more TE (it was already high, now it's insanely high)</li>
+<li>refit support for FIRS Beans and Nitrates cargos</li>
+<li>all tank engines now have randomised forward/reversed sprites (random when built in depot)</li>
+<li>improved sprite shading for some box cars and flat cars</li>
+<li>improved sprites for some metro trains / wagons</li>
+</ul>
+<p><em>Fixes</em></p>
+<ul>
+<li>box cars now have capacity &gt; 0 when refitted to mail</li>
+</ul>
+<p><em>Language Updates</em></p>
+<ul>
+<li>multiple languages</li>
+<li>translator credits http://bundles.openttdcoop.org/iron-horse/push/LATEST/credits.txt</li>
+</ul>
+<p><em>Codechanges</em></p>
+<ul>
+<li>compile now uses python 3 not python 2</li>
+<li>compile now requires nml 0.4.0 or newer</li>
+<li>refactored compile scripts, keeping pyflakes happy, and not relying on weird magic related to python imports</li>
+</ul>
+<hr />
+<h2>1.5.0 Release</h2>
+<p><em>New Features / Changes</em></p>
+<ul>
+<li>balanced loading speeds for all vehicles</li>
+<li>tank, hopper, covered hopper and intermodal cars load twice as fast as other types</li>
+<li>metro trains load twice as fast as other passenger trains</li>
+<li>clay cargo sprites for open and hopper cars</li>
+<li>more cargo sprites for supplies cars</li>
+<li>more cargo sprites for narrow gauge flat cars (timber, lumber, metal, tarpaulins)</li>
+<li>most text now translatable</li>
+</ul>
+<p><em>Language Updates</em></p>
+<ul>
+<li>af_ZA (telanus)</li>
+<li>ca_ES (juanjo)</li>
+<li>de_DE (planetmaker)</li>
+<li>en_US (Supercheese)</li>
+<li>es_ES (SilverSurferZzZ)</li>
+<li>fr_FR (arikover)</li>
+<li>hr_HR (Voyager1)</li>
+<li>la_VA (Supercheese)</li>
+<li>nl_NL (Alberth)</li>
+</ul>
+<hr />
+<h2>1.4.0 Release</h2>
+<p><em>New Features / Changes</em></p>
+<ul>
+<li>added supplies cars (two generations); refit engineering supplies, farm supplies, building materials</li>
+<li>added a 3rd generation open car (large and fast, available late 1990s)</li>
+<li>added a 2nd generation covered hopper car (1950s)</li>
+<li>introduce 2nd generation tank wagon earlier for game balance</li>
+<li>introduce 1st &amp; 2nd generation hoppers earlier for game balance</li>
+<li>flat wagons use metal as default cargo</li>
+<li>more pleasing buy menu order for wagons</li>
+<li>improve appearance of Cargo Sprinter when loaded</li>
+</ul>
+<p><em>Fixes</em></p>
+<ul>
+<li>a few wagons had excessive weights</li>
+<li>2nd generation open car missing cargo sprite for | direction</li>
+<li>passenger car capacity was 0 when refitted to tourists cargo</li>
+<li>stop mail cars refitting to tourists cargo</li>
+</ul>
+<hr />
+<h2>1.3.1 Release</h2>
+<p><em>Fixes</em></p>
+<ul>
+<li>stop box cars and open cars refitting to tourists cargo</li>
+</ul>
+<hr />
+<h2>1.3.0 Release</h2>
+<p><em>New Features / Changes</em></p>
+<ul>
+<li>added a narrow gauge mail car, bored of refitting box cars to mail</li>
+<li>fast (2nd generation) open, flat and box cars were introduced too early, unbalanced the game</li>
+</ul>
+<p><em>Fixes</em></p>
+<ul>
+<li>reefers weren't refitting refrigerated class (oops)</li>
+<li>dibble pax car loading speeds so later generations don't load slower than earlier</li>
+<li>gen 3 brit flat car loads out of place by one pixel</li>
+</ul>
+<p><em>Language Updates</em></p>
+<ul>
+<li>de_DE (planetmaker)</li>
+<li>fr_FR (arikover)</li>
+<li>la_VA (Supercheese)</li>
+</ul>
+<hr />
+<h2>1.2.1 Release</h2>
+<p><em>New Features / Changes</em></p>
+<ul>
+<li>generation 3 flat car</li>
+<li>introduce generation 1 edibles tanker earlier</li>
+<li>loading sprites for Tin Rocket when refitted to freight cargos</li>
+</ul>
+<p><em>Fixes</em></p>
+<ul>
+<li>url to tt-forums thread was wrong in docs</li>
+<li>bad spritesheet for gen 2 flat car</li>
+<li>partial load state added for supply cargos for gen 2 brit flat car</li>
+</ul>
+<p><em>Codechanges</em></p>
+<ul>
+<li>compiler defaults to multiprocessing <em>off</em> instead of <em>on</em>, to avoid DoS-ing people's systems</li>
+</ul>
+<hr />
+<h2>1.1.1 Release</h2>
+<p><em>New Features / Changes</em></p>
+<ul>
+<li>shuffled order of some wagons in buy menu</li>
+<li>box cars and reefer cars show progress while loading (open doors empty, open doors with crates loaded)</li>
+<li>improved online docs http://bundles.openttdcoop.org/iron-horse/releases/LATEST/docs/</li>
+</ul>
+<p><em>Fixes</em></p>
+<ul>
+<li>engines no longer show as having passenger capacity (when filtering by cargo in buy menu)</li>
+<li>narrow gauge wagons now available in 1860, same as first narrow gauge engine</li>
+</ul>
+<hr />
+<h2>1.1.0 Release</h2>
+<p><em>New Features / Changes</em></p>
+<ul>
+<li>new sprites for Walker narrow gauge diesel</li>
+<li>removed Planet narrow gauge diesel</li>
+<li>adjusted narrow gauge vehicle stats for game balance</li>
+<li>flat cars no longer refit to express cargos, use open, box or mail cars instead</li>
+<li>edibles tank cars no longer refit rubber (yum yum chewy rubber)</li>
+<li>bumped minimum compatible version to avoid breaking savegames</li>
+</ul>
+<hr />
+<h2>1.0.0 Release</h2>
+<p><em>New Features / Changes</em></p>
+<ul>
+<li>improved sprites for Mole Metro loco and metro car</li>
+<li>it's 1.0.0...</li>
+</ul>
+<hr />
+<h2>Release Candidate 6</h2>
+<p><em>New Features / Changes</em></p>
+<ul>
+<li>randomly chosen 1st or 2nd company colour for hopper cars</li>
+<li>open wagons load state graphics for default and bulk cargos</li>
+<li>close mail car doors when 100% loaded</li>
+<li>increase Double Juice diesel power (a lot) and electric power (a bit) for game balance</li>
+<li>introduce Gridiron 5 years earlier for game balance</li>
+</ul>
+<p><em>Fixes</em></p>
+<ul>
+<li>Northock 2-8-2 not 4-8-2</li>
+<li>correct smoke position for engines with random graphics variations (reversed tank engines)</li>
+<li>wagons and cargo sprinters now use loaded graphics in depot if they are loaded</li>
+</ul>
+<p>*Code Changes</p>
+<ul>
+<li>removed a bunch of strings relating to buy menu extra text</li>
+<li>decided we'll never show buy menu extra text, sign of BAD FEATURES; read the docs instead</li>
+<li>made it easier to support tanktainer on cargo sprinter, and opening doors on box and reefer cars</li>
+<li>cleaned up some other nonsense around visual effects and power</li>
+<li>extended the Pixa pipeline for cargo recolouring to also handle 1cc/2cc swap</li>
+</ul>
+<hr />
+<h2>Release Candidate 5</h2>
+<p><em>New Features / Changes</em></p>
+<ul>
+<li>rejig tank cars<ul>
+<li>add two edibles tank cars, for food-type cargos (water, milk, alcohol etc)</li>
+<li>edibles tank cars have high speed limits, and cargo-aging bonus</li>
+<li>remove one standard tank car</li>
+<li>adjust speeds and intro dates for tank cars</li>
+<li>tank cars no longer refit to food-type cargos, use edibles tank car instead</li>
+</ul>
+</li>
+<li>introduce first-generation reefer car later, and make it faster (game balance)</li>
+<li>change order of wagons in buy menu (puts the most widely-refittable wagons first)</li>
+<li>randomly chosen 1st or 2nd company colour for:<ul>
+<li>edibles tank cars</li>
+<li>tank cars</li>
+<li>flat cars</li>
+<li>covered hopper cars</li>
+</ul>
+</li>
+<li>narrow gauge tank car is now black not company colour</li>
+</ul>
+<p><em>Fixes</em></p>
+<ul>
+<li>avoid refitting hoppers to fruit (fruit cargo often has bulk class for historical reasons)</li>
+<li>allow refitting box cars to refit fruit (same issue with bulk class on fruit)</li>
+<li>don't refit flat wagons to food, the birds will eat it</li>
+</ul>
+<hr />
+<h2>Release Candidate 4</h2>
+<p><em>New Features / Changes</em></p>
+<ul>
+<li>new sprites for third generation hopper car</li>
+<li>randomly chosen 1st or 2nd company colour for<ul>
+<li>box cars</li>
+<li>open cars</li>
+<li>reefer cars</li>
+</ul>
+</li>
+<li>covered hopper cars can now refit to Building Materials cargo</li>
+</ul>
+<hr />
+<h2>Release Candidate 3</h2>
+<p><em>Fixes</em></p>
+<ul>
+<li>Ramsbottom tender misaligned in \ view</li>
+<li>smoke correctly positioned for most vehicles</li>
+<li>Double Juice shows electric sparks or diesel smoke, depending on power type</li>
+</ul>
+<hr />
+<h2>Release Candidate 2</h2>
+<p><em>Fixes</em></p>
+<ul>
+<li>Cargo Sprinter wasn't refitting at stations correctly</li>
+<li>purple pixels on 2nd generation hopper car</li>
+<li>many vehicles had loading speeds which were too high</li>
+</ul>
+<hr />
+<h2>Release Candidate 1</h2>
+<p><em>New Features / Changes</em></p>
+<ul>
+<li>set buy and run costs for all wagons</li>
+<li>sprites for generation 3 hopper car</li>
+<li>use company colours on generation 3 box car</li>
+<li>separate speed limit for narrow gauge wagons</li>
+</ul>
+<p><em>Language Updates</em></p>
+<ul>
+<li>Afrikaans (Telanus)</li>
+</ul>
+<hr />
+<h2>Alpha 6</h2>
+<p><em>New Features / Changes</em></p>
+<ul>
+<li>Chaplin tank randomised reversed sprites</li>
+<li>adjust vehicle name to Mail Car (Metro)</li>
+<li>multiple tweaks to vehicle stats for game balance (too many to list)</li>
+</ul>
+<p><em>Fixes</em></p>
+<ul>
+<li>some pax coaches using wrong sprite template</li>
+<li>Hudswell length should be 7/8</li>
+<li>Donegal should be 7/8 long</li>
+<li>Walker has 6/8 length</li>
+<li>bad spritesheet for some views of Little Bear</li>
+<li>Lemon tender wrong position in \ view</li>
+<li>set refittable pax on Combine cars (closes #6931)</li>
+<li>Cyclops sprites out of place (closes #6893)</li>
+<li>set default cargo correctly on lead slice of articulated consist (closes #6894)</li>
+<li>apparent fix for (limited) auto-replace of caboose</li>
+<li>spritesheet issues resolved for Tin Rocket</li>
+<li>sprites borked for gen 2 hopper car</li>
+<li>NG livestock is 4/8 long</li>
+</ul>
+<p><em>Language Updates</em></p>
+<ul>
+<li>ca_ES: 1 change by juanjo</li>
+<li>lb_LU: 18 changes by Phreeze</li>
+<li>hr_HR: 1 change by Voyager1</li>
+<li>es_ES: 1 change by SilverSurferZzZ</li>
+<li>ru_RU: 1 change by George</li>
+<li>nl_NL: 5 changes by foobar</li>
+<li>ko_KR: 18 changes by kevin</li>
+<li>fi_FI: 4 changes by Arexander</li>
+</ul>
+<p><em>Code Changes</em></p>
+<ul>
+<li>partial compiles, very much faster for isolated changes</li>
+<li>removed some dead strings</li>
+<li>provide NO_MP make flag for use during debugging</li>
+</ul>
+<hr />
+<h2>Alpha 1-5</h2>
+<p>Yair, stuff.  Nothing to see here.</p>
+    </div>
+    <div style="text-align:center; color:#999; padding:5px; background-color:#eee; border-top:solid 1px #ddd; box-shadow: inset 0px 1px 1px #ddd">
+        Iron Horse, with thanks to all who helped
+    </div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
