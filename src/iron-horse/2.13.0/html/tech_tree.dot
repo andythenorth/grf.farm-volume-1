@@ -1,0 +1,9 @@
+digraph tech_tree {
+	graph [fname="docs/html/tech_tree.dot",
+		fontname="sans-serif",
+		nodesep=0.33,
+		rankdir=LR,
+		ranksep=0.44,
+		stylesheet="static/css/cargoflow_styles.css"
+	];
+}
