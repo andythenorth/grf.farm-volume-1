@@ -42,6 +42,7 @@ def main():
 
     for grf_name in grf_farm.registered_grfs:
         dist_dir_path =  os.path.join(dist_container_path, grf_name)
+        print("Copying dirs for", grf_name)
         shutil.copytree(os.path.join(currentdir, 'src', grf_name), dist_dir_path)
         render_grf_index_pages(grf_name, dist_dir_path)
 

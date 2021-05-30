@@ -1,0 +1,99 @@
+td.number, th.number {
+    text-align:right;
+    padding-right:8px;
+}
+th a.table-link-dark, td a.table-link-dark {
+    color: #333;
+}
+
+.tablesorter-header {
+    cursor:pointer;
+}
+
+.tablesorter-headerAsc, .tablesorter-headerDesc {
+    background-color:#0077CC;
+    color:#fff;
+}
+
+.hero-unit {
+    color:#fff;
+    background-color:#3878bc;
+    background-image:url('../img/hero_bg_gradient.png');
+    background-repeat:repeat-x;
+    border-radius:0;
+    border-bottom:solid 1px #000;
+    border-top:solid 1px #14347c;
+    padding-bottom:40px;
+}
+
+.vehicle-table td {
+    vertical-align: middle;
+}
+
+td.vehicle-image {
+    padding-bottom: 13px;
+    text-align: center;
+}
+
+.tech_tree_table th {
+    text-align: center;
+}
+.tech_tree_table- {
+    text-align: center;
+}
+.tech_tree_vehicle_container {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    position: relative;
+    width: 300px;
+    height: 175px;
+}
+
+.tech_tree_vehicle {
+    display: block;
+    width: 138px;
+    margin-left: 81px;
+    margin-right: 81px;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background: #f5fcff;
+    border-radius: 8px;
+    box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.5), inset 0 1px #fff, inset 0 -1px #fff;
+}
+.tech_tree_vehicle:hover {
+    width: 276px;
+    margin-left: 12px;
+    margin-right: 12px;
+}
+.tech_tree_vehicle .tech_tree_vehicle_image_zoom {
+    display: none;
+}
+.tech_tree_vehicle:hover .tech_tree_vehicle_image {
+    display: none;
+}
+.tech_tree_vehicle:hover .tech_tree_vehicle_image_zoom {
+    display: inline-block;
+}
+
+.tech_tree_vehicle_arrow:after, .tech_tree_vehicle_arrow:before {
+    left: 100%;
+    top: 50%;
+    border: solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    border-color: rgba(255, 255, 255, 0);
+}
+.tech_tree_vehicle_arrow:before {
+    border-left-color: rgba(0, 0, 0, 0.5) !important;
+    margin-top: -21px;
+    border-width: 21px;
+}
+.tech_tree_vehicle_arrow:after {
+    border-left-color: #f5fcff !important;
+    margin-top: -20px;
+    border-width: 20px;
+}
