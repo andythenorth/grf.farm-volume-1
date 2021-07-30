@@ -3,6 +3,7 @@ import shutil
 import os
 currentdir = os.curdir
 import sys
+import subprocess
 from packaging.version import Version, parse
 
 import grf_farm
@@ -35,15 +36,16 @@ def render_grf_index_pages(grf_name, dist_dir_path):
 
 def main():
     print("Preparing files for distribution")
-    if os.path.exists(dist_container_path):
-        print("Cleaning: removing", dist_container_path)
-        shutil.rmtree(dist_container_path)
-    os.mkdir(dist_container_path)
+    if not os.path.exists(dist_container_path):
+        print("Creating", dist_container_path)
+        os.mkdir(dist_container_path)
 
     for grf_name in grf_farm.registered_grfs:
         dist_dir_path =  os.path.join(dist_container_path, grf_name)
-        print("Copying dirs for", grf_name)
-        shutil.copytree(os.path.join(currentdir, 'src', grf_name), dist_dir_path)
+        src_dir_path = os.path.join(currentdir, 'src', grf_name)
+        print("Syncing dirs for", grf_name)
+        # rsync is used as it's substantially faster than python copytree, both in the case of copying everything, and even faster if only a partial copy is needed
+        subprocess.call(['rsync', '-a', '--delete', src_dir_path, dist_container_path])
         render_grf_index_pages(grf_name, dist_dir_path)
 
     """
