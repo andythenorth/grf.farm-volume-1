@@ -1,0 +1,13 @@
+Changelog
+=========
+
+Preview Releases
+----------------
+
+* a limited selection of ships are available in preview releases
+* ships are believed to be complete for all sprites and cargo
+* intro dates, speeds and costs are unfinished
+* previous alpha releases deprecated
+
+Fin
+---
