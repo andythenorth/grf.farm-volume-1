@@ -4,7 +4,7 @@
         <h2>${grf_name}</h2>
         <ul>
             <!--! the versions list contains Version instances from python packaging library, these are more reliably sorted, but need converted to string for use here -->
-            <tal:distributed_docs_versions tal:repeat="distributed_docs_version distributed_docs_versions">
+            <tal:distributed_docs_versions tal:repeat="distributed_docs_version reversed(distributed_docs_versions)">
                 <li><a href="${str(distributed_docs_version)}/index.html">${str(distributed_docs_version)}</a></li>
             </tal:distributed_docs_versions>
         </ul>
