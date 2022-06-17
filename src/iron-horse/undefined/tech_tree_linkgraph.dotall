@@ -1,8 +1,0 @@
-digraph tech_tree {
-    fontname="sans-serif"
-    stylesheet="static/css/cargoflow_styles.css"
-    rankdir="LR"
-    ranksep="0.44"
-    nodesep="0.33"
-    
-}
