@@ -1,0 +1,373 @@
+
+
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+    <title >Iron Moose - Code reference</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link type="text/css" href="static/css/bootstrap.min.css" rel="stylesheet">
+    <link type="text/css" href="static/css/bootstrap-responsive.min.css" rel="stylesheet">
+    <link type="text/css" href="static/css/style.css" rel="stylesheet">
+
+    <script type="text/javascript" src="static/js/jquery-1.9.1.min.js"></script>
+
+    <script type="text/javascript" src="static/js/jquery.metadata.js"></script>
+    <script type="text/javascript" src="static/js/jquery.tablesorter.min.js"></script>
+    <script type="text/javascript" src="static/js/jquery.tablesorter.widgets.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $('.tablesorter').tablesorter({
+                textExtraction: function(node){
+                            var cell_value = $(node).text();
+                            var sort_value = $(node).data('value');
+                    return (sort_value != undefined) ? sort_value : cell_value;
+                 },
+            })
+        })
+    </script>
+</head>
+
+<body>
+    <div class="navbar navbar-inverse navbar-static-top" style="border-bottom:1px solid #000;">
+        <div class="navbar-inner">
+            <div class="container">
+                <ul class="nav pull-left">
+                    <li class="">
+                        <a href="get_started.html">Get started</a>
+                    </li>
+                    <li class="">
+                        <a href="trains.html">Trains</a>
+                    </li>
+                    <li class="">
+                        <a href="tech_tree_table_red.html">Tech tree</a>
+                    </li>
+                    <li class="">
+                        <a href="train_whack.html">Train Whack!</a>
+                    </li>
+                </ul>
+                <ul class="nav pull-right">
+                    
+                    <li class="active">
+                        <a href="code_reference.html">Code reference</a>
+                    </li>
+                    <li class="">
+                        <a href="changelog.html">Changelog</a>
+                    </li>
+                    <li>
+                        <a href="https://www.tt-forums.net/viewtopic.php?f=67&amp;t=71219"><i class="icon-comment icon-white"></i> Discuss at TT-Forums.net</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="hero-unit subhead">
+        <div class="container">
+            <div class="pull-right" style="margin-top:-30px; margin-bottom:20px;">
+                <script language="JavaScript">
+                    var all_consists_grouped=JSON.parse('{"sorted_by_vehicle_type": {"engines": [["snowplough_moose_gen_2", "17", 9000]]}, "sorted_by_base_track_type_and_vehicle_type": {"RAIL": {"engines": [["snowplough_moose_gen_2", "17", 9000]]}}}');
+                    function random_img(){
+                        var vehicle_type_keys = Object.keys(all_consists_grouped['sorted_by_vehicle_type']);
+                        var vehicle_type_key = vehicle_type_keys[Math.floor(Math.random()*vehicle_type_keys.length)];
+                        var images = all_consists_grouped['sorted_by_vehicle_type'][vehicle_type_key];
+                        var index = Math.floor(Math.random()*images.length);
+                        var random_image = images.splice(index, 1)[0]; // splice returns an array, and we need the nested array inside it
+                        document.write('<a href="trains.html#' + random_image[0] + '" style="display:inline; margin-bottom: 20px;"> \
+                                            <img src="static/img/'+ random_image[0] + '_red_white.png" \
+                                                 width="' + 4 * random_image[1] + '" \
+                                                 height="64"> \
+                                        </a>')
+                        return true;
+                    }
+                </script>
+                <div class="text-right">
+                    <script language="JavaScript">
+                        random_img();
+                        random_img();
+                        random_img();
+                        random_img();
+                        random_img();
+                    </script>
+                </div>
+                <div class="text-right">
+                    <script language="JavaScript">
+                        random_img();
+                        random_img();
+                        random_img();
+                        random_img();
+                        random_img();
+                    </script>
+                </div>
+                <div class="text-right">
+                    <script language="JavaScript">
+                        random_img();
+                        random_img();
+                        random_img();
+                        random_img();
+                        random_img();
+                    </script>
+                </div>
+            </div>
+            <h1 style="font-size:48px; padding-top:40px;">Iron Moose</h1>
+            <p class="lead">My Lovely <strike>Horse</strike> Train Set</p>
+        </div>
+    </div>
+    <div>
+    <div class="container">
+        <div class="span12">
+            <h2>Code reference</h2>
+
+            <p>Iron Moose source code is found on <a href="https://github.com/andythenorth/iron-horse">GitHub</a>. License is GPL v2.</p>
+
+            <div id="compiling">
+                <h3>Compiling</h3>
+                <p>
+                   Iron Moose source includes a makefile for convenient building.
+                   This requires '<a href="https://en.wikipedia.org/wiki/Make_(software)">Make</a>',
+                   typically provided by the ports tree on Linux / Unix, <a href="http://www.mingw.org/wiki/msys">MSYS</a>  on Windows
+                   and <a href="https://developer.apple.com/xcode/">Xcode</a> on macOS.
+                </p>
+                <p>Other dependencies include:</p>
+                <ul>
+                    <li><a href="https://www.python.org/">Python 3.8+</a></li>
+                    <li><a href="https://newgrf-specs.tt-wiki.net/wiki/NML:Getting_started">NML 0.6.0 or newer</a> (NewGRF compiler)</li>
+                    <li><a href="http://chameleon.readthedocs.org/en/latest/">Chameleon</a> (Template engine)</li>
+                    <li><a href="https://pypi.python.org/pypi/Markdown">Markdown</a> (Markdown text format parser)</li>
+                </ul>
+            </div>
+            <hr />
+            <br />
+            <h3>Railtypes and fallbacks</h3>
+            <p>Iron Moose uses a very specific approach to railtypes.</p>
+            <ol>
+                <li>
+                    The Iron Moose grf includes <em>both</em> vehicles <em>and</em> railtypes. This is unusual; it's more common to split up vehicles and railtypes to separate grfs.
+                    However this puts more work on the player to find an appropriate grf, if they're even aware they need to.
+                    Iron Moose provides <em>batteries-are-included</em> gameplay by including the appropriate railtypes.
+                </li>
+                <li>
+                    Players can turn off the included Iron Moose railtypes if they wish to via parameter setting
+                    (does not affect RAIL and ELRL which are provided as default by OpenTTD).
+                </li>
+                <li>
+                    Iron Moose uses the Iron Horse schema for vehicle track_type property (which sets the vehicle railtype).
+                    This schema makes it possible for railtype authors to detect different Iron Moose vehicle types and handle them as they see fit.
+                    Meanwhile the vehicles will fall back to more common railtypes if the specific Iron Moose labels are not available.
+                </li>
+            </ol>
+            <table style="font-size:84%;" class="table table-striped table-condensed table-bordered tablesorter">
+                
+                    
+                    <tr>
+                        <th>RAIL</th>
+                        <td>IHA_</td>
+                        <td>"IHA_","RAIL"</td>
+                    </tr>
+                
+                    
+                    <tr>
+                        <th>RAIL_ELECTRIFIED</th>
+                        <td>IHB_</td>
+                        <td>"IHB_","ELRL"</td>
+                    </tr>
+                
+                    
+                    <tr>
+                        <th>METRO</th>
+                        <td>IHC_</td>
+                        <td>"IHC_","MTRO"</td>
+                    </tr>
+                
+                    
+                    <tr>
+                        <th>NG</th>
+                        <td>IHD_</td>
+                        <td>"IHD_","NGRL","NAAN"</td>
+                    </tr>
+                
+                    
+                    <tr>
+                        <th>NG_ELECTRIFIED</th>
+                        <td>IHE_</td>
+                        <td>"IHE_","ELNG","NAAE"</td>
+                    </tr>
+                
+                    
+                    <tr>
+                        <th>LGV</th>
+                        <td>IHAA</td>
+                        <td>"IHAA","RAIL"</td>
+                    </tr>
+                
+                    
+                    <tr>
+                        <th>LGV_ELECTRIFIED</th>
+                        <td>IHBA</td>
+                        <td>"IHBA","ELRL"</td>
+                    </tr>
+                
+            </table>
+            <h4>Iron Moose railtype scheme details / tips for railtype authors</h4>
+            <p>Railtype labels are 4 chars, composed from the following valid characters: <code>a-z, A-Z, 0-9, _</code>.</p>
+            <p>Iron Moose labels, characters 1 and 2 are always <code>IH</code></p>
+            <p>Character 3 represents a general 'class' of vehicle</p>
+            <ul>
+                <li><code>A</code> vanilla rail vehicle, non-electric, suitable for <code>RAIL</code> and similar railtypes</li>
+                <li><code>B</code> vanilla rail vehicle, electric,  suitable for <code>ELRL</code> and similar railtypes</li>
+                <li><code>C</code> vanilla metro vehicle, requires dedicated metro lines, suitable for <code>MTRO</code> and similar railtypes, metro is always assumed to be electrified via 3 or 4 rail system</li>
+                <li><code>D</code> vanilla narrow gauge vehicle, non-electric, suitable for <code>NGRL</code> and similar railtypes</li>
+                <li><code>E</code> vanilla narrow gauge vehicle, electric, suitable for <code>ELNG</code> and similar railtypes</li>
+                
+                <li>&hellip;more 'classes' added as needed</li>
+            </ul>
+            <p>Character 4 represents modifiers to the class, and is used sparingly. Modifiers cannot be combined, except by adding a new character specifically for the combined properties.</p>
+            <ul>
+                <li><code>_</code> no modifier used (default)</li>
+                <li><code>A</code> can be used on high speed lines (LGV), has suitable brakes, signalling equipment etc.</li>
+                
+                
+                <li>&hellip;more modifiers added as needed</li>
+            </ul>
+            <p>
+                The uses of labels specific to Iron Moose means that railtype authors can control precisely how they wish to map Iron Moose vehicles to railtypes in their railtype grf.  This is done using the railtypes property <code>alternative_railtype_list</code>.
+            </p>
+            <p>
+                For some vehicle types, Iron Moose may also set labels from the <a href="https://newgrf-specs.tt-wiki.net/wiki/Standardized_Railtype_Scheme">Standardised Railtype Scheme</a> <strong>as fallbacks only</strong>.
+                Iron Moose is only <strong>partially compliant</strong> with the Standardised Railtype Scheme, and uses the <a href="https://newgrf-specs.tt-wiki.net/wiki/Standardized_Railtype_Scheme#.22Innsbruck_2022_Convention.22_for_partial_compliance">"Innsbruck 2022 Convention"</a> where axle load classes are treated as "undefined".
+            </p>
+            <hr />
+            <br />
+            <h3>1 trains</h3>
+            
+                
+                    <h4 id="SnowploughEngineConsist">SnowploughEngineConsist <small>Subclass</small></h4>
+                    <p>
+    Consist for a snowplough.  Implemented as Engine so it can lead a consist in-game.
+    </p>
+                    <table style="font-size:84%;" class="table table-striped table-condensed table-bordered tablesorter">
+                        <thead>
+                            <tr>
+                                <th style="background-color:#eee; vertical-align:top">Sprite</th>
+                                
+                                    <th style="background-color:#eee; vertical-align:top">Vehicle Name</th>
+                                
+                                    <th style="background-color:#eee; vertical-align:top">Gen</th>
+                                
+                                    <th style="background-color:#eee; vertical-align:top">Role</th>
+                                
+                                    <th style="background-color:#eee; vertical-align:top">Railtype</th>
+                                
+                                    <th style="background-color:#eee; vertical-align:top">HP</th>
+                                
+                                    <th style="background-color:#eee; vertical-align:top">Speed (mph)</th>
+                                
+                                    <th style="background-color:#eee; vertical-align:top">HP/Speed ratio</th>
+                                
+                                    <th style="background-color:#eee; vertical-align:top">Weight (t)</th>
+                                
+                                    <th style="background-color:#eee; vertical-align:top">TE coefficient</th>
+                                
+                                    <th style="background-color:#eee; vertical-align:top">Intro Date</th>
+                                
+                                    <th style="background-color:#eee; vertical-align:top">Vehicle Life</th>
+                                
+                                    <th style="background-color:#eee; vertical-align:top">Buy Cost</th>
+                                
+                                    <th style="background-color:#eee; vertical-align:top">Running Cost</th>
+                                
+                                    <th style="background-color:#eee; vertical-align:top">Loading Speed</th>
+                                
+                                <th style="background-color:#eee; vertical-align:top">Sprites Complete</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            
+                                <tr>
+                                    <td class="vehicle-image"
+                                        style="width:130;">
+                                        <img src="static/img/snowplough_moose_gen_2_red_white.png"
+                                             width="34"
+                                             height="32" />
+                                    </td>
+                                    
+                                        <td>Snowplough</td>
+                                    
+                                        <td>2</td>
+                                    
+                                        <td>snoughplough!</td>
+                                    
+                                        <td>IHA_</td>
+                                    
+                                        <td>100</td>
+                                    
+                                        <td>75</td>
+                                    
+                                        <td>1</td>
+                                    
+                                        <td>50</td>
+                                    
+                                        <td>0.1</td>
+                                    
+                                        <td>1900</td>
+                                    
+                                        <td>40</td>
+                                    
+                                        <td>4</td>
+                                    
+                                        <td>518</td>
+                                    
+                                        <td>[5]</td>
+                                    
+                                    <td>
+                                        <span style='color:red;'>Nope</span>
+                                    </td>
+                                </tr>
+                            
+                        </tbody>
+                    </table>
+                    <br />
+                
+            
+            <hr />
+            <br />
+            <h3>Numeric IDs</h3>
+            <p class="muted">Trailing parts of articulated vehicles are not listed here.</p>
+            <table class="table table-striped table-condensed table-bordered tablesorter">
+                <thead>
+                    <th>Numeric ID</th>
+                    <th>ID</th>
+                    <th>Title</th>
+                </thead>
+                <tbody>
+                    
+                        <tr>
+                            <td>9000</td>
+                            <td>snowplough_moose_gen_2</td>
+                            <td>Snowplough</td>
+                        </tr>
+                    
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+    <div style="text-align:center; color:#999; padding:5px; background-color:#eee; border-top:solid 1px #ddd; box-shadow: inset 0px 1px 1px #ddd">
+        Iron Moose, with thanks to all who helped
+    </div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,241 @@
+
+
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+    <title >Iron Moose - All Trains</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link type="text/css" href="static/css/bootstrap.min.css" rel="stylesheet">
+    <link type="text/css" href="static/css/bootstrap-responsive.min.css" rel="stylesheet">
+    <link type="text/css" href="static/css/style.css" rel="stylesheet">
+
+    <script type="text/javascript" src="static/js/jquery-1.9.1.min.js"></script>
+
+    <script type="text/javascript" src="static/js/jquery.metadata.js"></script>
+    <script type="text/javascript" src="static/js/jquery.tablesorter.min.js"></script>
+    <script type="text/javascript" src="static/js/jquery.tablesorter.widgets.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $('.tablesorter').tablesorter({
+                textExtraction: function(node){
+                            var cell_value = $(node).text();
+                            var sort_value = $(node).data('value');
+                    return (sort_value != undefined) ? sort_value : cell_value;
+                 },
+            })
+        })
+    </script>
+</head>
+
+<body>
+    <div class="navbar navbar-inverse navbar-static-top" style="border-bottom:1px solid #000;">
+        <div class="navbar-inner">
+            <div class="container">
+                <ul class="nav pull-left">
+                    <li class="">
+                        <a href="get_started.html">Get started</a>
+                    </li>
+                    <li class="active">
+                        <a href="trains.html">Trains</a>
+                    </li>
+                    <li class="">
+                        <a href="tech_tree_table_red.html">Tech tree</a>
+                    </li>
+                    <li class="">
+                        <a href="train_whack.html">Train Whack!</a>
+                    </li>
+                </ul>
+                <ul class="nav pull-right">
+                    
+                    <li class="">
+                        <a href="code_reference.html">Code reference</a>
+                    </li>
+                    <li class="">
+                        <a href="changelog.html">Changelog</a>
+                    </li>
+                    <li>
+                        <a href="https://www.tt-forums.net/viewtopic.php?f=67&amp;t=71219"><i class="icon-comment icon-white"></i> Discuss at TT-Forums.net</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="hero-unit subhead">
+        <div class="container">
+            <div class="pull-right" style="margin-top:-30px; margin-bottom:20px;">
+                <script language="JavaScript">
+                    var all_consists_grouped=JSON.parse('{"sorted_by_vehicle_type": {"engines": [["snowplough_moose_gen_2", "17", 9000]]}, "sorted_by_base_track_type_and_vehicle_type": {"RAIL": {"engines": [["snowplough_moose_gen_2", "17", 9000]]}}}');
+                    function random_img(){
+                        var vehicle_type_keys = Object.keys(all_consists_grouped['sorted_by_vehicle_type']);
+                        var vehicle_type_key = vehicle_type_keys[Math.floor(Math.random()*vehicle_type_keys.length)];
+                        var images = all_consists_grouped['sorted_by_vehicle_type'][vehicle_type_key];
+                        var index = Math.floor(Math.random()*images.length);
+                        var random_image = images.splice(index, 1)[0]; // splice returns an array, and we need the nested array inside it
+                        document.write('<a href="trains.html#' + random_image[0] + '" style="display:inline; margin-bottom: 20px;"> \
+                                            <img src="static/img/'+ random_image[0] + '_red_white.png" \
+                                                 width="' + 4 * random_image[1] + '" \
+                                                 height="64"> \
+                                        </a>')
+                        return true;
+                    }
+                </script>
+                <div class="text-right">
+                    <script language="JavaScript">
+                        random_img();
+                        random_img();
+                        random_img();
+                        random_img();
+                        random_img();
+                    </script>
+                </div>
+                <div class="text-right">
+                    <script language="JavaScript">
+                        random_img();
+                        random_img();
+                        random_img();
+                        random_img();
+                        random_img();
+                    </script>
+                </div>
+                <div class="text-right">
+                    <script language="JavaScript">
+                        random_img();
+                        random_img();
+                        random_img();
+                        random_img();
+                        random_img();
+                    </script>
+                </div>
+            </div>
+            <h1 style="font-size:48px; padding-top:40px;">Iron Moose</h1>
+            <p class="lead">My Lovely <strike>Horse</strike> Train Set</p>
+        </div>
+    </div>
+    <div>
+    <div class="container">
+        <div class="row">
+            <div class="span12">
+                <h2>CABBAGE  rosters of trains for OpenTTD</h2>
+                <p>Only one roster is active in any game.  Choose the one you want with the parameter option (newgrf settings) :)</p>
+                <hr />
+                Iron Moose
+                <p>
+                    1 engines and
+                    0 wagons
+                    inspired by
+                    
+                    
+                    trains
+                </p>
+                <ul class="inline">
+                    
+                        
+                            <li>
+                                <a href="#RAIL-engines">
+                                    1
+                                    standard gauge engines
+                                </a>
+                            </li>
+                        
+                    
+                        
+                    
+                        
+                    
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                </ul>
+                
+                    
+                        <hr />
+                        <h4 id="RAIL-engines">
+                            1
+                            standard gauge engines
+                        </h4>
+                        <table class="table table-striped tablesorter vehicle-table">
+                            <thead>
+                                <tr>
+                                    <th style="text-align:center;">1CC</th>
+                                    <th style="text-align:center;">2CC</th>
+                                    <th>Vehicle Name</th>
+                                    <th>Role</th>
+                                    <th class="date">Designed</th>
+                                    <th class="number">Power</th>
+                                    <th class="number">Speed</th>
+                                    <th>Track type</th>
+                                    <th>Link</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                
+                                    <tr id="snowplough_moose_gen_2">
+                                        <td class="vehicle-image"
+                                            style="width:130;">
+                                            <img src="static/img/snowplough_moose_gen_2_blue_blue.png"
+                                                 width="34"
+                                                 height="32" />
+                                        </td>
+                                        <td class="vehicle-image"
+                                            style="width:130;">
+                                            <img src="static/img/snowplough_moose_gen_2_red_white.png"
+                                                 width="34"
+                                                 height="32" />
+                                        </td>
+                                        <td>
+                                            <a class="table-link-dark" href="snowplough_moose_gen_2.html">Snowplough</a>
+                                        </td>
+                                        <td>Joker</td>
+                                        <td class="date">1900</td>
+                                        <td class="number">100 hp</td>
+                                        <td class="number">75 mph</td>
+                                        <td>IHA_</td>
+                                        <td>
+                                            <a style="text-decoration:none;" href="#snowplough_moose_gen_2">&#x1f517;</a>
+                                        </td>
+                                    </tr>
+                                
+                            </tbody>
+                        </table>
+                    
+                
+                    
+                
+                    
+                
+                
+                    
+                
+                    
+                
+                    
+                
+            </div>
+        </div>
+    </div>
+</div>
+    <div style="text-align:center; color:#999; padding:5px; background-color:#eee; border-top:solid 1px #ddd; box-shadow: inset 0px 1px 1px #ddd">
+        Iron Moose, with thanks to all who helped
+    </div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,325 @@
+
+
+
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+    <title >Iron Moose: Train Whack!</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link type="text/css" href="static/css/bootstrap.min.css" rel="stylesheet">
+    <link type="text/css" href="static/css/bootstrap-responsive.min.css" rel="stylesheet">
+    <link type="text/css" href="static/css/style.css" rel="stylesheet">
+
+    <script type="text/javascript" src="static/js/jquery-1.9.1.min.js"></script>
+
+    <script type="text/javascript" src="static/js/jquery.metadata.js"></script>
+    <script type="text/javascript" src="static/js/jquery.tablesorter.min.js"></script>
+    <script type="text/javascript" src="static/js/jquery.tablesorter.widgets.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $('.tablesorter').tablesorter({
+                textExtraction: function(node){
+                            var cell_value = $(node).text();
+                            var sort_value = $(node).data('value');
+                    return (sort_value != undefined) ? sort_value : cell_value;
+                 },
+            })
+        })
+    </script>
+</head>
+
+<body>
+    <div class="navbar navbar-inverse navbar-static-top" style="border-bottom:1px solid #000;">
+        <div class="navbar-inner">
+            <div class="container">
+                <ul class="nav pull-left">
+                    <li class="">
+                        <a href="get_started.html">Get started</a>
+                    </li>
+                    <li class="">
+                        <a href="trains.html">Trains</a>
+                    </li>
+                    <li class="">
+                        <a href="tech_tree_table_red.html">Tech tree</a>
+                    </li>
+                    <li class="active">
+                        <a href="train_whack.html">Train Whack!</a>
+                    </li>
+                </ul>
+                <ul class="nav pull-right">
+                    
+                    <li class="">
+                        <a href="code_reference.html">Code reference</a>
+                    </li>
+                    <li class="">
+                        <a href="changelog.html">Changelog</a>
+                    </li>
+                    <li>
+                        <a href="https://www.tt-forums.net/viewtopic.php?f=67&amp;t=71219"><i class="icon-comment icon-white"></i> Discuss at TT-Forums.net</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+    <div>
+
+    <div class="hero-unit subhead" style="margin-bottom:0;">
+        <div class="text-center">
+            <h1>Iron Moose: Train Whack</h1>
+            <h2>10 randomised train consists</h2>
+            <p class="lead">
+                You scored <span id="global_high_score_container">0</span>!
+                &nbsp;&nbsp;&nbsp;
+                Snowplough bonus: <span id="global_snoughplough_count_container">None</span>
+            </p>
+            
+            <script language="JavaScript">
+                var global_high_score = 0;
+                var global_snoughplough_count = 0;
+
+                function random_consist(){
+                    result = new Array;
+                    // json parsing is inside the function to avoid the function trying the var before the json parse is complete
+                    // inefficient as it will parse json n times, not 1, but easier than figuring out doing it onload
+                    var all_consists_grouped=JSON.parse('{"sorted_by_vehicle_type": {"engines": [["snowplough_moose_gen_2", "17", 9000]]}, "sorted_by_base_track_type_and_vehicle_type": {"RAIL": {"engines": [["snowplough_moose_gen_2", "17", 9000]]}}}');
+
+                    var engines_weighting = [1, 1, 1, 1, 2, 2, 3];
+                    var wagons_weighting = [3, 4, 5, 5, 6, 6, 6, 6, 7, 7, 7, 8, 8, 8, 9, 9, 10, 11, 12];
+
+                    var base_track_type_keys = Object.keys(all_consists_grouped['sorted_by_base_track_type_and_vehicle_type']);
+
+                    // there is an optional query parameter to force consists to use same base track type
+                    // when that isn't used, alternate simpler engine / wagon lists are used without walking the track types, as it gets better random results
+                    // there's various jank for handling metro and NG due to them being a limited selection of vehicles
+                    if (get_query_param('match_base_track_type') == 'true') {
+                        var base_track_type_keys_weighted = [];
+                        for (base_track_type_key of base_track_type_keys) {
+                            // metro jank, we want metro rather less than other types, without having to know all types, so use this crude hack
+                            if (base_track_type_key == 'METRO') {
+                                base_track_type_keys_weighted.push(base_track_type_key);
+                            }
+                            else if (base_track_type_key == 'NG') {
+                                base_track_type_keys_weighted.push(base_track_type_key);
+                                base_track_type_keys_weighted.push(base_track_type_key);
+                            }
+                            else {
+                                base_track_type_keys_weighted.push(base_track_type_key);
+                                base_track_type_keys_weighted.push(base_track_type_key);
+                                base_track_type_keys_weighted.push(base_track_type_key);
+                            }
+                        }
+                        // note use of weighted keys to prevent too much metro when same base_track_type is enforced
+                        var base_track_type_key = base_track_type_keys_weighted[Math.floor(Math.random()*base_track_type_keys_weighted.length)];
+                        consists = all_consists_grouped['sorted_by_base_track_type_and_vehicle_type'][base_track_type_key];
+                        // metro jank, over-ride weightings if metro, as there are no wagons and so more engines than usual are needed
+                        if (base_track_type_key == 'METRO') {
+                            engines_weighting = [1, 2, 2, 3, 3, 3, 3, 4, 4, 5, 6];
+                        }
+                    }
+                    else {
+                        consists = all_consists_grouped['sorted_by_vehicle_type'];
+                    }
+
+                    // get the images and write into page
+                    result = extend_result(consists['engines'], engines_weighting, result);
+                    result = extend_result(consists['wagons'], wagons_weighting, result);
+                    document.write(result.toString());
+
+                    // arbitrary high score crap
+                    var global_high_score_container = document.getElementById("global_high_score_container");
+                    global_high_score_container.innerHTML = global_high_score * Math.pow(2, global_snoughplough_count);
+                    var global_snoughplough_count_container = document.getElementById("global_snoughplough_count_container");
+                    if (global_snoughplough_count > 0) {
+                        global_snoughplough_count_container.innerHTML = global_snoughplough_count + ' = ' + Math.pow(2, global_snoughplough_count) + 'x score multiplier';
+                    }
+
+                    return true;
+                }
+
+                function extend_result(consists, weighting, result) {
+                    // note the guard here against vehicles not existing (e.g. metro wagons)
+                    if (consists != undefined) {
+                        const num_vehicles_to_draw = weighting[Math.floor(Math.random()*weighting.length)];
+                        if (get_query_param('boring_mode') == 'true') {
+                            var random_image = get_random_image(consists);
+                        }
+                        for (i = 0; i < num_vehicles_to_draw; i++) {
+                            if (get_query_param('boring_mode') != 'true') {
+                                random_image = get_random_image(consists);
+                            }
+                            result.push(get_image_html(random_image));
+                        };
+                    }
+                    return result;
+                }
+
+                function get_random_image(images) {
+                    var index = Math.floor(Math.random()*images.length);
+                    return images.splice(index, 1)[0]; // splice returns an array, and we need the nested array inside it
+                }
+
+                function get_image_html(random_image){
+                    // update scores, probably should be a separate function but eh
+                    global_high_score += random_image[2];
+                    if (random_image[0].indexOf('snowplough') != -1) {
+                        global_snoughplough_count = global_snoughplough_count + 1;
+                    }
+                    // image
+                    var sprite_size_factor = get_query_param('sprite_size_factor') ? get_query_param('sprite_size_factor') : 3;
+                    return '<a href="trains.html#' + random_image[0] + '" style="display:inline-block; margin-top:' + 5 * sprite_size_factor + 'px; margin-bottom:' + 5 * sprite_size_factor + 'px; margin-right:-' + sprite_size_factor + 'px;"> \
+                                <img src="static/img/'+ random_image[0] + '_red_white.png" \
+                                     style="width:' + sprite_size_factor * random_image[1] + 'px; height:' + sprite_size_factor * 16 + 'px; margin:0;"> \
+                           </a>'; // -ve margin right used to overlap buffers etc
+                }
+
+                function get_query_param(param_name) {
+                       var query = window.location.search.substring(1);
+                       var vars = query.split("&");
+                       for (var i = 0; i < vars.length; i++) {
+                               var pair = vars[i].split("=");
+                               if(pair[0] == param_name){return pair[1];}
+                       }
+                       return(false);
+                }
+
+                function reload_with_parameter_changed(param_name, param_value) {
+                    var query = window.location.search.substring(1);
+                    var vars = query.split("&");
+                    var new_query_vars = [param_name + '=' + param_value];
+                    for (var i = 0; i < vars.length; i++) {
+                        var pair = vars[i].split("=");
+                        // undefined checked to prevent extra junk parameter being added, quite janky
+                        if(pair[0] != param_name && pair[1] != undefined) {
+                            new_query_vars.push(pair[0] + '=' + pair[1]);
+                        }
+                    }
+                    new_url = window.location.protocol + window.location.pathname + '?' + new_query_vars.join('&');
+                    window.location.assign(new_url);
+                }
+            </script>
+            <p>
+                Play again?
+                &nbsp;&nbsp;&nbsp;
+                Track type:
+                <a style="color:white;" href="javascript:void(0);" onclick="return reload_with_parameter_changed('match_base_track_type', true);">Same within consist</a>
+                |
+                <a style="color:white;" href="javascript:void(0);" onclick="return reload_with_parameter_changed('match_base_track_type', false);">Random per vehicle</a>
+                &nbsp;&nbsp;&nbsp;
+                Zoom:
+                <a style="color:white;" href="javascript:void(0);" onclick="return reload_with_parameter_changed('sprite_size_factor', 2);">2x</a>
+                |
+                <a style="color:white;" href="javascript:void(0);" onclick="return reload_with_parameter_changed('sprite_size_factor', 3);">3x</a>
+                |
+                <a style="color:white;" href="javascript:void(0);" onclick="return reload_with_parameter_changed('sprite_size_factor', 4);">4x</a>
+                &nbsp;&nbsp;&nbsp;
+                Boring mode:
+                <a style="color:white;" href="javascript:void(0);" onclick="return reload_with_parameter_changed('boring_mode', false);">Off</a>
+                |
+                <a style="color:white;" href="javascript:void(0);" onclick="return reload_with_parameter_changed('boring_mode', true);">On</a>
+            </p>
+            <div>
+                <div style="font-size:0;">
+                    <script language="JavaScript">
+                        random_consist();
+                    </script>
+                </div>
+                <hr style="border-bottom:0; border-top-color:rgba(0, 0, 0, 0.3); line-height:10px; margin:0;"/>
+            </div>
+            <div>
+                <div style="font-size:0;">
+                    <script language="JavaScript">
+                        random_consist();
+                    </script>
+                </div>
+                <hr style="border-bottom:0; border-top-color:rgba(0, 0, 0, 0.3); line-height:10px; margin:0;"/>
+            </div>
+            <div>
+                <div style="font-size:0;">
+                    <script language="JavaScript">
+                        random_consist();
+                    </script>
+                </div>
+                <hr style="border-bottom:0; border-top-color:rgba(0, 0, 0, 0.3); line-height:10px; margin:0;"/>
+            </div>
+            <div>
+                <div style="font-size:0;">
+                    <script language="JavaScript">
+                        random_consist();
+                    </script>
+                </div>
+                <hr style="border-bottom:0; border-top-color:rgba(0, 0, 0, 0.3); line-height:10px; margin:0;"/>
+            </div>
+            <div>
+                <div style="font-size:0;">
+                    <script language="JavaScript">
+                        random_consist();
+                    </script>
+                </div>
+                <hr style="border-bottom:0; border-top-color:rgba(0, 0, 0, 0.3); line-height:10px; margin:0;"/>
+            </div>
+            <div>
+                <div style="font-size:0;">
+                    <script language="JavaScript">
+                        random_consist();
+                    </script>
+                </div>
+                <hr style="border-bottom:0; border-top-color:rgba(0, 0, 0, 0.3); line-height:10px; margin:0;"/>
+            </div>
+            <div>
+                <div style="font-size:0;">
+                    <script language="JavaScript">
+                        random_consist();
+                    </script>
+                </div>
+                <hr style="border-bottom:0; border-top-color:rgba(0, 0, 0, 0.3); line-height:10px; margin:0;"/>
+            </div>
+            <div>
+                <div style="font-size:0;">
+                    <script language="JavaScript">
+                        random_consist();
+                    </script>
+                </div>
+                <hr style="border-bottom:0; border-top-color:rgba(0, 0, 0, 0.3); line-height:10px; margin:0;"/>
+            </div>
+            <div>
+                <div style="font-size:0;">
+                    <script language="JavaScript">
+                        random_consist();
+                    </script>
+                </div>
+                <hr style="border-bottom:0; border-top-color:rgba(0, 0, 0, 0.3); line-height:10px; margin:0;"/>
+            </div>
+            <div>
+                <div style="font-size:0;">
+                    <script language="JavaScript">
+                        random_consist();
+                    </script>
+                </div>
+                <hr style="border-bottom:0; border-top-color:rgba(0, 0, 0, 0.3); line-height:10px; margin:0;"/>
+            </div>
+        </div>
+    </div>
+
+</div>
+    <div style="text-align:center; color:#999; padding:5px; background-color:#eee; border-top:solid 1px #ddd; box-shadow: inset 0px 1px 1px #ddd">
+        Iron Moose, with thanks to all who helped
+    </div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
