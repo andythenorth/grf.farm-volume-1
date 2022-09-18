@@ -1,0 +1,930 @@
+digraph arctic_basic {
+	graph [fname="docs/html/arctic_basic.dot",
+		fontname="sans-serif",
+		newrank=true,
+		nodesep=0.88,
+		output=edgesfirst,
+		overlap=compress,
+		rankdir=LR,
+		ranksep=0.88,
+		stylesheet="static/css/cargoflow_styles.css",
+		tooltip="Arctic Basic"
+	];
+	{
+		graph [rank=sink];
+		T_towns_food	[color="0.07142857142857144,1.0,0.66",
+			fontcolor="0.07142857142857144,1.0,0.66",
+			fontname="sans-serif",
+			fontsize=32,
+			label=Towns,
+			margin=0.33,
+			penwidth=5,
+			shape=box,
+			style=dashed];
+		T_town_industries	[fontcolor=black,
+			fontname="sans-serif",
+			fontsize=32,
+			label="Town Industries",
+			position="0,0!",
+			shape=none];
+	}
+	subgraph cluster_town_industries {
+		graph [color=azure2,
+			fillcolor=azure2,
+			penwidth=5,
+			position="0,0!",
+			rank=same,
+			shape=rounded,
+			style=filled
+		];
+		I_general_store	[fontname="sans-serif",
+			fontsize=32,
+			href="industries.html#general_store",
+			id=general_store,
+			label=<
+                <table border="0" cellborder="1" cellspacing="0" cellpadding="0" COLOR="azure3" BGCOLOR="white">
+                    <tr><td><IMG SRC="static/img/industries/general_store.png" /></td></tr>
+                    
+                    <tr><td><table BGCOLOR="ghostwhite" border="0" cellborder="0" cellspacing="5" cellpadding="0">
+                        <tr><td>General Store</td></tr>
+                        
+                             
+                            
+                            
+                                <tr><td><font POINT-SIZE="20">Requires Food</font></td></tr>
+                            
+                        
+                        
+                    </table></td></tr>
+                </table>
+            >,
+			shape=none,
+			target=_top,
+			tooltip="General Store"];
+		I_hotel	[fontname="sans-serif",
+			fontsize=32,
+			href="industries.html#hotel",
+			id=hotel,
+			label=<
+                <table border="0" cellborder="1" cellspacing="0" cellpadding="0" COLOR="azure3" BGCOLOR="white">
+                    <tr><td><IMG SRC="static/img/industries/hotel.png" /></td></tr>
+                    
+                    <tr><td><table BGCOLOR="ghostwhite" border="0" cellborder="0" cellspacing="5" cellpadding="0">
+                        <tr><td>Hotel</td></tr>
+                        
+                             
+                            
+                            
+                                <tr><td><font POINT-SIZE="20">Requires Food</font></td></tr>
+                            
+                        
+                             
+                            
+                            
+                                <tr><td><font POINT-SIZE="20">Requires Passengers</font></td></tr>
+                            
+                        
+                        
+                            
+                        
+                    </table></td></tr>
+                </table>
+            >,
+			shape=none,
+			target=_top,
+			tooltip=Hotel];
+		I_plaza	[fontname="sans-serif",
+			fontsize=32,
+			href="industries.html#plaza",
+			id=plaza,
+			label=<
+                <table border="0" cellborder="1" cellspacing="0" cellpadding="0" COLOR="azure3" BGCOLOR="white">
+                    <tr><td><IMG SRC="static/img/industries/plaza.png" /></td></tr>
+                    
+                    <tr><td><table BGCOLOR="ghostwhite" border="0" cellborder="0" cellspacing="5" cellpadding="0">
+                        <tr><td>Plaza</td></tr>
+                        
+                        
+                    </table></td></tr>
+                </table>
+            >,
+			shape=none,
+			target=_top,
+			tooltip=Plaza];
+		T_town_industries;
+	}
+	C_ammonia	[color="0.0,1.0,0.66",
+		fontcolor=white,
+		fontname="sans-serif",
+		fontsize=32,
+		href="cargos.html#ammonia",
+		id=ammonia,
+		label=Ammonia,
+		labelloc=c,
+		shape=box,
+		style=filled,
+		target=_top];
+	I_chemical_plant	[fontname="sans-serif",
+		fontsize=32,
+		href="industries.html#chemical_plant",
+		id=chemical_plant,
+		label=<
+                <table border="0" cellborder="1" cellspacing="0" cellpadding="0" COLOR="azure3" BGCOLOR="white">
+                    <tr><td><IMG SRC="static/img/industries/chemical_plant.png" /></td></tr>
+                    
+                    <tr><td><table BGCOLOR="ghostwhite" border="0" cellborder="0" cellspacing="5" cellpadding="0">
+                        <tr><td>Chemical Plant</td></tr>
+                        
+                             
+                            
+                            
+                        
+                             
+                            
+                            
+                        
+                             
+                            
+                            
+                        
+                             
+                            
+                            
+                        
+                        
+                            
+                        
+                            
+                        
+                    </table></td></tr>
+                </table>
+            >,
+		shape=none,
+		target=_top,
+		tooltip="Chemical Plant"];
+	C_ammonia -> I_chemical_plant	[arrowhead=normal,
+		arrowsize=2,
+		color="0.0,1.0,0.66",
+		penwidth=5,
+		tooltip="Ammonia -> Chemical Plant",
+		weight=4];
+	C_explosives	[color="0.026041666666666668,0.5079365079365079,0.66",
+		fontcolor=white,
+		fontname="sans-serif",
+		fontsize=32,
+		href="cargos.html#explosives",
+		id=explosives,
+		label=Explosives,
+		labelloc=c,
+		shape=box,
+		style=filled,
+		target=_top];
+	I_wharf	[fontname="sans-serif",
+		fontsize=32,
+		href="industries.html#wharf",
+		id=wharf,
+		label=<
+                <table border="0" cellborder="1" cellspacing="0" cellpadding="0" COLOR="azure3" BGCOLOR="white">
+                    <tr><td><IMG SRC="static/img/industries/wharf.png" /></td></tr>
+                    
+                    <tr><td><table BGCOLOR="ghostwhite" border="0" cellborder="0" cellspacing="5" cellpadding="0">
+                        <tr><td>Wharf</td></tr>
+                        
+                             
+                            
+                            
+                        
+                             
+                            
+                            
+                        
+                             
+                            
+                            
+                        
+                        
+                            
+                                <tr><td><font POINT-SIZE="20">Produces Engineering Supplies</font></td></tr>
+                            
+                        
+                            
+                                <tr><td><font POINT-SIZE="20">Produces Farm Supplies</font></td></tr>
+                            
+                        
+                            
+                        
+                    </table></td></tr>
+                </table>
+            >,
+		shape=none,
+		target=_top,
+		tooltip=Wharf];
+	C_explosives -> I_wharf	[arrowhead=normal,
+		arrowsize=2,
+		color="0.026041666666666668,0.5079365079365079,0.66",
+		penwidth=5,
+		tooltip="Explosives -> Wharf",
+		weight=3];
+	C_fertiliser	[color="0.5416666666666666,0.6060606060606061,0.5176470588235295",
+		fontcolor=white,
+		fontname="sans-serif",
+		fontsize=32,
+		href="cargos.html#fertiliser",
+		id=fertiliser,
+		label=Fertiliser,
+		labelloc=c,
+		shape=box,
+		style=filled,
+		target=_top];
+	I_port	[fontname="sans-serif",
+		fontsize=32,
+		href="industries.html#port",
+		id=port,
+		label=<
+                <table border="0" cellborder="1" cellspacing="0" cellpadding="0" COLOR="azure3" BGCOLOR="white">
+                    <tr><td><IMG SRC="static/img/industries/port.png" /></td></tr>
+                    
+                    <tr><td><table BGCOLOR="ghostwhite" border="0" cellborder="0" cellspacing="5" cellpadding="0">
+                        <tr><td>Port</td></tr>
+                        
+                             
+                            
+                            
+                        
+                             
+                            
+                            
+                        
+                             
+                            
+                            
+                        
+                        
+                            
+                        
+                            
+                                <tr><td><font POINT-SIZE="20">Produces Engineering Supplies</font></td></tr>
+                            
+                        
+                            
+                                <tr><td><font POINT-SIZE="20">Produces Farm Supplies</font></td></tr>
+                            
+                        
+                            
+                        
+                    </table></td></tr>
+                </table>
+            >,
+		shape=none,
+		target=_top,
+		tooltip=Port];
+	C_fertiliser -> I_port	[arrowhead=normal,
+		arrowsize=2,
+		color="0.5416666666666666,0.6060606060606061,0.5176470588235295",
+		penwidth=5,
+		tooltip="Fertiliser -> Port",
+		weight=3];
+	C_fish	[color="0.14930555555555555,0.7619047619047619,0.66",
+		fontcolor=white,
+		fontname="sans-serif",
+		fontsize=32,
+		href="cargos.html#fish",
+		id=fish,
+		label=Fish,
+		labelloc=c,
+		shape=box,
+		style=filled,
+		target=_top];
+	I_fishing_harbour	[fontname="sans-serif",
+		fontsize=32,
+		href="industries.html#fishing_harbour",
+		id=fishing_harbour,
+		label=<
+                <table border="0" cellborder="1" cellspacing="0" cellpadding="0" COLOR="azure3" BGCOLOR="white">
+                    <tr><td><IMG SRC="static/img/industries/fishing_harbour.png" /></td></tr>
+                    
+                    <tr><td><table BGCOLOR="ghostwhite" border="0" cellborder="0" cellspacing="5" cellpadding="0">
+                        <tr><td>Fishing Harbour</td></tr>
+                        
+                             
+                            
+                            
+                        
+                        
+                            
+                        
+                    </table></td></tr>
+                </table>
+            >,
+		shape=none,
+		target=_top,
+		tooltip="Fishing Harbour"];
+	C_fish -> I_fishing_harbour	[arrowhead=normal,
+		arrowsize=2,
+		color="0.14930555555555555,0.7619047619047619,0.66",
+		penwidth=5,
+		tooltip="Fish -> Fishing Harbour",
+		weight=1];
+	C_food	[color="0.07142857142857144,1.0,0.66",
+		fontcolor=white,
+		fontname="sans-serif",
+		fontsize=32,
+		href="cargos.html#food",
+		id=food,
+		label=Food,
+		labelloc=c,
+		shape=box,
+		style=filled,
+		target=_top];
+	C_food -> T_towns_food	[arrowsize=2,
+		color="0.07142857142857144,1.0,0.66",
+		penwidth=5,
+		style=dashed];
+	C_kaolin	[color="0.7072072072072072,0.5873015873015873,0.66",
+		fontcolor=white,
+		fontname="sans-serif",
+		fontsize=32,
+		href="cargos.html#kaolin",
+		id=kaolin,
+		label=Kaolin,
+		labelloc=c,
+		shape=box,
+		style=filled,
+		target=_top];
+	I_paper_mill	[fontname="sans-serif",
+		fontsize=32,
+		href="industries.html#paper_mill",
+		id=paper_mill,
+		label=<
+                <table border="0" cellborder="1" cellspacing="0" cellpadding="0" COLOR="azure3" BGCOLOR="white">
+                    <tr><td><IMG SRC="static/img/industries/paper_mill.png" /></td></tr>
+                    
+                    <tr><td><table BGCOLOR="ghostwhite" border="0" cellborder="0" cellspacing="5" cellpadding="0">
+                        <tr><td>Paper Mill</td></tr>
+                        
+                             
+                            
+                            
+                        
+                             
+                            
+                            
+                        
+                             
+                            
+                            
+                        
+                        
+                            
+                        
+                    </table></td></tr>
+                </table>
+            >,
+		shape=none,
+		target=_top,
+		tooltip="Paper Mill"];
+	C_kaolin -> I_paper_mill	[arrowhead=normal,
+		arrowsize=2,
+		color="0.7072072072072072,0.5873015873015873,0.66",
+		penwidth=5,
+		tooltip="Kaolin -> Paper Mill",
+		weight=3];
+	C_logs	[color="0.12698412698412698,1.0,0.66",
+		fontcolor=white,
+		fontname="sans-serif",
+		fontsize=32,
+		href="cargos.html#logs",
+		id=logs,
+		label=Logs,
+		labelloc=c,
+		shape=box,
+		style=filled,
+		target=_top];
+	C_logs -> I_paper_mill	[arrowhead=normal,
+		arrowsize=2,
+		color="0.12698412698412698,1.0,0.66",
+		penwidth=5,
+		tooltip="Logs -> Paper Mill",
+		weight=3];
+	I_sawmill	[fontname="sans-serif",
+		fontsize=32,
+		href="industries.html#sawmill",
+		id=sawmill,
+		label=<
+                <table border="0" cellborder="1" cellspacing="0" cellpadding="0" COLOR="azure3" BGCOLOR="white">
+                    <tr><td><IMG SRC="static/img/industries/sawmill.png" /></td></tr>
+                    
+                    <tr><td><table BGCOLOR="ghostwhite" border="0" cellborder="0" cellspacing="5" cellpadding="0">
+                        <tr><td>Sawmill</td></tr>
+                        
+                             
+                            
+                            
+                        
+                        
+                            
+                        
+                    </table></td></tr>
+                </table>
+            >,
+		shape=none,
+		target=_top,
+		tooltip=Sawmill];
+	C_logs -> I_sawmill	[arrowhead=normal,
+		arrowsize=2,
+		color="0.12698412698412698,1.0,0.66",
+		penwidth=5,
+		tooltip="Logs -> Sawmill",
+		weight=1];
+	C_paper	[color="0.967948717948718,0.7647058823529411,0.5333333333333333",
+		fontcolor=white,
+		fontname="sans-serif",
+		fontsize=32,
+		href="cargos.html#paper",
+		id=paper,
+		label=Paper,
+		labelloc=c,
+		shape=box,
+		style=filled,
+		target=_top];
+	C_paper -> I_port	[arrowhead=normal,
+		arrowsize=2,
+		color="0.967948717948718,0.7647058823529411,0.5333333333333333",
+		penwidth=5,
+		tooltip="Paper -> Port",
+		weight=3];
+	C_peat	[color="0.5911949685534591,1.0,0.66",
+		fontcolor=white,
+		fontname="sans-serif",
+		fontsize=32,
+		href="cargos.html#peat",
+		id=peat,
+		label=Peat,
+		labelloc=c,
+		shape=box,
+		style=filled,
+		target=_top];
+	I_power_plant	[fontname="sans-serif",
+		fontsize=32,
+		href="industries.html#power_plant",
+		id=power_plant,
+		label=<
+                <table border="0" cellborder="1" cellspacing="0" cellpadding="0" COLOR="azure3" BGCOLOR="white">
+                    <tr><td><IMG SRC="static/img/industries/power_plant.png" /></td></tr>
+                    
+                    <tr><td><table BGCOLOR="ghostwhite" border="0" cellborder="0" cellspacing="5" cellpadding="0">
+                        <tr><td>Power Plant</td></tr>
+                        
+                             
+                            
+                            
+                        
+                        
+                    </table></td></tr>
+                </table>
+            >,
+		shape=none,
+		target=_top,
+		tooltip="Power Plant"];
+	C_peat -> I_power_plant	[arrowhead=normal,
+		arrowsize=2,
+		color="0.5911949685534591,1.0,0.66",
+		penwidth=5,
+		tooltip="Peat -> Power Plant",
+		weight=1];
+	C_peat -> I_wharf	[arrowhead=normal,
+		arrowsize=2,
+		color="0.5911949685534591,1.0,0.66",
+		penwidth=5,
+		tooltip="Peat -> Wharf",
+		weight=3];
+	C_phosphate	[color="0.0,0.0,0.3137254901960784",
+		fontcolor=white,
+		fontname="sans-serif",
+		fontsize=32,
+		href="cargos.html#phosphate",
+		id=phosphate,
+		label=Phosphate,
+		labelloc=c,
+		shape=box,
+		style=filled,
+		target=_top];
+	C_phosphate -> I_chemical_plant	[arrowhead=normal,
+		arrowsize=2,
+		color="0.0,0.0,0.3137254901960784",
+		penwidth=5,
+		tooltip="Phosphate -> Chemical Plant",
+		weight=4];
+	C_potash	[color="0.5416666666666666,0.5818181818181818,0.66",
+		fontcolor=white,
+		fontname="sans-serif",
+		fontsize=32,
+		href="cargos.html#potash",
+		id=potash,
+		label=Potash,
+		labelloc=c,
+		shape=box,
+		style=filled,
+		target=_top];
+	C_potash -> I_chemical_plant	[arrowhead=normal,
+		arrowsize=2,
+		color="0.5416666666666666,0.5818181818181818,0.66",
+		penwidth=5,
+		tooltip="Potash -> Chemical Plant",
+		weight=4];
+	C_pyrite_ore	[color="0.0,0.5217391304347826,0.66",
+		fontcolor=white,
+		fontname="sans-serif",
+		fontsize=32,
+		href="cargos.html#pyrite_ore",
+		id=pyrite_ore,
+		label="Pyrite Ore",
+		labelloc=c,
+		shape=box,
+		style=filled,
+		target=_top];
+	I_pyrite_smelter	[fontname="sans-serif",
+		fontsize=32,
+		href="industries.html#pyrite_smelter",
+		id=pyrite_smelter,
+		label=<
+                <table border="0" cellborder="1" cellspacing="0" cellpadding="0" COLOR="azure3" BGCOLOR="white">
+                    <tr><td><IMG SRC="static/img/industries/pyrite_smelter.png" /></td></tr>
+                    
+                    <tr><td><table BGCOLOR="ghostwhite" border="0" cellborder="0" cellspacing="5" cellpadding="0">
+                        <tr><td>Pyrite Smelter</td></tr>
+                        
+                             
+                            
+                            
+                        
+                        
+                            
+                        
+                            
+                        
+                    </table></td></tr>
+                </table>
+            >,
+		shape=none,
+		target=_top,
+		tooltip="Pyrite Smelter"];
+	C_pyrite_ore -> I_pyrite_smelter	[arrowhead=normal,
+		arrowsize=2,
+		color="0.0,0.5217391304347826,0.66",
+		penwidth=5,
+		tooltip="Pyrite Ore -> Pyrite Smelter",
+		weight=1];
+	C_sulphur	[color="0.7063492063492064,0.3333333333333333,0.66",
+		fontcolor=white,
+		fontname="sans-serif",
+		fontsize=32,
+		href="cargos.html#sulphur",
+		id=sulphur,
+		label=Sulphur,
+		labelloc=c,
+		shape=box,
+		style=filled,
+		target=_top];
+	C_sulphur -> I_chemical_plant	[arrowhead=normal,
+		arrowsize=2,
+		color="0.7063492063492064,0.3333333333333333,0.66",
+		penwidth=5,
+		tooltip="Sulphur -> Chemical Plant",
+		weight=4];
+	C_sulphur -> I_paper_mill	[arrowhead=normal,
+		arrowsize=2,
+		color="0.7063492063492064,0.3333333333333333,0.66",
+		penwidth=5,
+		tooltip="Sulphur -> Paper Mill",
+		weight=3];
+	C_timber	[color="0.11363636363636365,0.7586206896551724,0.4549019607843137",
+		fontcolor=white,
+		fontname="sans-serif",
+		fontsize=32,
+		href="cargos.html#timber",
+		id=timber,
+		label=Timber,
+		labelloc=c,
+		shape=box,
+		style=filled,
+		target=_top];
+	C_timber -> I_wharf	[arrowhead=normal,
+		arrowsize=2,
+		color="0.11363636363636365,0.7586206896551724,0.4549019607843137",
+		penwidth=5,
+		tooltip="Timber -> Wharf",
+		weight=3];
+	C_zinc	[color="0.10416666666666667,0.34782608695652173,0.66",
+		fontcolor=white,
+		fontname="sans-serif",
+		fontsize=32,
+		href="cargos.html#zinc",
+		id=zinc,
+		label=Zinc,
+		labelloc=c,
+		shape=box,
+		style=filled,
+		target=_top];
+	C_zinc -> I_port	[arrowhead=normal,
+		arrowsize=2,
+		color="0.10416666666666667,0.34782608695652173,0.66",
+		penwidth=5,
+		tooltip="Zinc -> Port",
+		weight=3];
+	I_chemical_plant -> C_explosives	[arrowsize=2,
+		arrowtail=none,
+		color="0.026041666666666668,0.5079365079365079,0.66",
+		dir=back,
+		penwidth=5,
+		tooltip="Chemical Plant -> Explosives",
+		weight=2];
+	I_chemical_plant -> C_fertiliser	[arrowsize=2,
+		arrowtail=none,
+		color="0.5416666666666666,0.6060606060606061,0.5176470588235295",
+		dir=back,
+		penwidth=5,
+		tooltip="Chemical Plant -> Fertiliser",
+		weight=2];
+	I_fish_farm	[fontname="sans-serif",
+		fontsize=32,
+		href="industries.html#fish_farm",
+		id=fish_farm,
+		label=<
+                <table border="0" cellborder="1" cellspacing="0" cellpadding="0" COLOR="azure3" BGCOLOR="white">
+                    <tr><td><IMG SRC="static/img/industries/fish_farm.png" /></td></tr>
+                    
+                    <tr><td><table BGCOLOR="ghostwhite" border="0" cellborder="0" cellspacing="5" cellpadding="0">
+                        <tr><td>Fish Farm</td></tr>
+                        
+                             
+                                <tr><td><font POINT-SIZE="20">Requires Farm Supplies</font></td></tr>
+                            
+                            
+                            
+                        
+                        
+                            
+                        
+                    </table></td></tr>
+                </table>
+            >,
+		shape=none,
+		target=_top,
+		tooltip="Fish Farm"];
+	I_fish_farm -> C_fish	[arrowsize=2,
+		arrowtail=none,
+		color="0.14930555555555555,0.7619047619047619,0.66",
+		dir=back,
+		penwidth=5,
+		tooltip="Fish Farm -> Fish",
+		weight=1];
+	I_fishing_grounds	[fontname="sans-serif",
+		fontsize=32,
+		href="industries.html#fishing_grounds",
+		id=fishing_grounds,
+		label=<
+                <table border="0" cellborder="1" cellspacing="0" cellpadding="0" COLOR="azure3" BGCOLOR="white">
+                    <tr><td><IMG SRC="static/img/industries/fishing_grounds.png" /></td></tr>
+                    
+                    <tr><td><table BGCOLOR="ghostwhite" border="0" cellborder="0" cellspacing="5" cellpadding="0">
+                        <tr><td>Fishing Grounds</td></tr>
+                        
+                        
+                            
+                        
+                    </table></td></tr>
+                </table>
+            >,
+		shape=none,
+		target=_top,
+		tooltip="Fishing Grounds"];
+	I_fishing_grounds -> C_fish	[arrowsize=2,
+		arrowtail=none,
+		color="0.14930555555555555,0.7619047619047619,0.66",
+		dir=back,
+		penwidth=5,
+		tooltip="Fishing Grounds -> Fish",
+		weight=1];
+	I_fishing_harbour -> C_food	[arrowsize=2,
+		arrowtail=none,
+		color="0.07142857142857144,1.0,0.66",
+		dir=back,
+		penwidth=5,
+		tooltip="Fishing Harbour -> Food",
+		weight=1];
+	I_forest	[fontname="sans-serif",
+		fontsize=32,
+		href="industries.html#forest",
+		id=forest,
+		label=<
+                <table border="0" cellborder="1" cellspacing="0" cellpadding="0" COLOR="azure3" BGCOLOR="white">
+                    <tr><td><IMG SRC="static/img/industries/forest.png" /></td></tr>
+                    
+                    <tr><td><table BGCOLOR="ghostwhite" border="0" cellborder="0" cellspacing="5" cellpadding="0">
+                        <tr><td>Forest</td></tr>
+                        
+                             
+                                <tr><td><font POINT-SIZE="20">Requires Farm Supplies</font></td></tr>
+                            
+                            
+                            
+                        
+                        
+                            
+                        
+                    </table></td></tr>
+                </table>
+            >,
+		shape=none,
+		target=_top,
+		tooltip=Forest];
+	I_forest -> C_logs	[arrowsize=2,
+		arrowtail=none,
+		color="0.12698412698412698,1.0,0.66",
+		dir=back,
+		penwidth=5,
+		tooltip="Forest -> Logs",
+		weight=1];
+	I_herding_coop	[fontname="sans-serif",
+		fontsize=32,
+		href="industries.html#herding_coop",
+		id=herding_coop,
+		label=<
+                <table border="0" cellborder="1" cellspacing="0" cellpadding="0" COLOR="azure3" BGCOLOR="white">
+                    <tr><td><IMG SRC="static/img/industries/herding_coop.png" /></td></tr>
+                    
+                    <tr><td><table BGCOLOR="ghostwhite" border="0" cellborder="0" cellspacing="5" cellpadding="0">
+                        <tr><td>Herding Co-op</td></tr>
+                        
+                             
+                                <tr><td><font POINT-SIZE="20">Requires Farm Supplies</font></td></tr>
+                            
+                            
+                            
+                        
+                        
+                            
+                        
+                    </table></td></tr>
+                </table>
+            >,
+		shape=none,
+		target=_top,
+		tooltip="Herding Co-op"];
+	I_herding_coop -> C_food	[arrowsize=2,
+		arrowtail=none,
+		color="0.07142857142857144,1.0,0.66",
+		dir=back,
+		penwidth=5,
+		tooltip="Herding Co-op -> Food",
+		weight=1];
+	I_paper_mill -> C_paper	[arrowsize=2,
+		arrowtail=none,
+		color="0.967948717948718,0.7647058823529411,0.5333333333333333",
+		dir=back,
+		penwidth=5,
+		tooltip="Paper Mill -> Paper",
+		weight=1];
+	I_peatlands	[fontname="sans-serif",
+		fontsize=32,
+		href="industries.html#peatlands",
+		id=peatlands,
+		label=<
+                <table border="0" cellborder="1" cellspacing="0" cellpadding="0" COLOR="azure3" BGCOLOR="white">
+                    <tr><td><IMG SRC="static/img/industries/peatlands.png" /></td></tr>
+                    
+                    <tr><td><table BGCOLOR="ghostwhite" border="0" cellborder="0" cellspacing="5" cellpadding="0">
+                        <tr><td>Peatlands</td></tr>
+                        
+                             
+                                <tr><td><font POINT-SIZE="20">Requires Engineering Supplies</font></td></tr>
+                            
+                            
+                            
+                        
+                        
+                            
+                        
+                    </table></td></tr>
+                </table>
+            >,
+		shape=none,
+		target=_top,
+		tooltip=Peatlands];
+	I_peatlands -> C_peat	[arrowsize=2,
+		arrowtail=none,
+		color="0.5911949685534591,1.0,0.66",
+		dir=back,
+		penwidth=5,
+		tooltip="Peatlands -> Peat",
+		weight=1];
+	I_phosphate_mine	[fontname="sans-serif",
+		fontsize=32,
+		href="industries.html#phosphate_mine",
+		id=phosphate_mine,
+		label=<
+                <table border="0" cellborder="1" cellspacing="0" cellpadding="0" COLOR="azure3" BGCOLOR="white">
+                    <tr><td><IMG SRC="static/img/industries/phosphate_mine.png" /></td></tr>
+                    
+                    <tr><td><table BGCOLOR="ghostwhite" border="0" cellborder="0" cellspacing="5" cellpadding="0">
+                        <tr><td>Phosphate Mine</td></tr>
+                        
+                             
+                                <tr><td><font POINT-SIZE="20">Requires Engineering Supplies</font></td></tr>
+                            
+                            
+                            
+                        
+                        
+                            
+                        
+                    </table></td></tr>
+                </table>
+            >,
+		shape=none,
+		target=_top,
+		tooltip="Phosphate Mine"];
+	I_phosphate_mine -> C_phosphate	[arrowsize=2,
+		arrowtail=none,
+		color="0.0,0.0,0.3137254901960784",
+		dir=back,
+		penwidth=5,
+		tooltip="Phosphate Mine -> Phosphate",
+		weight=1];
+	I_port -> C_ammonia	[arrowsize=2,
+		arrowtail=none,
+		color="0.0,1.0,0.66",
+		dir=back,
+		penwidth=5,
+		tooltip="Port -> Ammonia",
+		weight=4];
+	I_port -> C_kaolin	[arrowsize=2,
+		arrowtail=none,
+		color="0.7072072072072072,0.5873015873015873,0.66",
+		dir=back,
+		penwidth=5,
+		tooltip="Port -> Kaolin",
+		weight=4];
+	I_pyrite_mine	[fontname="sans-serif",
+		fontsize=32,
+		href="industries.html#pyrite_mine",
+		id=pyrite_mine,
+		label=<
+                <table border="0" cellborder="1" cellspacing="0" cellpadding="0" COLOR="azure3" BGCOLOR="white">
+                    <tr><td><IMG SRC="static/img/industries/pyrite_mine.png" /></td></tr>
+                    
+                    <tr><td><table BGCOLOR="ghostwhite" border="0" cellborder="0" cellspacing="5" cellpadding="0">
+                        <tr><td>Pyrite Mine</td></tr>
+                        
+                             
+                                <tr><td><font POINT-SIZE="20">Requires Engineering Supplies</font></td></tr>
+                            
+                            
+                            
+                        
+                        
+                            
+                        
+                    </table></td></tr>
+                </table>
+            >,
+		shape=none,
+		target=_top,
+		tooltip="Pyrite Mine"];
+	I_pyrite_mine -> C_pyrite_ore	[arrowsize=2,
+		arrowtail=none,
+		color="0.0,0.5217391304347826,0.66",
+		dir=back,
+		penwidth=5,
+		tooltip="Pyrite Mine -> Pyrite Ore",
+		weight=1];
+	I_pyrite_smelter -> C_sulphur	[arrowsize=2,
+		arrowtail=none,
+		color="0.7063492063492064,0.3333333333333333,0.66",
+		dir=back,
+		penwidth=5,
+		tooltip="Pyrite Smelter -> Sulphur",
+		weight=2];
+	I_pyrite_smelter -> C_zinc	[arrowsize=2,
+		arrowtail=none,
+		color="0.10416666666666667,0.34782608695652173,0.66",
+		dir=back,
+		penwidth=5,
+		tooltip="Pyrite Smelter -> Zinc",
+		weight=2];
+	I_sawmill -> C_timber	[arrowsize=2,
+		arrowtail=none,
+		color="0.11363636363636365,0.7586206896551724,0.4549019607843137",
+		dir=back,
+		penwidth=5,
+		tooltip="Sawmill -> Timber",
+		weight=1];
+	I_wharf -> C_potash	[arrowsize=2,
+		arrowtail=none,
+		color="0.5416666666666666,0.5818181818181818,0.66",
+		dir=back,
+		penwidth=5,
+		tooltip="Wharf -> Potash",
+		weight=3];
+}
