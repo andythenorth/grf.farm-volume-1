@@ -1,0 +1,2022 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+    <title >Unsinkable Sam</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link type="text/css" href="static/css/bootstrap.min.css" rel="stylesheet">
+    <link type="text/css" href="static/css/bootstrap-responsive.min.css" rel="stylesheet">
+    <link type="text/css" href="static/css/style.css" rel="stylesheet">
+
+    <!--Font Awesome-->
+    <link rel="stylesheet" href="static/font-awesome/css/font-awesome.min.css" />
+    <!--/Font Awesome-->
+
+    <script type="text/javascript" src="static/js/jquery-1.9.1.min.js"></script>
+
+    <script type="text/javascript" src="static/js/jquery.metadata.js"></script>
+    <script type="text/javascript" src="static/js/jquery.tablesorter.min.js"></script>
+    <script type="text/javascript" src="static/js/jquery.tablesorter.widgets.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $('.tablesorter').tablesorter({
+                textExtraction: function(node){
+                            var cell_value = $(node).text();
+                            var sort_value = $(node).data('value');
+                    return (sort_value != undefined) ? sort_value : cell_value;
+                 },
+            })
+        })
+    </script>
+</head>
+
+<body>
+    <div class="navbar navbar-inverse navbar-static-top" style="margin-bottom:0; border-bottom:1px solid #000;">
+        <div class="container">
+            <ul class="nav navbar-nav pull-left">
+                <li class="">
+                    <a href="get_started.html">Get Started</a>
+                </li>
+                <li class="">
+                    <a href="ships.html">Ships</a>
+                </li>
+                <li class="">
+                    <a href="tech_tree_table_blue.html">Tech Tree</a>
+                </li>
+                <li class="active">
+                    <a href="code_reference.html">Code Reference</a>
+                </li>
+            </ul>
+            <ul class="nav navbar-nav pull-right">
+                <li class="">
+                    <a href="translations.html"><i class="icon-globe icon-white"></i> Help Translate Unsinkable Sam</a>
+                </li>
+                <li>
+                    <a href="https://www.tt-forums.net/viewtopic.php?f=26&amp;t=75762"><i class="icon-comment icon-white"></i> Discuss at TT-Forums.net</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="hero-unit subhead">
+        <script language="JavaScript">
+        function random_img(){
+            var images=new Array("",
+                                 "");
+
+            var random_image=images[Math.floor(Math.random()*images.length)];
+            document.write('<a href="ships.html#' + random_image + '"><img class="pull-right" style="margin-top:-30px; margin-bottom:0;" src="static/img/industries/'+ random_image +'.png"></a>')
+        }
+        random_img()
+        </script>
+        <div class="container">
+            <h1 style="font-size:48px; padding-top:30px;">Unsinkable Sam</h1>
+            <p class="lead">New Ships for OpenTTD</p>
+        </div>
+    </div>
+    
+        
+    
+    <div class="container">
+        <div>
+    <div class="span12">
+        <h2>Code Reference</h2>
+        <p>48 ships</p>
+        <hr />
+        
+            
+                <h4>BulkShip <small>Subclass</small></h4>
+                <p>
+    Standard bulk ship
+    </p>
+                <table style="font-size:84%;" class="table table-striped table-condensed table-bordered">
+                    <thead>
+                        <tr>
+                           
+                                <th style="background-color:#eee; vertical-align:top">Ship Name</th>
+                            
+                                <th style="background-color:#eee; vertical-align:top">Subtype</th>
+                            
+                                <th style="background-color:#eee; vertical-align:top">Extra Info</th>
+                            
+                                <th style="background-color:#eee; vertical-align:top">Speed Laden</th>
+                            
+                                <th style="background-color:#eee; vertical-align:top">Intro Date</th>
+                            
+                                <th style="background-color:#eee; vertical-align:top">Vehicle Life</th>
+                            
+                                <th style="background-color:#eee; vertical-align:top">Capacity</th>
+                            
+                                <th style="background-color:#eee; vertical-align:top">Buy Cost</th>
+                            
+                                <th style="background-color:#eee; vertical-align:top">Running Cost</th>
+                            
+                                <th style="background-color:#eee; vertical-align:top">Loading Speed</th>
+                            
+                            <th style="background-color:#eee; vertical-align:top">Sprites Complete</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+                            <tr>
+                                
+                                    <td>Rockton Mini Bulker</td>
+                                
+                                    <td>A</td>
+                                
+                                    <td></td>
+                                
+                                    <td>25</td>
+                                
+                                    <td>1900</td>
+                                
+                                    <td>100</td>
+                                
+                                    <td>80</td>
+                                
+                                    <td>8.0</td>
+                                
+                                    <td>28</td>
+                                
+                                    <td>20</td>
+                                
+                                <td>
+                                    &#10004;
+                                </td>
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>Hellevik Mini Bulker</td>
+                                
+                                    <td>B</td>
+                                
+                                    <td></td>
+                                
+                                    <td>25</td>
+                                
+                                    <td>1900</td>
+                                
+                                    <td>100</td>
+                                
+                                    <td>160</td>
+                                
+                                    <td>16.0</td>
+                                
+                                    <td>38</td>
+                                
+                                    <td>20</td>
+                                
+                                <td>
+                                    &#10004;
+                                </td>
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>Saltlick Mini Bulker</td>
+                                
+                                    <td>C</td>
+                                
+                                    <td></td>
+                                
+                                    <td>25</td>
+                                
+                                    <td>1900</td>
+                                
+                                    <td>100</td>
+                                
+                                    <td>240</td>
+                                
+                                    <td>24.0</td>
+                                
+                                    <td>48</td>
+                                
+                                    <td>20</td>
+                                
+                                <td>
+                                    &#10004;
+                                </td>
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>Lotsberget Mini Bulker</td>
+                                
+                                    <td>D</td>
+                                
+                                    <td></td>
+                                
+                                    <td>25</td>
+                                
+                                    <td>1900</td>
+                                
+                                    <td>100</td>
+                                
+                                    <td>360</td>
+                                
+                                    <td>36.0</td>
+                                
+                                    <td>63</td>
+                                
+                                    <td>20</td>
+                                
+                                <td>
+                                    &#10004;
+                                </td>
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>Gravelly Mini Bulker</td>
+                                
+                                    <td>E</td>
+                                
+                                    <td></td>
+                                
+                                    <td>25</td>
+                                
+                                    <td>1900</td>
+                                
+                                    <td>100</td>
+                                
+                                    <td>540</td>
+                                
+                                    <td>54.0</td>
+                                
+                                    <td>86</td>
+                                
+                                    <td>20</td>
+                                
+                                <td>
+                                    &#10004;
+                                </td>
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>Alligator Mini Bulker</td>
+                                
+                                    <td>F</td>
+                                
+                                    <td></td>
+                                
+                                    <td>25</td>
+                                
+                                    <td>1900</td>
+                                
+                                    <td>100</td>
+                                
+                                    <td>810</td>
+                                
+                                    <td>81.0</td>
+                                
+                                    <td>121</td>
+                                
+                                    <td>20</td>
+                                
+                                <td>
+                                    &#10004;
+                                </td>
+                            </tr>
+                        
+                    </tbody>
+                </table>
+                <br />
+            
+        
+            
+                <h4>CargoLiner <small>Subclass</small></h4>
+                <p>
+    Piece goods cargos, other selected cargos.  Equivalent of Road Hog box hauler and Iron Horse box car / van.
+    IRL: "GCV", "Break-bulk", "Pallet carrier", also cargo packet (but not mail packet)
+    Not "box ship" because IRL they are container carriers (yair).
+    The name is ultimately just a generic solution to 'this is not quite a general freighter', that doesn't describe the specific shape or cargo type or RL trade name.
+    Many name variants were tried, Cargo Liner seemed to stick.
+    </p>
+                <table style="font-size:84%;" class="table table-striped table-condensed table-bordered">
+                    <thead>
+                        <tr>
+                           
+                                <th style="background-color:#eee; vertical-align:top">Ship Name</th>
+                            
+                                <th style="background-color:#eee; vertical-align:top">Subtype</th>
+                            
+                                <th style="background-color:#eee; vertical-align:top">Extra Info</th>
+                            
+                                <th style="background-color:#eee; vertical-align:top">Speed Laden</th>
+                            
+                                <th style="background-color:#eee; vertical-align:top">Intro Date</th>
+                            
+                                <th style="background-color:#eee; vertical-align:top">Vehicle Life</th>
+                            
+                                <th style="background-color:#eee; vertical-align:top">Capacity</th>
+                            
+                                <th style="background-color:#eee; vertical-align:top">Buy Cost</th>
+                            
+                                <th style="background-color:#eee; vertical-align:top">Running Cost</th>
+                            
+                                <th style="background-color:#eee; vertical-align:top">Loading Speed</th>
+                            
+                            <th style="background-color:#eee; vertical-align:top">Sprites Complete</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+                            <tr>
+                                
+                                    <td>Inisheer Cargo Liner</td>
+                                
+                                    <td>A</td>
+                                
+                                    <td></td>
+                                
+                                    <td>25</td>
+                                
+                                    <td>1900</td>
+                                
+                                    <td>100</td>
+                                
+                                    <td>80</td>
+                                
+                                    <td>8.0</td>
+                                
+                                    <td>28</td>
+                                
+                                    <td>10</td>
+                                
+                                <td>
+                                    &#10004;
+                                </td>
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>Braddock Cargo Liner</td>
+                                
+                                    <td>B</td>
+                                
+                                    <td></td>
+                                
+                                    <td>25</td>
+                                
+                                    <td>1900</td>
+                                
+                                    <td>100</td>
+                                
+                                    <td>160</td>
+                                
+                                    <td>16.0</td>
+                                
+                                    <td>38</td>
+                                
+                                    <td>10</td>
+                                
+                                <td>
+                                    &#10004;
+                                </td>
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>Magellan Cargo Liner</td>
+                                
+                                    <td>C</td>
+                                
+                                    <td></td>
+                                
+                                    <td>25</td>
+                                
+                                    <td>1900</td>
+                                
+                                    <td>100</td>
+                                
+                                    <td>240</td>
+                                
+                                    <td>24.0</td>
+                                
+                                    <td>48</td>
+                                
+                                    <td>10</td>
+                                
+                                <td>
+                                    &#10004;
+                                </td>
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>Rampside Cargo Liner</td>
+                                
+                                    <td>D</td>
+                                
+                                    <td></td>
+                                
+                                    <td>25</td>
+                                
+                                    <td>1900</td>
+                                
+                                    <td>100</td>
+                                
+                                    <td>360</td>
+                                
+                                    <td>36.0</td>
+                                
+                                    <td>63</td>
+                                
+                                    <td>10</td>
+                                
+                                <td>
+                                    &#10004;
+                                </td>
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>Rivingen Cargo Liner</td>
+                                
+                                    <td>E</td>
+                                
+                                    <td></td>
+                                
+                                    <td>25</td>
+                                
+                                    <td>1900</td>
+                                
+                                    <td>100</td>
+                                
+                                    <td>540</td>
+                                
+                                    <td>54.0</td>
+                                
+                                    <td>86</td>
+                                
+                                    <td>10</td>
+                                
+                                <td>
+                                    &#10004;
+                                </td>
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>Trondheim Cargo Liner</td>
+                                
+                                    <td>F</td>
+                                
+                                    <td></td>
+                                
+                                    <td>25</td>
+                                
+                                    <td>1900</td>
+                                
+                                    <td>100</td>
+                                
+                                    <td>810</td>
+                                
+                                    <td>81.0</td>
+                                
+                                    <td>121</td>
+                                
+                                    <td>10</td>
+                                
+                                <td>
+                                    &#10004;
+                                </td>
+                            </tr>
+                        
+                    </tbody>
+                </table>
+                <br />
+            
+        
+            
+                <h4>EdiblesTanker <small>Subclass</small></h4>
+                <p>
+    Gallons and gallons and gallons of wine, milk or water.  Except in metric systems, where it's litres.
+    </p>
+                <table style="font-size:84%;" class="table table-striped table-condensed table-bordered">
+                    <thead>
+                        <tr>
+                           
+                                <th style="background-color:#eee; vertical-align:top">Ship Name</th>
+                            
+                                <th style="background-color:#eee; vertical-align:top">Subtype</th>
+                            
+                                <th style="background-color:#eee; vertical-align:top">Extra Info</th>
+                            
+                                <th style="background-color:#eee; vertical-align:top">Speed Laden</th>
+                            
+                                <th style="background-color:#eee; vertical-align:top">Intro Date</th>
+                            
+                                <th style="background-color:#eee; vertical-align:top">Vehicle Life</th>
+                            
+                                <th style="background-color:#eee; vertical-align:top">Capacity</th>
+                            
+                                <th style="background-color:#eee; vertical-align:top">Buy Cost</th>
+                            
+                                <th style="background-color:#eee; vertical-align:top">Running Cost</th>
+                            
+                                <th style="background-color:#eee; vertical-align:top">Loading Speed</th>
+                            
+                            <th style="background-color:#eee; vertical-align:top">Sprites Complete</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+                            <tr>
+                                
+                                    <td>Gumdrop Edibles Tanker</td>
+                                
+                                    <td>A</td>
+                                
+                                    <td></td>
+                                
+                                    <td>25</td>
+                                
+                                    <td>1900</td>
+                                
+                                    <td>100</td>
+                                
+                                    <td>80</td>
+                                
+                                    <td>8.0</td>
+                                
+                                    <td>28</td>
+                                
+                                    <td>10</td>
+                                
+                                <td>
+                                    &#10004;
+                                </td>
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>Bounty Edibles Tanker</td>
+                                
+                                    <td>B</td>
+                                
+                                    <td></td>
+                                
+                                    <td>25</td>
+                                
+                                    <td>1900</td>
+                                
+                                    <td>100</td>
+                                
+                                    <td>160</td>
+                                
+                                    <td>16.0</td>
+                                
+                                    <td>38</td>
+                                
+                                    <td>10</td>
+                                
+                                <td>
+                                    &#10004;
+                                </td>
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>Mystic Edibles Tanker</td>
+                                
+                                    <td>C</td>
+                                
+                                    <td></td>
+                                
+                                    <td>25</td>
+                                
+                                    <td>1900</td>
+                                
+                                    <td>100</td>
+                                
+                                    <td>240</td>
+                                
+                                    <td>24.0</td>
+                                
+                                    <td>48</td>
+                                
+                                    <td>10</td>
+                                
+                                <td>
+                                    &#10004;
+                                </td>
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>Fresnel Edibles Tanker</td>
+                                
+                                    <td>D</td>
+                                
+                                    <td></td>
+                                
+                                    <td>25</td>
+                                
+                                    <td>1900</td>
+                                
+                                    <td>100</td>
+                                
+                                    <td>360</td>
+                                
+                                    <td>36.0</td>
+                                
+                                    <td>63</td>
+                                
+                                    <td>10</td>
+                                
+                                <td>
+                                    &#10004;
+                                </td>
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>Belliveau Edibles Tanker</td>
+                                
+                                    <td>E</td>
+                                
+                                    <td></td>
+                                
+                                    <td>25</td>
+                                
+                                    <td>1900</td>
+                                
+                                    <td>100</td>
+                                
+                                    <td>540</td>
+                                
+                                    <td>54.0</td>
+                                
+                                    <td>86</td>
+                                
+                                    <td>10</td>
+                                
+                                <td>
+                                    &#10004;
+                                </td>
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>Cortes Edibles Tanker</td>
+                                
+                                    <td>F</td>
+                                
+                                    <td></td>
+                                
+                                    <td>25</td>
+                                
+                                    <td>1900</td>
+                                
+                                    <td>100</td>
+                                
+                                    <td>810</td>
+                                
+                                    <td>81.0</td>
+                                
+                                    <td>121</td>
+                                
+                                    <td>10</td>
+                                
+                                <td>
+                                    &#10004;
+                                </td>
+                            </tr>
+                        
+                    </tbody>
+                </table>
+                <br />
+            
+        
+            
+                <h4>FreighterShip <small>Subclass</small></h4>
+                <p>
+    Standard freighter
+    </p>
+                <table style="font-size:84%;" class="table table-striped table-condensed table-bordered">
+                    <thead>
+                        <tr>
+                           
+                                <th style="background-color:#eee; vertical-align:top">Ship Name</th>
+                            
+                                <th style="background-color:#eee; vertical-align:top">Subtype</th>
+                            
+                                <th style="background-color:#eee; vertical-align:top">Extra Info</th>
+                            
+                                <th style="background-color:#eee; vertical-align:top">Speed Laden</th>
+                            
+                                <th style="background-color:#eee; vertical-align:top">Intro Date</th>
+                            
+                                <th style="background-color:#eee; vertical-align:top">Vehicle Life</th>
+                            
+                                <th style="background-color:#eee; vertical-align:top">Capacity</th>
+                            
+                                <th style="background-color:#eee; vertical-align:top">Buy Cost</th>
+                            
+                                <th style="background-color:#eee; vertical-align:top">Running Cost</th>
+                            
+                                <th style="background-color:#eee; vertical-align:top">Loading Speed</th>
+                            
+                            <th style="background-color:#eee; vertical-align:top">Sprites Complete</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+                            <tr>
+                                
+                                    <td>Matson Freighter</td>
+                                
+                                    <td>A</td>
+                                
+                                    <td></td>
+                                
+                                    <td>25</td>
+                                
+                                    <td>1900</td>
+                                
+                                    <td>100</td>
+                                
+                                    <td>80</td>
+                                
+                                    <td>8.0</td>
+                                
+                                    <td>28</td>
+                                
+                                    <td>10</td>
+                                
+                                <td>
+                                    &#10004;
+                                </td>
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>Gelenbeek Freighter</td>
+                                
+                                    <td>B</td>
+                                
+                                    <td></td>
+                                
+                                    <td>25</td>
+                                
+                                    <td>1900</td>
+                                
+                                    <td>100</td>
+                                
+                                    <td>160</td>
+                                
+                                    <td>16.0</td>
+                                
+                                    <td>38</td>
+                                
+                                    <td>10</td>
+                                
+                                <td>
+                                    &#10004;
+                                </td>
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>Eagle Freighter</td>
+                                
+                                    <td>C</td>
+                                
+                                    <td></td>
+                                
+                                    <td>25</td>
+                                
+                                    <td>1900</td>
+                                
+                                    <td>100</td>
+                                
+                                    <td>240</td>
+                                
+                                    <td>24.0</td>
+                                
+                                    <td>48</td>
+                                
+                                    <td>10</td>
+                                
+                                <td>
+                                    &#10004;
+                                </td>
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>Akraberg Freighter</td>
+                                
+                                    <td>D</td>
+                                
+                                    <td></td>
+                                
+                                    <td>25</td>
+                                
+                                    <td>1900</td>
+                                
+                                    <td>100</td>
+                                
+                                    <td>360</td>
+                                
+                                    <td>36.0</td>
+                                
+                                    <td>63</td>
+                                
+                                    <td>10</td>
+                                
+                                <td>
+                                    &#10004;
+                                </td>
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>Thesiger Freighter</td>
+                                
+                                    <td>E</td>
+                                
+                                    <td></td>
+                                
+                                    <td>25</td>
+                                
+                                    <td>1900</td>
+                                
+                                    <td>100</td>
+                                
+                                    <td>540</td>
+                                
+                                    <td>54.0</td>
+                                
+                                    <td>86</td>
+                                
+                                    <td>10</td>
+                                
+                                <td>
+                                    &#10004;
+                                </td>
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>Longstone Freighter</td>
+                                
+                                    <td>F</td>
+                                
+                                    <td></td>
+                                
+                                    <td>25</td>
+                                
+                                    <td>1900</td>
+                                
+                                    <td>100</td>
+                                
+                                    <td>810</td>
+                                
+                                    <td>81.0</td>
+                                
+                                    <td>121</td>
+                                
+                                    <td>10</td>
+                                
+                                <td>
+                                    &#10004;
+                                </td>
+                            </tr>
+                        
+                    </tbody>
+                </table>
+                <br />
+            
+        
+            
+                <h4>MerchandiseFreighterShip <small>Subclass</small></h4>
+                <p>
+    Colour variation on standard freighter, no other differences
+    </p>
+                <table style="font-size:84%;" class="table table-striped table-condensed table-bordered">
+                    <thead>
+                        <tr>
+                           
+                                <th style="background-color:#eee; vertical-align:top">Ship Name</th>
+                            
+                                <th style="background-color:#eee; vertical-align:top">Subtype</th>
+                            
+                                <th style="background-color:#eee; vertical-align:top">Extra Info</th>
+                            
+                                <th style="background-color:#eee; vertical-align:top">Speed Laden</th>
+                            
+                                <th style="background-color:#eee; vertical-align:top">Intro Date</th>
+                            
+                                <th style="background-color:#eee; vertical-align:top">Vehicle Life</th>
+                            
+                                <th style="background-color:#eee; vertical-align:top">Capacity</th>
+                            
+                                <th style="background-color:#eee; vertical-align:top">Buy Cost</th>
+                            
+                                <th style="background-color:#eee; vertical-align:top">Running Cost</th>
+                            
+                                <th style="background-color:#eee; vertical-align:top">Loading Speed</th>
+                            
+                            <th style="background-color:#eee; vertical-align:top">Sprites Complete</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+                            <tr>
+                                
+                                    <td>Pitney Merchandise Freighter</td>
+                                
+                                    <td>A</td>
+                                
+                                    <td></td>
+                                
+                                    <td>25</td>
+                                
+                                    <td>1900</td>
+                                
+                                    <td>100</td>
+                                
+                                    <td>80</td>
+                                
+                                    <td>8.0</td>
+                                
+                                    <td>28</td>
+                                
+                                    <td>10</td>
+                                
+                                <td>
+                                    &#10004;
+                                </td>
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>Bamburgh Merchandise Freighter</td>
+                                
+                                    <td>B</td>
+                                
+                                    <td></td>
+                                
+                                    <td>25</td>
+                                
+                                    <td>1900</td>
+                                
+                                    <td>100</td>
+                                
+                                    <td>160</td>
+                                
+                                    <td>16.0</td>
+                                
+                                    <td>38</td>
+                                
+                                    <td>10</td>
+                                
+                                <td>
+                                    &#10004;
+                                </td>
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>Achillbeg Merchandise Freighter</td>
+                                
+                                    <td>C</td>
+                                
+                                    <td></td>
+                                
+                                    <td>25</td>
+                                
+                                    <td>1900</td>
+                                
+                                    <td>100</td>
+                                
+                                    <td>240</td>
+                                
+                                    <td>24.0</td>
+                                
+                                    <td>48</td>
+                                
+                                    <td>10</td>
+                                
+                                <td>
+                                    &#10004;
+                                </td>
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>Rosenthal Merchandise Freighter</td>
+                                
+                                    <td>D</td>
+                                
+                                    <td></td>
+                                
+                                    <td>25</td>
+                                
+                                    <td>1900</td>
+                                
+                                    <td>100</td>
+                                
+                                    <td>360</td>
+                                
+                                    <td>36.0</td>
+                                
+                                    <td>63</td>
+                                
+                                    <td>10</td>
+                                
+                                <td>
+                                    &#10004;
+                                </td>
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>Watchet Merchandise Freighter</td>
+                                
+                                    <td>E</td>
+                                
+                                    <td></td>
+                                
+                                    <td>25</td>
+                                
+                                    <td>1900</td>
+                                
+                                    <td>100</td>
+                                
+                                    <td>540</td>
+                                
+                                    <td>54.0</td>
+                                
+                                    <td>86</td>
+                                
+                                    <td>10</td>
+                                
+                                <td>
+                                    &#10004;
+                                </td>
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>Amherst Merchandise Freighter</td>
+                                
+                                    <td>F</td>
+                                
+                                    <td></td>
+                                
+                                    <td>25</td>
+                                
+                                    <td>1900</td>
+                                
+                                    <td>100</td>
+                                
+                                    <td>810</td>
+                                
+                                    <td>81.0</td>
+                                
+                                    <td>121</td>
+                                
+                                    <td>10</td>
+                                
+                                <td>
+                                    &#10004;
+                                </td>
+                            </tr>
+                        
+                    </tbody>
+                </table>
+                <br />
+            
+        
+            
+                <h4>Reefer <small>Subclass</small></h4>
+                <p>
+    Refits to limited range of refrigerated cargos, with 'improved' cargo decay rate.
+    </p>
+                <table style="font-size:84%;" class="table table-striped table-condensed table-bordered">
+                    <thead>
+                        <tr>
+                           
+                                <th style="background-color:#eee; vertical-align:top">Ship Name</th>
+                            
+                                <th style="background-color:#eee; vertical-align:top">Subtype</th>
+                            
+                                <th style="background-color:#eee; vertical-align:top">Extra Info</th>
+                            
+                                <th style="background-color:#eee; vertical-align:top">Speed Laden</th>
+                            
+                                <th style="background-color:#eee; vertical-align:top">Intro Date</th>
+                            
+                                <th style="background-color:#eee; vertical-align:top">Vehicle Life</th>
+                            
+                                <th style="background-color:#eee; vertical-align:top">Capacity</th>
+                            
+                                <th style="background-color:#eee; vertical-align:top">Buy Cost</th>
+                            
+                                <th style="background-color:#eee; vertical-align:top">Running Cost</th>
+                            
+                                <th style="background-color:#eee; vertical-align:top">Loading Speed</th>
+                            
+                            <th style="background-color:#eee; vertical-align:top">Sprites Complete</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+                            <tr>
+                                
+                                    <td>Seafrost Refrigerated Ship</td>
+                                
+                                    <td>A</td>
+                                
+                                    <td></td>
+                                
+                                    <td>25</td>
+                                
+                                    <td>1900</td>
+                                
+                                    <td>100</td>
+                                
+                                    <td>80</td>
+                                
+                                    <td>8.0</td>
+                                
+                                    <td>28</td>
+                                
+                                    <td>10</td>
+                                
+                                <td>
+                                    &#10004;
+                                </td>
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>Langara Refrigerated Ship</td>
+                                
+                                    <td>B</td>
+                                
+                                    <td></td>
+                                
+                                    <td>25</td>
+                                
+                                    <td>1900</td>
+                                
+                                    <td>100</td>
+                                
+                                    <td>160</td>
+                                
+                                    <td>16.0</td>
+                                
+                                    <td>38</td>
+                                
+                                    <td>10</td>
+                                
+                                <td>
+                                    &#10004;
+                                </td>
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>Samphire Refrigerated Ship</td>
+                                
+                                    <td>C</td>
+                                
+                                    <td></td>
+                                
+                                    <td>25</td>
+                                
+                                    <td>1900</td>
+                                
+                                    <td>100</td>
+                                
+                                    <td>240</td>
+                                
+                                    <td>24.0</td>
+                                
+                                    <td>48</td>
+                                
+                                    <td>10</td>
+                                
+                                <td>
+                                    &#10004;
+                                </td>
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>Kodiak Refrigerated Ship</td>
+                                
+                                    <td>D</td>
+                                
+                                    <td></td>
+                                
+                                    <td>25</td>
+                                
+                                    <td>1900</td>
+                                
+                                    <td>100</td>
+                                
+                                    <td>360</td>
+                                
+                                    <td>36.0</td>
+                                
+                                    <td>63</td>
+                                
+                                    <td>10</td>
+                                
+                                <td>
+                                    &#10004;
+                                </td>
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>Caribou Refrigerated Ship</td>
+                                
+                                    <td>E</td>
+                                
+                                    <td></td>
+                                
+                                    <td>25</td>
+                                
+                                    <td>1900</td>
+                                
+                                    <td>100</td>
+                                
+                                    <td>540</td>
+                                
+                                    <td>54.0</td>
+                                
+                                    <td>86</td>
+                                
+                                    <td>10</td>
+                                
+                                <td>
+                                    &#10004;
+                                </td>
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>Helsinki Refrigerated Ship</td>
+                                
+                                    <td>F</td>
+                                
+                                    <td></td>
+                                
+                                    <td>25</td>
+                                
+                                    <td>1900</td>
+                                
+                                    <td>100</td>
+                                
+                                    <td>810</td>
+                                
+                                    <td>81.0</td>
+                                
+                                    <td>121</td>
+                                
+                                    <td>10</td>
+                                
+                                <td>
+                                    &#10004;
+                                </td>
+                            </tr>
+                        
+                    </tbody>
+                </table>
+                <br />
+            
+        
+            
+                <h4>ScrapCarrierShip <small>Subclass</small></h4>
+                <p>
+    Colour variation on standard bulk ship, no other differences
+    </p>
+                <table style="font-size:84%;" class="table table-striped table-condensed table-bordered">
+                    <thead>
+                        <tr>
+                           
+                                <th style="background-color:#eee; vertical-align:top">Ship Name</th>
+                            
+                                <th style="background-color:#eee; vertical-align:top">Subtype</th>
+                            
+                                <th style="background-color:#eee; vertical-align:top">Extra Info</th>
+                            
+                                <th style="background-color:#eee; vertical-align:top">Speed Laden</th>
+                            
+                                <th style="background-color:#eee; vertical-align:top">Intro Date</th>
+                            
+                                <th style="background-color:#eee; vertical-align:top">Vehicle Life</th>
+                            
+                                <th style="background-color:#eee; vertical-align:top">Capacity</th>
+                            
+                                <th style="background-color:#eee; vertical-align:top">Buy Cost</th>
+                            
+                                <th style="background-color:#eee; vertical-align:top">Running Cost</th>
+                            
+                                <th style="background-color:#eee; vertical-align:top">Loading Speed</th>
+                            
+                            <th style="background-color:#eee; vertical-align:top">Sprites Complete</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+                            <tr>
+                                
+                                    <td>Sintra Scrap Carrier</td>
+                                
+                                    <td>A</td>
+                                
+                                    <td></td>
+                                
+                                    <td>25</td>
+                                
+                                    <td>1900</td>
+                                
+                                    <td>100</td>
+                                
+                                    <td>80</td>
+                                
+                                    <td>8.0</td>
+                                
+                                    <td>28</td>
+                                
+                                    <td>20</td>
+                                
+                                <td>
+                                    &#10004;
+                                </td>
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>Klink Scrap Carrier</td>
+                                
+                                    <td>B</td>
+                                
+                                    <td></td>
+                                
+                                    <td>25</td>
+                                
+                                    <td>1900</td>
+                                
+                                    <td>100</td>
+                                
+                                    <td>160</td>
+                                
+                                    <td>16.0</td>
+                                
+                                    <td>38</td>
+                                
+                                    <td>20</td>
+                                
+                                <td>
+                                    &#10004;
+                                </td>
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>Skansin Scrap Carrier</td>
+                                
+                                    <td>C</td>
+                                
+                                    <td></td>
+                                
+                                    <td>25</td>
+                                
+                                    <td>1900</td>
+                                
+                                    <td>100</td>
+                                
+                                    <td>240</td>
+                                
+                                    <td>24.0</td>
+                                
+                                    <td>48</td>
+                                
+                                    <td>20</td>
+                                
+                                <td>
+                                    &#10004;
+                                </td>
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>Grinna Scrap Carrier</td>
+                                
+                                    <td>D</td>
+                                
+                                    <td></td>
+                                
+                                    <td>25</td>
+                                
+                                    <td>1900</td>
+                                
+                                    <td>100</td>
+                                
+                                    <td>360</td>
+                                
+                                    <td>36.0</td>
+                                
+                                    <td>63</td>
+                                
+                                    <td>20</td>
+                                
+                                <td>
+                                    &#10004;
+                                </td>
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>Carson Scrap Carrier</td>
+                                
+                                    <td>E</td>
+                                
+                                    <td></td>
+                                
+                                    <td>25</td>
+                                
+                                    <td>1900</td>
+                                
+                                    <td>100</td>
+                                
+                                    <td>540</td>
+                                
+                                    <td>54.0</td>
+                                
+                                    <td>86</td>
+                                
+                                    <td>20</td>
+                                
+                                <td>
+                                    &#10004;
+                                </td>
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>Anvil Scrap Carrier</td>
+                                
+                                    <td>F</td>
+                                
+                                    <td></td>
+                                
+                                    <td>25</td>
+                                
+                                    <td>1900</td>
+                                
+                                    <td>100</td>
+                                
+                                    <td>810</td>
+                                
+                                    <td>81.0</td>
+                                
+                                    <td>121</td>
+                                
+                                    <td>20</td>
+                                
+                                <td>
+                                    &#10004;
+                                </td>
+                            </tr>
+                        
+                    </tbody>
+                </table>
+                <br />
+            
+        
+            
+                <h4>TankerShip <small>Subclass</small></h4>
+                <p>
+    Sparse subclass to set base ID
+    </p>
+                <table style="font-size:84%;" class="table table-striped table-condensed table-bordered">
+                    <thead>
+                        <tr>
+                           
+                                <th style="background-color:#eee; vertical-align:top">Ship Name</th>
+                            
+                                <th style="background-color:#eee; vertical-align:top">Subtype</th>
+                            
+                                <th style="background-color:#eee; vertical-align:top">Extra Info</th>
+                            
+                                <th style="background-color:#eee; vertical-align:top">Speed Laden</th>
+                            
+                                <th style="background-color:#eee; vertical-align:top">Intro Date</th>
+                            
+                                <th style="background-color:#eee; vertical-align:top">Vehicle Life</th>
+                            
+                                <th style="background-color:#eee; vertical-align:top">Capacity</th>
+                            
+                                <th style="background-color:#eee; vertical-align:top">Buy Cost</th>
+                            
+                                <th style="background-color:#eee; vertical-align:top">Running Cost</th>
+                            
+                                <th style="background-color:#eee; vertical-align:top">Loading Speed</th>
+                            
+                            <th style="background-color:#eee; vertical-align:top">Sprites Complete</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+                            <tr>
+                                
+                                    <td>Salso Tanker</td>
+                                
+                                    <td>A</td>
+                                
+                                    <td></td>
+                                
+                                    <td>25</td>
+                                
+                                    <td>1900</td>
+                                
+                                    <td>100</td>
+                                
+                                    <td>80</td>
+                                
+                                    <td>8.0</td>
+                                
+                                    <td>28</td>
+                                
+                                    <td>10</td>
+                                
+                                <td>
+                                    <span style='color:red;'>Nope</span>
+                                </td>
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>Berwick Tanker</td>
+                                
+                                    <td>B</td>
+                                
+                                    <td></td>
+                                
+                                    <td>25</td>
+                                
+                                    <td>1900</td>
+                                
+                                    <td>100</td>
+                                
+                                    <td>160</td>
+                                
+                                    <td>16.0</td>
+                                
+                                    <td>38</td>
+                                
+                                    <td>10</td>
+                                
+                                <td>
+                                    &#10004;
+                                </td>
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>Kalsoy Tanker</td>
+                                
+                                    <td>C</td>
+                                
+                                    <td></td>
+                                
+                                    <td>25</td>
+                                
+                                    <td>1900</td>
+                                
+                                    <td>100</td>
+                                
+                                    <td>240</td>
+                                
+                                    <td>24.0</td>
+                                
+                                    <td>48</td>
+                                
+                                    <td>10</td>
+                                
+                                <td>
+                                    &#10004;
+                                </td>
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>Ellesmere Tanker</td>
+                                
+                                    <td>D</td>
+                                
+                                    <td></td>
+                                
+                                    <td>25</td>
+                                
+                                    <td>1900</td>
+                                
+                                    <td>100</td>
+                                
+                                    <td>360</td>
+                                
+                                    <td>36.0</td>
+                                
+                                    <td>63</td>
+                                
+                                    <td>10</td>
+                                
+                                <td>
+                                    &#10004;
+                                </td>
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>Gunfleet Tanker</td>
+                                
+                                    <td>E</td>
+                                
+                                    <td></td>
+                                
+                                    <td>25</td>
+                                
+                                    <td>1900</td>
+                                
+                                    <td>100</td>
+                                
+                                    <td>540</td>
+                                
+                                    <td>54.0</td>
+                                
+                                    <td>86</td>
+                                
+                                    <td>10</td>
+                                
+                                <td>
+                                    &#10004;
+                                </td>
+                            </tr>
+                        
+                            <tr>
+                                
+                                    <td>Rotterdam Tanker</td>
+                                
+                                    <td>F</td>
+                                
+                                    <td></td>
+                                
+                                    <td>25</td>
+                                
+                                    <td>1900</td>
+                                
+                                    <td>100</td>
+                                
+                                    <td>810</td>
+                                
+                                    <td>81.0</td>
+                                
+                                    <td>121</td>
+                                
+                                    <td>10</td>
+                                
+                                <td>
+                                    &#10004;
+                                </td>
+                            </tr>
+                        
+                    </tbody>
+                </table>
+                <br />
+            
+        
+
+        <hr />
+        <h3>Numeric IDs</h3>
+        <table class="table table-striped table-condensed table-bordered">
+            <thead>
+                <th>Numeric ID</th>
+                <th>ID</th>
+                <th>Title</th>
+            </thead>
+            <tbody>
+                
+                    <tr>
+                        <td>1</td>
+                        <td>tanker_ship_gen_3D</td>
+                        <td>string(STR_NAME_tanker_ship_gen_3D, string(STR_NAME_TANKER_SHIP))</td>
+                    </tr>
+                
+                    <tr>
+                        <td>2</td>
+                        <td>tanker_ship_gen_3F</td>
+                        <td>string(STR_NAME_tanker_ship_gen_3F, string(STR_NAME_TANKER_SHIP))</td>
+                    </tr>
+                
+                    <tr>
+                        <td>3</td>
+                        <td>freighter_ship_gen_3D</td>
+                        <td>string(STR_NAME_freighter_ship_gen_3D, string(STR_NAME_FREIGHTER_SHIP))</td>
+                    </tr>
+                
+                    <tr>
+                        <td>4</td>
+                        <td>freighter_ship_gen_3C</td>
+                        <td>string(STR_NAME_freighter_ship_gen_3C, string(STR_NAME_FREIGHTER_SHIP))</td>
+                    </tr>
+                
+                    <tr>
+                        <td>5</td>
+                        <td>freighter_ship_gen_3B</td>
+                        <td>string(STR_NAME_freighter_ship_gen_3B, string(STR_NAME_FREIGHTER_SHIP))</td>
+                    </tr>
+                
+                    <tr>
+                        <td>6</td>
+                        <td>freighter_ship_gen_3A</td>
+                        <td>string(STR_NAME_freighter_ship_gen_3A, string(STR_NAME_FREIGHTER_SHIP))</td>
+                    </tr>
+                
+                    <tr>
+                        <td>7</td>
+                        <td>cargo_liner_gen_3D</td>
+                        <td>string(STR_NAME_cargo_liner_gen_3D, string(STR_NAME_CARGO_LINER))</td>
+                    </tr>
+                
+                    <tr>
+                        <td>8</td>
+                        <td>cargo_liner_gen_3F</td>
+                        <td>string(STR_NAME_cargo_liner_gen_3F, string(STR_NAME_CARGO_LINER))</td>
+                    </tr>
+                
+                    <tr>
+                        <td>14</td>
+                        <td>reefer_gen_3D</td>
+                        <td>string(STR_NAME_reefer_gen_3D, string(STR_NAME_REEFER))</td>
+                    </tr>
+                
+                    <tr>
+                        <td>15</td>
+                        <td>reefer_gen_3F</td>
+                        <td>string(STR_NAME_reefer_gen_3F, string(STR_NAME_REEFER))</td>
+                    </tr>
+                
+                    <tr>
+                        <td>18</td>
+                        <td>edibles_tanker_gen_3F</td>
+                        <td>string(STR_NAME_edibles_tanker_gen_3F, string(STR_NAME_EDIBLES_TANKER))</td>
+                    </tr>
+                
+                    <tr>
+                        <td>19</td>
+                        <td>tanker_ship_gen_3E</td>
+                        <td>string(STR_NAME_tanker_ship_gen_3E, string(STR_NAME_TANKER_SHIP))</td>
+                    </tr>
+                
+                    <tr>
+                        <td>32</td>
+                        <td>edibles_tanker_gen_3D</td>
+                        <td>string(STR_NAME_edibles_tanker_gen_3D, string(STR_NAME_EDIBLES_TANKER))</td>
+                    </tr>
+                
+                    <tr>
+                        <td>34</td>
+                        <td>tanker_ship_gen_3B</td>
+                        <td>string(STR_NAME_tanker_ship_gen_3B, string(STR_NAME_TANKER_SHIP))</td>
+                    </tr>
+                
+                    <tr>
+                        <td>41</td>
+                        <td>freighter_ship_gen_3E</td>
+                        <td>string(STR_NAME_freighter_ship_gen_3E, string(STR_NAME_FREIGHTER_SHIP))</td>
+                    </tr>
+                
+                    <tr>
+                        <td>42</td>
+                        <td>freighter_ship_gen_3F</td>
+                        <td>string(STR_NAME_freighter_ship_gen_3F, string(STR_NAME_FREIGHTER_SHIP))</td>
+                    </tr>
+                
+                    <tr>
+                        <td>44</td>
+                        <td>tanker_ship_gen_3C</td>
+                        <td>string(STR_NAME_tanker_ship_gen_3C, string(STR_NAME_TANKER_SHIP))</td>
+                    </tr>
+                
+                    <tr>
+                        <td>45</td>
+                        <td>cargo_liner_gen_3E</td>
+                        <td>string(STR_NAME_cargo_liner_gen_3E, string(STR_NAME_CARGO_LINER))</td>
+                    </tr>
+                
+                    <tr>
+                        <td>50</td>
+                        <td>bulk_ship_gen_3F</td>
+                        <td>string(STR_NAME_bulk_ship_gen_3F, string(STR_NAME_MINI_BULKER))</td>
+                    </tr>
+                
+                    <tr>
+                        <td>51</td>
+                        <td>bulk_ship_gen_3E</td>
+                        <td>string(STR_NAME_bulk_ship_gen_3E, string(STR_NAME_MINI_BULKER))</td>
+                    </tr>
+                
+                    <tr>
+                        <td>53</td>
+                        <td>bulk_ship_gen_3D</td>
+                        <td>string(STR_NAME_bulk_ship_gen_3D, string(STR_NAME_MINI_BULKER))</td>
+                    </tr>
+                
+                    <tr>
+                        <td>54</td>
+                        <td>bulk_ship_gen_3C</td>
+                        <td>string(STR_NAME_bulk_ship_gen_3C, string(STR_NAME_MINI_BULKER))</td>
+                    </tr>
+                
+                    <tr>
+                        <td>56</td>
+                        <td>edibles_tanker_gen_3E</td>
+                        <td>string(STR_NAME_edibles_tanker_gen_3E, string(STR_NAME_EDIBLES_TANKER))</td>
+                    </tr>
+                
+                    <tr>
+                        <td>57</td>
+                        <td>edibles_tanker_gen_3C</td>
+                        <td>string(STR_NAME_edibles_tanker_gen_3C, string(STR_NAME_EDIBLES_TANKER))</td>
+                    </tr>
+                
+                    <tr>
+                        <td>58</td>
+                        <td>edibles_tanker_gen_3B</td>
+                        <td>string(STR_NAME_edibles_tanker_gen_3B, string(STR_NAME_EDIBLES_TANKER))</td>
+                    </tr>
+                
+                    <tr>
+                        <td>59</td>
+                        <td>reefer_gen_3E</td>
+                        <td>string(STR_NAME_reefer_gen_3E, string(STR_NAME_REEFER))</td>
+                    </tr>
+                
+                    <tr>
+                        <td>60</td>
+                        <td>reefer_gen_3C</td>
+                        <td>string(STR_NAME_reefer_gen_3C, string(STR_NAME_REEFER))</td>
+                    </tr>
+                
+                    <tr>
+                        <td>61</td>
+                        <td>reefer_gen_3B</td>
+                        <td>string(STR_NAME_reefer_gen_3B, string(STR_NAME_REEFER))</td>
+                    </tr>
+                
+                    <tr>
+                        <td>65</td>
+                        <td>bulk_ship_gen_3B</td>
+                        <td>string(STR_NAME_bulk_ship_gen_3B, string(STR_NAME_MINI_BULKER))</td>
+                    </tr>
+                
+                    <tr>
+                        <td>67</td>
+                        <td>tanker_ship_gen_3A</td>
+                        <td>string(STR_NAME_tanker_ship_gen_3A, string(STR_NAME_TANKER_SHIP))</td>
+                    </tr>
+                
+                    <tr>
+                        <td>68</td>
+                        <td>bulk_ship_gen_3A</td>
+                        <td>string(STR_NAME_bulk_ship_gen_3A, string(STR_NAME_MINI_BULKER))</td>
+                    </tr>
+                
+                    <tr>
+                        <td>69</td>
+                        <td>edibles_tanker_gen_3A</td>
+                        <td>string(STR_NAME_edibles_tanker_gen_3A, string(STR_NAME_EDIBLES_TANKER))</td>
+                    </tr>
+                
+                    <tr>
+                        <td>70</td>
+                        <td>cargo_liner_gen_3B</td>
+                        <td>string(STR_NAME_cargo_liner_gen_3B, string(STR_NAME_CARGO_LINER))</td>
+                    </tr>
+                
+                    <tr>
+                        <td>71</td>
+                        <td>cargo_liner_gen_3C</td>
+                        <td>string(STR_NAME_cargo_liner_gen_3C, string(STR_NAME_CARGO_LINER))</td>
+                    </tr>
+                
+                    <tr>
+                        <td>75</td>
+                        <td>cargo_liner_gen_3A</td>
+                        <td>string(STR_NAME_cargo_liner_gen_3A, string(STR_NAME_CARGO_LINER))</td>
+                    </tr>
+                
+                    <tr>
+                        <td>76</td>
+                        <td>reefer_gen_3A</td>
+                        <td>string(STR_NAME_reefer_gen_3A, string(STR_NAME_REEFER))</td>
+                    </tr>
+                
+                    <tr>
+                        <td>79</td>
+                        <td>merchandise_freighter_ship_gen_3A</td>
+                        <td>string(STR_NAME_merchandise_freighter_ship_gen_3A, string(STR_NAME_MERCHANDISE_FREIGHTER_SHIP))</td>
+                    </tr>
+                
+                    <tr>
+                        <td>80</td>
+                        <td>merchandise_freighter_ship_gen_3B</td>
+                        <td>string(STR_NAME_merchandise_freighter_ship_gen_3B, string(STR_NAME_MERCHANDISE_FREIGHTER_SHIP))</td>
+                    </tr>
+                
+                    <tr>
+                        <td>81</td>
+                        <td>merchandise_freighter_ship_gen_3C</td>
+                        <td>string(STR_NAME_merchandise_freighter_ship_gen_3C, string(STR_NAME_MERCHANDISE_FREIGHTER_SHIP))</td>
+                    </tr>
+                
+                    <tr>
+                        <td>82</td>
+                        <td>merchandise_freighter_ship_gen_3D</td>
+                        <td>string(STR_NAME_merchandise_freighter_ship_gen_3D, string(STR_NAME_MERCHANDISE_FREIGHTER_SHIP))</td>
+                    </tr>
+                
+                    <tr>
+                        <td>83</td>
+                        <td>merchandise_freighter_ship_gen_3E</td>
+                        <td>string(STR_NAME_merchandise_freighter_ship_gen_3E, string(STR_NAME_MERCHANDISE_FREIGHTER_SHIP))</td>
+                    </tr>
+                
+                    <tr>
+                        <td>84</td>
+                        <td>merchandise_freighter_ship_gen_3F</td>
+                        <td>string(STR_NAME_merchandise_freighter_ship_gen_3F, string(STR_NAME_MERCHANDISE_FREIGHTER_SHIP))</td>
+                    </tr>
+                
+                    <tr>
+                        <td>86</td>
+                        <td>scrap_carrier_ship_gen_3A</td>
+                        <td>string(STR_NAME_scrap_carrier_ship_gen_3A, string(STR_NAME_SCRAP_CARRIER_SHIP))</td>
+                    </tr>
+                
+                    <tr>
+                        <td>87</td>
+                        <td>scrap_carrier_ship_gen_3B</td>
+                        <td>string(STR_NAME_scrap_carrier_ship_gen_3B, string(STR_NAME_SCRAP_CARRIER_SHIP))</td>
+                    </tr>
+                
+                    <tr>
+                        <td>88</td>
+                        <td>scrap_carrier_ship_gen_3C</td>
+                        <td>string(STR_NAME_scrap_carrier_ship_gen_3C, string(STR_NAME_SCRAP_CARRIER_SHIP))</td>
+                    </tr>
+                
+                    <tr>
+                        <td>89</td>
+                        <td>scrap_carrier_ship_gen_3D</td>
+                        <td>string(STR_NAME_scrap_carrier_ship_gen_3D, string(STR_NAME_SCRAP_CARRIER_SHIP))</td>
+                    </tr>
+                
+                    <tr>
+                        <td>90</td>
+                        <td>scrap_carrier_ship_gen_3E</td>
+                        <td>string(STR_NAME_scrap_carrier_ship_gen_3E, string(STR_NAME_SCRAP_CARRIER_SHIP))</td>
+                    </tr>
+                
+                    <tr>
+                        <td>91</td>
+                        <td>scrap_carrier_ship_gen_3F</td>
+                        <td>string(STR_NAME_scrap_carrier_ship_gen_3F, string(STR_NAME_SCRAP_CARRIER_SHIP))</td>
+                    </tr>
+                
+            </tbody>
+        </table>
+    </div>
+
+</div>
+    </div>
+    <div style="margin-top:30px; text-align:center; color:#999; padding:5px; background-color:#eee; border-top:solid 1px #ddd; box-shadow: inset 0px 1px 1px #ddd">
+        Unsinkable Sam, with thanks to all who helped
+    </div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

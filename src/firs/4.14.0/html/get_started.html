@@ -1,0 +1,250 @@
+
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+    <title >FIRS Industry Replacement Set</title>
+    <meta http-equiv="Content-Type" content="text/html;" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link type="text/css" href="static/css/bootstrap.min.css" rel="stylesheet">
+    <link type="text/css" href="static/css/bootstrap-theme.min.css" rel="stylesheet">
+    <link type="text/css" href="static/css/style.css" rel="stylesheet">
+    <link href="static/css/font-awesome.min.css" rel="stylesheet">
+
+    <script type="text/javascript" src="static/js/jquery-1.9.1.min.js"></script>
+
+    <script type="text/javascript" src="static/js/jquery.metadata.js"></script>
+    <script type="text/javascript" src="static/js/jquery.tablesorter.min.js"></script>
+    <script type="text/javascript" src="static/js/jquery.tablesorter.widgets.min.js"></script>
+    <script type="text/javascript" src="static/js/bootstrap.min.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $('.tablesorter').tablesorter({
+                textExtraction: function(node){
+                            var cell_value = $(node).text();
+                            var sort_value = $(node).data('value');
+                    return (sort_value != undefined) ? sort_value : cell_value;
+                 },
+            })
+        })
+    </script>
+</head>
+
+<body>
+    <div class="navbar navbar-inverse"
+         style="border-bottom:1px solid #000; border-radius:0; margin-bottom:0;">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#firs-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="get_started.html">FIRS</a>
+            </div>
+
+            <div class="collapse navbar-collapse" id="firs-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li class="active">
+                    </li>
+                    <li class="">
+                        <a href="economies.html">Economies</a>
+                    </li>
+                    <li class="">
+                        <a href="cargos.html">Cargos</a>
+                    </li>
+                    <li class="">
+                        <a href="industries.html">Industries</a>
+                    </li>
+                    <li class="">
+                        <a href="code_reference.html">Code Reference</a>
+                    </li>
+                    <li class="">
+                        <a href="changelog.html">Changelog</a>
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="">
+                        <a href="translations.html"><i class="fa fa-globe icon-white"></i> Help Translate FIRS</a>
+                    </li>
+                    <li>
+                        <a href="http://www.tt-forums.net/viewtopic.php?t=41607"><i class="fa fa-comments icon-white"></i> Discuss at TT-Forums.net</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="hero-unit subhead">
+        <div class="container text-center">
+            <h1 style="font-size:48px; padding-top:30px;">FIRS Industry Replacement Set</h1>
+            <p class="lead">New Industries and Cargos for OpenTTD</p>
+            <br />
+            <br />
+            <script language="JavaScript">
+            function random_img(num_images){
+                var images=new Array(
+                    
+                    'arable_farm','assembly_plant','basic_oxygen_furnace','blast_furnace','body_plant','brewery','builders_yard','bulk_terminal','carbon_black_plant','cement_plant','chemical_plant','chlor_alkali_plant','cider_mill','clay_pit','coal_mine','coffee_estate','coke_oven','component_factory','copper_smelter','cryo_plant','dairy','dairy_farm','diamond_mine','dredging_site','electric_arc_furnace','engine_plant','farm','fish_farm','fishing_grounds','fishing_harbour','flour_mill','food_processor','forest','fruit_plantation','general_store','glass_works','hardware_store','herding_coop','iron_ore_mine','lime_kiln','limestone_mine','liquids_terminal','manganese_mine','metal_workshop','nitrate_mine','oil_wells','orchard_piggery','paper_mill','peatlands','petrol_pump','phosphate_mine','plaza','port','potash_mine','pyrite_mine','pyrite_smelter','quarry','ranch','rubber_plantation','scrap_yard','sheet_and_pipe_mill','slag_grinding_plant','soda_ash_mine','integrated_steel_mill','stockyard','supply_yard','timber_yard','trading_post','tyre_plant','vehicle_distributor','vineyard','wharf','wire_and_section_mill'
+                );
+
+                for(i = 0; i < num_images; i++){
+                    var random_image = images.splice(Math.floor(Math.random()*images.length), 1);
+                    document.write('<a href="industries.html#' + random_image + '"><img style="margin-top:-30px; margin-bottom:0;" width="20%" src="static/img/industries/'+ random_image +'.png"></a>')
+                }
+            }
+            random_img(5)
+            </script>
+        </div>
+    </div>
+    
+        
+    
+    <div class="container firs-larger-font">
+        <div>
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="page-header text-center">
+                <ul class="list-inline">
+                    <li><i class="fa fa-check-circle-o"></i> 83 cargos</li>
+                    <li><i class="fa fa-check-circle-o"></i> 78 industries</li>
+                    <li><i class="fa fa-check-circle-o"></i> 5 economies - choose simple or complex gameplay</li>
+                    <li><i class="fa fa-check-circle-o"></i> Primary industries don't close</li>
+                    <li><i class="fa fa-check-circle-o"></i> Optional secondary industry closure</li>
+                    <li><i class="fa fa-check-circle-o"></i> Snow for buildings above snowline</li>
+                    <li><i class="fa fa-check-circle-o"></i> Beautiful hand-drawn pixels</li>
+                    <li><i class="fa fa-check-circle-o"></i> GPL v2 license</li>
+                </ul>
+                <ul class="list-inline">
+                    <li><a href="#firs-gameplay">FIRS Gameplay</a></li>
+                    <li><a href="#download-firs">Download FIRS</a></li>
+                    <li><a href="#choose-economy">Setting up a Game with FIRS</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="row" id="firs-gameplay">
+        <div class="col-xs-12 col-sm-4">
+            <h2>FIRS Gameplay</h2>
+        </div>
+        <div class="col-xs-12 col-sm-8">
+            <p class="lead" style="margin-top:1em;">You can jump right into FIRS gameplay.</p>
+            <ul>
+                <li>There are familiar industries and cargos you'll recognise from default OpenTTD.</li>
+                <li>FIRS also adds lots of exciting new cargos and industries to play with.</li>
+                <li>Primary industries like mines and farms will always produce some cargo.</li>
+                <li>Secondary industries like the steel mill and cement plant will always produce some output cargo when an accepted cargo is delivered.</li>
+            </ul>
+            <h3>Gameplay Tips</h3>
+            <ul>
+                <li>Deliver supplies to primary industries regularly to boost production.</li>
+                <li>Some secondary industries boost production when more than one accepted cargo is delivered regularly.</li>
+                <li>Industries will never close.</li>
+                <li>Some industries are available from year 0. Some industries (and the cargos
+                    they use) are only available after a certain date.</li>
+                <li>FIRS adjusts default town behaviour: towns above snowline do not require food to grow, and towns in desert do not require food and water to grow.</li>
+            </ul>
+        </div>
+    </div>
+    <hr />
+    <div class="row" id="download-firs">
+        <div class="col-xs-12 col-sm-4">
+            <h2>Download FIRS</h2>
+        </div>
+        <div class="col-xs-12 col-sm-8">
+            <p style="margin-top:1em;">
+                FIRS is available:
+            <p>
+            <ul>
+                <li><strong>From the content service (Bananas) in OpenTTD (<em>recommended</em>)</strong>. <a href="http://wiki.openttd.org/Content_downloading">Instructions</a>.</li>
+                <li>As a source checkout for compiling. <a href="code_reference.html">How to checkout and compile</a>.</li>
+            </ul>
+        </div>
+    </div>
+    <hr />
+    <div class="row" id="vehicles">
+        <div class="col-xs-12 col-sm-4">
+            <h2>FIRS vehicle compatibility</h2>
+        </div>
+        <div class="col-xs-12 col-sm-8">
+            <p style="margin-top:1em;">FIRS cargos are transportable using the default OpenTTD vehicles (for OpenTTD 12.0 or newer).</p>
+            <p>There are also lots of great NewGRF vehicle sets with FIRS support.</p>
+            <p>The OpenTTD content service (Bananas) is a good place to find these.</p>
+        </div>
+    </div>
+    <hr />
+    <div class="row" id="choose-economy">
+        <div class="col-xs-12 col-sm-4">
+            <h2>Activate FIRS and Choose an Economy</h2>
+        </div>
+        <div class="col-xs-12 col-sm-8">
+            <p style="margin-top:1em;">
+                FIRS offers <a href="economies.html">5 economies</a>.
+                The 'Basic' economies are simple and offer a good starting point for players new to FIRS.
+                Other economies are more complex and challenging.
+            </p>
+            <ul>
+                <li>Activate FIRS via the <a href="https://wiki.openttd.org/NewGRF#Activating_NewGRFs">NewGRF settings window</a>.</li>
+                <li>Choose which economy you want using the parameter settings window.</li>
+                <li>Only one economy can be active at once.</li>
+                <li>Economies can be used in any OpenTTD climate, but some are designed to work best in the temperate, sub-arctic or sub-tropic climates.</li>
+            </ul>
+        </div>
+    </div>
+    <hr />
+    <div class="row">
+        <div class="col-xs-12 col-sm-4">
+            <h2>Advanced FIRS Parameters</h2>
+        </div>
+        <div class="col-xs-12 col-sm-8">
+            <p style="margin-top:1em;">
+                In addition to the economy parameter, FIRS provides a number of other parameters.
+            </p>
+            <p>
+                It's fine to leave these on the defaults, they're provided for advanced players
+                who want to adjust certain aspects of FIRS gameplay.
+            </p>
+        </div>
+    </div>
+    <hr />
+    <div class="row" id="conflicts">
+        <div class="col-xs-12 col-sm-4">
+            <h2>Conflict Detection</h2>
+        </div>
+        <div class="col-xs-12 col-sm-8">
+            <p style="margin-top:1em;">
+                When you begin a new OpenTTD game, FIRS will disable itself if certain conflicting newgrfs are detected.
+            </p>
+            <p>
+                You'll see a message if this happens.
+            </p>
+            <p>There's a list of <a href="code_reference.html#incompatible-grfs">conflicting newgrfs</a>.</p>
+        </div>
+    </div>
+    <hr />
+    <br />
+    <br />
+    <br />
+    <br />
+</div>
+    </div>
+    <div style="margin-top:30px; text-align:center; color:#999; padding:5px; background-color:#eee; border-top:solid 1px #ddd; box-shadow: inset 0px 1px 1px #ddd">
+        FIRS, with thanks to all who helped
+    </div>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
