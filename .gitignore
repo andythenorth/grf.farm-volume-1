@@ -5,3 +5,7 @@ Makefile.local
 
 # Ignore the dist file used when updating downstream projects
 dist
+
+# pruning
+tmp/
+files-to-remove.txt
