@@ -8,4 +8,6 @@ dist
 
 # pruning
 tmp/
+tmp_done/
 files-to-remove.txt
+files-to-remove.txt.bak
